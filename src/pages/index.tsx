@@ -3,153 +3,133 @@ import { APP_NAME } from '@/lib/consts'
 import ConnectWallet from '@/components/ConnectWallet'
 import { BookOpenIcon, CodeIcon, ShareIcon } from '@heroicons/react/outline'
 import ThemeSwitcher from '@/components/ThemeSwitcher'
+import Menu from 'src/components/Menu'
+import Profile from 'src/components/Profile'
+import Image from 'next/image'
+import test from 'public/images/iphone-se-2020-2560x1440-dark-8k-22550.jpg'
+import test1 from 'public/images/wallpaper.jpg'
+import test2 from 'public/images/apple-macbook-pro-2021-2560x1440-abstract-colorful-apple-october-2021-23772.jpg'
 
 const Home: FC = () => {
 	return (
-		<div className="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-			<div className="absolute top-6 right-6">
-				<ConnectWallet />
-			</div>
-			<ThemeSwitcher className="absolute bottom-6 right-6" />
-			<div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
-				<div className="flex justify-center pt-8 sm:justify-start sm:pt-0">
-					<h1 className="text-6xl font-bold dark:text-white">{APP_NAME}</h1>
-				</div>
-
-				<div className="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-					<div className="grid grid-cols-1 md:grid-cols-2">
-						<div className="p-6">
-							<div className="flex items-center">
-								<BookOpenIcon className="w-8 h-8 text-gray-500" />
-								<div className="ml-4 text-lg leading-7 font-semibold">
-									<a
-										href="https://nextjs.org/docs"
-										className="underline text-gray-900 dark:text-white"
-									>
-										Next.js Docs
-									</a>
-								</div>
-							</div>
-
-							<div className="ml-12">
-								<div className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-									Next.js gives you the best developer experience with all the features you need for
-									production: hybrid static &amp; server rendering, TypeScript support, smart
-									bundling, route pre-fetching, and more. No config needed.
-								</div>
-							</div>
-						</div>
-
-						<div className="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-							<div className="flex items-center">
-								<BookOpenIcon className="w-8 h-8 text-gray-500" />
-								<div className="ml-4 text-lg leading-7 font-semibold">
-									<a href="https://wagmi.sh" className="underline text-gray-900 dark:text-white">
-										wagmi Docs
-									</a>
-								</div>
-							</div>
-
-							<div className="ml-12">
-								<div className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-									wagmi is a collection of React Hooks containing everything you need to start working
-									with Ethereum. wagmi makes it easy to display ENS and balance information, sign
-									messages, interact with contracts, and much more — all with caching, request
-									deduplication, and persistence.
-								</div>
-							</div>
-						</div>
-
-						<div className="p-6 border-t border-gray-200 dark:border-gray-700">
-							<div className="flex items-center">
-								<BookOpenIcon className="w-8 h-8 text-gray-500" />
-								<div className="ml-4 text-lg leading-7 font-semibold">
-									<a
-										href="https://laravel-news.com/"
-										className="underline text-gray-900 dark:text-white"
-									>
-										Tailwind Docs
-									</a>
-								</div>
-							</div>
-
-							<div className="ml-12">
-								<div className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-									Tailwind CSS is a highly customizable, low-level CSS framework that gives you all of
-									the building blocks you need to build bespoke designs without any annoying
-									opinionated styles you have to fight to override.
-								</div>
-							</div>
-						</div>
-
-						<div className="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-							<div className="flex items-center">
-								<CodeIcon className="w-8 h-8 text-gray-500" />
-								<div className="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">
-									About this Template
-								</div>
-							</div>
-
-							<div className="ml-12">
-								<div className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-									This starter kit is composed of{' '}
-									<a href="https://nextjs.org" className="underline" target="_blank" rel="noreferrer">
-										Next.js
-									</a>{' '}
-									and{' '}
-									<a
-										href="https://tailwindcss.com"
-										className="underline"
-										target="_blank"
-										rel="noreferrer"
-									>
-										Tailwind CSS
-									</a>
-									, with{' '}
-									<a
-										href="https://docs.family.co/connectkit"
-										className="underline"
-										target="_blank"
-										rel="noreferrer"
-									>
-										ConnectKit
-									</a>
-									,{' '}
-									<a href="https://ethers.org" className="underline" target="_blank" rel="noreferrer">
-										ethers
-									</a>{' '}
-									&amp;{' '}
-									<a href="https://wagmi.sh" className="underline" target="_blank" rel="noreferrer">
-										wagmi
-									</a>{' '}
-									for all your web3 needs. It uses{' '}
-									<a
-										href="https://www.typescriptlang.org/"
-										className="underline"
-										target="_blank"
-										rel="noreferrer"
-									>
-										Typescript
-									</a>{' '}
-									and an opinionated directory structure for maximum dev confy-ness. Enjoy!
-								</div>
-							</div>
-						</div>
+		<div className="flex flex-col xl:flex-row justify-center bg-[#080808] sm:items-center py-4 xl:px-30 2xl:px-40 sm:pt-0">
+			<section className="container mx-auto max-h-screen flex items-center justify-center flex-col relative pb-40">
+				<div className="h-screen flex flex-col xl:fixed pt-28 xl:pt-0 xl:top-[10em] px-20 xl:pr-32 xl:max-w-[50em] space-y-8">
+					<h1 className="text-6xl text-white text-Space font-medium">William Phan</h1>
+					<h2 className="text-3xl text-white text-Space font-medium">Perfectly Imperfect in Every Way</h2>
+					<p className="text-2xl text-[#9B9B9B] leading-loose text-Sans">
+						I’m a blockchain developer who dabbles in UX/UI design. You can find me coding on the{' '}
+						<a className="underline underline-offset-6" href="">
+							Blockchain
+						</a>
+						, learning{' '}
+						<a className="underline underline-offset-2" href="">
+							MLL
+						</a>
+						, & exploring{' '}
+						<a className="underline underline-offset-2" href="">
+							UX/UI
+						</a>{' '}
+						design. I have a weakness for diet coke & dogs. An avid grass toucher.
+					</p>
+					<div className="">
+						<Menu />
+					</div>
+					<div>
+						<Profile />
 					</div>
 				</div>
-
-				<div className="flex justify-center mt-4 sm:items-center sm:justify-between">
-					<div className="text-center text-sm text-gray-500 sm:text-left">
-						<div className="flex items-center">
-							<ShareIcon className="-mt-px w-5 h-5 text-gray-400" />
-
-							<a href="https://twitter.com/m1guelpf" className="ml-1 underline">
-								Share
-							</a>
-						</div>
+			</section>
+			<section className="container mx-auto flex flex-col min-h-screen px-20 pt-24 sm:mt-0 py-24 items-center justify-center ">
+				<div className="gap-6 columns-2">
+					<div className="mb-4">
+						<Image alt="image" className="w-full aspect-square" objectFit="contain" src={test} />
 					</div>
+					<div className="mb-4">
+						<Image
+							alt="image"
+							className="w-full aspect-square rounded-lg"
+							objectFit="contain"
+							src={test1}
+						/>
+					</div>
+					<div className="mb-4">
+						<Image
+							alt="image"
+							className="w-full aspect-square rounded-lg"
+							objectFit="contain"
+							src={test2}
+						/>
+					</div>
+					<div className="mb-4">
+						<Image
+							alt="image"
+							className="w-full aspect-square rounded-lg"
+							objectFit="contain"
+							src={test1}
+						/>
+					</div>
+					<div className="mb-4">
+						<Image
+							alt="image"
+							className="w-full aspect-square rounded-lg"
+							objectFit="contain"
+							src={test2}
+						/>
+					</div>
+					<div className="mb-4">
+						<Image
+							alt="image"
+							className="w-full aspect-square rounded-lg"
+							objectFit="contain"
+							src={test1}
+						/>
+					</div>
+					<div className="mb-4">
+						<Image
+							alt="image"
+							className="w-full aspect-square rounded-lg"
+							objectFit="contain"
+							src={test2}
+						/>
+					</div>
+					<div className="mb-4">
+						<Image alt="image" className="w-full aspect-square rounded-lg" objectFit="contain" src={test} />
+					</div>
+					<div className="mb-4">
+						<Image alt="image" className="w-full aspect-square" objectFit="contain" src={test2} />
+					</div>
+					<div className="mb-4">
+						<Image
+							alt="image"
+							className="w-full aspect-square rounded-lg "
+							objectFit="contain"
+							src={test}
+						/>
+					</div>
+					<div className="mb-4">
+						<Image
+							alt="image"
+							className="w-full aspect-square rounded-lg"
+							objectFit="contain"
+							src={test1}
+						/>
+					</div>
+					<div className="mb-4">
+						<Image alt="image" className="w-full aspect-square" objectFit="contain" src={test2} />
+					</div>
+
+					{/* <img className="w-full aspect-video mb-12" src="https://picsum.photos/500/300?random=1" />
+					<img className="w-full aspect-square mb-6" src="https://picsum.photos/500/300?random=2" />
+					<img className="w-full aspect-square mb-6" src="https://picsum.photos/500/300?random=3" />
+					<img className="w-full aspect-square mb-6" src="https://picsum.photos/500/300?random=4" />
+					<img className="w-full aspect-video mb-6" src="https://picsum.photos/500/300?random=5" />
+					<img className="w-full aspect-video mb-6" src="https://picsum.photos/500/300?random=6" />
+					<img className="w-full aspect-square mb-6" src="https://picsum.photos/500/300?random=7" />
+					<img className="w-full aspect-video mb-6" src="https://picsum.photos/500/300?random=8" />
+					<img className="w-full aspect-square mb-6" src="https://picsum.photos/500/300?random=9" /> */}
 				</div>
-			</div>
+			</section>
 		</div>
 	)
 }
