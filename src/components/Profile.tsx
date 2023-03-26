@@ -14,7 +14,7 @@ const Profile = () => {
 				objectFit="contain"
 				src={profile}
 			/>
-			<h1 className="scroll text-Sans text-2xl cursor-pointer space-x-10">
+			<h1 className="scroll font-Sans text-2xl cursor-pointer space-x-10">
 				<Link href="https://twitter.com/willdphan">
 					<a className=" hover:underline"> Twitter</a>
 				</Link>
