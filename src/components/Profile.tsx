@@ -5,7 +5,7 @@ import profile from 'public/images/profile.jpeg'
 
 const Profile = () => {
 	return (
-		<div className="flex flex-row items-center space-x-5 sm:space-x-10 absolute bottom-20 xl:bottom-40">
+		<div className="flex flex-row items-center space-x-5 lg:space-x-10 absolute bottom-20 lg:bottom-40">
 			<Image alt="image" className=" aspect-square rounded-full " height={50} width={50} src={profile} />
 			<div className="flex space-x-2 sm:space-x-10">
 				{/* FIRST LINK */}

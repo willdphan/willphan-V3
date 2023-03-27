@@ -7,9 +7,9 @@ import Crafts from 'src/components/Crafts'
 
 const Home: FC = () => {
 	return (
-		<div className="flex flex-col xl:flex-row justify-center bg-[#080808] sm:items-center py-4 xl:px-30 2xl:px-40 sm:pt-0">
-			<section className="container mx-auto max-h-screen flex items-center justify-center flex-col relative pb-20">
-				<div className="h-screen flex flex-col xl:fixed pt-20 xl:pt-0 xl:top-[5em] px-16 xl:pr-32 xl:max-w-[50em] space-y-4">
+		<div className="flex flex-col lg:flex-row justify-center bg-[#080808] sm:items-center py-4 lg:px-30 2xl:px-40 sm:pt-0">
+			<section className="container mx-auto max-h-screen flex flex-col items-center justify-center relative pb-20">
+				<div className="h-screen flex flex-col lg:fixed pt-20 lg:pt-0 lg:top-[5em] px-10 xl:px-28  space-y-4 ">
 					<h1 className="text-3xl text-white font-Space font-medium">William Phan</h1>
 					<h2 className="text-xl text-white font-Space font-medium">Perfectly Imperfect in Every Way</h2>
 					<p className="text-md text-[#9B9B9B] leading-loose font-Sans">
@@ -25,7 +25,7 @@ const Home: FC = () => {
 					</div>
 				</div>
 			</section>
-			<section className="container mx-auto flex flex-col min-h-screen px-20 pt-24 sm:mt-0 py-24 items-center justify-center ">
+			<section className="container mx-auto flex flex-col min-h-screen lg:px-10 xl:px-28 pt-16 py-24 items-center justify-center ">
 				<Projects />
 				<Crafts />
 				<Learnings />
