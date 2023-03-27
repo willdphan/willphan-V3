@@ -25,7 +25,7 @@ const Home: FC = () => {
 					</div>
 				</div>
 			</section>
-			<section className="container mx-auto flex flex-col min-h-screen lg:px-10 xl:px-28 pt-16 py-24 items-center justify-center ">
+			<section className="container mx-auto flex flex-col min-h-screen px-10 lg:px-10 xl:px-28 pt-16 py-24 items-center justify-center ">
 				<Projects />
 				<Crafts />
 				<Learnings />
