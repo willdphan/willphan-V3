@@ -1,8 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
-import test from 'public/images/iphone-se-2020-2560x1440-dark-8k-22550.jpg'
-import test1 from 'public/images/wallpaper.jpg'
-import test2 from 'public/images/apple-macbook-pro-2021-2560x1440-abstract-colorful-apple-october-2021-23772.jpg'
 import Link from 'next/link'
 
 const Projects = () => {

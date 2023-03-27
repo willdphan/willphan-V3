@@ -1,31 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import profile from 'public/images/profile-pic.jpeg'
-import test from 'public/images/iphone-se-2020-2560x1440-dark-8k-22550.jpg'
-
-{
-	/* <div className="relative">
- <img 
-    src="/image1.png" 
-    className="w-[100px] h-[100px]"/>
- <img 
-    src="/image1.png" 
-    className="w-[100px] h-[100px] absolute opacity-[0] hover:opacity-[1]"/>
-</div> */
-}
+import profile from 'public/images/profile.jpeg'
 
 const Profile = () => {
 	return (
 		<div className="flex flex-row items-center space-x-10 absolute bottom-20 xl:bottom-60">
-			<Image
-				alt="image"
-				className="w-full aspect-square rounded-full "
-				height={75}
-				width={75}
-				objectFit="contain"
-				src={profile}
-			/>
+			<Image alt="image" className=" aspect-square rounded-full " height={75} width={75} src={profile} />
 			<div className="flex space-x-12">
 				{/* FIRST LINK */}
 				<h1 className="scroll font-Sans text-2xl cursor-pointer flex items-center space-x-2">
@@ -37,7 +18,7 @@ const Profile = () => {
 						/>
 					</svg>
 					<Link href="https://twitter.com/willdphan">
-						<a className="  pl-2"> Twitter</a>
+						<div className="  pl-2"> Twitter</div>
 					</Link>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35">
 						<path fill="none" d="M0 0h24v24H0z" />
@@ -57,7 +38,7 @@ const Profile = () => {
 						/>
 					</svg>
 					<Link href="https://twitter.com/willdphan">
-						<a className="  pl-2"> Github</a>
+						<div className="  pl-2"> Github</div>
 					</Link>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35">
 						<path fill="none" d="M0 0h24v24H0z" />
