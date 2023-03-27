@@ -7,45 +7,45 @@ import test2 from 'public/images/apple-macbook-pro-2021-2560x1440-abstract-color
 const Crafts = () => {
 	return (
 		<section>
-			<div className="gap-6 columns-2 ">
+			<div className="gap-3 columns-2 ">
 				{/* MARGIN-TOP-20 */}
-				<div className="mb-4 mt-20">
+				<div className="mb-3 mt-10">
 					<Image alt="image" className="w-full aspect-square" src={test} />
 				</div>
-				<div className="mb-4">
+				<div className="mb-3">
 					<Image alt="image" className="w-full aspect-square rounded-lg" src={test1} />
 				</div>
-				<div className="mb-4">
+				<div className="mb-3">
 					<Image alt="image" className="w-full aspect-square rounded-lg" src={test2} />
 				</div>
-				<div className="mb-4">
+				<div className="mb-3">
 					<Image alt="image" className="w-full aspect-square rounded-lg" src={test1} />
 				</div>
-				<div className="mb-4">
+				<div className="mb-3">
 					<Image alt="image" className="w-full aspect-square rounded-lg" src={test2} />
 				</div>
-				<div className="mb-4">
+				<div className="mb-3">
 					<Image alt="image" className="w-full aspect-square rounded-lg" src={test1} />
 				</div>
-				<div className="mb-4">
+				<div className="mb-3">
 					<Image alt="image" className="w-full aspect-square rounded-lg" src={test2} />
 				</div>
-				<div className="mb-4">
+				<div className="mb-3">
 					<Image alt="image" className="w-full aspect-square rounded-lg" src={test} />
 				</div>
-				<div className="mb-4">
+				<div className="mb-3">
 					<Image alt="image" className="w-full aspect-square" src={test2} />
 				</div>
-				<div className="mb-4">
+				<div className="mb-3">
 					<Image alt="image" className="w-full aspect-square rounded-lg " src={test} />
 				</div>
-				<div className="mb-4">
+				<div className="mb-3">
 					<Image alt="image" className="w-full aspect-square rounded-lg" src={test1} />
 				</div>
-				<div className="mb-4">
+				<div className="mb-3">
 					<Image alt="image" className="w-full aspect-square" src={test2} />
 				</div>
-				<div className="mb-4">
+				<div className="mb-3">
 					<Image alt="image" className="w-full aspect-square" src={test2} />
 				</div>
 
