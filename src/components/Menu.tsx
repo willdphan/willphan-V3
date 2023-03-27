@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Menu = () => {
 	return (
-		<div className="pt-20 z-10 text-start font-Sans text-[#9B9B9B] space-y-10 text-md">
+		<div className="pt-10 z-10 text-start font-Sans text-[#9B9B9B] space-y-10 text-md">
 			<Link href="https://github.com/wdphan">
 				<p className="scroll  cursor-pointer hover:underline pb-7">Projects</p>
 			</Link>
