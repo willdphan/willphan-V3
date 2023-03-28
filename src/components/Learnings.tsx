@@ -10,7 +10,7 @@ const Learnings = () => {
 		<section>
 			<div className="gap-3 columns-1 mt-32">
 				{/* LEARNINGS START */}
-				<div className="w-full bg-[#121212] transform transition duration-300 hover:scale-[1.06] hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white rounded-lg mb-3">
+				<div className="w-full bg-[#121212] transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white rounded-lg mb-3">
 					<div className="py-10 px-10 space-y-4">
 						<h2 className="text-md font-Space text-white">Get. Plugged. In.</h2>
 						<h1 className="text-2xl font-Space font-medium text-white">Development</h1>
@@ -50,7 +50,7 @@ const Learnings = () => {
 				</div>
 				{/* LEARNINGS END */}
 				{/* LEARNINGS START */}
-				<div className="w-full bg-[#121212] transform transition duration-300 hover:scale-[1.06] hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white rounded-lg mb-3">
+				<div className="w-full bg-[#121212] transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white rounded-lg mb-3">
 					<div className="py-10 px-10 space-y-4">
 						<h2 className="text-md font-Space text-white">Get. Plugged. In.</h2>
 						<h1 className="text-2xl font-Space font-medium text-white">Development</h1>
@@ -90,7 +90,7 @@ const Learnings = () => {
 				</div>
 				{/* LEARNINGS END */}
 				{/* LEARNINGS START */}
-				<div className="w-full bg-[#121212] transform transition duration-300 hover:scale-[1.06] hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white rounded-lg mb-3">
+				<div className="w-full bg-[#121212] transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white rounded-lg mb-3">
 					<div className="py-10 px-10 space-y-4">
 						<h2 className="text-md font-Space text-white">Get. Plugged. In.</h2>
 						<h1 className="text-2xl font-Space font-medium text-white">Development</h1>

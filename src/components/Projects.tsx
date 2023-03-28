@@ -7,7 +7,7 @@ const Projects = () => {
 			<div className="gap-3 columns-1 sm:columns-2 mb-20">
 				<div className="bg-[#080808] "></div>
 				{/* PROJECT START MARGIN-TOP-20 */}
-				<div className="mt-10 w-full bg-[#121212] rounded-lg mb-3 py-10 px-10 space-y-4 transform transition duration-300 hover:scale-[1.06] hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white">
+				<div className="mt-10 w-full bg-[#121212] rounded-lg mb-3 py-10 px-10 space-y-4 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white">
 					<h2 className="text-md font-Space text-white">Get. Plugged. In.</h2>
 					<h1 className="text-2xl font-Space font-medium text-white">Development</h1>
 					<p className="text-md leading-relaxed  font-Sans">
@@ -45,7 +45,7 @@ const Projects = () => {
 				</div>
 				{/* PROJECT END */}
 				{/* PROJECT START MARGIN-TOP-20 */}
-				<div className=" w-full bg-[#121212] rounded-lg mb-3 py-10 px-10 space-y-4 transform transition duration-300 hover:scale-[1.06] hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white">
+				<div className="w-full bg-[#121212] rounded-lg mb-3 py-10 px-10 space-y-4 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white">
 					<h2 className="text-md font-Space text-white">Get. Plugged. In.</h2>
 					<h1 className="text-2xl font-Space font-medium text-white">Development</h1>
 					<p className="text-md leading-relaxed  font-Sans">
@@ -83,7 +83,7 @@ const Projects = () => {
 				</div>
 				{/* PROJECT END */}
 				{/* PROJECT START MARGIN-TOP-20 */}
-				<div className=" w-full bg-[#121212] rounded-lg mb-3 py-10 px-10 space-y-4 transform transition duration-300 hover:scale-[1.06] hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white">
+				<div className=" w-full bg-[#121212] rounded-lg mb-3 py-10 px-10 space-y-4 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white">
 					<h2 className="text-md font-Space text-white">Get. Plugged. In.</h2>
 					<h1 className="text-2xl font-Space font-medium text-white">Development</h1>
 					<p className="text-md leading-relaxed  font-Sans">
@@ -121,7 +121,7 @@ const Projects = () => {
 				</div>
 				{/* PROJECT END */}
 				{/* PROJECT START MARGIN-TOP-20 */}
-				<div className="w-full bg-[#121212] rounded-lg mb-3 py-10 px-10 space-y-4 transform transition duration-300 hover:scale-[1.06] hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white">
+				<div className="mt-10 w-full bg-[#121212] rounded-lg mb-3 py-10 px-10 space-y-4 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white">
 					<h2 className="text-md font-Space text-white">Get. Plugged. In.</h2>
 					<h1 className="text-2xl font-Space font-medium text-white">Development</h1>
 					<p className="text-md leading-relaxed  font-Sans">
@@ -159,7 +159,7 @@ const Projects = () => {
 				</div>
 				{/* PROJECT END */}
 				{/* PROJECT START MARGIN-TOP-20 */}
-				<div className="w-full bg-[#121212] rounded-lg mb-3 py-10 px-10 space-y-4 transform transition duration-300 hover:scale-[1.06] hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white">
+				<div className=" w-full bg-[#121212] rounded-lg mb-3 py-10 px-10 space-y-4 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white">
 					<h2 className="text-md font-Space text-white">Get. Plugged. In.</h2>
 					<h1 className="text-2xl font-Space font-medium text-white">Development</h1>
 					<p className="text-md leading-relaxed  font-Sans">
@@ -196,8 +196,8 @@ const Projects = () => {
 					</div>
 				</div>
 				{/* PROJECT END */}
-				{/* PROJECT START MARGIN-BOTTOM-20 */}
-				<div className="mb-10 w-full bg-[#121212] rounded-lg py-10 px-10 space-y-4 transform transition duration-300 hover:scale-[1.06] hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white">
+				{/* PROJECT START MARGIN-TOP-20 */}
+				<div className="mb-10 w-full bg-[#121212] rounded-lg mb-3 py-10 px-10 space-y-4 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white">
 					<h2 className="text-md font-Space text-white">Get. Plugged. In.</h2>
 					<h1 className="text-2xl font-Space font-medium text-white">Development</h1>
 					<p className="text-md leading-relaxed  font-Sans">
