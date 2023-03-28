@@ -5,17 +5,17 @@ import profile from 'public/images/profile.jpeg'
 
 const Profile = () => {
 	return (
-		<div className="flex flex-row items-center space-x-5 lg:space-x-10 absolute bottom-20 lg:bottom-40">
+		<div className="flex flex-row items-center space-x-5 lg:space-x-5 absolute bottom-20 lg:bottom-20">
 			<Image alt="image" className=" aspect-square rounded-full " height={50} width={50} src={profile} />
 			<div className="flex space-x-2 sm:space-x-10">
 				{/* FIRST LINK */}
-				<h1 className="scroll font-Sans text-md cursor-pointer flex items-center space-x-2">
+				<h1 className="scroll font-Sans text-sm cursor-pointer flex items-center space-x-2">
 					<svg
 						className="hidden sm:block"
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
-						width="20"
-						height="20"
+						width="15"
+						height="15"
 					>
 						<path fill="none" d="M0 0h24v24H0z" />
 						<path
@@ -26,7 +26,7 @@ const Profile = () => {
 					<Link href="https://twitter.com/willdphan">
 						<div className=""> Twitter</div>
 					</Link>
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
 						<path fill="none" d="M0 0h24v24H0z" />
 						<path
 							d="M16.004 9.414l-8.607 8.607-1.414-1.414L14.589 8H7.004V6h11v11h-2V9.414z"
@@ -35,13 +35,13 @@ const Profile = () => {
 					</svg>
 				</h1>
 				{/* SECOND LINK */}
-				<h1 className="scroll font-Sans text-md cursor-pointer flex items-center space-x-2">
+				<h1 className="scroll font-Sans text-sm cursor-pointer flex items-center space-x-2">
 					<svg
 						className="hidden sm:block"
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
-						width="20"
-						height="20"
+						width="15"
+						height="15"
 					>
 						<path fill="none" d="M0 0h24v24H0z" />
 						<path
@@ -52,7 +52,7 @@ const Profile = () => {
 					<Link href="https://twitter.com/willdphan">
 						<div className=" "> Github</div>
 					</Link>
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
 						<path fill="none" d="M0 0h24v24H0z" />
 						<path
 							d="M16.004 9.414l-8.607 8.607-1.414-1.414L14.589 8H7.004V6h11v11h-2V9.414z"
