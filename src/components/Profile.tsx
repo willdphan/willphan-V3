@@ -2,11 +2,28 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import profile from 'public/images/profile.jpeg'
+import test1 from 'public/images/wallpaper.jpg'
+import { useState } from 'react'
+import personal from 'public/images/personal.png'
 
 const Profile = () => {
+	const [isHovering, setIsHovered] = useState(false)
+	const onMouseEnter = () => setIsHovered(true)
+	const onMouseLeave = () => setIsHovered(false)
 	return (
 		<div className="flex flex-row items-center space-x-5 lg:space-x-5 absolute bottom-20 lg:bottom-20">
-			<Image alt="image" className=" aspect-square rounded-full " height={50} width={50} src={profile} />
+			{/* <Image alt="image" className=" aspect-square rounded-full " height={50} width={50} src={profile} /> */}
+			<div
+				className="flex items-center flex-shrink-0 cursor-pointer lg:mr-2"
+				onMouseEnter={onMouseEnter}
+				onMouseLeave={onMouseLeave}
+			>
+				{isHovering ? (
+					<Image className="aspect-square rounded-full " src={profile} height={75} width={75} alt="logo" />
+				) : (
+					<Image className=" aspect-square rounded-full " src={personal} height={75} width={75} alt="logo" />
+				)}
+			</div>
 			<div className="flex space-x-2 sm:space-x-10">
 				{/* FIRST LINK */}
 				<h1 className="scroll font-Sans text-sm cursor-pointer flex items-center space-x-2">

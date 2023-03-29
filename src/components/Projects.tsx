@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
+
 const Projects = () => {
 	return (
 		<section id="projects">

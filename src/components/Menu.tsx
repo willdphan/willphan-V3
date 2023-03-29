@@ -27,7 +27,7 @@ const Menu = () => {
 								key={category}
 								className={({ selected }) =>
 									classNames(
-										'px-4 sm:px-10 py-2.5 tracking-widest text-xs text-[#9B9B9B] transition-all ease-in-out duration-100',
+										'px-6 sm:px-10 py-2.5 tracking-widest text-xs text-[#9B9B9B] transition-all ease-in-out duration-100',
 										'focus:outline-none text-white text-start md:text-center',
 										selected
 											? '   bg-gradient-to-b from-[#4055808b] via-[#40558039] to-[#40558000] shadow border-t-2 '
