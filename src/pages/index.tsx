@@ -14,7 +14,7 @@ const Home: FC = () => {
 					<Bio />
 				</div>
 
-				<div className="w-full lg:w-6/12 ml-auto pt-14 ">
+				<div className="w-full lg:w-6/12 ml-auto pt-14  ">
 					<Projects />
 					<Crafts />
 					<Learnings />
