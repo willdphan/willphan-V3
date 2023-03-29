@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 const Learnings = () => {
 	return (
-		<section>
+		<section id="learnings">
 			<div className="gap-2 columns-1 mt-20 mb-20">
 				{/* LEARNINGS START */}
 				<div className="w-full bg-[#121212] transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white rounded-lg mb-2">

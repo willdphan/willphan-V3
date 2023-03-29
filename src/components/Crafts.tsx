@@ -6,7 +6,7 @@ import test2 from 'public/images/apple-macbook-pro-2021-2560x1440-abstract-color
 
 const Crafts = () => {
 	return (
-		<section>
+		<section id="crafts">
 			<div className="gap-2 columns-2 mt-20 mb-20">
 				<div className="mb-2 mt-10">
 					<Image alt="image" className="w-full aspect-square" src={test} />
