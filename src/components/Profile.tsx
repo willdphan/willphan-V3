@@ -40,7 +40,7 @@ const Profile = () => {
 							fill="rgba(255,255,255,1)"
 						/>
 					</svg>
-					<Link href="https://twitter.com/willdphan">
+					<Link href="https://twitter.com/__wdp__">
 						<div className=""> Twitter</div>
 					</Link>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
@@ -66,7 +66,7 @@ const Profile = () => {
 							fill="rgba(255,255,255,1)"
 						/>
 					</svg>
-					<Link href="https://twitter.com/willdphan">
+					<Link href="https://github.com/willdphan">
 						<div className=" "> Github</div>
 					</Link>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">

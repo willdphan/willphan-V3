@@ -22,7 +22,7 @@ const Menu = () => {
 				<Tab.List className="flex flex-row rounded-lg  md:flex-row p-1 font-Space lg:hidden">
 					{Object.keys(categories).map(category => (
 						// eslint-disable-next-line react/jsx-key
-						<Link to={category.toLowerCase()} spy={true} smooth={true} offset={50} duration={500}>
+						<Link to={category.toLowerCase()} spy={true} smooth={true} offset={100} duration={500}>
 							<Tab
 								key={category}
 								className={({ selected }) =>

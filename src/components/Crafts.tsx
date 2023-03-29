@@ -9,43 +9,43 @@ const Crafts = () => {
 		<section id="crafts">
 			<div className="gap-2 columns-2 mt-20 mb-20">
 				<div className="mb-2 mt-10">
-					<Image alt="image" className="w-full aspect-square" src={test} />
+					<Image alt="image" className="w-full" src={test} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full aspect-square rounded-lg" src={test1} />
+					<Image alt="image" className="w-full  rounded-lg" src={test1} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full aspect-square rounded-lg" src={test2} />
+					<Image alt="image" className="w-full  rounded-lg" src={test2} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full aspect-square rounded-lg" src={test1} />
+					<Image alt="image" className="w-full  rounded-lg" src={test1} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full aspect-square rounded-lg" src={test2} />
+					<Image alt="image" className="w-full  rounded-lg" src={test2} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full aspect-square rounded-lg" src={test1} />
+					<Image alt="image" className="w-full rounded-lg" src={test1} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full aspect-square rounded-lg" src={test2} />
+					<Image alt="image" className="w-full  rounded-lg" src={test2} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full aspect-square rounded-lg" src={test} />
+					<Image alt="image" className="w-full rounded-lg" src={test} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full aspect-square" src={test2} />
+					<Image alt="image" className="w-full rounded-lg" src={test2} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full aspect-square rounded-lg " src={test} />
+					<Image alt="image" className="w-full  rounded-lg " src={test} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full aspect-square rounded-lg" src={test1} />
+					<Image alt="image" className="w-full  rounded-lg" src={test1} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full aspect-square" src={test2} />
+					<Image alt="image" className="w-full rounded-lg" src={test2} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full aspect-square" src={test2} />
+					<Image alt="image" className="w-full rounded-lg" src={test2} />
 				</div>
 
 				{/* <img className="w-full aspect-video mb-12" src="https://picsum.photos/500/300?random=1" />
