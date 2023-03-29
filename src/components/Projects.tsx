@@ -138,7 +138,7 @@ const Projects = () => {
 
 				{/* COLUMN 2 */}
 
-				<section className="space-y-2 pt-10 max-w-[50%]">
+				<section className="space-y-2 pt-2 lg:pt-10 lg:max-w-[50%]">
 					{/* PROJECT START */}
 					<div className="w-full bg-[#121212] rounded-lg py-10 px-10 space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white">
 						<h2 className="text-xs font-Space text-white tracking-widest">SOLIDITY</h2>
