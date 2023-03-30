@@ -77,7 +77,11 @@ function Projects() {
 
 	return (
 		<section id="projects">
-			<Masonry breakpointCols={2} className="my-masonry-grid flex gap-2" columnClassName="my-masonry-grid_column">
+			<Masonry
+				breakpointCols={{ default: 2, 700: 1 }}
+				className="my-masonry-grid flex gap-2"
+				columnClassName="my-masonry-grid_column"
+			>
 				{projects.slice(0, showMore ? projects.length : 6).map(project => (
 					<div
 						key={project.name}
