@@ -28,7 +28,7 @@ const Menu = () => {
 							hashSpy={true}
 							offset={100}
 							duration={500}
-							delay={1000}
+							delay={10}
 							isDynamic={true}
 							ignoreCancelEvents={false}
 							spyThrottle={500}
