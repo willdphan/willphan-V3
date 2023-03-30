@@ -10,7 +10,7 @@ const Bio = () => {
 	return (
 		<div className="pt-20 lg:fixed min-h-screen lg:pt-18  space-y-4 px-3 lg:px-10  ">
 			<h1 className="text-5xl text-white font-Space font-medium">William Phan</h1>
-			<h2 className="text-2xl text-white font-Space font-medium">Always Imperfectly Perfect</h2>
+			<h2 className="text-2xl text-white font-Space font-medium">Inherently Imperfectly Perfect</h2>
 			<p className="text-sm text-[#9B9B9B] leading-loose font-Sans md:max-w-[50em] lg:max-w-[30em]">
 				A developer dabbling in design. I&apos;m always trying to push the boundaries of what&apos;s possible
 				and finding new ways to make a difference through technology. I have a weakness for diet coke & dogs.
