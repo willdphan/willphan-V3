@@ -26,7 +26,7 @@ const Menu = () => {
 							spy={true}
 							smooth={true}
 							hashSpy={true}
-							offset={50}
+							offset={100}
 							duration={500}
 							delay={1000}
 							isDynamic={true}
