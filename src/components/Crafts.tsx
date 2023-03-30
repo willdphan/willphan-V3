@@ -38,7 +38,12 @@ const Crafts = () => {
 					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={chips} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full rounded-lg border-[#121212] border-2" src={grain} />
+					<Image
+						alt="image"
+						className="w-full rounded-lg border-[#121212] border-2"
+						priority={true}
+						src={grain}
+					/>
 				</div>
 				<div className="mb-2">
 					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={walletfeatures} />
