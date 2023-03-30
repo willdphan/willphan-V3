@@ -19,7 +19,7 @@ const Bio = () => {
 					{' '}
 					<br />{' '}
 				</a>{' '}
-				<div className="inline-block"> An avid grass toucher</div>
+				<div className="inline-block"> An avid grass toucher.</div>
 			</p>
 			<div>
 				<Menu />
