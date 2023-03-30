@@ -14,19 +14,19 @@ const Crafts = () => {
 		<section id="crafts">
 			<div className="gap-2 columns-2 mt-20 mb-20">
 				<div className="mb-2 mt-10">
-					<Image alt="image" className="w-full rounded-lg" src={opepen} />
+					<Image alt="image" className="w-full rounded-lg border-[#121212] border-2" src={opepen} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full  rounded-lg" src={nouns} />
+					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={nouns} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full  rounded-lg" src={marketplace} />
+					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={marketplace} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full  rounded-lg" src={dock} />
+					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={dock} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full  rounded-lg" src={chips} />
+					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={chips} />
 				</div>
 			</div>
 		</section>
