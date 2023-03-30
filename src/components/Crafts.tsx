@@ -20,7 +20,12 @@ const Crafts = () => {
 					<Image alt="image" className="w-full rounded-lg border-[#121212] border-2" src={opepen} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={playlist} />
+					<Image
+						alt="image"
+						className="w-full  rounded-lg border-[#121212] border-2"
+						priority={true}
+						src={playlist}
+					/>
 				</div>
 				<div className="mb-2">
 					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={marketplace} />
@@ -35,7 +40,12 @@ const Crafts = () => {
 					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={walletfeatures} />
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={opepenfolder} />
+					<Image
+						alt="image"
+						className="w-full  rounded-lg border-[#121212] border-2"
+						priority={true}
+						src={opepenfolder}
+					/>
 				</div>
 				<div className="mb-2">
 					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={nouns} />
