@@ -131,7 +131,7 @@ function Projects() {
 			</Masonry>
 			{projects.length > 3 && (
 				<button
-					className="pl-2 pt-5 flex items-center hover:cursor-pointer font-Space text-sm text-white decoration underline underline-offset-4"
+					className="pl-2 pt-2 flex items-center hover:cursor-pointer font-Space text-sm text-white decoration underline underline-offset-4"
 					onClick={() => setShowMore(!showMore)}
 				>
 					{showMore ? 'SHOW LESS' : 'SHOW MORE'}
