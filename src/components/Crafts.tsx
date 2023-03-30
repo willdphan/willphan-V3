@@ -11,7 +11,7 @@ import chips from 'public/images/mac-chips.gif'
 import walletfeatures from 'public/images/wallet-features.gif'
 import opepenfolder from 'public/images/opepen-folder.gif'
 import playlist from 'public/images/album-playlist.gif'
-import grain from 'public/images/album-grain.gif'
+import grain from 'public/images/playlist-grain.gif'
 
 const Crafts = () => {
 	return (
