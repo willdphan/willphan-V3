@@ -10,6 +10,7 @@ import dock from 'public/images/ezgif.com-video-to-gif (1) copy 2.gif'
 import chips from 'public/images/mac-chips.gif'
 import walletfeatures from 'public/images/wallet-features.gif'
 import opepenfolder from 'public/images/opepen-folder.gif'
+import playlist from 'public/images/album-playlist.gif'
 
 const Crafts = () => {
 	return (
@@ -35,6 +36,9 @@ const Crafts = () => {
 				</div>
 				<div className="mb-2">
 					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={opepenfolder} />
+				</div>
+				<div className="mb-2">
+					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={playlist} />
 				</div>
 			</div>
 		</section>
