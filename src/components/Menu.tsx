@@ -9,7 +9,7 @@ const Menu = () => {
 	}
 
 	let [categories] = useState({
-		PROJECTS: [],
+		EXPERIMENTS: [],
 		CRAFTS: [],
 		LEARNINGS: [],
 	})
@@ -80,46 +80,3 @@ const Menu = () => {
 }
 
 export default Menu
-
-{
-	/* <div className="pt-10 z-10 text-start font-Space text-[#9B9B9B] text-sm">
-			<ul className="space-y-2">
-				<li>
-					<Link
-						className="scroll cursor-pointer hover:ml-5 hover:text-white text-xs font-Space tracking-widest transform transition duration-300 "
-						to="Projects"
-						spy={true}
-						smooth={true}
-						offset={50}
-						duration={500}
-					>
-						PROJECTS
-					</Link>
-				</li>
-				<li>
-					<Link
-						className="scroll cursor-pointer hover:ml-5 hover:text-white text-xs font-Space tracking-widest transform transition duration-300 "
-						to="Crafts"
-						spy={true}
-						smooth={true}
-						offset={50}
-						duration={500}
-					>
-						CRAFTS
-					</Link>
-				</li>
-				<li>
-					<Link
-						className="scroll cursor-pointer hover:ml-5 hover:text-white text-xs font-Space tracking-widest transform transition duration-300 "
-						to="Learnings"
-						spy={true}
-						smooth={true}
-						offset={50}
-						duration={500}
-					>
-						LEARNINGS
-					</Link>
-				</li>
-			</ul>
-		</div> */
-}

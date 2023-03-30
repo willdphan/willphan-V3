@@ -3,10 +3,10 @@ import Link from 'next/link'
 import { useState } from 'react'
 import Masonry from 'react-masonry-css'
 
-function Projects() {
+function Experiments() {
 	const [showMore, setShowMore] = useState(false)
 
-	const projects = [
+	const experiments = [
 		{
 			title: 'SOLIDITY',
 			name: 'One of One',
@@ -76,13 +76,13 @@ function Projects() {
 	]
 
 	return (
-		<section id="projects">
+		<section id="experiments">
 			<Masonry
 				breakpointCols={{ default: 2, 700: 1 }}
 				className="my-masonry-grid flex gap-2"
 				columnClassName="my-masonry-grid_column"
 			>
-				{projects.slice(0, showMore ? projects.length : 6).map(project => (
+				{experiments.slice(0, showMore ? experiments.length : 6).map(project => (
 					<div
 						key={project.name}
 						className="my-masonry-grid_column mb-2 w-full bg-[#121212] rounded-lg py-10 px-10 space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white"
@@ -129,7 +129,7 @@ function Projects() {
 					</div>
 				))}
 			</Masonry>
-			{projects.length > 3 && (
+			{experiments.length > 3 && (
 				<button
 					className="pl-2 pt-2 flex items-center hover:cursor-pointer font-Space text-sm text-white decoration underline underline-offset-4"
 					onClick={() => setShowMore(!showMore)}
@@ -141,4 +141,4 @@ function Projects() {
 	)
 }
 
-export default Projects
+export default Experiments
