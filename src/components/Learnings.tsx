@@ -17,8 +17,7 @@ const Learnings = () => {
 						<p className="text-sm leading-relaxed  font-Sans">
 							My web development resources page serves as a comprehensive guide to the tools, tutorials,
 							and references that have assisted me in my journey towards becoming a proficient web
-							developer. The page is organized into sections that cater to different areas of web
-							development.
+							developer.
 						</p>
 						<div className="flex space-x-3 pt-4 text-sm text-[#405580]">
 							{/* LINK 1 */}
@@ -45,8 +44,7 @@ const Learnings = () => {
 						<h1 className="text-xl font-Space font-medium text-white">Blockchain</h1>
 						<p className="text-sm leading-relaxed  font-Sans">
 							This is a collection of resources I&apos;ve compiled while studying blockchain protocols,
-							blockchains, and NFT projects. Each page includes links and brief summaries of the sources
-							I&apos;ve used to deepen my understanding of these topics.
+							blockchains, and NFT projects.
 						</p>
 						<div className="flex space-x-3 pt-4 text-sm text-[#405580]">
 							{/* LINK 1 */}
@@ -73,8 +71,7 @@ const Learnings = () => {
 						<h1 className="text-xl font-Space font-medium text-white">Design</h1>
 						<p className="text-sm leading-relaxed  font-Sans">
 							My collection of UX/UI resources includes links to articles, videos, and courses that have
-							helped me improve my design skills. The pages on my Notion are categorized by tools, such as
-							Framer and Figma.
+							helped me improve my design skills.
 						</p>
 						<div className="flex space-x-3 pt-4 text-sm text-[#405580]">
 							{/* LINK 1 */}
