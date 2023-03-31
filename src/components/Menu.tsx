@@ -15,7 +15,7 @@ const Menu = () => {
 	})
 
 	return (
-		<div className="w-full max-w-md  pt-8 sm:px-0 ">
+		<div className="w-full max-w-md pt-8 sm:px-0 ">
 			{/* PHONE SCREEN */}
 			<Tab.Group>
 				<Tab.List className="flex flex-row   md:flex-row p-1 font-Space lg:hidden">
