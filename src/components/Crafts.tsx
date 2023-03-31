@@ -10,7 +10,7 @@ import dock from 'public/images/ezgif.com-video-to-gif (1) copy 2.gif'
 import chips from 'public/images/mac-chips.gif'
 import walletfeatures from 'public/images/wallet-features.gif'
 import opepenfolder from 'public/images/ezgif.com-optimize.gif'
-import playlist from 'public/images/album-playlist.png'
+import playlist from 'public/images/playlist-song.gif'
 import grain from 'public/images/playlist-grain.png'
 import cd from 'public/images/cd2.gif'
 
