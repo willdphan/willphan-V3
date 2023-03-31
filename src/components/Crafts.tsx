@@ -11,7 +11,7 @@ import chips from 'public/images/mac-chips.gif'
 import walletfeatures from 'public/images/wallet-features.gif'
 import opepenfolder from 'public/images/ezgif.com-optimize.gif'
 import playlist from 'public/images/playlist-song.gif'
-import grain from 'public/images/playlist-grain.png'
+import grain from 'public/images/playlist-grain.gif'
 import cd from 'public/images/cd2.gif'
 
 const Crafts = () => {
