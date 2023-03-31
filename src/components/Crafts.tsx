@@ -48,7 +48,12 @@ const Crafts = () => {
 					/>
 				</div>
 				<div className="mb-2">
-					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={cd} />
+					<Image
+						alt="image"
+						className="w-full  rounded-lg border-[#121212] border-2"
+						priority={true}
+						src={cd}
+					/>
 				</div>
 				<div className="mb-2">
 					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={walletfeatures} />
