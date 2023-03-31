@@ -19,7 +19,12 @@ const Crafts = () => {
 		<section id="crafts">
 			<div className="gap-2 columns-2 mt-20 mb-20">
 				<div className="mb-2 mt-10">
-					<Image alt="image" className="w-full rounded-lg border-[#121212] border-2" src={opepen} />
+					<Image
+						alt="image"
+						className="w-full rounded-lg border-[#121212] border-2"
+						priority={true}
+						src={opepen}
+					/>
 				</div>
 				<div className="mb-2">
 					<Image
