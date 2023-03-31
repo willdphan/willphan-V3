@@ -14,12 +14,7 @@ const Bio = () => {
 			<p className="text-sm text-[#9B9B9B] leading-loose font-Sans md:max-w-[50em] lg:max-w-[30em]">
 				20 year old developer dabbling in design. I&apos;m always trying to push the boundaries of what&apos;s
 				possible and finding new ways to make a difference through technology. I have a weakness for diet coke &
-				dogs.
-				<a className="lg:hidden">
-					{' '}
-					<br />{' '}
-				</a>{' '}
-				<div className="inline-block"> An avid grass toucher.</div>
+				dogs. An avid grass toucher.
 			</p>
 			<div>
 				<Menu />
