@@ -9,9 +9,9 @@ import marketplace from 'public/images/ezgif.com-video-to-gif (1) copy.gif'
 import dock from 'public/images/ezgif.com-video-to-gif (1) copy 2.gif'
 import chips from 'public/images/mac-chips.gif'
 import walletfeatures from 'public/images/wallet-features.gif'
-import opepenfolder from 'public/images/opepen-folder.gif'
+import opepenfolder from 'public/images/opepen2.gif'
 import playlist from 'public/images/album-playlist.gif'
-import grain from 'public/images/playlist-grain.gif'
+import grain from 'public/images/grain2.gif'
 import cd from 'public/images/cd-2.gif'
 
 const Crafts = () => {
