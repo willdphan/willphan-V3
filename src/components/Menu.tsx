@@ -18,7 +18,7 @@ const Menu = () => {
 		<div className="w-full max-w-md  pt-8 sm:px-0 ">
 			{/* PHONE SCREEN */}
 			<Tab.Group>
-				<Tab.List className="flex flex-row rounded-lg  md:flex-row p-1 font-Space lg:hidden">
+				<Tab.List className="flex flex-row   md:flex-row p-1 font-Space lg:hidden">
 					{Object.keys(categories).map(category => (
 						// eslint-disable-next-line react/jsx-key
 						<Link
@@ -53,7 +53,7 @@ const Menu = () => {
 			</Tab.Group>
 			{/* MEDIUM SCREEN OR LARGER */}
 			<Tab.Group>
-				<Tab.List className="rounded-lg font-Space hidden lg:block">
+				<Tab.List className=" font-Space hidden lg:block">
 					{Object.keys(categories).map(category => (
 						// eslint-disable-next-line react/jsx-key
 						<Link to={category.toLowerCase()} spy={true} smooth={true} offset={50} duration={500}>
