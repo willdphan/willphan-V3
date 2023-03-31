@@ -12,7 +12,7 @@ import walletfeatures from 'public/images/wallet-features.gif'
 import opepenfolder from 'public/images/opepen-folder.gif'
 import playlist from 'public/images/album-playlist.gif'
 import grain from 'public/images/playlist-grain.gif'
-import cd from 'public/images/cd.gif'
+import cd from 'public/images/cd-2.gif'
 
 const Crafts = () => {
 	return (
