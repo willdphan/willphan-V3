@@ -5,6 +5,7 @@
 * {
 	scrollbar-width: thin;
 	scrollbar-color: #121212;
+	overflow-x: hidden;
 }
 
 /* Chrome, Edge, and Safari */
