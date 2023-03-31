@@ -13,7 +13,7 @@ const Bio = () => {
 			<h2 className="text-xl text-white font-Space font-medium">Inherently Imperfectly Perfect</h2>
 			<p className="text-sm text-[#9B9B9B] leading-loose font-Sans md:max-w-[50em] lg:max-w-[30em]">
 				20 year old developer dabbling in design. I&apos;m always trying to push the boundaries of what&apos;s
-				possible and finding new ways to make a difference through technology. I have a weakness for diet coke &
+				possible and find new ways to make a difference through technology. I have a weakness for diet coke &
 				dogs. An avid grass toucher.
 			</p>
 			<div>
