@@ -91,6 +91,33 @@ const Learnings = () => {
 					</div>
 				</div>
 				{/* LEARNINGS END */}
+				{/* LEARNINGS START */}
+				<div className="w-full bg-[#121212] transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br from-[#405580] via-[#8c9ab7] to-[#FFFFFF] text-[#9B9B9B] hover:text-white rounded-lg mb-2">
+					<div className="py-10 px-10 space-y-2">
+						<h2 className="text-xs font-Space text-white tracking-widest">GOOD READS</h2>
+						<h1 className="text-xl font-Space font-medium text-white">Library</h1>
+						<p className="text-sm leading-relaxed  font-Sans">
+							My collection of books that I've read, want to read, and am currently reading. Feel free to
+							follow me on Goodreads!
+						</p>
+						<div className="flex space-x-3 pt-4 text-sm text-[#405580]">
+							{/* LINK 1 */}
+							<div className="flex items-center hover:cursor-pointer">
+								<Link href="https://www.goodreads.com/user/show/164155100-william-phan">
+									<p>Goodreads</p>
+								</Link>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+									<path fill="none" d="M0 0h24v24H0z" />
+									<path
+										d="M16.004 9.414l-8.607 8.607-1.414-1.414L14.589 8H7.004V6h11v11h-2V9.414z"
+										fill="#405580"
+									/>
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
+				{/* LEARNINGS END */}
 			</div>
 		</section>
 	)
