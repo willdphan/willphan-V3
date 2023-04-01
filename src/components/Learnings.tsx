@@ -97,8 +97,8 @@ const Learnings = () => {
 						<h2 className="text-xs font-Space text-white tracking-widest">GOOD READS</h2>
 						<h1 className="text-xl font-Space font-medium text-white">Library</h1>
 						<p className="text-sm leading-relaxed  font-Sans">
-							My collection of books that I've read, want to read, and am currently reading. Feel free to
-							follow me on Goodreads!
+							My collection of books that I&apos;ve read, want to read, and am currently reading. Feel
+							free to follow me on Goodreads!
 						</p>
 						<div className="flex space-x-3 pt-4 text-sm text-[#405580]">
 							{/* LINK 1 */}
