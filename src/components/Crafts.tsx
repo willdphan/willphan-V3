@@ -15,14 +15,14 @@ import grain from 'public/images/playlist-grain.gif'
 import cd from 'public/images/cd2.gif'
 
 const images = [
-	{ src: opepen, alt: 'image' },
-	{ src: playlist, alt: 'image' },
-	{ src: marketplace, alt: 'image' },
 	{ src: dock, alt: 'image' },
+	{ src: marketplace, alt: 'image' },
+	{ src: playlist, alt: 'image' },
+	{ src: opepen, alt: 'image' },
 	{ src: chips, alt: 'image' },
-	{ src: grain, alt: 'image' },
 	{ src: cd, alt: 'image' },
 	{ src: walletfeatures, alt: 'image' },
+	{ src: grain, alt: 'image' },
 	{ src: opepenfolder, alt: 'image' },
 	{ src: nouns, alt: 'image' },
 ]
