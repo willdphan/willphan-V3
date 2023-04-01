@@ -14,67 +14,33 @@ import playlist from 'public/images/playlist-song.gif'
 import grain from 'public/images/playlist-grain.gif'
 import cd from 'public/images/cd2.gif'
 
+const images = [
+	{ src: opepen, alt: 'image' },
+	{ src: playlist, alt: 'image' },
+	{ src: marketplace, alt: 'image' },
+	{ src: dock, alt: 'image' },
+	{ src: chips, alt: 'image' },
+	{ src: grain, alt: 'image' },
+	{ src: cd, alt: 'image' },
+	{ src: walletfeatures, alt: 'image' },
+	{ src: opepenfolder, alt: 'image' },
+	{ src: nouns, alt: 'image' },
+]
+
 const Crafts = () => {
 	return (
 		<section id="crafts">
 			<div className="gap-2 columns-2 mt-20 mb-20">
-				<div className="mb-2 mt-10">
-					<Image
-						alt="image"
-						className="w-full rounded-lg border-[#121212] border-2"
-						priority={true}
-						src={opepen}
-					/>
-				</div>
-				<div className="mb-2">
-					<Image
-						alt="image"
-						className="w-full  rounded-lg border-[#121212] border-2"
-						priority={true}
-						src={playlist}
-					/>
-				</div>
-
-				<div className="mb-2">
-					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={marketplace} />
-				</div>
-				<div className="mb-2">
-					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={dock} />
-				</div>
-				<div className="mb-2">
-					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={chips} />
-				</div>
-
-				<div className="mb-2">
-					<Image
-						alt="image"
-						className="w-full rounded-lg border-[#121212] border-2"
-						priority={true}
-						src={grain}
-					/>
-				</div>
-				<div className="mb-2">
-					<Image
-						alt="image"
-						className="w-full  rounded-lg border-[#121212] border-2"
-						priority={true}
-						src={cd}
-					/>
-				</div>
-				<div className="mb-2">
-					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={walletfeatures} />
-				</div>
-				<div className="mb-2">
-					<Image
-						alt="image"
-						className="w-full  rounded-lg border-[#121212] border-2"
-						priority={true}
-						src={opepenfolder}
-					/>
-				</div>
-				<div className="mb-2">
-					<Image alt="image" className="w-full  rounded-lg border-[#121212] border-2" src={nouns} />
-				</div>
+				{images.map((image, index) => (
+					<div key={index} className="mb-2">
+						<Image
+							alt={image.alt}
+							className="w-full rounded-lg border-[#121212] border-2"
+							priority={true}
+							src={image.src}
+						/>
+					</div>
+				))}
 			</div>
 		</section>
 	)
