@@ -15,9 +15,8 @@ const Learnings = () => {
 						<h2 className="text-xs font-Space text-white tracking-widest">GET PLUGGED IN.</h2>
 						<h1 className="text-xl font-Space font-medium text-white">Development</h1>
 						<p className="text-sm leading-relaxed  font-Sans">
-							My web development resources page serves as a comprehensive guide to the tools, tutorials,
-							and references that have assisted me in my journey towards becoming a proficient web
-							developer.
+							A comprehensive guide to the tools, tutorials, and references that have assisted me in my
+							journey towards becoming a proficient web developer.
 						</p>
 						<div className="flex space-x-3 pt-4 text-sm text-[#405580]">
 							{/* LINK 1 */}
