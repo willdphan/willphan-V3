@@ -26,14 +26,14 @@ const Learnings = () => {
 			sub: 'ml',
 			description:
 				'Resources for studying machine learning, including a variety of materials such as tutorials, videos, textbooks, research papers, and code repositories. Huge WIP.',
-			link: 'https://frost-sloop-bbc.notion.site/Machine-Learning-89f7c721c6ab425e8af69c6b9fc18d9a',
+			link: 'https://frost-sloop-bbc.notion.site/Machine-Learning-0a39c6c52b1049159bed07ff87cda592',
 		},
 		{
 			title: 'Design',
 			sub: 'ux | ui',
 			description:
 				'My collection of design resources includes links to articles, videos, and courses that have helped me improve my design skills. Went from a coloring to drawing squares.',
-			link: 'https://frost-sloop-bbc.notion.site/UX-UI-234124ad035f4370a6b3f5d865fc00f3',
+			link: 'https://frost-sloop-bbc.notion.site/Design-234124ad035f4370a6b3f5d865fc00f3',
 		},
 		{
 			title: 'Library',
