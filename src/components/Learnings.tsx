@@ -8,28 +8,6 @@ import Link from 'next/link'
 const Learnings = () => {
 	const learnings = [
 		{
-			title: 'Development',
-			sub: 'Get plugged in.',
-			description:
-				'A comprehensive guide to the tools, tutorials, and references that have assisted me in my journey towards becoming a proficient web developer.',
-			link: 'https://frost-sloop-bbc.notion.site/Dev-42a7eeaa9240423eb7566a5abc3237d5',
-		},
-		{
-			title: 'Blockchain',
-			sub: 'web3',
-			description:
-				"My collection of resources I've compiled while studying blockchain protocols, blockchains, and NFT projects.",
-			link: 'https://frost-sloop-bbc.notion.site/Blockchain-54d10d04cee848e082cae8a62e7be8e2',
-		},
-		{
-			title: 'Machine Learning',
-			sub: 'ml',
-			description:
-				'Resources for studying machine learning, including a variety of materials such as tutorials, videos, textbooks, research papers, and code repositories. Huge WIP.',
-			link: 'https://frost-sloop-bbc.notion.site/Machine-Learning-0a39c6c52b1049159bed07ff87cda592',
-		},
-
-		{
 			title: 'Library',
 			sub: 'Good Reads',
 			description:
