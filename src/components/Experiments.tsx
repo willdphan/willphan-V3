@@ -79,9 +79,17 @@ function Experiments() {
 		<section id="experiments">
 			<Masonry
 				breakpointCols={{ default: 2, 700: 1 }}
-				className="my-masonry-grid flex gap-2"
+				className="my-masonry-grid flex gap-2 relative"
 				columnClassName="my-masonry-grid_column"
 			>
+				{/* <!-- Animation Snippet --> */}
+				{/* <div className="flex h-5 w-5 top-3 right-2 absolute z-10">
+					<span className="animate-ping absolute h-4 w-4 rounded-full bg-[#405580] opacity-75"></span>
+					<span className="relative rounded-full h-4 w-4 bg-[#9B9B9B] flex items-center justify-center text-[#405580] text-xs">
+						?
+					</span>
+				</div> */}
+				{/* <!-- Animation Snippet --> */}
 				{experiments.slice(0, showMore ? experiments.length : 6).map(project => (
 					<div
 						key={project.name}
