@@ -9,6 +9,14 @@ function Experiments() {
 	const experiments = [
 		{
 			title: 'SOLIDITY',
+			name: 'RICKS-V2',
+			description:
+				'A fractionalized ERC721 auction contract that uses [VRGDA](https://www.paradigm.xyz/2022/08/vrgda) pricing logic and allows for buyouts.',
+
+			code: 'https://github.com/willdphan/RICKS-V2.git',
+		},
+		{
+			title: 'SOLIDITY',
 			name: 'One of One',
 			description: 'One Of One NFT editions using Minimal Proxy. Draft of gas efficient deployments.',
 
@@ -60,7 +68,7 @@ function Experiments() {
 			code: 'https://github.com/willdphan/ratio-contracts',
 		},
 	]
-ß
+
 	return (
 		<section id="experiments">
 			<Masonry
