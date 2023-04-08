@@ -15,26 +15,12 @@ function Experiments() {
 			code: 'https://github.com/willdphan/1-of-1.git',
 		},
 		{
-			title: 'PYTHON',
-			name: 'Jarvis',
-			description:
-				"Playing with OpenAI's API. Jarvis, A GPT Voice Assistant was made with speech recognition, OpenAI's Whisper, and Gradio",
-			code: 'https://github.com/willdphan/jarvis-whisperr',
-		},
-		{
 			title: 'SOLIDITY',
 			name: 'ERC20-YUL',
 			description:
 				'Used to practice coding in Yul. Made to be gas-efficient. Obviously, not optimal for production.',
 
 			code: 'https://github.com/willdphan/erc20-yul',
-		},
-		{
-			title: 'SOLIDITY',
-			name: 'RSVP',
-			description:
-				'Show Up or Pay Up. A fee is required to attend a meeting. If absent, you lose the fee you initially paid upfront.',
-			code: 'https://github.com/willdphan/rsvp',
 		},
 		{
 			title: 'TYPESCRIPT',
@@ -70,7 +56,7 @@ function Experiments() {
 			name: 'Ratio',
 			description:
 				'A mini-implementation of Fractional. Each NFT that intends to be fractionalized would be deposited into a vault by utilizing a clone factory (Vault Factory).',
-			frontend: 'https://ratio-flame.vercel.app',
+			frontend: 'https://ratio-flame.vercel.app',ß
 			code: 'https://github.com/willdphan/ratio-contracts',
 		},
 	]
