@@ -11,7 +11,7 @@ function Experiments() {
 			title: 'SOLIDITY',
 			name: 'RICKS-V2',
 			description:
-				'A fractionalized ERC721 auction contract that uses [VRGDA](https://www.paradigm.xyz/2022/08/vrgda) pricing logic and allows for buyouts.',
+				'A fractionalized ERC721 auction contract that uses VRGDA as pricing logic and allows for buyouts.',
 
 			code: 'https://github.com/willdphan/RICKS-V2.git',
 		},
