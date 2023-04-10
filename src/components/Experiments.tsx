@@ -59,14 +59,6 @@ function Experiments() {
 			frontend: 'https://splitz.vercel.app',
 			code: 'https://github.com/willdphan/splitz-contracts',
 		},
-		{
-			title: 'SOLIDITY',
-			name: 'Ratio',
-			description:
-				'A mini-implementation of Fractional. Each NFT that intends to be fractionalized would be deposited into a vault by utilizing a clone factory (Vault Factory).',
-			frontend: 'https://ratio-flame.vercel.app',
-			code: 'https://github.com/willdphan/ratio-contracts',
-		},
 	]
 
 	return (
