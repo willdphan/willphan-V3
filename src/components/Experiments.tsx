@@ -8,6 +8,14 @@ function Experiments() {
 
 	const experiments = [
 		{
+			title: 'PYTHON',
+			name: 'ATOM',
+			description:
+				'A personal assistant for managing and reviewing my schedule when I wake up.',
+			code: 'https://github.com/willdphan/atom-v2',
+			demo: 'https://twitter.com/willdphan/status/1652442555533885441?s=20'
+		},
+		{
 			title: 'SOLIDITY',
 			name: 'RICKS-V2',
 			description:
@@ -85,6 +93,23 @@ function Experiments() {
 						<h1 className="text-xl font-Space font-medium text-white">{project.name}</h1>
 						<p className="text-sm leading-relaxed font-Sans">{project.description}</p>
 						<div className="flex space-x-4 pt-4">
+							{project.demo && (
+								<a
+									href={project.demo}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="flex items-center hover:cursor-pointer font-Sans text-sm text-[#405580] pr-3"
+								>
+									Demo
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+										<path fill="none" d="M0 0h24v24H0z" />
+										<path
+											d="M16.004 9.414l-8.607 8.607-1.414-1.414L14.589 8H7.004V6h11v11h-2V9.414z"
+											fill="#405580"
+										/>
+									</svg>
+								</a>
+							)}
 							{project.frontend && (
 								<a
 									href={project.frontend}
