@@ -11,7 +11,6 @@ function Experiments() {
 			title: 'TYPESCRIPT',
 			name: 'DEGEN',
 			description: 'Uncover your NFT assets and their stories. Paste in your wallet to get started.',
-			code: 'https://github.com/willdphan/atom-v2',
 			frontend: 'https://degen-kappa.vercel.app/',
 			demo: 'https://twitter.com/willdphan/status/1660381395947077633?s=20',
 		},
