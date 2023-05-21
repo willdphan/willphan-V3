@@ -8,12 +8,19 @@ function Experiments() {
 
 	const experiments = [
 		{
+			title: 'TYPESCRIPT',
+			name: 'DEGEN',
+			description: 'Uncover your NFT assets and their stories. Paste in your wallet to get started.',
+			code: 'https://github.com/willdphan/atom-v2',
+			frontend: 'https://degen-kappa.vercel.app/',
+			demo: 'https://degen-kappa.vercel.app/',
+		},
+		{
 			title: 'PYTHON',
 			name: 'ATOM',
-			description:
-				'A personal assistant for managing and reviewing my schedule when I wake up.',
+			description: 'A personal assistant for managing and reviewing my schedule when I wake up.',
 			code: 'https://github.com/willdphan/atom-v2',
-			demo: 'https://twitter.com/willdphan/status/1652442555533885441?s=20'
+			demo: 'https://twitter.com/willdphan/status/1652442555533885441?s=20',
 		},
 		{
 			title: 'SOLIDITY',
