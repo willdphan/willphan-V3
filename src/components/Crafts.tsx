@@ -13,8 +13,10 @@ import opepenfolder from 'public/images/ezgif.com-optimize.gif'
 import playlist from 'public/images/playlist-2.gif'
 import grain from 'public/images/playlist-grain-2.gif'
 import cd from 'public/images/cd2.gif'
+import degen from 'public/images/degen.gif'
 
 const images = [
+	{ src: degen, alt: 'image' },
 	{ src: dock, alt: 'image' },
 	{ src: marketplace, alt: 'image' },
 	{ src: playlist, alt: 'image' },
