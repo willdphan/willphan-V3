@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import opepen from 'public/images/opepen.gif'
 import nouns from 'public/images/nouns.gif'
@@ -27,12 +27,23 @@ const images = [
 	{ src: opepenfolder, alt: 'image' },
 	{ src: nouns, alt: 'image' },
 ]
-
 const Crafts = () => {
+	const [visible, setVisible] = useState(8) // Initial number of images to show
+	const [expanded, setExpanded] = useState(false) // Initial state
+
+	const toggle = () => {
+		if (expanded) {
+			setVisible(8)
+		} else {
+			setVisible(images.length)
+		}
+		setExpanded(!expanded)
+	}
+
 	return (
 		<section id="crafts">
-			<div className="gap-2 columns-2 mt-20 mb-20">
-				{images.map((image, index, link) => (
+			<div className="gap-2 columns-2 mt-20">
+				{images.slice(0, visible).map((image, index) => (
 					<div key={index} className="mb-2">
 						<a href={image.link}>
 							<Image
@@ -45,6 +56,12 @@ const Crafts = () => {
 					</div>
 				))}
 			</div>
+			<button
+				onClick={toggle}
+				className="pl-2  flex items-center hover:cursor-pointer font-Space text-sm text-white decoration underline underline-offset-4"
+			>
+				{expanded ? 'SHOW LESS' : 'SHOW MORE'}
+			</button>
 		</section>
 	)
 }
