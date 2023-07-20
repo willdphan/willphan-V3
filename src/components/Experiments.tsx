@@ -9,6 +9,63 @@ function Experiments() {
 
 	const experiments = [
 		{
+			title: 'PYTHON',
+			name: 'RICE CNN',
+			description: 'Rice CNN with 75,000 grain images.',
+			code: 'https://github.com/willdphan/rice-cnn',
+			nbviewer: 'https://nbviewer.org/github/willdphan/rice-cnn/blob/main/Rice_Classifier_CNN.ipynb',
+			technology: 'ML',
+		},
+		{
+			title: 'PYTHON',
+			name: 'FISH CNN',
+			description: 'CNN with 9 different seafood types.',
+			code: 'https://github.com/willdphan/fish-cnn',
+			nbviewer: 'https://nbviewer.org/github/willdphan/fish-cnn/blob/main/Fish_CNN.ipynb',
+			technology: 'ML',
+		},
+		{
+			title: 'PYTHON',
+			name: 'FROZEN LAKE',
+			description: 'Reinforcement Learning with Frozen Lake Game.',
+			code: 'https://github.com/willdphan/frozen-lake',
+			nbviewer: 'https://nbviewer.org/github/willdphan/frozen-lake/blob/master/Frozen_Lake_Q_Learning.ipynb',
+			technology: 'ML',
+		},
+
+		{
+			title: 'PYTHON',
+			name: 'GPT PDF',
+			description: 'Using GPT to analyze PDFs.',
+			code: 'https://github.com/willdphan/gpt-pdf',
+			nbviewer: 'https://nbviewer.org/github/willdphan/gpt-pdf/blob/main/pdf_gpt.ipynb',
+			technology: 'ML',
+		},
+		{
+			title: 'PYTHON',
+			name: 'LEX QA AGENT',
+			description: 'CNN for Fashion MNIST Dataset.',
+			code: 'https://github.com/willdphan/lex-agent',
+			nbviewer: 'https://nbviewer.org/github/willdphan/lex-agent/blob/main/langchain_lex_agent.ipynb',
+			technology: 'ML',
+		},
+		{
+			title: 'PYTHON',
+			name: 'FASHION CNN',
+			description: 'CNN for Fashion MNIST Dataset.',
+			code: 'https://github.com/willdphan/fashion-cnn',
+			nbviewer:
+				'https://nbviewer.org/github/willdphan/fashion-cnn/blob/main/CNN_Fashion_Classifier_on_MNIST.ipynb',
+			technology: 'ML',
+		},
+		{
+			title: 'PYTHON',
+			name: 'NUMBER CNN',
+			description: 'CNN for Number MNIST Dataset.',
+			code: 'https://github.com/willdphan/number-cnn',
+			technology: 'ML',
+		},
+		{
 			title: 'TYPESCRIPT',
 			name: 'DEGEN',
 			description: 'Uncover your NFT assets and their stories.',
@@ -27,7 +84,7 @@ function Experiments() {
 		{
 			title: 'SOLIDITY',
 			name: 'RICKS-V2',
-			description: 'Fractionalized ERC721 auction w/VRGDA pricing',
+			description: 'Fractionalized ERC721 auction w/VRGDA pricing.',
 
 			code: 'https://github.com/willdphan/RICKS-V2.git',
 			technology: 'BLOCKCHAIN',
@@ -153,6 +210,23 @@ function Experiments() {
 									className="flex items-center hover:cursor-pointer font-Sans text-sm text-[#54627a] pr-3"
 								>
 									Code
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+										<path fill="none" d="M0 0h24v24H0z" />
+										<path
+											d="M16.004 9.414l-8.607 8.607-1.414-1.414L14.589 8H7.004V6h11v11h-2V9.414z"
+											fill="#54627a"
+										/>
+									</svg>
+								</a>
+							)}
+							{project.nbviewer && (
+								<a
+									href={project.nbviewer}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="flex items-center hover:cursor-pointer font-Sans text-sm text-[#54627a] pr-3"
+								>
+									NBViewer
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
 										<path fill="none" d="M0 0h24v24H0z" />
 										<path
