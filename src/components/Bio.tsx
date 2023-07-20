@@ -14,7 +14,7 @@ const Bio = () => {
 				Inherently Imperfectly Perfect
 			</h2>
 			<p className="text-md text-[#9B9B9B] leading-relaxed font-Sans  font-light md:max-w-[50em] lg:max-w-[25em] xl:max-w-[30em]">
-				21 year old developer dabbling in design. Find new ways to make a difference through technology while
+				21 year old developer dabbling in design. Finding new ways to make a difference through technology while
 				documenting my learnings. I have a weakness for diet coke & dogs. Avid grass toucher.
 			</p>
 			<div>
