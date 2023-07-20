@@ -7,6 +7,7 @@ module.exports = {
 			fontFamily: {
 				Space: ['Space Grotesk', 'sans-serif'],
 				Sans: ['DM Sans', 'sans-serif'],
+				Inter: ['Inter', 'sans-serif'],
 			},
 		},
 	},

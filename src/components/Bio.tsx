@@ -8,13 +8,15 @@ import Link from 'next/link'
 
 const Bio = () => {
 	return (
-		<div className="pt-20 lg:fixed min-h-screen lg:pt-18 space-y-4 px-3 lg:px-10  ">
-			<h1 className="text-4xl text-white font-Space font-medium">William Phan</h1>
-			<h2 className="text-xl text-white font-Space font-medium">Inherently Imperfectly Perfect</h2>
-			<p className="text-sm text-[#9B9B9B] leading-loose font-Sans md:max-w-[50em] lg:max-w-[30em]">
-				20 year old developer dabbling in design. I&apos;m always trying to push the boundaries of what&apos;s
-				possible and find new ways to make a difference through technology. I have a weakness for diet coke &
-				dogs. An avid grass toucher.
+		<div className="pt-20 lg:fixed min-h-screen lg:pt-18 space-y-2 px-3 lg:px-10  ">
+			<h1 className="text-xl font-Space font-medium text-white ">William Phan</h1>
+			<h2 className="text-md text-[#9B9B9B] font-Sans leading-relaxed font-light">
+				Inherently Imperfectly Perfect
+			</h2>
+			<p className="text-md text-[#9B9B9B] leading-relaxed font-Sans  font-light md:max-w-[50em] lg:max-w-[25em] xl:max-w-[30em]">
+				21 year old developer dabbling in design. Trying to push the boundaries of what&apos;s possible and find
+				new ways to make a difference through technology. I have a weakness for diet coke & dogs. Avid grass
+				toucher.
 			</p>
 			<div>
 				<Menu />

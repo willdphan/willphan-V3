@@ -3,9 +3,8 @@ import Link from 'next/link'
 import { useState } from 'react'
 import Masonry from 'react-masonry-css'
 
-function Experiments() {
+function Old() {
 	const [showMore, setShowMore] = useState(false)
-	const [selectedTech, setSelectedTech] = useState('ALL')
 
 	const experiments = [
 		{
@@ -14,7 +13,6 @@ function Experiments() {
 			description: 'Uncover your NFT assets and their stories.',
 			frontend: 'https://degen-kappa.vercel.app/',
 			demo: 'https://twitter.com/willdphan/status/1660381395947077633?s=20',
-			technology: 'BLOCKCHAIN',
 		},
 		{
 			title: 'PYTHON',
@@ -22,7 +20,6 @@ function Experiments() {
 			description: 'Personal assistant for managing & reviewing schedule.',
 			code: 'https://github.com/willdphan/atom-v2',
 			demo: 'https://twitter.com/willdphan/status/1652442555533885441?s=20',
-			technology: 'ML',
 		},
 		{
 			title: 'SOLIDITY',
@@ -30,7 +27,6 @@ function Experiments() {
 			description: 'Fractionalized ERC721 auction w/VRGDA pricing',
 
 			code: 'https://github.com/willdphan/RICKS-V2.git',
-			technology: 'BLOCKCHAIN',
 		},
 		{
 			title: 'SOLIDITY',
@@ -38,7 +34,6 @@ function Experiments() {
 			description: '1 | 1 NFT editions using gas efficient Minimal Proxy.',
 
 			code: 'https://github.com/willdphan/1-of-1.git',
-			technology: 'BLOCKCHAIN',
 		},
 		{
 			title: 'SOLIDITY',
@@ -46,28 +41,24 @@ function Experiments() {
 			description: 'ERC-20 in Yul. Obviously, not optimal for production.',
 
 			code: 'https://github.com/willdphan/erc20-yul',
-			technology: 'BLOCKCHAIN',
 		},
 		{
 			title: 'TYPESCRIPT',
 			name: 'Kaleidor',
 			description: 'On-Chain NFTs w/VRGDAs. You see what you get.',
 			frontend: 'https://kaleidor.vercel.app/',
-			technology: 'OTHER',
 		},
 		{
 			title: 'SOLIDITY',
 			name: 'Latter',
 			description: 'Mini-implementation of Affirm - Buy Now, Pay Later.',
 			code: 'https://github.com/willdphan/latter-contracts.git',
-			technology: 'BLOCKCHAIN',
 		},
 		{
 			title: 'SOLIDITY',
 			name: 'Shade',
 			description: 'On-chain generative art. 111 shades of NFTs.',
 			frontend: 'https://shade-pi.vercel.app/',
-			technology: 'BLOCKCHAIN',
 		},
 		{
 			title: 'SOLIDITY',
@@ -75,34 +66,25 @@ function Experiments() {
 			description: 'Funds split among recipients automatically.',
 			frontend: 'https://splitz.vercel.app',
 			code: 'https://github.com/willdphan/splitz-contracts',
-			technology: 'BLOCKCHAIN',
 		},
 	]
 
-	const filteredExperiments = experiments.filter(exp =>
-		selectedTech === 'ALL' ? true : exp.technology === selectedTech
-	)
-
 	return (
-		<section className="mt-[-2em]" id="experiments">
-			<div>
-				<select
-					value={selectedTech}
-					onChange={e => setSelectedTech(e.target.value)}
-					className="mb-4 bg-[#000000] rounded-md py-2 px-4 text-md leading-relaxed text-xs font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
-				>
-					<option value="ALL">ALL</option>
-					<option value="BLOCKCHAIN">BLOCKCHAIN</option>
-					<option value="ML">AI | ML</option>
-					<option value="OTHER">OTHER</option>
-				</select>
-			</div>
+		<section id="experiments">
 			<Masonry
 				breakpointCols={{ default: 2, 700: 1 }}
 				className="my-masonry-grid flex gap-2 relative"
 				columnClassName="my-masonry-grid_column"
 			>
-				{filteredExperiments.slice(0, showMore ? filteredExperiments.length : 6).map(project => (
+				{/* <!-- Animation Snippet --> */}
+				{/* <div className="flex h-5 w-5 top-3 right-2 absolute z-10">
+					<span className="animate-ping absolute h-4 w-4 rounded-full bg-[#405580] opacity-75"></span>
+					<span className="relative rounded-full h-4 w-4 bg-[#9B9B9B] flex items-center justify-center text-[#405580] text-xs">
+						?
+					</span>
+				</div> */}
+				{/* <!-- Animation Snippet --> */}
+				{experiments.slice(0, showMore ? experiments.length : 6).map(project => (
 					<div
 						key={project.name}
 						className="my-masonry-grid_column mb-2 w-full bg-[#181818]  border-[#262626] border-[1px] rounded-lg py-10 px-10 space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
@@ -166,9 +148,9 @@ function Experiments() {
 					</div>
 				))}
 			</Masonry>
-			{filteredExperiments.length > 3 && (
+			{experiments.length > 3 && (
 				<button
-					className="py-2 px-4 rounded-md flex items-center hover:cursor-pointer font-Space text-[#9B9B9B] text-xs tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
+					className="pl-2 pt-2 flex items-center hover:cursor-pointer font-Space text-sm text-[#9B9B9B] decoration underline underline-offset-4"
 					onClick={() => setShowMore(!showMore)}
 				>
 					{showMore ? 'LESS' : 'MORE'}

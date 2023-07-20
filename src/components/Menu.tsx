@@ -9,7 +9,7 @@ const Menu = () => {
 	}
 
 	let [categories] = useState({
-		EXPERIMENTS: [],
+		'FOR FUN': [],
 		CRAFTS: [],
 		LEARNINGS: [],
 	})

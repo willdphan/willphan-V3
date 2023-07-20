@@ -17,12 +17,12 @@ const images = [
 	{ src: scale, alt: 'image', link: 'https://bw-scaleai.vercel.app/' },
 	{ src: dock, alt: 'image' },
 	{ src: marketplace, alt: 'image' },
-	{ src: playlist, alt: 'image' },
+	// { src: playlist, alt: 'image' },
 	{ src: degen, alt: 'image', link: 'https://degen-kappa.vercel.app/' },
 	{ src: opepen, alt: 'image' },
 	{ src: chips, alt: 'image' },
 	{ src: cd, alt: 'image' },
-	{ src: walletfeatures, alt: 'image' },
+	// { src: walletfeatures, alt: 'image' },
 	{ src: grain, alt: 'image' },
 	{ src: opepenfolder, alt: 'image' },
 	{ src: nouns, alt: 'image' },
@@ -58,9 +58,9 @@ const Crafts = () => {
 			</div>
 			<button
 				onClick={toggle}
-				className="pl-2  flex items-center hover:cursor-pointer font-Space text-sm text-white decoration underline underline-offset-4"
+				className="py-2 px-4 rounded-md flex items-center hover:cursor-pointer font-Space text-[#9B9B9B] text-xs tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
 			>
-				{expanded ? 'SHOW LESS' : 'SHOW MORE'}
+				{expanded ? 'LESS' : 'MORE'}
 			</button>
 		</section>
 	)
