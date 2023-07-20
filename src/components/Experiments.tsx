@@ -3,14 +3,14 @@ import Link from 'next/link'
 import { useState } from 'react'
 import Masonry from 'react-masonry-css'
 
-function Experiments() {
+const Experiments = () => {
 	const [showMore, setShowMore] = useState(false)
 	const [selectedTech, setSelectedTech] = useState('ALL')
 
 	const experiments = [
 		{
 			title: 'PYTHON',
-			name: 'RICE CNN',
+			name: 'Rice CNN',
 			description: 'Rice CNN with 75,000 grain images.',
 			code: 'https://github.com/willdphan/rice-cnn',
 			nbviewer: 'https://nbviewer.org/github/willdphan/rice-cnn/blob/main/Rice_Classifier_CNN.ipynb',
@@ -18,7 +18,7 @@ function Experiments() {
 		},
 		{
 			title: 'PYTHON',
-			name: 'FISH CNN',
+			name: 'Fish CNN',
 			description: 'CNN with 9 different seafood types.',
 			code: 'https://github.com/willdphan/fish-cnn',
 			nbviewer: 'https://nbviewer.org/github/willdphan/fish-cnn/blob/main/Fish_CNN.ipynb',
@@ -26,7 +26,7 @@ function Experiments() {
 		},
 		{
 			title: 'PYTHON',
-			name: 'FROZEN LAKE',
+			name: 'Frozen Lake',
 			description: 'Reinforcement Learning with Frozen Lake Game.',
 			code: 'https://github.com/willdphan/frozen-lake',
 			nbviewer: 'https://nbviewer.org/github/willdphan/frozen-lake/blob/master/Frozen_Lake_Q_Learning.ipynb',
@@ -43,7 +43,7 @@ function Experiments() {
 		},
 		{
 			title: 'PYTHON',
-			name: 'LEX QA AGENT',
+			name: 'Lex QA Agent',
 			description: 'CNN for Fashion MNIST Dataset.',
 			code: 'https://github.com/willdphan/lex-agent',
 			nbviewer: 'https://nbviewer.org/github/willdphan/lex-agent/blob/main/langchain_lex_agent.ipynb',
@@ -51,7 +51,7 @@ function Experiments() {
 		},
 		{
 			title: 'PYTHON',
-			name: 'FASHION CNN',
+			name: 'Fashion CNN',
 			description: 'CNN for Fashion MNIST Dataset.',
 			code: 'https://github.com/willdphan/fashion-cnn',
 			nbviewer:
@@ -60,7 +60,7 @@ function Experiments() {
 		},
 		{
 			title: 'PYTHON',
-			name: 'NUMBER CNN',
+			name: 'Number CNN',
 			description: 'CNN for Number MNIST Dataset.',
 			code: 'https://github.com/willdphan/number-cnn',
 			technology: 'ML',
