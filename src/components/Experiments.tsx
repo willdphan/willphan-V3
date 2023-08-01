@@ -27,7 +27,7 @@ const Experiments = () => {
 		{
 			title: 'PYTHON',
 			name: 'Pet CNN',
-			description: 'ResNet-50 architecture for Cat and Dog Dataset',
+			description: 'ResNet-50 architecture for Cat and Dog Dataset.',
 			code: 'https://github.com/willdphan/pet-cnn',
 			nbviewer: 'https://nbviewer.org/github/willdphan/pet-cnn/blob/main/Pet_Classifier_CNN.ipynb',
 			technology: 'ML',
@@ -43,7 +43,7 @@ const Experiments = () => {
 		{
 			title: 'PYTHON',
 			name: 'Amazon Stock LSTM',
-			description: 'Reinforcement Learning with Frozen Lake Game.',
+			description: 'LSTM Amazon Stock Price Prediction.',
 			code: 'https://github.com/willdphan/amazon-forecast/tree/main',
 			nbviewer:
 				'https://nbviewer.org/github/willdphan/amazon-forecast/blob/main/Amazon_Stock_Forecasting_with_LSTM.ipynb',
