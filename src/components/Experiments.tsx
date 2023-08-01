@@ -19,9 +19,17 @@ const Experiments = () => {
 		{
 			title: 'PYTHON',
 			name: 'Fish CNN',
-			description: 'CNN with 9 different seafood types.',
+			description: 'CNN with 9 different types of seafood.',
 			code: 'https://github.com/willdphan/fish-cnn',
 			nbviewer: 'https://nbviewer.org/github/willdphan/fish-cnn/blob/main/Fish_CNN.ipynb',
+			technology: 'ML',
+		},
+		{
+			title: 'PYTHON',
+			name: 'Pet CNN',
+			description: 'ResNet-50 architecture for Cat and Dog Dataset',
+			code: 'https://github.com/willdphan/pet-cnn',
+			nbviewer: 'https://nbviewer.org/github/willdphan/pet-cnn/blob/main/Pet_Classifier_CNN.ipynb',
 			technology: 'ML',
 		},
 		{
@@ -32,21 +40,21 @@ const Experiments = () => {
 			nbviewer: 'https://nbviewer.org/github/willdphan/frozen-lake/blob/master/Frozen_Lake_Q_Learning.ipynb',
 			technology: 'ML',
 		},
-
 		{
 			title: 'PYTHON',
-			name: 'GPT PDF',
-			description: 'Using GPT to analyze PDFs.',
-			code: 'https://github.com/willdphan/gpt-pdf',
-			nbviewer: 'https://nbviewer.org/github/willdphan/gpt-pdf/blob/main/pdf_gpt.ipynb',
+			name: 'Amazon Stock LSTM',
+			description: 'Reinforcement Learning with Frozen Lake Game.',
+			code: 'https://github.com/willdphan/amazon-forecast/tree/main',
+			nbviewer:
+				'https://nbviewer.org/github/willdphan/amazon-forecast/blob/main/Amazon_Stock_Forecasting_with_LSTM.ipynb',
 			technology: 'ML',
 		},
 		{
 			title: 'PYTHON',
-			name: 'Lex QA Agent',
-			description: 'CNN for Fashion MNIST Dataset.',
-			code: 'https://github.com/willdphan/lex-agent',
-			nbviewer: 'https://nbviewer.org/github/willdphan/lex-agent/blob/main/langchain_lex_agent.ipynb',
+			name: 'CIFAR-10 CNN',
+			description: 'CNN for CIFAR-1O Dataset.',
+			code: 'https://github.com/willdphan/cifar-cnn/tree/main',
+			nbviewer: 'https://nbviewer.org/github/willdphan/cifar-cnn/blob/main/CIFAR_10_CNN.ipynb',
 			technology: 'ML',
 		},
 		{
@@ -66,6 +74,30 @@ const Experiments = () => {
 			technology: 'ML',
 		},
 		{
+			title: 'PYTHON',
+			name: 'Car Price',
+			description: 'Linear Regression model to predict car selling prices.',
+			code: 'https://github.com/willdphan/car-price.git',
+			nbviewer: 'https://nbviewer.org/github/willdphan/car-price/blob/main/Car_Price_Regression.ipynb',
+			technology: 'ML',
+		},
+		{
+			title: 'PYTHON',
+			name: 'GPT PDF',
+			description: 'Using GPT to analyze PDFs.',
+			code: 'https://github.com/willdphan/gpt-pdf',
+			nbviewer: 'https://nbviewer.org/github/willdphan/gpt-pdf/blob/main/pdf_gpt.ipynb',
+			technology: 'ML',
+		},
+		{
+			title: 'PYTHON',
+			name: 'Lex QA Agent',
+			description: 'Lex Fridman question and answer agent.',
+			code: 'https://github.com/willdphan/lex-agent',
+			nbviewer: 'https://nbviewer.org/github/willdphan/lex-agent/blob/main/langchain_lex_agent.ipynb',
+			technology: 'ML',
+		},
+		{
 			title: 'TYPESCRIPT',
 			name: 'DEGEN',
 			description: 'Uncover your NFT assets and their stories.',
@@ -76,7 +108,7 @@ const Experiments = () => {
 		{
 			title: 'PYTHON',
 			name: 'ATOM',
-			description: 'Personal assistant for managing & reviewing schedule.',
+			description: 'GPT audio assistant for managing & reviewing schedule.',
 			code: 'https://github.com/willdphan/atom-v2',
 			demo: 'https://twitter.com/willdphan/status/1652442555533885441?s=20',
 			technology: 'ML',
@@ -141,7 +173,7 @@ const Experiments = () => {
 	)
 
 	return (
-		<section className="mt-[-2em]" id="experiments">
+		<section className="mt-[-2em]" id="for fun">
 			<div>
 				<select
 					value={selectedTech}
