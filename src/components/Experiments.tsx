@@ -142,7 +142,7 @@ const Experiments = () => {
 			name: 'Kaleidor',
 			description: 'On-Chain NFTs w/VRGDAs. You see what you get.',
 			frontend: 'https://kaleidor.vercel.app/',
-			technology: 'ML',
+			technology: 'BLOCKCHAIN',
 		},
 		{
 			title: 'SOLIDITY',
