@@ -12,7 +12,7 @@ const Experiments = () => {
 			title: 'PYTHON',
 			name: 'Age-Related Conditions',
 			description: 'Anonymized Health Metrics to Predict Binary Outcome',
-			code: 'https://github.com/willdphan/age-related-conditions/blob/main/Age_Related_Conditions.ipynb',
+			code: 'https://github.com/willdphan/age-related-conditions/tree/main',
 			nbviewer:
 				'https://nbviewer.org/github/willdphan/age-related-conditions/blob/main/Age_Related_Conditions.ipynb',
 			technology: 'ML',
@@ -39,7 +39,7 @@ const Experiments = () => {
 			title: 'PYTHON',
 			name: 'Heart Disease',
 			description: 'Binary Classification for Heart Disease Prediction.',
-			code: 'https://github.com/willdphan/heart-disease/blob/main/Heart_Disease.ipynb',
+			code: 'https://github.com/willdphan/heart-disease/tree/main',
 			nbviewer: 'https://nbviewer.org/github/willdphan/heart-disease/blob/main/Heart_Disease.ipynb',
 			technology: 'ML',
 		},
