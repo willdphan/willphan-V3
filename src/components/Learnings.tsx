@@ -8,6 +8,13 @@ import Link from 'next/link'
 const Learnings = () => {
 	const learnings = [
 		{
+			title: 'Notes',
+			sub: 'Notability',
+			description:
+				'Notes that I have hand-written with Notability to break down my learnings into concise explanations.',
+			link: 'https://drive.google.com/drive/folders/14Da3l60kJGyWyL-l1m1SfBZPzSGx7UN0?usp=sharing',
+		},
+		{
 			title: 'Library',
 			sub: 'GOOD READS',
 			description:
