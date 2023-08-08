@@ -38,7 +38,7 @@ const Learnings = () => {
 							<div className="flex space-x-3 pt-4 text-sm text-[#405580]">
 								<div className="flex items-center font-Sans hover:cursor-pointer">
 									<Link href={learning.link}>
-										<p className="text-[#54627a]">Notion</p>
+										<p className="text-[#54627a]">Link</p>
 									</Link>
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
 										<path fill="none" d="M0 0h24v24H0z" />
