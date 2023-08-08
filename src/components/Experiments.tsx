@@ -29,15 +29,6 @@ const Experiments = () => {
 		{
 			title: 'PYTHON',
 			name: 'Cardiovascular Disease',
-			description: 'University Classification - Private VS Public K-Means',
-			code: 'https://github.com/willdphan/private-vs-public-uni/blob/main/Private_vs_Public_Universities.ipynb',
-			nbviewer:
-				'https://nbviewer.org/github/willdphan/private-vs-public-uni/blob/main/Private_vs_Public_Universities.ipynb',
-			technology: 'ML',
-		},
-		{
-			title: 'PYTHON',
-			name: 'Cardiovascular Disease',
 			description: 'Cardiovascular Disease Prediction on 19 Lifestyle Factors',
 			code: 'https://github.com/willdphan/heart-disease/blob/main/Heart_Disease.ipynb',
 			nbviewer:
