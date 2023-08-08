@@ -10,6 +10,50 @@ const Experiments = () => {
 	const experiments = [
 		{
 			title: 'PYTHON',
+			name: 'Age-Related Conditions',
+			description: 'Anonymized Health Metrics to Predict Binary Outcome',
+			code: 'https://github.com/willdphan/age-related-conditions/blob/main/Age_Related_Conditions.ipynb',
+			nbviewer:
+				'https://nbviewer.org/github/willdphan/age-related-conditions/blob/main/Age_Related_Conditions.ipynb',
+			technology: 'ML',
+		},
+		{
+			title: 'PYTHON',
+			name: 'Private VS Public Uni',
+			description: 'University Classification - Private VS Public K-Means',
+			code: 'https://github.com/willdphan/private-vs-public-uni/blob/main/Private_vs_Public_Universities.ipynb',
+			nbviewer:
+				'https://nbviewer.org/github/willdphan/private-vs-public-uni/blob/main/Private_vs_Public_Universities.ipynb',
+			technology: 'ML',
+		},
+		{
+			title: 'PYTHON',
+			name: 'Cardiovascular Disease',
+			description: 'University Classification - Private VS Public K-Means',
+			code: 'https://github.com/willdphan/private-vs-public-uni/blob/main/Private_vs_Public_Universities.ipynb',
+			nbviewer:
+				'https://nbviewer.org/github/willdphan/private-vs-public-uni/blob/main/Private_vs_Public_Universities.ipynb',
+			technology: 'ML',
+		},
+		{
+			title: 'PYTHON',
+			name: 'Cardiovascular Disease',
+			description: 'Cardiovascular Disease Prediction on 19 Lifestyle Factors',
+			code: 'https://github.com/willdphan/heart-disease/blob/main/Heart_Disease.ipynb',
+			nbviewer:
+				'https://nbviewer.org/github/willdphan/cardiovascular-disease/blob/main/Cardiovascular_Disease.ipynb',
+			technology: 'ML',
+		},
+		{
+			title: 'PYTHON',
+			name: 'Heart Disease',
+			description: 'Binary Classification for Heart Disease Prediction.',
+			code: 'https://github.com/willdphan/heart-disease/blob/main/Heart_Disease.ipynb',
+			nbviewer: 'https://nbviewer.org/github/willdphan/heart-disease/blob/main/Heart_Disease.ipynb',
+			technology: 'ML',
+		},
+		{
+			title: 'PYTHON',
 			name: 'Rice CNN',
 			description: 'Rice CNN with 75,000 grain images.',
 			code: 'https://github.com/willdphan/rice-cnn',
