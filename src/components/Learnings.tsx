@@ -11,7 +11,7 @@ const Learnings = () => {
 			title: 'Notes',
 			sub: 'NOTABILITY',
 			description:
-				'Notes that I have hand-written in Notability to break down my learnings into concise explanations.',
+				'Notes that I have hand-written in Notability to break down my learnings into concise explanations. TO BE UPDATED.',
 			link: 'https://drive.google.com/drive/folders/14Da3l60kJGyWyL-l1m1SfBZPzSGx7UN0?usp=sharing',
 		},
 		{
