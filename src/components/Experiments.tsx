@@ -10,6 +10,20 @@ const Experiments = () => {
 	const experiments = [
 		{
 			title: 'PYTHON',
+			name: 'Pose Estimation',
+			description: 'Pose Estimation with OpenCV and Google MediaPipe Library',
+			code: 'https://github.com/willdphan/pose-estimator',
+			technology: 'ML',
+		},
+		{
+			title: 'PYTHON',
+			name: 'Hand Tracker',
+			description: 'Hand Detection with OpenCV and Google MediaPipe Library',
+			code: 'https://github.com/willdphan/hand-tracker',
+			technology: 'ML',
+		},
+		{
+			title: 'PYTHON',
 			name: 'Age-Related Conditions',
 			description: 'Anonymized Health Metrics to Predict Binary Outcome',
 			code: 'https://github.com/willdphan/age-related-conditions/tree/main',
