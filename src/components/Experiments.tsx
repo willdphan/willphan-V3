@@ -11,14 +11,14 @@ const Experiments = () => {
 		{
 			title: 'PYTHON',
 			name: 'Pose Estimation',
-			description: 'Pose Estimation with OpenCV and Google MediaPipe Library',
+			description: 'Pose Estimation with OpenCV & MediaPipe',
 			code: 'https://github.com/willdphan/pose-estimator',
 			technology: 'ML',
 		},
 		{
 			title: 'PYTHON',
 			name: 'Hand Tracker',
-			description: 'Hand Detection with OpenCV and Google MediaPipe Library',
+			description: 'Hand Detection with OpenCV & MediaPipe',
 			code: 'https://github.com/willdphan/hand-tracker',
 			technology: 'ML',
 		},
