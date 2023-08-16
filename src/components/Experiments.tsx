@@ -10,6 +10,13 @@ const Experiments = () => {
 	const experiments = [
 		{
 			title: 'PYTHON',
+			name: 'Color-Detector',
+			description: 'Color Detector with OpenCV and PIL',
+			code: 'https://github.com/willdphan/color-detector',
+			technology: 'ML',
+		},
+		{
+			title: 'PYTHON',
 			name: 'Pose Estimation',
 			description: 'Pose Estimation with OpenCV & MediaPipe',
 			code: 'https://github.com/willdphan/pose-estimator',
