@@ -2,6 +2,16 @@ import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
 import Masonry from 'react-masonry-css'
+import Image from 'next/image'
+import scale from 'public/images/scale.gif'
+import degen from 'public/images/degen.gif'
+import splitz from 'public/images/splitz.gif'
+import shade from 'public/images/shade.gif'
+import kaleidor from 'public/images/kaleidor.gif'
+import cdetector from 'public/images/color-detector.gif'
+import pose from 'public/images/pose.gif'
+import atom from 'public/images/atom.gif'
+import hand from 'public/images/hand.gif'
 
 const Experiments = () => {
 	const [showMore, setShowMore] = useState(false)
@@ -14,6 +24,7 @@ const Experiments = () => {
 			description: 'Color Detector with OpenCV and PIL',
 			code: 'https://github.com/willdphan/color-detector',
 			technology: 'ML',
+			image: cdetector,
 		},
 		{
 			title: 'PYTHON',
@@ -21,6 +32,7 @@ const Experiments = () => {
 			description: 'Pose Estimation with OpenCV & MediaPipe',
 			code: 'https://github.com/willdphan/pose-estimator',
 			technology: 'ML',
+			image: pose,
 		},
 		{
 			title: 'PYTHON',
@@ -28,6 +40,7 @@ const Experiments = () => {
 			description: 'Hand Detection with OpenCV & MediaPipe',
 			code: 'https://github.com/willdphan/hand-tracker',
 			technology: 'ML',
+			image: hand,
 		},
 		{
 			title: 'PYTHON',
@@ -160,6 +173,7 @@ const Experiments = () => {
 			frontend: 'https://degen-kappa.vercel.app/',
 			demo: 'https://twitter.com/willdphan/status/1660381395947077633?s=20',
 			technology: 'BLOCKCHAIN',
+			image: degen,
 		},
 		{
 			title: 'PYTHON',
@@ -168,6 +182,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/atom-v2',
 			demo: 'https://twitter.com/willdphan/status/1652442555533885441?s=20',
 			technology: 'ML',
+			image: atom,
 		},
 		{
 			title: 'SOLIDITY',
@@ -199,6 +214,7 @@ const Experiments = () => {
 			description: 'On-Chain NFTs w/VRGDAs. You see what you get.',
 			frontend: 'https://kaleidor.vercel.app/',
 			technology: 'BLOCKCHAIN',
+			image: kaleidor,
 		},
 		{
 			title: 'SOLIDITY',
@@ -213,6 +229,7 @@ const Experiments = () => {
 			description: 'On-chain generative art. 111 shades of NFTs.',
 			frontend: 'https://shade-pi.vercel.app/',
 			technology: 'BLOCKCHAIN',
+			image: shade,
 		},
 		{
 			title: 'SOLIDITY',
@@ -221,6 +238,7 @@ const Experiments = () => {
 			frontend: 'https://splitz.vercel.app',
 			code: 'https://github.com/willdphan/splitz-contracts',
 			technology: 'BLOCKCHAIN',
+			image: splitz,
 		},
 	]
 
@@ -250,12 +268,12 @@ const Experiments = () => {
 				{filteredExperiments.slice(0, showMore ? filteredExperiments.length : 6).map(project => (
 					<div
 						key={project.name}
-						className="my-masonry-grid_column mb-2 w-full bg-[#181818]  border-[#262626] border-[1px] rounded-lg py-10 px-10 space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
+						className="my-masonry-grid_column mb-2 w-full bg-[#181818]  border-[#262626] border-[1px] rounded-lg py-7 px-7 space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
 					>
 						<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest">{project.title}</h2>
-						<h1 className="text-xl font-Space font-medium text-white">{project.name}</h1>
-						<p className="text-md leading-relaxed font-Sans text-[#9B9B9B]">{project.description}</p>
-						<div className="flex space-x-4 pt-4">
+						<h1 className="text-lg font-Space p font-medium text-white">{project.name}</h1>
+						<p className="text-sm leading-relaxed font-Sans text-[#9B9B9B]">{project.description}</p>
+						<div className="flex space-x-4 pt-3">
 							{project.demo && (
 								<a
 									href={project.demo}
@@ -324,7 +342,20 @@ const Experiments = () => {
 									</svg>
 								</a>
 							)}
+							{/* Adding the Next.js Image component */}
 						</div>
+						{project.image && (
+							<div className="pt-5">
+								<Image
+									src={project.image}
+									alt={project.name}
+									width={600} // specify the width
+									height={300} // specify the height
+									layout="responsive" // if you want to maintain aspect ratio
+									className="rounded"
+								/>
+							</div>
+						)}
 					</div>
 				))}
 			</Masonry>
