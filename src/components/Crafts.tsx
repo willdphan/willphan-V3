@@ -18,8 +18,8 @@ const images = [
 	{ src: dock, alt: 'image' },
 	{ src: marketplace, alt: 'image' },
 	// { src: playlist, alt: 'image' },
-	{ src: degen, alt: 'image', link: 'https://degen-kappa.vercel.app/' },
 	{ src: opepen, alt: 'image' },
+	// { src: degen, alt: 'image' },
 	{ src: chips, alt: 'image' },
 	{ src: cd, alt: 'image' },
 	// { src: walletfeatures, alt: 'image' },
@@ -48,7 +48,7 @@ const Crafts = () => {
 						<a href={image.link}>
 							<Image
 								alt={image.alt}
-								className="w-full rounded-lg border-[#121212] border-2"
+								className="w-full h-full rounded-lg border-[#121212] border-2"
 								priority={true}
 								src={image.src}
 							/>
