@@ -28,12 +28,12 @@ const images = [
 	{ src: nouns, alt: 'image' },
 ]
 const Crafts = () => {
-	const [visible, setVisible] = useState(8) // Initial number of images to show
+	const [visible, setVisible] = useState(5) // Initial number of images to show
 	const [expanded, setExpanded] = useState(false) // Initial state
 
 	const toggle = () => {
 		if (expanded) {
-			setVisible(8)
+			setVisible(5)
 		} else {
 			setVisible(images.length)
 		}
