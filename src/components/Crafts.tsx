@@ -14,7 +14,7 @@ import degen from 'public/images/degen.gif'
 import scale from 'public/images/scale.gif'
 
 const images = [
-	{ src: scale, alt: 'image', link: 'https://bw-scaleai.vercel.app/' },
+	{ src: scale, alt: 'image' },
 	{ src: dock, alt: 'image' },
 	{ src: marketplace, alt: 'image' },
 	// { src: playlist, alt: 'image' },
