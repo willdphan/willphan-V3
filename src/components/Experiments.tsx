@@ -193,12 +193,28 @@ const Experiments = () => {
 			technology: 'BLOCKCHAIN',
 		},
 		{
+			title: 'TYPESCRIPT',
+			name: 'Kaleidor',
+			description: 'On-Chain NFTs w/VRGDAs. You see what you get.',
+			frontend: 'https://kaleidor.vercel.app/',
+			technology: 'BLOCKCHAIN',
+			image: kaleidor,
+		},
+		{
 			title: 'SOLIDITY',
 			name: 'One of One',
 			description: '1 | 1 NFT editions using gas efficient Minimal Proxy.',
 
 			code: 'https://github.com/willdphan/1-of-1.git',
 			technology: 'BLOCKCHAIN',
+		},
+		{
+			title: 'SOLIDITY',
+			name: 'Shade',
+			description: 'On-chain generative art. 111 shades of NFTs.',
+			frontend: 'https://shade-pi.vercel.app/',
+			technology: 'BLOCKCHAIN',
+			image: shade,
 		},
 		{
 			title: 'SOLIDITY',
@@ -209,27 +225,11 @@ const Experiments = () => {
 			technology: 'BLOCKCHAIN',
 		},
 		{
-			title: 'TYPESCRIPT',
-			name: 'Kaleidor',
-			description: 'On-Chain NFTs w/VRGDAs. You see what you get.',
-			frontend: 'https://kaleidor.vercel.app/',
-			technology: 'BLOCKCHAIN',
-			image: kaleidor,
-		},
-		{
 			title: 'SOLIDITY',
 			name: 'Latter',
 			description: 'Mini-implementation of Affirm - Buy Now, Pay Later.',
 			code: 'https://github.com/willdphan/latter-contracts.git',
 			technology: 'BLOCKCHAIN',
-		},
-		{
-			title: 'SOLIDITY',
-			name: 'Shade',
-			description: 'On-chain generative art. 111 shades of NFTs.',
-			frontend: 'https://shade-pi.vercel.app/',
-			technology: 'BLOCKCHAIN',
-			image: shade,
 		},
 		{
 			title: 'SOLIDITY',
