@@ -45,14 +45,12 @@ const Crafts = () => {
 			<div className="gap-2 columns-2 mt-20">
 				{images.slice(0, visible).map((image, index) => (
 					<div key={index} className="mb-2">
-						<a href={image.link}>
-							<Image
-								alt={image.alt}
-								className="w-full h-full rounded-lg border-[#121212] border-2"
-								priority={true}
-								src={image.src}
-							/>
-						</a>
+						<Image
+							alt={image.alt}
+							className="w-full h-full rounded-lg border-[#121212] border-2"
+							priority={true}
+							src={image.src}
+						/>
 					</div>
 				))}
 			</div>
