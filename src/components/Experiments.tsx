@@ -17,6 +17,8 @@ import rice from 'public/images/rice.png'
 import fish from 'public/images/fish.png'
 import heart from 'public/images/heart.png'
 import cardiovascular from 'public/images/cardiovascular.png'
+import cifar from 'public/images/cifar.png'
+import amazon from 'public/images/amazon.png'
 
 const Experiments = () => {
 	const [showMore, setShowMore] = useState(false)
@@ -134,6 +136,7 @@ const Experiments = () => {
 			nbviewer:
 				'https://nbviewer.org/github/willdphan/amazon-forecast/blob/main/Amazon_Stock_Forecasting_with_LSTM.ipynb',
 			technology: 'ML/CV',
+			image: amazon,
 		},
 		{
 			title: 'PYTHON',
@@ -142,6 +145,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/cifar-cnn/tree/main',
 			nbviewer: 'https://nbviewer.org/github/willdphan/cifar-cnn/blob/main/CIFAR_10_CNN.ipynb',
 			technology: 'ML',
+			image: cifar,
 		},
 		{
 			title: 'PYTHON',
