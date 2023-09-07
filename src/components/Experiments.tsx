@@ -12,6 +12,7 @@ import cdetector from 'public/images/color-detector.gif'
 import pose from 'public/images/pose.gif'
 import atom from 'public/images/atom.gif'
 import hand from 'public/images/hand.gif'
+import parking from 'public/images/parking.gif'
 
 const Experiments = () => {
 	const [showMore, setShowMore] = useState(false)
@@ -20,7 +21,15 @@ const Experiments = () => {
 	const experiments = [
 		{
 			title: 'PYTHON',
-			name: 'Color-Detector',
+			name: 'Parking Counter',
+			description: 'Counting Available Parking Spots with OpenCV',
+			code: 'https://github.com/willdphan/parking-counter',
+			technology: 'ML',
+			image: parking,
+		},
+		{
+			title: 'PYTHON',
+			name: 'Color Detector',
 			description: 'Color Detector with OpenCV and PIL',
 			code: 'https://github.com/willdphan/color-detector',
 			technology: 'ML',
