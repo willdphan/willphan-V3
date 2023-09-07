@@ -1,9 +1,9 @@
 import { FC } from 'react'
 import Menu from 'src/components/Menu'
 import Profile from 'src/components/Profile'
-import Learnings from 'src/components/Learnings'
+import Other from '@/components/Other'
 import Projects from '@/components/Projects'
-import Fun from '@/components/Fun'
+import Learnings from '@/components/Learnings'
 import Crafts from 'src/components/Crafts'
 import Bio from 'src/components/Bio'
 
@@ -17,9 +17,9 @@ const Home: FC = () => {
 
 				<div className="w-full lg:w-6/12 ml-auto pt-14  ">
 					<Projects />
-					<Fun />
-					<Crafts />
 					<Learnings />
+					<Crafts />
+					<Other />
 				</div>
 			</div>
 		</div>

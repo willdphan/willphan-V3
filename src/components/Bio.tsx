@@ -1,8 +1,8 @@
 import React from 'react'
 import Menu from 'src/components/Menu'
 import Profile from 'src/components/Profile'
-import Learnings from 'src/components/Learnings'
-import Projects from '@/components/Fun'
+import Learnings from '@/components/Other'
+import Projects from '@/components/Learnings'
 import Crafts from 'src/components/Crafts'
 import Link from 'next/link'
 
