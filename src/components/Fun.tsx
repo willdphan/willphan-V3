@@ -272,11 +272,12 @@ const Fun = () => {
 		<section className="mt-[-2em]" id="for fun">
 			<div className="flex items-center justify-start mb-4">
 				{' '}
-				<h2 className="text-sm font-Space text-[#9B9B9B] mx-2">FOR FUN</h2> {/* Title next to dropdown */}
+				<h2 className="text-sm font-Space text-[#9B9B9B] mx-2 mr-8">LEARNINGS</h2>{' '}
+				{/* Title next to dropdown */}
 				<select
 					value={selectedTech}
 					onChange={e => setSelectedTech(e.target.value)}
-					className="bg-[#000000] rounded-md py-2 px-4 text-md leading-relaxed text-sm font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
+					className="bg-[#000000] rounded-md py-2 text-md leading-relaxed text-sm font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
 				>
 					<option value="ALL">ALL</option>
 					<option value="ML/CV">ML | CV</option>
