@@ -13,6 +13,10 @@ import pose from 'public/images/pose.gif'
 import atom from 'public/images/atom.gif'
 import hand from 'public/images/hand.gif'
 import parking from 'public/images/parking.gif'
+import rice from 'public/images/rice.png'
+import fish from 'public/images/fish.png'
+import heart from 'public/images/heart.png'
+import cardiovascular from 'public/images/cardiovascular.png'
 
 const Experiments = () => {
 	const [showMore, setShowMore] = useState(false)
@@ -73,10 +77,11 @@ const Experiments = () => {
 			title: 'PYTHON',
 			name: 'Cardiovascular Disease',
 			description: 'Cardiovascular Disease Prediction on 19 Lifestyle Factors',
-			code: 'https://github.com/willdphan/heart-disease/blob/main/Heart_Disease.ipynb',
+			code: 'https://github.com/willdphan/cardiovascular-disease',
 			nbviewer:
 				'https://nbviewer.org/github/willdphan/cardiovascular-disease/blob/main/Cardiovascular_Disease.ipynb',
 			technology: 'ML',
+			image: cardiovascular,
 		},
 		{
 			title: 'PYTHON',
@@ -85,6 +90,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/heart-disease/tree/main',
 			nbviewer: 'https://nbviewer.org/github/willdphan/heart-disease/blob/main/Heart_Disease.ipynb',
 			technology: 'ML',
+			image: heart,
 		},
 		{
 			title: 'PYTHON',
@@ -93,6 +99,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/rice-cnn',
 			nbviewer: 'https://nbviewer.org/github/willdphan/rice-cnn/blob/main/Rice_Classifier_CNN.ipynb',
 			technology: 'ML/CV',
+			image: rice,
 		},
 		{
 			title: 'PYTHON',
@@ -101,6 +108,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/fish-cnn',
 			nbviewer: 'https://nbviewer.org/github/willdphan/fish-cnn/blob/main/Fish_CNN.ipynb',
 			technology: 'ML',
+			image: fish,
 		},
 		{
 			title: 'PYTHON',
