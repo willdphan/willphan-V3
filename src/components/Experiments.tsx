@@ -276,7 +276,7 @@ const Experiments = () => {
 					className="mb-4 bg-[#000000] rounded-md py-2 px-4 text-md leading-relaxed text-xs font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
 				>
 					<option value="ALL">ALL</option>
-					<option value="ML/CV">AI | ML | CV</option>
+					<option value="ML/CV">ML | CV</option>
 					<option value="BLOCKCHAIN">BLOCKCHAIN</option>
 					<option value="OTHER">OTHER</option>
 				</select>
