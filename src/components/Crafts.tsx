@@ -41,7 +41,7 @@ const Crafts = () => {
 	}
 
 	return (
-		<section id="crafts">
+		<section id="other">
 			<div className="gap-2 columns-2 mt-20">
 				{images.slice(0, visible).map((image, index) => (
 					<div key={index} className="mb-2">
