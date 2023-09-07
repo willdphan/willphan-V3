@@ -3,14 +3,11 @@ import Link from 'next/link'
 import { useState } from 'react'
 import Masonry from 'react-masonry-css'
 import Image from 'next/image'
-import scale from 'public/images/scale.gif'
-import degen from 'public/images/degen.gif'
 import splitz from 'public/images/splitz.gif'
 import shade from 'public/images/shade.gif'
 import kaleidor from 'public/images/kaleidor.gif'
 import cdetector from 'public/images/color-detector.gif'
 import pose from 'public/images/pose.gif'
-import atom from 'public/images/atom.gif'
 import hand from 'public/images/hand.gif'
 import parking from 'public/images/parking.gif'
 import rice from 'public/images/rice.png'
@@ -20,7 +17,7 @@ import cardiovascular from 'public/images/cardiovascular.png'
 import cifar from 'public/images/cifar.png'
 import amazon from 'public/images/amazon.png'
 
-const Experiments = () => {
+const Fun = () => {
 	const [showMore, setShowMore] = useState(false)
 	const [selectedTech, setSelectedTech] = useState('ALL')
 
@@ -32,6 +29,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/parking-counter',
 			technology: 'ML/CV',
 			image: parking,
+			demo: '',
 		},
 		{
 			title: 'PYTHON',
@@ -40,6 +38,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/color-detector',
 			technology: 'ML/CV',
 			image: cdetector,
+			demo: '',
 		},
 		{
 			title: 'PYTHON',
@@ -48,6 +47,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/pose-estimator',
 			technology: 'ML/CV',
 			image: pose,
+			demo: '',
 		},
 		{
 			title: 'PYTHON',
@@ -56,6 +56,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/hand-tracker',
 			technology: 'ML/CV',
 			image: hand,
+			demo: '',
 		},
 		{
 			title: 'PYTHON',
@@ -65,6 +66,7 @@ const Experiments = () => {
 			nbviewer:
 				'https://nbviewer.org/github/willdphan/age-related-conditions/blob/main/Age_Related_Conditions.ipynb',
 			technology: 'ML/CV',
+			demo: '',
 		},
 		{
 			title: 'PYTHON',
@@ -74,6 +76,7 @@ const Experiments = () => {
 			nbviewer:
 				'https://nbviewer.org/github/willdphan/private-vs-public-uni/blob/main/Private_vs_Public_Universities.ipynb',
 			technology: 'ML/CV',
+			demo: '',
 		},
 		{
 			title: 'PYTHON',
@@ -84,6 +87,7 @@ const Experiments = () => {
 				'https://nbviewer.org/github/willdphan/cardiovascular-disease/blob/main/Cardiovascular_Disease.ipynb',
 			technology: 'ML/CV',
 			image: cardiovascular,
+			demo: '',
 		},
 		{
 			title: 'PYTHON',
@@ -93,6 +97,7 @@ const Experiments = () => {
 			nbviewer: 'https://nbviewer.org/github/willdphan/heart-disease/blob/main/Heart_Disease.ipynb',
 			technology: 'ML/CV',
 			image: heart,
+			demo: '',
 		},
 		{
 			title: 'PYTHON',
@@ -102,6 +107,7 @@ const Experiments = () => {
 			nbviewer: 'https://nbviewer.org/github/willdphan/rice-cnn/blob/main/Rice_Classifier_CNN.ipynb',
 			technology: 'ML/CV',
 			image: rice,
+			demo: '',
 		},
 		{
 			title: 'PYTHON',
@@ -111,6 +117,7 @@ const Experiments = () => {
 			nbviewer: 'https://nbviewer.org/github/willdphan/fish-cnn/blob/main/Fish_CNN.ipynb',
 			technology: 'ML/CV',
 			image: fish,
+			demo: '',
 		},
 		{
 			title: 'PYTHON',
@@ -119,6 +126,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/pet-cnn',
 			nbviewer: 'https://nbviewer.org/github/willdphan/pet-cnn/blob/main/Pet_Classifier_CNN.ipynb',
 			technology: 'ML/CV',
+			demo: '',
 		},
 		{
 			title: 'PYTHON',
@@ -137,6 +145,7 @@ const Experiments = () => {
 				'https://nbviewer.org/github/willdphan/amazon-forecast/blob/main/Amazon_Stock_Forecasting_with_LSTM.ipynb',
 			technology: 'ML/CV',
 			image: amazon,
+			demo: '',
 		},
 		{
 			title: 'PYTHON',
@@ -146,6 +155,7 @@ const Experiments = () => {
 			nbviewer: 'https://nbviewer.org/github/willdphan/cifar-cnn/blob/main/CIFAR_10_CNN.ipynb',
 			technology: 'ML/CV',
 			image: cifar,
+			demo: '',
 		},
 		{
 			title: 'PYTHON',
@@ -155,6 +165,7 @@ const Experiments = () => {
 			nbviewer:
 				'https://nbviewer.org/github/willdphan/fashion-cnn/blob/main/CNN_Fashion_Classifier_on_MNIST.ipynb',
 			technology: 'ML/CV',
+			demo: '',
 		},
 		{
 			title: 'PYTHON',
@@ -162,6 +173,7 @@ const Experiments = () => {
 			description: 'CNN for Number MNIST Dataset.',
 			code: 'https://github.com/willdphan/number-cnn',
 			technology: 'ML/CV',
+			demo: '',
 		},
 		{
 			title: 'PYTHON',
@@ -170,6 +182,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/car-price.git',
 			nbviewer: 'https://nbviewer.org/github/willdphan/car-price/blob/main/Car_Price_Regression.ipynb',
 			technology: 'ML/CV',
+			demo: '',
 		},
 		{
 			title: 'PYTHON',
@@ -178,6 +191,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/gpt-pdf',
 			nbviewer: 'https://nbviewer.org/github/willdphan/gpt-pdf/blob/main/pdf_gpt.ipynb',
 			technology: 'ML/CV',
+			demo: '',
 		},
 		{
 			title: 'PYTHON',
@@ -186,32 +200,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/lex-agent',
 			nbviewer: 'https://nbviewer.org/github/willdphan/lex-agent/blob/main/langchain_lex_agent.ipynb',
 			technology: 'ML/CV',
-		},
-		{
-			title: 'TYPESCRIPT',
-			name: 'DEGEN',
-			description: 'Uncover your NFT assets and their stories.',
-			frontend: 'https://degen-kappa.vercel.app/',
-			demo: 'https://twitter.com/willdphan/status/1660381395947077633?s=20',
-			technology: 'BLOCKCHAIN',
-			image: degen,
-		},
-		{
-			title: 'PYTHON',
-			name: 'ATOM',
-			description: 'GPT audio assistant for managing & reviewing schedule.',
-			code: 'https://github.com/willdphan/atom-v2',
-			demo: 'https://twitter.com/willdphan/status/1652442555533885441?s=20',
-			technology: 'ML/CV',
-			image: atom,
-		},
-		{
-			title: 'SOLIDITY',
-			name: 'RICKS-V2',
-			description: 'Fractionalized ERC721 auction w/VRGDA pricing.',
-
-			code: 'https://github.com/willdphan/RICKS-V2.git',
-			technology: 'BLOCKCHAIN',
+			demo: '',
 		},
 		{
 			title: 'TYPESCRIPT',
@@ -220,14 +209,23 @@ const Experiments = () => {
 			frontend: 'https://kaleidor.vercel.app/',
 			technology: 'BLOCKCHAIN',
 			image: kaleidor,
+			demo: '',
+		},
+		{
+			title: 'SOLIDITY',
+			name: 'RICKS-V2',
+			description: 'Fractionalized ERC721 auction w/VRGDA pricing.',
+			code: 'https://github.com/willdphan/RICKS-V2.git',
+			technology: 'BLOCKCHAIN',
+			demo: '',
 		},
 		{
 			title: 'SOLIDITY',
 			name: 'One of One',
 			description: '1 | 1 NFT editions using gas efficient Minimal Proxy.',
-
 			code: 'https://github.com/willdphan/1-of-1.git',
 			technology: 'BLOCKCHAIN',
+			demo: '',
 		},
 		{
 			title: 'SOLIDITY',
@@ -236,14 +234,15 @@ const Experiments = () => {
 			frontend: 'https://shade-pi.vercel.app/',
 			technology: 'BLOCKCHAIN',
 			image: shade,
+			demo: '',
 		},
 		{
 			title: 'SOLIDITY',
 			name: 'ERC20-YUL',
 			description: 'ERC-20 in Yul. Obviously, not optimal for production.',
-
 			code: 'https://github.com/willdphan/erc20-yul',
 			technology: 'BLOCKCHAIN',
+			demo: '',
 		},
 		{
 			title: 'SOLIDITY',
@@ -251,6 +250,7 @@ const Experiments = () => {
 			description: 'Mini-implementation of Affirm - Buy Now, Pay Later.',
 			code: 'https://github.com/willdphan/latter-contracts.git',
 			technology: 'BLOCKCHAIN',
+			demo: '',
 		},
 		{
 			title: 'SOLIDITY',
@@ -260,6 +260,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/splitz-contracts',
 			technology: 'BLOCKCHAIN',
 			image: splitz,
+			demo: '',
 		},
 	]
 
@@ -286,7 +287,7 @@ const Experiments = () => {
 				className="my-masonry-grid flex gap-2 relative"
 				columnClassName="my-masonry-grid_column"
 			>
-				{filteredExperiments.slice(0, showMore ? filteredExperiments.length : 6).map(project => (
+				{filteredExperiments.slice(0, showMore ? filteredExperiments.length : 4).map(project => (
 					<div
 						key={project.name}
 						className="my-masonry-grid_column mb-2 w-full bg-[#181818]  border-[#262626] border-[1px] rounded-lg py-7 px-7 space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
@@ -295,7 +296,7 @@ const Experiments = () => {
 						<h1 className="text-lg font-Space p font-medium text-white">{project.name}</h1>
 						<p className="text-sm leading-relaxed font-Sans text-[#9B9B9B]">{project.description}</p>
 						<div className="flex space-x-4 pt-3">
-							{project.demo && (
+							{project.demo ? (
 								<a
 									href={project.demo}
 									target="_blank"
@@ -311,7 +312,8 @@ const Experiments = () => {
 										/>
 									</svg>
 								</a>
-							)}
+							) : null}
+
 							{project.frontend && (
 								<a
 									href={project.frontend}
@@ -392,4 +394,4 @@ const Experiments = () => {
 	)
 }
 
-export default Experiments
+export default Fun
