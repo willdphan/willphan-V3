@@ -63,7 +63,7 @@ const Fun = () => {
 				{filteredExperiments.slice(0, showMore ? filteredExperiments.length : 4).map(project => (
 					<div
 						key={project.name}
-						className="mb-20 my-masonry-grid_column w-full bg-[#181818]  border-[#262626] border-[1px] rounded-lg py-7 px-7 space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
+						className="mb-2 my-masonry-grid_column w-full bg-[#181818]  border-[#262626] border-[1px] rounded-lg py-7 px-7 space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
 					>
 						<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest">{project.title}</h2>
 						<h1 className="text-lg font-Space font-medium text-white">{project.name}</h1>
