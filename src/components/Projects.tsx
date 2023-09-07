@@ -40,12 +40,14 @@ const Fun = () => {
 	)
 
 	return (
-		<section className="mt-[-2em]" id="projects">
-			<div>
+		<section className="mt-[1em]" id="projects">
+			<div className="flex items-center justify-start mb-4">
+				{' '}
+				<h2 className="text-sm font-Space text-[#9B9B9B] mx-2">PROJECTS</h2> {/* Title next to dropdown */}
 				<select
 					value={selectedTech}
 					onChange={e => setSelectedTech(e.target.value)}
-					className="mb-4 bg-[#000000] rounded-md py-2 px-4 text-md leading-relaxed text-xs font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
+					className="bg-[#000000] rounded-md py-2 px-4 text-md leading-relaxed text-sm font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
 				>
 					<option value="ALL">ALL</option>
 					<option value="ML/CV">ML | CV</option>
@@ -64,7 +66,7 @@ const Fun = () => {
 						className="mb-20 my-masonry-grid_column w-full bg-[#181818]  border-[#262626] border-[1px] rounded-lg py-7 px-7 space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
 					>
 						<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest">{project.title}</h2>
-						<h1 className="text-lg font-Space p font-medium text-white">{project.name}</h1>
+						<h1 className="text-lg font-Space font-medium text-white">{project.name}</h1>
 						<p className="text-sm leading-relaxed font-Sans text-[#9B9B9B]">{project.description}</p>
 						<div className="flex space-x-4 pt-3">
 							{project.demo && (
@@ -153,12 +155,14 @@ const Fun = () => {
 				))}
 			</Masonry>
 			{filteredExperiments.length > 3 && (
-				<button
-					className="py-2 px-4 rounded-md flex items-center hover:cursor-pointer font-Space text-[#9B9B9B] text-xs tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
-					onClick={() => setShowMore(!showMore)}
-				>
-					{showMore ? 'LESS' : 'MORE'}
-				</button>
+				<div className="flex items-center">
+					<button
+						className="py-2 px-4 rounded-md flex items-center hover:cursor-pointer font-Space text-[#9B9B9B] text-xs tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
+						onClick={() => setShowMore(!showMore)}
+					>
+						{showMore ? 'LESS' : 'MORE'}
+					</button>
+				</div>
 			)}
 		</section>
 	)
