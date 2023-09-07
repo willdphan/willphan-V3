@@ -10,7 +10,7 @@ const Menu = () => {
 
 	let [categories] = useState({
 		PROJECTS: [],
-		'FOR FUN': [],
+		FUNSIES: [],
 		CRAFTS: [],
 		LEARNINGS: [],
 	})
@@ -19,7 +19,7 @@ const Menu = () => {
 		<div className="w-full max-w-md pt-8 sm:px-0 ">
 			{/* PHONE SCREEN */}
 			<Tab.Group>
-				<Tab.List className="flex flex-row   md:flex-row p-1 font-Space lg:hidden">
+				<Tab.List className="flex flex-row md:flex-row p-1 font-Space lg:hidden">
 					{Object.keys(categories).map(category => (
 						// eslint-disable-next-line react/jsx-key
 						<Link
