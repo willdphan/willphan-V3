@@ -82,7 +82,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/cardiovascular-disease',
 			nbviewer:
 				'https://nbviewer.org/github/willdphan/cardiovascular-disease/blob/main/Cardiovascular_Disease.ipynb',
-			technology: 'ML',
+			technology: 'ML/CV',
 			image: cardiovascular,
 		},
 		{
@@ -91,7 +91,7 @@ const Experiments = () => {
 			description: 'Binary Classification for Heart Disease Prediction.',
 			code: 'https://github.com/willdphan/heart-disease/tree/main',
 			nbviewer: 'https://nbviewer.org/github/willdphan/heart-disease/blob/main/Heart_Disease.ipynb',
-			technology: 'ML',
+			technology: 'ML/CV',
 			image: heart,
 		},
 		{
@@ -109,7 +109,7 @@ const Experiments = () => {
 			description: 'CNN with 9 different types of seafood.',
 			code: 'https://github.com/willdphan/fish-cnn',
 			nbviewer: 'https://nbviewer.org/github/willdphan/fish-cnn/blob/main/Fish_CNN.ipynb',
-			technology: 'ML',
+			technology: 'ML/CV',
 			image: fish,
 		},
 		{
@@ -126,7 +126,7 @@ const Experiments = () => {
 			description: 'Reinforcement Learning with Frozen Lake Game.',
 			code: 'https://github.com/willdphan/frozen-lake',
 			nbviewer: 'https://nbviewer.org/github/willdphan/frozen-lake/blob/master/Frozen_Lake_Q_Learning.ipynb',
-			technology: 'ML',
+			technology: 'ML/CV',
 		},
 		{
 			title: 'PYTHON',
@@ -144,7 +144,7 @@ const Experiments = () => {
 			description: 'CNN for CIFAR-1O Dataset.',
 			code: 'https://github.com/willdphan/cifar-cnn/tree/main',
 			nbviewer: 'https://nbviewer.org/github/willdphan/cifar-cnn/blob/main/CIFAR_10_CNN.ipynb',
-			technology: 'ML',
+			technology: 'ML/CV',
 			image: cifar,
 		},
 		{
@@ -154,14 +154,14 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/fashion-cnn',
 			nbviewer:
 				'https://nbviewer.org/github/willdphan/fashion-cnn/blob/main/CNN_Fashion_Classifier_on_MNIST.ipynb',
-			technology: 'ML',
+			technology: 'ML/CV',
 		},
 		{
 			title: 'PYTHON',
 			name: 'Number CNN',
 			description: 'CNN for Number MNIST Dataset.',
 			code: 'https://github.com/willdphan/number-cnn',
-			technology: 'ML',
+			technology: 'ML/CV',
 		},
 		{
 			title: 'PYTHON',
@@ -202,7 +202,7 @@ const Experiments = () => {
 			description: 'GPT audio assistant for managing & reviewing schedule.',
 			code: 'https://github.com/willdphan/atom-v2',
 			demo: 'https://twitter.com/willdphan/status/1652442555533885441?s=20',
-			technology: 'ML',
+			technology: 'ML/CV',
 			image: atom,
 		},
 		{
@@ -276,7 +276,7 @@ const Experiments = () => {
 					className="mb-4 bg-[#000000] rounded-md py-2 px-4 text-md leading-relaxed text-xs font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
 				>
 					<option value="ALL">ALL</option>
-					<option value="ML/CV">AI | ML</option>
+					<option value="ML/CV">AI | ML | CV</option>
 					<option value="BLOCKCHAIN">BLOCKCHAIN</option>
 					<option value="OTHER">OTHER</option>
 				</select>
