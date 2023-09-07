@@ -21,6 +21,7 @@ const Fun = () => {
 			demo: 'https://twitter.com/willdphan/status/1660381395947077633?s=20',
 			technology: 'BLOCKCHAIN',
 			image: degen,
+			nbviewer: '',
 		},
 		{
 			title: 'PYTHON',
@@ -30,6 +31,7 @@ const Fun = () => {
 			demo: 'https://twitter.com/willdphan/status/1652442555533885441?s=20',
 			technology: 'ML/CV',
 			image: atom,
+			nbviewer: '',
 		},
 	]
 
