@@ -40,7 +40,7 @@ const Fun = () => {
 	)
 
 	return (
-		<section className="mt-[1em]" id="projects">
+		<section className="mt-[1em] mb-20" id="projects">
 			<div className="flex items-center justify-start mb-4">
 				{' '}
 				<h2 className="text-sm font-Space text-[#9B9B9B] mx-2 mr-8">PROJECTS</h2> {/* Title next to dropdown */}
