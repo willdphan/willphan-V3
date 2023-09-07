@@ -24,7 +24,7 @@ const Experiments = () => {
 			name: 'Parking Counter',
 			description: 'Counting Available Parking Spots with OpenCV',
 			code: 'https://github.com/willdphan/parking-counter',
-			technology: 'ML',
+			technology: 'ML/CV',
 			image: parking,
 		},
 		{
@@ -32,7 +32,7 @@ const Experiments = () => {
 			name: 'Color Detector',
 			description: 'Color Detector with OpenCV and PIL',
 			code: 'https://github.com/willdphan/color-detector',
-			technology: 'ML',
+			technology: 'ML/CV',
 			image: cdetector,
 		},
 		{
@@ -40,7 +40,7 @@ const Experiments = () => {
 			name: 'Pose Estimation',
 			description: 'Pose Estimation with OpenCV & MediaPipe',
 			code: 'https://github.com/willdphan/pose-estimator',
-			technology: 'ML',
+			technology: 'ML/CV',
 			image: pose,
 		},
 		{
@@ -48,7 +48,7 @@ const Experiments = () => {
 			name: 'Hand Tracker',
 			description: 'Hand Detection with OpenCV & MediaPipe',
 			code: 'https://github.com/willdphan/hand-tracker',
-			technology: 'ML',
+			technology: 'ML/CV',
 			image: hand,
 		},
 		{
@@ -58,7 +58,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/age-related-conditions/tree/main',
 			nbviewer:
 				'https://nbviewer.org/github/willdphan/age-related-conditions/blob/main/Age_Related_Conditions.ipynb',
-			technology: 'ML',
+			technology: 'ML/CV',
 		},
 		{
 			title: 'PYTHON',
@@ -67,7 +67,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/private-vs-public-uni/blob/main/Private_vs_Public_Universities.ipynb',
 			nbviewer:
 				'https://nbviewer.org/github/willdphan/private-vs-public-uni/blob/main/Private_vs_Public_Universities.ipynb',
-			technology: 'ML',
+			technology: 'ML/CV',
 		},
 		{
 			title: 'PYTHON',
@@ -92,7 +92,7 @@ const Experiments = () => {
 			description: 'Rice CNN with 75,000 grain images.',
 			code: 'https://github.com/willdphan/rice-cnn',
 			nbviewer: 'https://nbviewer.org/github/willdphan/rice-cnn/blob/main/Rice_Classifier_CNN.ipynb',
-			technology: 'ML',
+			technology: 'ML/CV',
 		},
 		{
 			title: 'PYTHON',
@@ -108,7 +108,7 @@ const Experiments = () => {
 			description: 'ResNet-50 architecture for Cat and Dog Dataset.',
 			code: 'https://github.com/willdphan/pet-cnn',
 			nbviewer: 'https://nbviewer.org/github/willdphan/pet-cnn/blob/main/Pet_Classifier_CNN.ipynb',
-			technology: 'ML',
+			technology: 'ML/CV',
 		},
 		{
 			title: 'PYTHON',
@@ -125,7 +125,7 @@ const Experiments = () => {
 			code: 'https://github.com/willdphan/amazon-forecast/tree/main',
 			nbviewer:
 				'https://nbviewer.org/github/willdphan/amazon-forecast/blob/main/Amazon_Stock_Forecasting_with_LSTM.ipynb',
-			technology: 'ML',
+			technology: 'ML/CV',
 		},
 		{
 			title: 'PYTHON',
@@ -157,7 +157,7 @@ const Experiments = () => {
 			description: 'Linear Regression model to predict car selling prices.',
 			code: 'https://github.com/willdphan/car-price.git',
 			nbviewer: 'https://nbviewer.org/github/willdphan/car-price/blob/main/Car_Price_Regression.ipynb',
-			technology: 'ML',
+			technology: 'ML/CV',
 		},
 		{
 			title: 'PYTHON',
@@ -165,7 +165,7 @@ const Experiments = () => {
 			description: 'Using GPT to analyze PDFs.',
 			code: 'https://github.com/willdphan/gpt-pdf',
 			nbviewer: 'https://nbviewer.org/github/willdphan/gpt-pdf/blob/main/pdf_gpt.ipynb',
-			technology: 'ML',
+			technology: 'ML/CV',
 		},
 		{
 			title: 'PYTHON',
@@ -173,7 +173,7 @@ const Experiments = () => {
 			description: 'Lex Fridman question and answer agent.',
 			code: 'https://github.com/willdphan/lex-agent',
 			nbviewer: 'https://nbviewer.org/github/willdphan/lex-agent/blob/main/langchain_lex_agent.ipynb',
-			technology: 'ML',
+			technology: 'ML/CV',
 		},
 		{
 			title: 'TYPESCRIPT',
@@ -264,7 +264,7 @@ const Experiments = () => {
 					className="mb-4 bg-[#000000] rounded-md py-2 px-4 text-md leading-relaxed text-xs font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
 				>
 					<option value="ALL">ALL</option>
-					<option value="ML">AI | ML</option>
+					<option value="ML/CV">AI | ML</option>
 					<option value="BLOCKCHAIN">BLOCKCHAIN</option>
 					<option value="OTHER">OTHER</option>
 				</select>
