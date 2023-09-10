@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
+import { useEffect } from 'react'
 
 const videos = [
 	{ src: '/images/scaleai.mov', alt: 'video' },
@@ -24,6 +25,13 @@ const Crafts = () => {
 		}
 		setExpanded(!expanded)
 	}
+
+	useEffect(() => {
+		const videoElement = document.querySelector('video')
+		videoElement.addEventListener('canplaythrough', function () {
+			this.play()
+		})
+	}, [])
 
 	return (
 		<section id="other">
