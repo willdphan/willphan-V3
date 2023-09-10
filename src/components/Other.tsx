@@ -24,7 +24,7 @@ const Other = () => {
 							<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest">{learning.sub}</h2>
 							<h1 className="text-xl font-Space font-medium text-white">{learning.title}</h1>
 							<p className="text-sm leading-relaxed font-Sans text-[#9B9B9B]">{learning.description}</p>
-							<div className="flex space-x-3 pt-4 text-sm text-[#405580]">
+							<div className="flex space-x-3 pt-1 text-sm text-[#405580]">
 								<div className="flex items-center font-Sans hover:cursor-pointer">
 									<Link href={learning.link}>
 										<p className="text-[#54627a]">Link</p>
