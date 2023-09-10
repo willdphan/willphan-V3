@@ -141,7 +141,7 @@ const Fun = () => {
 						</div>
 						{project.video ? (
 							<div className="pt-2">
-								<video autoPlay loop muted>
+								<video autoPlay loop muted playsInline>
 									<source src={project.video} type="video/mp4" />
 								</video>
 							</div>
