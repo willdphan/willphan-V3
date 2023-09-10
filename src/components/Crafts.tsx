@@ -3,13 +3,13 @@ import Image from 'next/image'
 
 const videos = [
 	{ src: '/images/scaleai.mov', alt: 'video' },
+	{ src: '/images/mac-chips.mov', alt: 'video' },
 	{ src: '/images/cd.mov', alt: 'video' },
 	{ src: '/images/dock.mp4', alt: 'video' },
 	{ src: '/images/marketplace.mp4', alt: 'video' },
 	{ src: '/images/opepen-folder.mov', alt: 'video' },
 	{ src: '/images/playlist-grain.mov', alt: 'video' },
 	{ src: '/images/opepen.mp4', alt: 'video' },
-	{ src: '/images/mac-chips.mov', alt: 'video' },
 	{ src: '/images/nouns.mp4', alt: 'video' },
 ]
 const Crafts = () => {
