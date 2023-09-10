@@ -41,7 +41,7 @@ const Learnings = () => {
 			description: 'Pose Estimation with OpenCV & MediaPipe',
 			code: 'https://github.com/willdphan/pose-estimator',
 			technology: 'ML/CV',
-			image: pose,
+			// image: pose,
 			demo: '',
 		},
 		{
