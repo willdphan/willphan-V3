@@ -4,10 +4,6 @@ import { useState } from 'react'
 import Masonry from 'react-masonry-css'
 import Image from 'next/image'
 
-import degen from 'public/images/degen.gif'
-
-import atom from 'public/images/atom.gif'
-
 const Fun = () => {
 	const [showMore, setShowMore] = useState(false)
 	const [selectedTech, setSelectedTech] = useState('ALL')
@@ -20,7 +16,7 @@ const Fun = () => {
 			frontend: 'https://degen-kappa.vercel.app/',
 			demo: 'https://twitter.com/willdphan/status/1660381395947077633?s=20',
 			technology: 'BLOCKCHAIN',
-			image: degen,
+			video: '/images/degen.mov',
 			nbviewer: '',
 		},
 		{
