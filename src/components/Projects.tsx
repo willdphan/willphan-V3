@@ -30,7 +30,7 @@ const Fun = () => {
 			code: 'https://github.com/willdphan/atom-v2',
 			demo: 'https://twitter.com/willdphan/status/1652442555533885441?s=20',
 			technology: 'ML/CV',
-			video: "/images/atom.mov",
+			video: '/images/atom.mov',
 			nbviewer: '',
 		},
 	]
@@ -68,7 +68,7 @@ const Fun = () => {
 						<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest">{project.title}</h2>
 						<h1 className="text-lg font-Space font-medium text-white">{project.name}</h1>
 						<p className="text-sm leading-relaxed font-Sans text-[#9B9B9B]">{project.description}</p>
-						<div className="flex space-x-4 pt-3">
+						<div className="flex space-x-4 pt-1">
 							{project.demo && (
 								<a
 									href={project.demo}
@@ -140,14 +140,14 @@ const Fun = () => {
 							{/* Adding the Next.js Image component */}
 						</div>
 						{project.video ? (
-							<div className="pt-5">
+							<div className="pt-2">
 								<video autoPlay loop muted>
 									<source src={project.video} type="video/mp4" />
 								</video>
 							</div>
 						) : (
 							project.image && (
-								<div className="pt-5">
+								<div className="pt-2">
 									{/* Specify the width */}
 									{/* Specify the height */}
 									{/* If you want to maintain aspect ratio */}
