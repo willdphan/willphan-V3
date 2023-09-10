@@ -30,7 +30,7 @@ const Fun = () => {
 			code: 'https://github.com/willdphan/atom-v2',
 			demo: 'https://twitter.com/willdphan/status/1652442555533885441?s=20',
 			technology: 'ML/CV',
-			image: atom,
+			video: "/images/atom.mov",
 			nbviewer: '',
 		},
 	]
@@ -139,17 +139,28 @@ const Fun = () => {
 							)}
 							{/* Adding the Next.js Image component */}
 						</div>
-						{project.image && (
+						{project.video ? (
 							<div className="pt-5">
-								<Image
-									src={project.image}
-									alt={project.name}
-									width={600} // specify the width
-									height={300} // specify the height
-									layout="responsive" // if you want to maintain aspect ratio
-									className="rounded"
-								/>
+								<video autoPlay loop muted>
+									<source src={project.video} type="video/mp4" />
+								</video>
 							</div>
+						) : (
+							project.image && (
+								<div className="pt-5">
+									{/* Specify the width */}
+									{/* Specify the height */}
+									{/* If you want to maintain aspect ratio */}
+									<Image
+										src={project.image}
+										alt={project.name}
+										width={600}
+										height={300}
+										layout="responsive"
+										className="rounded"
+									/>
+								</div>
+							)
 						)}
 					</div>
 				))}

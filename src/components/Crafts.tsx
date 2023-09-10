@@ -1,41 +1,26 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
-import opepen from 'public/images/opepen.gif'
-import nouns from 'public/images/nouns.gif'
-import marketplace from 'public/images/marketplace.gif'
-import dock from 'public/images/dock.gif'
-import chips from 'public/images/mac-chips.gif'
-import walletfeatures from 'public/images/wallet-features.gif'
-import opepenfolder from 'public/images/opepenfolder.gif'
-import playlist from 'public/images/playlist-2.gif'
-import grain from 'public/images/playlist-grain-2.gif'
-import cd from 'public/images/cd2.gif'
-import degen from 'public/images/degen.gif'
-import scale from 'public/images/scale.gif'
 
-const images = [
-	{ src: scale, alt: 'image' },
-	{ src: dock, alt: 'image' },
-	{ src: marketplace, alt: 'image' },
-	// { src: playlist, alt: 'image' },
-	{ src: opepen, alt: 'image' },
-	// { src: degen, alt: 'image' },
-	{ src: chips, alt: 'image' },
-	{ src: cd, alt: 'image' },
-	// { src: walletfeatures, alt: 'image' },
-	{ src: grain, alt: 'image' },
-	{ src: opepenfolder, alt: 'image' },
-	{ src: nouns, alt: 'image' },
+const videos = [
+	{ src: '/images/scaleai.mov', alt: 'video' },
+	{ src: '/images/cd.mov', alt: 'video' },
+	{ src: '/images/dock.mp4', alt: 'video' },
+	{ src: '/images/marketplace.mp4', alt: 'video' },
+	{ src: '/images/opepen-folder.mov', alt: 'video' },
+	{ src: '/images/playlist-grain.mov', alt: 'video' },
+	{ src: '/images/opepen.mp4', alt: 'video' },
+	{ src: '/images/mac-chips.mov', alt: 'video' },
+	{ src: '/images/nouns.mp4', alt: 'video' },
 ]
 const Crafts = () => {
-	const [visible, setVisible] = useState(5) // Initial number of images to show
+	const [visible, setVisible] = useState(5) // Initial number of videos to show
 	const [expanded, setExpanded] = useState(false) // Initial state
 
 	const toggle = () => {
 		if (expanded) {
 			setVisible(5)
 		} else {
-			setVisible(images.length)
+			setVisible(videos.length)
 		}
 		setExpanded(!expanded)
 	}
@@ -43,14 +28,12 @@ const Crafts = () => {
 	return (
 		<section id="other">
 			<div className="gap-2 columns-2 mt-20">
-				{images.slice(0, visible).map((image, index) => (
+				{videos.slice(0, visible).map((video, index) => (
 					<div key={index} className="mb-2">
-						<Image
-							alt={image.alt}
-							className="w-full h-full rounded-lg border-[#121212] border-2"
-							priority={true}
-							src={image.src}
-						/>
+						<video autoPlay loop muted className="w-full h-full rounded-lg border-[#121212] border-2">
+							<source src={video.src} type="video/mp4" />
+							Your browser does not support the video tag.
+						</video>
 					</div>
 				))}
 			</div>

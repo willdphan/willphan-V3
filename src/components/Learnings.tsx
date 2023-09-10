@@ -1,15 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
+
 import Masonry from 'react-masonry-css'
 import Image from 'next/image'
-import splitz from 'public/images/splitz.gif'
-import shade from 'public/images/shade.gif'
-import kaleidor from 'public/images/kaleidor.gif'
-import cdetector from 'public/images/color-detector.gif'
 import pose from 'public/images/pose.gif'
-import hand from 'public/images/hand.gif'
-import parking from 'public/images/parking.gif'
 import rice from 'public/images/rice.png'
 import fish from 'public/images/fish.png'
 import heart from 'public/images/heart.png'
@@ -21,14 +16,14 @@ const Learnings = () => {
 	const [showMore, setShowMore] = useState(false)
 	const [selectedTech, setSelectedTech] = useState('ALL')
 
-	const experiments = [
+	const videos = [
 		{
 			title: 'PYTHON',
 			name: 'Parking Counter',
 			description: 'Counting Available Parking Spots with OpenCV',
 			code: 'https://github.com/willdphan/parking-counter',
 			technology: 'ML/CV',
-			image: parking,
+			video: '/images/parking.mov',
 			demo: '',
 		},
 		{
@@ -37,7 +32,7 @@ const Learnings = () => {
 			description: 'Color Detector with OpenCV and PIL',
 			code: 'https://github.com/willdphan/color-detector',
 			technology: 'ML/CV',
-			image: cdetector,
+			video: '/images/color-detector.mov',
 			demo: '',
 		},
 		{
@@ -55,7 +50,7 @@ const Learnings = () => {
 			description: 'Hand Detection with OpenCV & MediaPipe',
 			code: 'https://github.com/willdphan/hand-tracker',
 			technology: 'ML/CV',
-			image: hand,
+			video: '/images/hand.mov',
 			demo: '',
 		},
 		{
@@ -208,7 +203,7 @@ const Learnings = () => {
 			description: 'On-Chain NFTs w/VRGDAs. You see what you get.',
 			frontend: 'https://kaleidor.vercel.app/',
 			technology: 'BLOCKCHAIN',
-			image: kaleidor,
+			video: '/images/kaleidor.mov',
 			demo: '',
 		},
 		{
@@ -233,7 +228,7 @@ const Learnings = () => {
 			description: 'On-chain generative art. 111 shades of NFTs.',
 			frontend: 'https://shade-pi.vercel.app/',
 			technology: 'BLOCKCHAIN',
-			image: shade,
+			video: '/images/shade.mov',
 			demo: '',
 		},
 		{
@@ -259,14 +254,12 @@ const Learnings = () => {
 			frontend: 'https://splitz.vercel.app',
 			code: 'https://github.com/willdphan/splitz-contracts',
 			technology: 'BLOCKCHAIN',
-			image: splitz,
+			video: '/images/splitz.mov',
 			demo: '',
 		},
 	]
 
-	const filteredExperiments = experiments.filter(exp =>
-		selectedTech === 'ALL' ? true : exp.technology === selectedTech
-	)
+	const filteredVideos = videos.filter(exp => (selectedTech === 'ALL' ? true : exp.technology === selectedTech))
 
 	return (
 		<section className="mt-[-2em]" id="learnings">
@@ -290,7 +283,7 @@ const Learnings = () => {
 				className="my-masonry-grid flex gap-2 relative"
 				columnClassName="my-masonry-grid_column"
 			>
-				{filteredExperiments.slice(0, showMore ? filteredExperiments.length : 4).map(project => (
+				{filteredVideos.slice(0, showMore ? filteredVideos.length : 4).map(project => (
 					<div
 						key={project.name}
 						className="my-masonry-grid_column mb-2 w-full bg-[#181818]  border-[#262626] border-[1px] rounded-lg py-7 px-7 space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
@@ -370,22 +363,33 @@ const Learnings = () => {
 							)}
 							{/* Adding the Next.js Image component */}
 						</div>
-						{project.image && (
+						{project.video ? (
 							<div className="pt-5">
-								<Image
-									src={project.image}
-									alt={project.name}
-									width={600} // specify the width
-									height={300} // specify the height
-									layout="responsive" // if you want to maintain aspect ratio
-									className="rounded"
-								/>
+								<video autoPlay loop muted>
+									<source src={project.video} type="video/mp4" />
+								</video>
 							</div>
+						) : (
+							project.image && (
+								<div className="pt-5">
+									{/* Specify the width */}
+									{/* Specify the height */}
+									{/* If you want to maintain aspect ratio */}
+									<Image
+										src={project.image}
+										alt={project.name}
+										width={600}
+										height={300}
+										layout="responsive"
+										className="rounded"
+									/>
+								</div>
+							)
 						)}
 					</div>
 				))}
 			</Masonry>
-			{filteredExperiments.length > 3 && (
+			{filteredVideos.length > 3 && (
 				<button
 					className="py-2 px-4 rounded-md flex items-center hover:cursor-pointer font-Space text-[#9B9B9B] text-xs tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
 					onClick={() => setShowMore(!showMore)}
