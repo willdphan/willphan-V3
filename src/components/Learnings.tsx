@@ -291,7 +291,7 @@ const Learnings = () => {
 						<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest">{project.title}</h2>
 						<h1 className="text-lg font-Space p font-medium text-white">{project.name}</h1>
 						<p className="text-sm leading-relaxed font-Sans text-[#9B9B9B]">{project.description}</p>
-						<div className="flex space-x-4 pt-3">
+						<div className="flex space-x-4 pt-1">
 							{project.demo ? (
 								<a
 									href={project.demo}
@@ -364,14 +364,14 @@ const Learnings = () => {
 							{/* Adding the Next.js Image component */}
 						</div>
 						{project.video ? (
-							<div className="pt-5">
+							<div className="pt-2">
 								<video autoPlay loop muted>
 									<source src={project.video} type="video/mp4" />
 								</video>
 							</div>
 						) : (
 							project.image && (
-								<div className="pt-5">
+								<div className="pt-2">
 									{/* Specify the width */}
 									{/* Specify the height */}
 									{/* If you want to maintain aspect ratio */}
