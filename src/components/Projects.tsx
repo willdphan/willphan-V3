@@ -18,6 +18,7 @@ const Fun = () => {
 			technology: 'BLOCKCHAIN',
 			video: '/images/degen.mov',
 			nbviewer: '',
+			image: '',
 		},
 		{
 			title: 'PYTHON',
@@ -28,6 +29,7 @@ const Fun = () => {
 			technology: 'ML/CV',
 			video: '/images/atom.mov',
 			nbviewer: '',
+			image: '',
 		},
 	]
 
