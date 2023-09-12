@@ -13,6 +13,7 @@ const videos = [
 	{ src: '/images/opepen.mp4', alt: 'video' },
 	{ src: '/images/nouns.mp4', alt: 'video' },
 ]
+
 const Crafts = () => {
 	const [visible, setVisible] = useState(5) // Initial number of videos to show
 	const [expanded, setExpanded] = useState(false) // Initial state

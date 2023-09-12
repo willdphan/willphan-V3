@@ -4,38 +4,36 @@ import { useState } from 'react'
 import Masonry from 'react-masonry-css'
 import Image from 'next/image'
 
+export const projects = [
+	{
+		title: 'TYPESCRIPT',
+		name: 'DEGEN',
+		description: 'Uncover your NFT assets and their stories.',
+		frontend: 'https://degen-kappa.vercel.app/',
+		demo: 'https://twitter.com/willdphan/status/1660381395947077633?s=20',
+		technology: 'BLOCKCHAIN',
+		video: '/images/degen.mov',
+		nbviewer: '',
+		image: '',
+	},
+	{
+		title: 'PYTHON',
+		name: 'ATOM',
+		description: 'GPT audio assistant for managing & reviewing schedule.',
+		code: 'https://github.com/willdphan/atom-v2',
+		demo: 'https://twitter.com/willdphan/status/1652442555533885441?s=20',
+		technology: 'ML/CV',
+		video: '/images/atom.mov',
+		nbviewer: '',
+		image: '',
+	},
+]
+
 const Fun = () => {
 	const [showMore, setShowMore] = useState(false)
 	const [selectedTech, setSelectedTech] = useState('ALL')
 
-	const experiments = [
-		{
-			title: 'TYPESCRIPT',
-			name: 'DEGEN',
-			description: 'Uncover your NFT assets and their stories.',
-			frontend: 'https://degen-kappa.vercel.app/',
-			demo: 'https://twitter.com/willdphan/status/1660381395947077633?s=20',
-			technology: 'BLOCKCHAIN',
-			video: '/images/degen.mov',
-			nbviewer: '',
-			image: '',
-		},
-		{
-			title: 'PYTHON',
-			name: 'ATOM',
-			description: 'GPT audio assistant for managing & reviewing schedule.',
-			code: 'https://github.com/willdphan/atom-v2',
-			demo: 'https://twitter.com/willdphan/status/1652442555533885441?s=20',
-			technology: 'ML/CV',
-			video: '/images/atom.mov',
-			nbviewer: '',
-			image: '',
-		},
-	]
-
-	const filteredExperiments = experiments.filter(exp =>
-		selectedTech === 'ALL' ? true : exp.technology === selectedTech
-	)
+	const filteredProjects = projects.filter(exp => (selectedTech === 'ALL' ? true : exp.technology === selectedTech))
 
 	return (
 		<section className="mt-[1em] mb-20" id="projects">
@@ -58,7 +56,7 @@ const Fun = () => {
 				className="my-masonry-grid flex gap-2 relative"
 				columnClassName="my-masonry-grid_column"
 			>
-				{filteredExperiments.slice(0, showMore ? filteredExperiments.length : 4).map(project => (
+				{filteredProjects.slice(0, showMore ? filteredProjects.length : 4).map(project => (
 					// px-7 py-7
 					/* changes */
 					<div
@@ -67,7 +65,7 @@ const Fun = () => {
 					>
 						{/* changes */}
 						<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest px-3 pt-3">{project.title}</h2>
-						<h1 className="text-lg font-Space font-medium text-white px-3 ">{project.name}</h1>
+						<h1 className="text-lg font-Space font-medium text-white px-3">{project.name}</h1>
 						<p className="text-sm leading-relaxed font-Sans text-[#9B9B9B] px-3 ">{project.description}</p>
 						{/* changes */}
 						<div className="flex space-x-4 pt-1 px-3 pb-2">
@@ -142,39 +140,41 @@ const Fun = () => {
 							)}
 							{/* Adding the Next.js Image component */}
 						</div>
-						{project.video ? (
-							<div className="">
-								<video
-									autoPlay
-									loop
-									muted
-									playsInline
-									className="rounded-lg border-[#242424] border-[1px]"
-								>
-									<source src={project.video} type="video/mp4" />
-								</video>
-							</div>
-						) : (
-							project.image && (
+						<Link href={`/projects/${project.name.toLowerCase()}?projectName=${project.name}`}>
+							{project.video ? (
 								<div className="">
-									{/* Specify the width */}
-									{/* Specify the height */}
-									{/* If you want to maintain aspect ratio */}
-									<Image
-										src={project.image}
-										alt={project.name}
-										width={600}
-										height={300}
-										layout="responsive"
+									<video
+										autoPlay
+										loop
+										muted
+										playsInline
 										className="rounded-lg border-[#242424] border-[1px]"
-									/>
+									>
+										<source src={project.video} type="video/mp4" />
+									</video>
 								</div>
-							)
-						)}
+							) : (
+								project.image && (
+									<div className="">
+										{/* Specify the width */}
+										{/* Specify the height */}
+										{/* If you want to maintain aspect ratio */}
+										<Image
+											src={project.image}
+											alt={project.name}
+											width={600}
+											height={300}
+											layout="responsive"
+											className="rounded-lg border-[#242424] border-[1px]"
+										/>
+									</div>
+								)
+							)}
+						</Link>
 					</div>
 				))}
 			</Masonry>
-			{filteredExperiments.length > 3 && (
+			{filteredProjects.length > 3 && (
 				<div className="flex items-center">
 					<button
 						className="py-2 px-4 rounded-md flex items-center hover:cursor-pointer font-Space text-[#9B9B9B] text-xs tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
