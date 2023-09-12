@@ -37,8 +37,14 @@ const Crafts = () => {
 		<section id="other">
 			<div className="gap-2 md:columns-2 mt-20">
 				{videos.slice(0, visible).map((video, index) => (
-					<div key={index} className="mb-2">
-						<video autoPlay loop muted playsInline className="w-full h-full rounded-lg border-[#121212] border-2">
+					<div key={index} className="mb-2 border-[#242424] border-[1px] rounded-lg">
+						<video
+							autoPlay
+							loop
+							muted
+							playsInline
+							className="w-full h-full rounded-lg border-[#121212] border-2"
+						>
 							<source src={video.src} type="video/mp4" />
 							Your browser does not support the video tag.
 						</video>

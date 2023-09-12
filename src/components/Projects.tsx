@@ -59,14 +59,19 @@ const Fun = () => {
 				columnClassName="my-masonry-grid_column"
 			>
 				{filteredExperiments.slice(0, showMore ? filteredExperiments.length : 4).map(project => (
+					// px-7 py-7
+					/* changes */
 					<div
 						key={project.name}
-						className="mb-2 my-masonry-grid_column w-full bg-[#181818]  border-[#262626] border-[1px] rounded-lg py-7 px-7 space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
+						className="mb-2 my-masonry-grid_column w-full bg-[#181818]  border-[#262626] border-[1px] rounded-lg py-[1px] px-[1px] space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
 					>
-						<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest">{project.title}</h2>
-						<h1 className="text-lg font-Space font-medium text-white">{project.name}</h1>
-						<p className="text-sm leading-relaxed font-Sans text-[#9B9B9B]">{project.description}</p>
-						<div className="flex space-x-4 pt-1">
+						{/* changes */}
+						<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest px-3 pt-3">{project.title}</h2>
+						<h1 className="text-lg font-Space font-medium text-white px-3 ">{project.name}</h1>
+						<p className="text-sm leading-relaxed font-Sans text-[#9B9B9B] px-3 ">{project.description}</p>
+						{/* changes */}
+						<div className="flex space-x-4 pt-1 px-3 pb-2">
+							{/* changes */}
 							{project.demo && (
 								<a
 									href={project.demo}
@@ -138,14 +143,20 @@ const Fun = () => {
 							{/* Adding the Next.js Image component */}
 						</div>
 						{project.video ? (
-							<div className="pt-2">
-								<video autoPlay loop muted playsInline>
+							<div className="pt-2 ">
+								<video
+									autoPlay
+									loop
+									muted
+									playsInline
+									className="rounded-lg border-[#242424] border-[1px]"
+								>
 									<source src={project.video} type="video/mp4" />
 								</video>
 							</div>
 						) : (
 							project.image && (
-								<div className="pt-2">
+								<div className="">
 									{/* Specify the width */}
 									{/* Specify the height */}
 									{/* If you want to maintain aspect ratio */}
@@ -155,7 +166,7 @@ const Fun = () => {
 										width={600}
 										height={300}
 										layout="responsive"
-										className="rounded"
+										className="rounded-lg border-[#242424] border-[1px]"
 									/>
 								</div>
 							)
