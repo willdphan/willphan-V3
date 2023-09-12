@@ -143,7 +143,7 @@ const Fun = () => {
 							{/* Adding the Next.js Image component */}
 						</div>
 						{project.video ? (
-							<div className="pt-2 ">
+							<div className="">
 								<video
 									autoPlay
 									loop
