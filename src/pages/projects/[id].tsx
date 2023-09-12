@@ -3,9 +3,11 @@ import { useRouter } from 'next/router'
 // pages/project/[id].tsx
 import { projects } from 'src/components/Projects' // Assuming that projects.tsx is in the same folder
 
-export default function Project({ project }) {
+export default function Project({ projectName, publicationDate }) {
 	return (
-		<Layout projectName={project.name}>
+		<Layout projectName={projectName as string} publicationDate={publicationDate}>
+			{/* Pass an empty fragment as children */}
+			<></>
 		</Layout>
 	)
 }
