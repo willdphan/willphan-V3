@@ -65,7 +65,10 @@ const Fun = () => {
 					>
 						{/* changes */}
 						<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest px-3 pt-3">{project.title}</h2>
-						<h1 className="text-lg font-Space font-medium text-white px-3">{project.name}</h1>
+						{/*  LINK ADDED HERE FOR PROJECTS PAGE */}
+						<Link href={`/projects/${project.name.toLowerCase()}?projectName=${project.name}`}>
+							<h1 className="text-lg font-Space font-medium text-white px-3 pt-2">{project.name}</h1>
+						</Link>
 						<p className="text-sm leading-relaxed font-Sans text-[#9B9B9B] px-3 ">{project.description}</p>
 						{/* changes */}
 						<div className="flex space-x-4 pt-1 px-3 pb-2">
@@ -140,37 +143,36 @@ const Fun = () => {
 							)}
 							{/* Adding the Next.js Image component */}
 						</div>
-						<Link href={`/projects/${project.name.toLowerCase()}?projectName=${project.name}`}>
-							{project.video ? (
+
+						{project.video ? (
+							<div className="">
+								<video
+									autoPlay
+									loop
+									muted
+									playsInline
+									className="rounded-lg border-[#242424] border-[1px]"
+								>
+									<source src={project.video} type="video/mp4" />
+								</video>
+							</div>
+						) : (
+							project.image && (
 								<div className="">
-									<video
-										autoPlay
-										loop
-										muted
-										playsInline
+									{/* Specify the width */}
+									{/* Specify the height */}
+									{/* If you want to maintain aspect ratio */}
+									<Image
+										src={project.image}
+										alt={project.name}
+										width={600}
+										height={300}
+										layout="responsive"
 										className="rounded-lg border-[#242424] border-[1px]"
-									>
-										<source src={project.video} type="video/mp4" />
-									</video>
+									/>
 								</div>
-							) : (
-								project.image && (
-									<div className="">
-										{/* Specify the width */}
-										{/* Specify the height */}
-										{/* If you want to maintain aspect ratio */}
-										<Image
-											src={project.image}
-											alt={project.name}
-											width={600}
-											height={300}
-											layout="responsive"
-											className="rounded-lg border-[#242424] border-[1px]"
-										/>
-									</div>
-								)
-							)}
-						</Link>
+							)
+						)}
 					</div>
 				))}
 			</Masonry>
