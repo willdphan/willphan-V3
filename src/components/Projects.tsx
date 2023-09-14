@@ -39,7 +39,8 @@ const Fun = () => {
 		<section className="mt-[1em] mb-20" id="projects">
 			<div className="flex items-center justify-start mb-4">
 				{' '}
-				<h2 className="text-sm font-Space text-[#9B9B9B] mx-2 mr-8 tracking-widest">PROJECTS</h2> {/* Title next to dropdown */}
+				<h2 className="text-sm font-Space text-[#9B9B9B] mx-2 mr-8 tracking-widest">PROJECTS</h2>{' '}
+				{/* Title next to dropdown */}
 				<select
 					value={selectedTech}
 					onChange={e => setSelectedTech(e.target.value)}
