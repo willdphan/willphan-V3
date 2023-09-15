@@ -73,7 +73,7 @@ const Fun = () => {
 
 					<div
 						key={project.name}
-						className="mb-2 my-masonry-grid_column w-full bg-[#181818]  border-[#262626] border-[1px] rounded-lg py-[1px] pb-1 px-[1px] space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
+						className="mb-2 my-masonry-grid_column w-full bg-[#181818]  border-[#262626] border-[1px] rounded-lg py-[1px]  px-[1px] space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
 					>
 						{project.video ? (
 							<div className="">

@@ -286,7 +286,7 @@ const Learnings = () => {
 				{filteredVideos.slice(0, showMore ? filteredVideos.length : 4).map(project => (
 					<div
 						key={project.name}
-						className=" pb-1 my-masonry-grid_column mb-2 w-full bg-[#181818] border-[#262626] border-[1px] rounded-lg py-[1px] px-[1px] space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
+						className=" my-masonry-grid_column mb-2 w-full bg-[#181818] border-[#262626] border-[1px] rounded-lg py-[1px] px-[1px] space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
 					>
 						{project.video ? (
 							<div className="">
