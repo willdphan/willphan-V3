@@ -6,6 +6,16 @@ import Image from 'next/image'
 
 export const projects = [
 	{
+		title: 'TYPESCRIPT | PYTHON',
+		name: 'Plate Vision',
+		description: 'Uncover your NFT assets and their stories.',
+		frontend: '',
+		technology: 'ML/CV',
+		video: '/images/plate_vision.mp4',
+		nbviewer: '',
+		image: '',
+	},
+	{
 		title: 'TYPESCRIPT',
 		name: 'DEGEN',
 		description: 'Uncover your NFT assets and their stories.',
