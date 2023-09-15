@@ -60,12 +60,43 @@ const Fun = () => {
 				{filteredProjects.slice(0, showMore ? filteredProjects.length : 4).map(project => (
 					// px-7 py-7
 					/* changes */
+
 					<div
 						key={project.name}
-						className="mb-2 my-masonry-grid_column w-full bg-[#181818]  border-[#262626] border-[1px] rounded-lg py-[1px] px-[1px] space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
+						className="mb-2 my-masonry-grid_column w-full bg-[#181818]  border-[#262626] border-[1px] rounded-lg py-[1px] pb-1 px-[1px] space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
 					>
+						{project.video ? (
+							<div className="">
+								<video
+									autoPlay
+									loop
+									muted
+									playsInline
+									className="rounded-lg border-[#242424] border-[1px]"
+								>
+									<source src={project.video} type="video/mp4" />
+								</video>
+							</div>
+						) : (
+							project.image && (
+								<div className="">
+									{/* Specify the width */}
+									{/* Specify the height */}
+									{/* If you want to maintain aspect ratio */}
+									<Image
+										src={project.image}
+										alt={project.name}
+										width={600}
+										height={300}
+										layout="responsive"
+										className="rounded-lg border-[#242424] border-[1px]"
+									/>
+								</div>
+							)
+						)}
+
 						{/* changes */}
-						<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest px-3 pt-3">{project.title}</h2>
+						<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest px-3 pt-2">{project.title}</h2>
 						{/*  LINK ADDED HERE FOR PROJECTS PAGE */}
 						<Link href={`/projects/${project.name.toLowerCase()}-pg?projectName=${project.name}`}>
 							<h1 className="text-lg font-Space font-medium text-white px-3 pt-2">{project.name}</h1>
@@ -144,36 +175,6 @@ const Fun = () => {
 							)}
 							{/* Adding the Next.js Image component */}
 						</div>
-
-						{project.video ? (
-							<div className="">
-								<video
-									autoPlay
-									loop
-									muted
-									playsInline
-									className="rounded-lg border-[#242424] border-[1px]"
-								>
-									<source src={project.video} type="video/mp4" />
-								</video>
-							</div>
-						) : (
-							project.image && (
-								<div className="">
-									{/* Specify the width */}
-									{/* Specify the height */}
-									{/* If you want to maintain aspect ratio */}
-									<Image
-										src={project.image}
-										alt={project.name}
-										width={600}
-										height={300}
-										layout="responsive"
-										className="rounded-lg border-[#242424] border-[1px]"
-									/>
-								</div>
-							)
-						)}
 					</div>
 				))}
 			</Masonry>
