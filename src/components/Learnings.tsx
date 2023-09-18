@@ -322,7 +322,7 @@ const Learnings = () => {
 							{project.title}
 						</h2>
 						<h1 className="text-md font-Space p font-normal text-white px-3 ">{project.name}</h1>
-						<p className="text-sm leading-relaxed font-Inter text-[#9B9B9B] px-3">{project.description}</p>
+						<p className="text-sm leading-7 font-Inter text-[#9B9B9B] px-3">{project.description}</p>
 						<div className="flex space-x-4 pt-1 px-3 pb-2">
 							{project.demo ? (
 								<a

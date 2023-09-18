@@ -23,7 +23,7 @@ const Other = () => {
 						<div className="py-7 px-7 space-y-2">
 							<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest">{learning.sub}</h2>
 							<h1 className="text-md font-Space font-normal text-white">{learning.title}</h1>
-							<p className="text-sm leading-relaxed font-Inter text-[#9B9B9B]">{learning.description}</p>
+							<p className="text-sm leading-7 font-Inter text-[#9B9B9B]">{learning.description}</p>
 							<div className="flex space-x-3 pt-1 text-sm text-[#405580]">
 								<div className="flex items-center font-Inter hover:cursor-pointer">
 									<Link href={learning.link}>

@@ -10,7 +10,7 @@ export const projectClasses = {
 	date: 'text-xs font-Space text-[#9B9B9B] tracking-widest pb-2 uppercase',
 	// SUBHEADINGS ARE H2
 	subheading: 'text-sm font-Space font-normal text-white pb-2 pt-8',
-	content: 'text-sm text-[#9B9B9B] leading-relaxed font-Inter font-normal',
+	content: 'text-sm text-[#9B9B9B] leading-7 font-Inter font-normal',
 	image: 'my-5 rounded-xl border-[#242424] border-[1px] rounded-lg', // Define a custom class for images
 	video: 'my-5 rounded-xl border-[#242424] border-[1px] rounded-lg', // Define a custom class for videos
 }
@@ -52,7 +52,7 @@ export default function Layout({ children, projectName, publicationDate }) {
 				{/* Table of Contents */}
 				<div className="relative">
 					<div className="fixed">
-						<ul className="animate-fade invisible xl:visible  absolute left-[-15em] space-y-2 text-sm text-[#9B9B9B] leading-relaxed font-Inter font-light">
+						<ul className="animate-fade invisible xl:visible  absolute left-[-15em] space-y-2 text-xs text-[#9B9B9B] leading-relaxed font-Inter font-light">
 							<li>
 								<Link href="/">
 									<svg
@@ -60,11 +60,11 @@ export default function Layout({ children, projectName, publicationDate }) {
 										viewBox="0 0 24 24"
 										width="20"
 										height="20"
-										className="mb-[5.5em]"
+										className="mb-[6em]"
 									>
 										<path
 											d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z"
-											fill="rgba(255,255,255,1)"
+											fill="#9B9B9B"
 										></path>
 									</svg>
 								</Link>
@@ -86,6 +86,22 @@ export default function Layout({ children, projectName, publicationDate }) {
 				</div>
 				{/* Table of Contents */}
 				<div id="content">
+					<div>
+						<Link href="/">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								width="20"
+								height="20"
+								className="mb-10 lg:hidden"
+							>
+								<path
+									d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z"
+									fill="#9B9B9B"
+								></path>
+							</svg>
+						</Link>
+					</div>
 					{/* Display the project name as a title */}
 					<h1 className={projectClasses.title}>{projectName}</h1>
 
