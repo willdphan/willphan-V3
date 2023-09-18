@@ -22,12 +22,12 @@ const Other = () => {
 					>
 						<div className="py-7 px-7 space-y-2">
 							<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest">{learning.sub}</h2>
-							<h1 className="text-xl font-Space font-medium text-white">{learning.title}</h1>
-							<p className="text-sm leading-relaxed font-Sans text-[#9B9B9B]">{learning.description}</p>
+							<h1 className="text-md font-Space font-normal text-white">{learning.title}</h1>
+							<p className="text-sm leading-relaxed font-Inter text-[#9B9B9B]">{learning.description}</p>
 							<div className="flex space-x-3 pt-1 text-sm text-[#405580]">
-								<div className="flex items-center font-Sans hover:cursor-pointer">
+								<div className="flex items-center font-Inter hover:cursor-pointer">
 									<Link href={learning.link}>
-										<p className="text-[#54627a]">Link</p>
+										<p className="text-[#54627a] font-Inter">Link</p>
 									</Link>
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
 										<path fill="none" d="M0 0h24v24H0z" />

@@ -54,7 +54,7 @@ const Fun = () => {
 				<select
 					value={selectedTech}
 					onChange={e => setSelectedTech(e.target.value)}
-					className="bg-[#000000] rounded-md py-2 text-md leading-relaxed text-sm font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
+					className="bg-[#0A0A0A] rounded-md py-2 text-md leading-relaxed text-sm font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
 				>
 					<option value="ALL">ALL</option>
 					<option value="ML/CV">ML | CV</option>
@@ -73,7 +73,7 @@ const Fun = () => {
 
 					<div
 						key={project.name}
-						className="mb-2 my-masonry-grid_column w-full bg-[#181818]  border-[#262626] border-[1px] rounded-lg py-[1px]  px-[1px] space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
+						className=" mb-2 my-masonry-grid_column w-full bg-[#0A0A0A]  border-[#262626] border-[1px] rounded-lg py-[1px]  px-[1px] space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
 					>
 						{project.video ? (
 							<div className="">
@@ -82,7 +82,7 @@ const Fun = () => {
 									loop
 									muted
 									playsInline
-									className="rounded-lg border-[#242424] border-[1px]"
+									className="rounded-lg border-[#0A0A0A] border-[1px]"
 								>
 									<source src={project.video} type="video/mp4" />
 								</video>
@@ -99,7 +99,7 @@ const Fun = () => {
 										width={600}
 										height={300}
 										layout="responsive"
-										className="rounded-lg border-[#242424] border-[1px]"
+										className="rounded-lg border-[#0A0A0A] border-[1px]"
 									/>
 								</div>
 							)
@@ -109,9 +109,11 @@ const Fun = () => {
 						<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest px-3 pt-2">{project.title}</h2>
 						{/*  LINK ADDED HERE FOR PROJECTS PAGE */}
 						<Link href={`/projects/${project.name.toLowerCase()}-pg?projectName=${project.name}`}>
-							<h1 className="text-lg font-Space font-medium text-white px-3 pt-2">{project.name}</h1>
+							<h1 className="text-md font-Space font-normal text-white px-3 pt-2">{project.name}</h1>
 						</Link>
-						<p className="text-sm leading-relaxed font-Sans text-[#9B9B9B] px-3 ">{project.description}</p>
+						<p className="text-sm leading-relaxed font-Inter  text-[#9B9B9B] px-3 ">
+							{project.description}
+						</p>
 						{/* changes */}
 						<div className="flex space-x-4 pt-1 px-3 pb-2">
 							{/* changes */}
@@ -120,7 +122,7 @@ const Fun = () => {
 									href={project.demo}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="flex items-center hover:cursor-pointer font-Sans text-sm text-[#54627a] pr-3"
+									className="flex items-center hover:cursor-pointer font-Inter text-sm text-[#54627a] pr-3"
 								>
 									Demo
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
@@ -137,7 +139,7 @@ const Fun = () => {
 									href={project.frontend}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="flex items-center hover:cursor-pointer font-Sans text-sm text-[#54627a] pr-3"
+									className="flex items-center hover:cursor-pointer font-Inter text-sm text-[#54627a] pr-3"
 								>
 									Frontend
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
@@ -154,7 +156,7 @@ const Fun = () => {
 									href={project.code}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="flex items-center hover:cursor-pointer font-Sans text-sm text-[#54627a] pr-3"
+									className="flex items-center hover:cursor-pointer font-Inter text-sm text-[#54627a] pr-3"
 								>
 									Code
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
@@ -171,7 +173,7 @@ const Fun = () => {
 									href={project.nbviewer}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="flex items-center hover:cursor-pointer font-Sans text-sm text-[#54627a] pr-3"
+									className="flex items-center hover:cursor-pointer font-Inter text-sm text-[#54627a] pr-3"
 								>
 									NBViewer
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
