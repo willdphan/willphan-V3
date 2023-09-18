@@ -18,7 +18,7 @@ const Other = () => {
 				{other.map((learning, index) => (
 					<div
 						key={index}
-						className="w-full border-[#262626] border-[1px] bg-[#121212] transform transition duration-300 hover:bg-[#2a2929] sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br text-[#9B9B9B] hover:text-white rounded-lg mb-2"
+						className="w-full border-[#262626] border-[1px] bg-[#0A0A0A] transform transition duration-300 hover:bg-[#2a2929] sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br text-[#9B9B9B] hover:text-white rounded-lg mb-2"
 					>
 						<div className="py-7 px-7 space-y-2">
 							<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest">{learning.sub}</h2>

@@ -6,11 +6,11 @@ import { Link as ScrollLink } from 'react-scroll'
 // Tailwind CSS Global classes
 export const projectClasses = {
 	// H1
-	title: 'text-lg font-space font-medium text-white pb-2',
+	title: 'text-md font-space font-medium text-white pb-2',
 	date: 'text-xs font-Space text-[#9B9B9B] tracking-widest pb-2 uppercase',
 	// SUBHEADINGS ARE H2
-	subheading: 'text-lg font-space font-medium text-white pb-2 pt-8',
-	content: 'text-sm text-[#9B9B9B] leading-relaxed font-Sans font-light',
+	subheading: 'text-sm font-Space font-normal text-white pb-2 pt-8',
+	content: 'text-sm text-[#9B9B9B] leading-relaxed font-Inter font-normal',
 	image: 'my-5 rounded-xl border-[#242424] border-[1px] rounded-lg', // Define a custom class for images
 	video: 'my-5 rounded-xl border-[#242424] border-[1px] rounded-lg', // Define a custom class for videos
 }
@@ -47,12 +47,12 @@ export default function Layout({ children, projectName, publicationDate }) {
 	}, [children])
 
 	return (
-		<div className="bg-black w-full h-full px-6 pt-20 flex flex-col items-center pb-20">
-			<main className="max-w-3xl">
+		<div className="bg-[#0A0A0A]  w-full h-full px-6 pt-20 flex flex-col items-center pb-20">
+			<main className="max-w-2xl">
 				{/* Table of Contents */}
 				<div className="relative">
 					<div className="fixed">
-						<ul className="animate-fade invisible xl:visible  absolute left-[-15em] space-y-2 text-sm text-[#9B9B9B] leading-relaxed font-Sans font-light">
+						<ul className="animate-fade invisible xl:visible  absolute left-[-15em] space-y-2 text-sm text-[#9B9B9B] leading-relaxed font-Inter font-light">
 							<li>
 								<Link href="/">
 									<svg
