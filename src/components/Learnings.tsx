@@ -318,12 +318,14 @@ const Learnings = () => {
 							)
 						)}
 
-						<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest px-3  pt-2">
-							{project.title}
-						</h2>
-						<h1 className="text-md font-Space p font-normal text-white px-3 ">{project.name}</h1>
-						<p className="text-sm leading-7 font-Inter text-[#9B9B9B] px-3">{project.description}</p>
-						<div className="flex space-x-4 pt-1 px-3 pb-2">
+						<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest px-3 pt-3">{project.title}</h2>
+						{/*  LINK ADDED HERE FOR PROJECTS PAGE, IF U ADD LINK, USE PT-3 */}
+						{/* <Link href={`/projects/${project.name.toLowerCase()}-pg?projectName=${project.name}`}> */}
+						<h1 className="text-md font-Space font-normal text-white px-3 pt-1">{project.name}</h1>
+						{/* </Link> */}
+						<p className="text-sm leading-7 font-Inter  text-[#9B9B9B] px-3">{project.description}</p>
+						{/* changes */}
+						<div className="flex space-x-4 pt-1 px-3 pb-3">
 							{project.demo ? (
 								<a
 									href={project.demo}

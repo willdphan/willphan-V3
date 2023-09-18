@@ -52,7 +52,7 @@ export default function Layout({ children, projectName, publicationDate }) {
 				{/* Table of Contents */}
 				<div className="relative">
 					<div className="fixed">
-						<ul className="animate-fade invisible xl:visible  absolute left-[-15em] space-y-2 text-xs text-[#9B9B9B] leading-relaxed font-Inter font-light">
+						<ul className="animate-fade invisible xl:visible  absolute left-[-18em] space-y-2 text-xs text-[#9B9B9B] leading-relaxed font-Inter font-light">
 							<li>
 								<Link href="/">
 									<svg

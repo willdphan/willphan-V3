@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Learnings from './Learnings'
 
 const Other = () => {
 	const other = [
@@ -21,9 +22,13 @@ const Other = () => {
 						className="w-full border-[#262626] border-[1px] bg-[#0A0A0A] transform transition duration-300 hover:bg-[#2a2929] sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br text-[#9B9B9B] hover:text-white rounded-lg mb-2"
 					>
 						<div className="py-7 px-7 space-y-2">
-							<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest">{learning.sub}</h2>
-							<h1 className="text-md font-Space font-normal text-white">{learning.title}</h1>
-							<p className="text-sm leading-7 font-Inter text-[#9B9B9B]">{learning.description}</p>
+							<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest ">{learning.sub}</h2>
+							{/*  LINK ADDED HERE FOR PROJECTS PAGE, IF U ADD LINK, USE PT-3 */}
+							{/* <Link href={`/projects/${project.name.toLowerCase()}-pg?projectName=${project.name}`}> */}
+							<h1 className="text-md font-Space font-normal text-white  pt-1">{learning.title}</h1>
+							{/* </Link> */}
+							<p className="text-sm leading-7 font-Inter  text-[#9B9B9B] ">{learning.description}</p>
+							{/* changes */}
 							<div className="flex space-x-3 pt-1 text-sm text-[#405580]">
 								<div className="flex items-center font-Inter hover:cursor-pointer">
 									<Link href={learning.link}>
