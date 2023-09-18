@@ -1,9 +1,23 @@
 // pages/projects/degen.tsx
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Layout, { projectClasses } from 'src/pages/projects/layout'
+import '@mantine/code-highlight/styles.css';
+import { CodeHighlight } from '@mantine/code-highlight';
+import { CodeHighlightTabs } from '@mantine/code-highlight';
+
+
 
 const Project = () => {
+
+
+const exampleCode = `
+function Button() {
+  return <button>Click me</button>;
+}
+`;
+
+	
 	const router = useRouter()
 	const { projectName } = router.query
 
@@ -14,6 +28,22 @@ const Project = () => {
 			<h2 id="hello" className={`${projectClasses.subheading}`}>
 				WIP!!!
 			</h2>
+
+			<>
+      <CodeHighlight
+        code={`// Custom copy label${exampleCode}`}
+        language="tsx"
+        copyLabel="Copy button code"
+        copiedLabel="Copied!"
+      />
+      <CodeHighlight
+        code={`// Without copy button${exampleCode}`}
+        language="tsx"
+        withCopyButton={false}
+        mt="md"
+      />
+    </>
+
 			<div>
 				The graph is an svg element. And the rounded indicator itself has offset-path defined with the same path
 				definition that renders the graph stroke. Basically, this property enables moving an element along a
