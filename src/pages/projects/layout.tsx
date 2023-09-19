@@ -49,8 +49,8 @@ export default function Layout({ children, projectName, publicationDate }) {
 	}, [children])
 
 	return (
-		<div className="bg-[#0A0A0A] w-full min-h-[100vh] h-full px-6 pt-20 flex flex-col items-center pb-20">
-			<main className="max-w-2xl ">
+		<div className="bg-[#0A0A0A]   min-h-[100vh] h-full  pt-20 flex flex-col items-center pb-20">
+			<main className="px-10 w-full max-w-2xl">
 				{/* Table of Contents */}
 				<div className="">
 					<div className="fixed">
@@ -88,7 +88,7 @@ export default function Layout({ children, projectName, publicationDate }) {
 				</div>
 				{/* Table of Contents */}
 				<div id="content">
-					<div>
+					<div className="">
 						<Link href="/">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +112,6 @@ export default function Layout({ children, projectName, publicationDate }) {
 					<div className={projectClasses.content}>{children}</div>
 				</div>
 			</main>
-			<footer>{/* Footer content */}</footer>
 		</div>
 	)
 }
