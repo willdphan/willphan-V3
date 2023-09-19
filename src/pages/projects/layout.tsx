@@ -9,11 +9,11 @@ export const projectClasses = {
 	title: 'text-md font-space font-medium text-white pb-2',
 	date: 'text-xs font-Space text-[#9B9B9B] tracking-widest pb-2 uppercase mb-6',
 	// SUBHEADINGS ARE H2
-	subheading: 'text-sm font-Space font-normal text-white pb-2 mt-6',
-	content: 'text-sm text-[#9B9B9B] leading-7 font-Inter font-normal mb-6',
+	subheading: 'text-sm font-Space font-normal text-white pb-2 ',
+	content: 'text-sm space-y-2 text-[#9B9B9B] leading-7 font-Inter font-normal ',
 	image: 'relative rounded-lg w-full h-full overflow-hidden border-[#242424] border-[1px]', // Define a custom class for images h-[350px] sm:h-[450px] md:h-[550px] lg:h-[550px] xl:h-[550px]
-	video: 'my-6 rounded-xl border-[#242424] border-[1px] rounded-lg', // Define a custom class for videos
-	code: 'max-w-md sm:max-w-2xl  mb-6 w-full rounded-xl border-[#262626] border-[1px]',
+	video: ' rounded-xl border-[#242424] border-[1px] rounded-lg', // Define a custom class for videos
+	code: 'max-w-md sm:max-w-2xl w-full rounded-xl border-[#262626] border-[1px]',
 	// max-w-md sm:max-w-2xl
 }
 
