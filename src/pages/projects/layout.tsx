@@ -13,7 +13,7 @@ export const projectClasses = {
 	content: 'text-sm space-y-2 text-[#9B9B9B] leading-7 font-Inter font-normal ',
 	image: 'relative rounded-lg w-full h-full overflow-hidden border-[#242424] border-[1px]', // Define a custom class for images h-[350px] sm:h-[450px] md:h-[550px] lg:h-[550px] xl:h-[550px]
 	video: ' rounded-xl border-[#242424] border-[1px] rounded-lg', // Define a custom class for videos
-	code: 'max-w-[25em] xs:max-w-[30em] sm:max-w-[45em] md:max-w-2xl w-full rounded-xl border-[#262626] border-[1px]',
+	code: 'max-w-[24.5em] xs:max-w-[30em] sm:max-w-[45em] md:max-w-2xl w-full rounded-xl border-[#262626] border-[1px]',
 	// max-w-md sm:max-w-2xl
 }
 
