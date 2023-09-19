@@ -279,7 +279,7 @@ def licensePlate():
 			</video>
 
 			<br />
-			<h2 id="hello" className={`${projectClasses.subheading}`}>
+			<h2 id="structure" className={`${projectClasses.subheading}`}>
 				Structure
 			</h2>
 
@@ -309,7 +309,7 @@ def licensePlate():
 				Python libraries on the backend while benefiting from the features of Next.js and on the frontend.
 			</div>
 			<br />
-			<h2 id="hello" className={`${projectClasses.subheading}`}>
+			<h2 id="Data" className={`${projectClasses.subheading}`}>
 				Data
 			</h2>
 
@@ -329,7 +329,7 @@ def licensePlate():
 				className={`${projectClasses.image}`}
 			/>
 			<br />
-			<h2 id="hello" className={`${projectClasses.subheading}`}>
+			<h2 id="Method" className={`${projectClasses.subheading}`}>
 				Method
 			</h2>
 
@@ -358,7 +358,9 @@ def licensePlate():
 
 			<div>
 				<br />
-				<div className={`${projectClasses.subheading}`}>Base Script</div>
+				<h2 id="Base Script" className={`${projectClasses.subheading}`}>
+					Base Script
+				</h2>
 				<div className={`${projectClasses.content}`}>
 					<Code>lp.py</Code> is the base script that <Code>upload_lp.py</Code> and <Code>realTime_lp.py</Code>{' '}
 					are built upon. It contains a function
@@ -377,7 +379,9 @@ def licensePlate():
 					className={`${projectClasses.code}`}
 				/>
 				<br />
-				<div className={`${projectClasses.subheading}`}>Upload Videos</div>
+				<h2 id="Upload Videos" className={`${projectClasses.subheading}`}>
+					Upload Videos
+				</h2>
 				<div className={`${projectClasses.content}`}>
 					<div>
 						upload_lp.py is similar to lp.py but is designed to work with user-uploaded videos. It contains
@@ -426,7 +430,9 @@ def licensePlate():
 					className={`${projectClasses.code}`}
 				/>
 				<br />
-				<div className={`${projectClasses.subheading}`}>Real-Time Analysis</div>
+				<h2 id="Real-Time Analysis" className={`${projectClasses.subheading}`}>
+					Real-Time Analysis
+				</h2>
 				<div className={`${projectClasses.content}`}>
 					<Code>realTime_lp.py</Code> is similar to <Code>upload_lp.py</Code> but is designed to work with
 					real-time video streams instead of uploaded videos.
@@ -468,7 +474,9 @@ def licensePlate():
 				/>
 
 				<br />
-				<div className={`${projectClasses.subheading}`}>API</div>
+				<h2 id="API" className={`${projectClasses.subheading}`}>
+					API
+				</h2>
 				<div className={`${projectClasses.content}`}>
 					The api.py file serves as the Flask app&apos;s main entry point, defining API routes and
 					functionalities. Functions like <Code>allowed_file()</Code> check for permitted file extensions,
@@ -491,7 +499,9 @@ def licensePlate():
 					className={`${projectClasses.code}`}
 				/>
 				<br />
-				<div className={`${projectClasses.subheading}`}>Results</div>
+				<h2 id="Results" className={`${projectClasses.subheading}`}>
+					Results
+				</h2>
 				<div>It took a while to process, but the video turned out amazing!</div>
 				<br />
 
@@ -508,7 +518,9 @@ def licensePlate():
 				</video>
 
 				<br />
-				<div className={`${projectClasses.subheading}`}>Further Improvements</div>
+				<h2 id="Further Improvements" className={`${projectClasses.subheading}`}>
+					Further Improvements
+				</h2>
 				<div className={`${projectClasses.content}`}>
 					<div>
 						1. The <Code>realTime_lp.py</Code> script could further be improved. Was stuck a little on why
@@ -529,13 +541,15 @@ def licensePlate():
 					</div>
 				</div>
 				<br />
-				<div className={`${projectClasses.subheading}`}>Thanks for Reading!</div>
+				<h2 id="You are Crazy" className={`${projectClasses.subheading}`}>
+					You are Crazy
+				</h2>
 				<div className={`${projectClasses.content}`}>
 					<div>
-						I gained an immense amount of knowledge and experience from working on this project. One of the
-						key learnings was building an API using Flask, which served as the backbone for the entire
-						system. This was not only educational but also an excellent refresher course on server-side
-						programming.
+						If you made it this far, you are crazy. I gained an immense amount of knowledge and experience
+						from working on this project. One of the key learnings was building an API using Flask, which
+						served as the backbone for the entire system. This was not only educational but also an
+						excellent refresher course on server-side programming.
 					</div>
 					<div>
 						The project also afforded me the opportunity to deeply integrate the API with a frontend
