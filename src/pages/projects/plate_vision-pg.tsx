@@ -289,7 +289,7 @@ def licensePlate():
 					features. Inside the folder <Code>api/sort</Code>, the SORT algorithm is implemented.
 				</div>
 				<div>
-					The tech stack includes Next.js for the frontend and Flask for the backend, integrated under{' '}
+					The tech stack includes Next.js for the frontend and Flask for the backend, integrated under
 					<Code>/api/</Code>. The backend leverages libraries for tasks like object detection and license
 					plate recognition. The structure looks something like this.
 				</div>
@@ -337,14 +337,14 @@ def licensePlate():
 				<div>
 					The api folder uses the Flask library for creating the api, the Ultralytics library for the YOLO
 					object detection model, cv2 (OpenCV) for image and video processing, and the sort library for the
-					SORT (Simple, Online, and Realtime Tracker) algorithm for tracking objects in a video.{' '}
+					SORT (Simple, Online, and Realtime Tracker) algorithm for tracking objects in a video.
 				</div>
 				<div>
-					{' '}
+				
 					It also uses the roboflow library for interacting with the Roboflow platform, which is used for
 					training and deploying computer vision models, and the easyocr library for performing Optical
 					Character Recognition (OCR) to convert images of text into machine-readable text.
-				</div>{' '}
+				</div>
 				Below is the code used to initialize the Roboflow model.
 			</div>
 			<br />
