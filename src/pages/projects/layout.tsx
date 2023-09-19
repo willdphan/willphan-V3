@@ -7,12 +7,14 @@ import { Link as ScrollLink } from 'react-scroll'
 export const projectClasses = {
 	// H1
 	title: 'text-md font-space font-medium text-white pb-2',
-	date: 'text-xs font-Space text-[#9B9B9B] tracking-widest pb-2 uppercase',
+	date: 'text-xs font-Space text-[#9B9B9B] tracking-widest pb-2 uppercase mb-6',
 	// SUBHEADINGS ARE H2
-	subheading: 'text-sm font-Space font-normal text-white pb-2 pt-8',
-	content: 'text-sm text-[#9B9B9B] leading-7 font-Inter font-normal',
-	image: 'my-5 rounded-xl border-[#242424] border-[1px] rounded-lg', // Define a custom class for images
-	video: 'my-5 rounded-xl border-[#242424] border-[1px] rounded-lg', // Define a custom class for videos
+	subheading: 'text-sm font-Space font-normal text-white pb-2 mt-6',
+	content: 'text-sm text-[#9B9B9B] leading-7 font-Inter font-normal mb-6',
+	image: 'relative rounded-lg w-full h-full overflow-hidden border-[#242424] border-[1px]', // Define a custom class for images h-[350px] sm:h-[450px] md:h-[550px] lg:h-[550px] xl:h-[550px]
+	video: 'my-6 rounded-xl border-[#242424] border-[1px] rounded-lg', // Define a custom class for videos
+	code: 'max-w-md sm:max-w-2xl  mb-6 w-full rounded-xl border-[#262626] border-[1px]',
+	// max-w-md sm:max-w-2xl
 }
 
 export default function Layout({ children, projectName, publicationDate }) {
@@ -47,10 +49,10 @@ export default function Layout({ children, projectName, publicationDate }) {
 	}, [children])
 
 	return (
-		<div className="bg-[#0A0A0A]  w-full h-full px-6 pt-20 flex flex-col items-center pb-20">
-			<main className="max-w-2xl">
+		<div className="bg-[#0A0A0A] w-full min-h-[100vh] h-full px-6 pt-20 flex flex-col items-center pb-20">
+			<main className="max-w-2xl ">
 				{/* Table of Contents */}
-				<div className="relative">
+				<div className="">
 					<div className="fixed">
 						<ul className="animate-fade invisible xl:visible  absolute left-[-18em] space-y-2 text-xs text-[#9B9B9B] leading-relaxed font-Inter font-light">
 							<li>
