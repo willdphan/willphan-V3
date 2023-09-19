@@ -129,6 +129,126 @@ def licensePlate():
 		writer.writerows(interpolated_data)
 	`
 
+	const realtime = `
+	# realTime_lp.py
+	cap = cv2.VideoCapture(1)
+	
+	# upload_lp.py
+	cap = cv2.VideoCapture(filepath)
+	`
+	const realtime2 = `
+	# realTime_lp.py
+	def realTime(stop_event, frame_queue):
+		# ...
+		while not stop_event.is_set() and ret:
+			# ...
+			if stop_event.is_set():
+				print("Stopping the script.")
+				break
+			# ...
+			frame_queue.put(frame)  # Put the frame in the queue for the API to pick up
+	`
+	const api = `
+	UPLOAD_FOLDER = 'public'
+	ALLOWED_EXTENSIONS = {'mp4', 'avi', 'mov'}
+	
+	# Initialize the global variable
+	stop_event = threading.Event()
+	
+	frame_queue = Queue()
+	
+	app = Flask(__name__)
+	# local frontend
+	CORS(app)
+	
+	app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+	
+	def allowed_file(filename):
+		return '.' in filename and \
+			   filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+	
+	# UPLOAD VIDEO
+	
+	@app.route('/upload', methods=['POST'])
+	def upload_file():
+		if 'file' not in request.files:
+			return jsonify({"error": "No file part"}), 400
+		file = request.files['file']
+		if file.filename == '':
+			return jsonify({"error": "No selected file"}), 400
+		if file and allowed_file(file.filename):
+			filename = secure_filename(file.filename)
+			filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+			file.save(filepath)
+			
+			# Start a new thread to process the video
+			t = threading.Thread(target=licensePlate, args=(filepath,))
+			t.start()
+			
+			return jsonify({"status": "File uploaded and processing started", "download_url": f"/download/{filename}"}), 200
+		else:
+			return jsonify({"error": "File type not allowed"}), 400
+	
+	# DOWNLOAD EDITED VIDEO
+	
+	@app.route('/download', methods=['GET'])
+	def download_file():
+		# returns current working directory
+		current_path = os.getcwd()
+		print("Current Path:", current_path)  # Debug print
+		
+		file_path = "api/public/userdownload.mp4"
+		absolute_file_path = os.path.join(current_path, file_path)
+		
+		print("Trying to send file:", absolute_file_path)  # Debug print
+		
+		if os.path.exists(absolute_file_path):
+			return send_file(absolute_file_path, as_attachment=True)
+		else:
+			return "File not found", 404
+	
+	
+	
+	# START CAM
+	
+	@app.route('/start', methods=['POST'])
+	def start_script():
+		global t, stop_event  # Declare as global
+		stop_event.clear()  # Reset the event flag
+		t = threading.Thread(target=realTime, args=(stop_event, frame_queue))
+		t.start()
+		return jsonify({"status": "Script started"})
+	
+	def generate_frames():
+		while True:
+			if not frame_queue.empty():
+				frame = frame_queue.get()
+				_, buffer = cv2.imencode('.jpg', frame)
+				frame = buffer.tobytes()
+				print("Sending Frame")  # Debug print
+				yield (b'--frame\r\n'
+					   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+	
+	
+	@app.route('/video')
+	def video():
+		return Response(generate_frames(),
+						mimetype='multipart/x-mixed-replace; boundary=frame')
+	
+	
+	# @app.route('/test', methods=['GET'])
+	# def test_route():
+	#     return "This is a test route."
+	
+	# END CAM
+	
+	@app.route('/stop', methods=['POST'])
+	def stop_script():
+		global stop_event  # Declare as global
+		stop_event.set()  # Signal the thread to stop
+		return jsonify({"status": "Script stopped"})
+	`
+
 	const router = useRouter()
 	const { projectName } = router.query
 
@@ -143,6 +263,21 @@ def licensePlate():
 				control, and streaming. It employs multithreading for concurrent video and API handling, streams
 				processed frames to clients, and manages file storage and output in CSV format.
 			</div>
+
+			<br />
+
+			<video
+				autoPlay
+				loop
+				muted
+				playsInline
+				// className="w-full h-full rounded-lg border-[#121212] border-2"
+				className="w-full h-full rounded-lg"
+			>
+				<source src="/images/plate_vision.mov" type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
+
 			<br />
 			<h2 id="hello" className={`${projectClasses.subheading}`}>
 				Structure
@@ -151,12 +286,12 @@ def licensePlate():
 			<div className={`${projectClasses.content}`}>
 				<div>
 					The api directory houses the backend Flask app, including various Python scripts for routes and
-					features. Inside the folder api/sort, the SORT algorithm is implemented.
+					features. Inside the folder <Code>api/sort</Code>, the SORT algorithm is implemented.
 				</div>
 				<div>
-					The tech stack includes Next.js for the frontend and Flask for the backend, integrated under /api/.
-					The backend leverages libraries for tasks like object detection and license plate recognition. The
-					structure looks something like this.
+					The tech stack includes Next.js for the frontend and Flask for the backend, integrated under{' '}
+					<Code>/api/</Code>. The backend leverages libraries for tasks like object detection and license
+					plate recognition. The structure looks something like this.
 				</div>
 			</div>
 			<br />
@@ -170,8 +305,8 @@ def licensePlate():
 			<br />
 			<div className={`${projectClasses.content}`}>
 				The api folder is part of a larger project that uses Next.js for the frontend and Flask for the backend.
-				The Flask server is mapped into the Next.js app under /api/. This setup allows the use of Python
-				libraries on the backend while benefiting from the features of Next.js and on the frontend.
+				The Flask server is mapped into the Next.js app under <Code>/api/</Code>. This setup allows the use of
+				Python libraries on the backend while benefiting from the features of Next.js and on the frontend.
 			</div>
 			<br />
 			<h2 id="hello" className={`${projectClasses.subheading}`}>
@@ -225,10 +360,11 @@ def licensePlate():
 				<br />
 				<div className={`${projectClasses.subheading}`}>Base Script</div>
 				<div className={`${projectClasses.content}`}>
-					lp.py is the base script that upload_lp.py and realTime_lp.py are built upon. It contains a function
-					licensePlate() that uses the YOLO and Roboflow models to detect vehicles and license plates in a
-					video. It also uses the SORT algorithm for tracking vehicles across frames. The detected license
-					plates are read using the EasyOCR library. Format shown below shortened for brevity.
+					<Code>lp.py</Code> is the base script that <Code>upload_lp.py</Code> and <Code>realTime_lp.py</Code>{' '}
+					are built upon. It contains a function
+					<Code>licensePlate()</Code> that uses the YOLO and Roboflow models to detect vehicles and license
+					plates in a video. It also uses the SORT algorithm for tracking vehicles across frames. The detected
+					license plates are read using the EasyOCR library. Format shown below shortened for brevity.
 				</div>
 				<br />
 				<CodeHighlightTabs
@@ -245,12 +381,13 @@ def licensePlate():
 				<div className={`${projectClasses.content}`}>
 					<div>
 						upload_lp.py is similar to lp.py but is designed to work with user-uploaded videos. It contains
-						a function licensePlate(filepath) that takes a file path as input and performs vehicle and
-						license plate detection on the video at that path.
+						a function <Code>licensePlate(filepath)</Code> that takes a file path as input and performs
+						vehicle and license plate detection on the video at that path.
 					</div>
 					<div>
-						The licensePlate() function in upload_lp.py takes a filepath argument, which is the path to the
-						video file to be processed. In lp.py, the video file path is hardcoded as 'trim-highway.mp4'.
+						The <Code>licensePlate()</Code> function in <Code>upload_lp.py</Code> takes a filepath argument,
+						which is the path to the video file to be processed. In <Code>lp.py</Code>, the video file path
+						is hardcoded as <Code>trim-highway.mp4</Code>.
 					</div>{' '}
 				</div>
 				<br />
@@ -270,14 +407,14 @@ def licensePlate():
 						Ultralytics library detects vehicles in each frame, the SORT algorithm is applied to track these
 						vehicles across frames. This is done by associating the detected vehicles in the current frame
 						with those in the previous frame based on their bounding box coordinates. Then, the
-						add_missing_data.py is able to use the results in order fill in the missing frames in the
-						designated csv file. This way, multiple rendered frames wouldn&apos;t be missing, and we could
-						avoid the glitchy display.
+						<Code>add_missing_data.py</Code> is able to use the results in order fill in the missing frames
+						in the designated csv file. This way, multiple rendered frames wouldn&apos;t be missing, and we
+						could avoid the glitchy display.
 					</div>
 					<div>
 						After the license plate recognition results are written to a CSV file, the script reads the CSV
 						file back in, performs interpolation on the bounding box data, and writes the interpolated data
-						back to the CSV file. This process, however, is not done in lp.py.
+						back to the CSV file. This process, however, is not done in <Code>lp.py</Code>.
 					</div>
 				</div>
 				<br />
@@ -291,58 +428,128 @@ def licensePlate():
 				<br />
 				<div className={`${projectClasses.subheading}`}>Real-Time Analysis</div>
 				<div className={`${projectClasses.content}`}>
+					<Code>realTime_lp.py</Code> is similar to <Code>upload_lp.py</Code> but is designed to work with
+					real-time video streams instead of uploaded videos.
+				</div>
+
+				<br />
+				<CodeHighlight
+					code={`${realtime}`}
+					language="tsx"
+					copyLabel="Copy code"
+					copiedLabel="Copied!"
+					className={`${projectClasses.code}`}
+				/>
+				<br />
+
+				<div className={`${projectClasses.content}`}>
 					<div>
-						realTime_lp.py is similar to upload_lp.py but is designed to work with real-time video streams
-						instead of uploaded videos.
-					</div>
-					<div>
-						The realTime_lp.py file has a function called realTime(stop_event, frame_queue) for real-time
-						license plate recognition from a video feed. It initializes SORT tracker, YOLO, and Roboflow
-						models, opens a video stream, and reads frames until a stop event or video end. Every 5 frames,
-						it detects and tracks vehicles, identifies license plates, reads their text with EasyOCR, and
-						stores the results. Processed frames are put into a queue for API retrieval, and results are
-						written to a CSV file.
+						The <Code>realTime_lp.py</Code> file has a function called{' '}
+						<Code>realTime(stop_event, frame_queue)</Code> for real-time license plate recognition from a
+						video feed. It initializes SORT tracker, YOLO, and Roboflow models, opens a video stream, and
+						reads frames until a stop event or video end. Every 5 frames, it detects and tracks vehicles,
+						identifies license plates, reads their text with EasyOCR, and stores the results. Processed
+						frames are put into a queue for API retrieval, and results are written to a CSV file.
 					</div>{' '}
 					<div>
-						The function runs in a separate thread, with stop_event signaling it to stop and frame_queue
+						The function runs in a separate thread, with <Code>stop_event</Code> signaling it to stop and{' '}
+						<Code>frame_queue</Code>
 						passing processed frames to the API.
 					</div>
 				</div>
+
+				<br />
+				<CodeHighlight
+					code={`${realtime2}`}
+					language="tsx"
+					copyLabel="Copy code"
+					copiedLabel="Copied!"
+					className={`${projectClasses.code}`}
+				/>
+
 				<br />
 				<div className={`${projectClasses.subheading}`}>API</div>
 				<div className={`${projectClasses.content}`}>
-					<div>
-						The api.py file serves as the Flask app's main entry point, defining API routes and
-						functionalities. Functions like allowed_file() check for permitted file extensions, while routes
-						like /upload and /download handle video file uploads and downloads, respectively. Other routes
-						like /start and /stop manage the real-time license plate recognition script, running it in
-						separate threads. The script also handles video streaming through the /video route.
-						Additionally, the Flask application is initialized, the upload folder is set, and the server
-						starts when the script runs directly.
-					</div>
+					The api.py file serves as the Flask app&apos;s main entry point, defining API routes and
+					functionalities. Functions like <Code>allowed_file()</Code> check for permitted file extensions,
+					while routes like <Code>/upload</Code> and
+					<Code>/download</Code> handle video file uploads and downloads, respectively. Other routes like{' '}
+					<Code>/start</Code> and <Code>/stop</Code>
+					manage the real-time license plate recognition script, running it in separate threads. The script
+					also handles video streaming through the <Code>/video</Code> route. Additionally, the Flask
+					application is initialized, the upload folder is set, and the server starts when the script runs
+					directly.
 				</div>
+				<br />
+				<CodeHighlightTabs
+					withExpandButton
+					defaultExpanded={false}
+					expandCodeLabel="Show full code"
+					collapseCodeLabel="Show less"
+					code={[{ fileName: 'api.py', code: api, language: 'py' }]}
+					copiedLabel="Copied!"
+					className={`${projectClasses.code}`}
+				/>
 				<br />
 				<div className={`${projectClasses.subheading}`}>Results</div>
 				<div>It took a while to process, but the video turned out amazing!</div>
+				<br />
+
+				<video
+					autoPlay
+					loop
+					muted
+					playsInline
+					// className="w-full h-full rounded-lg border-[#121212] border-2"
+					className="w-full h-full rounded-lg"
+				>
+					<source src="/images/lp.mov" type="video/mp4" />
+					Your browser does not support the video tag.
+				</video>
 
 				<br />
 				<div className={`${projectClasses.subheading}`}>Further Improvements</div>
 				<div className={`${projectClasses.content}`}>
-				<div>
-					1. The realTime_lp.py script could further be improved. Was stuck a little on why the live feed was
-					slow and unresponsive. Possibly could further fix the frame rate, but it was reasonable considering
-					the the model would have the process the live feed real-time. Researching and implementing a more
-					efficient method could improve performance.
+					<div>
+						1. The <Code>realTime_lp.py</Code> script could further be improved. Was stuck a little on why
+						the live feed was slow and unresponsive. Possibly could further fix the frame rate, but it was
+						reasonable considering the the model would have the process the live feed real-time. Researching
+						and implementing a more efficient method could improve performance.
 					</div>
 					<div>
-					2. The current code lacks comprehensive error handling. For instance, in the upload_file() function,
-					there's no handling for potential issues like file save errors. Adding try-except blocks around
-					these operations could improve the robustness of the application.
+						2. The current code lacks comprehensive error handling. For instance, in the{' '}
+						<Code>upload_file()</Code>
+						function, there&apos;s no handling for potential issues like file save errors. Adding try-except
+						blocks around these operations could improve the robustness of the application.
 					</div>
 					<div>
-					3. There's a significant amount of code duplication, especially in the licensePlate() functions in
-					api/lp.py and api/upload_lp.py. This could be refactored into a common function or module.
+						3. There&apos;s a significant amount of code duplication, especially in the{' '}
+						<Code>licensePlate()</Code> functions in <Code>api/lp.py</Code> and{' '}
+						<Code>api/upload_lp.py</Code>. This could be refactored into a common function or module.
+					</div>
 				</div>
+				<br />
+				<div className={`${projectClasses.subheading}`}>Thanks for Reading!</div>
+				<div className={`${projectClasses.content}`}>
+					<div>
+						I gained an immense amount of knowledge and experience from working on this project. One of the
+						key learnings was building an API using Flask, which served as the backbone for the entire
+						system. This was not only educational but also an excellent refresher course on server-side
+						programming.
+					</div>
+					<div>
+						The project also afforded me the opportunity to deeply integrate the API with a frontend
+						application. The synergy between the frontend and backend provided a well-rounded perspective on
+						full-stack development, and it was incredibly satisfying to see the two sides interact
+						seamlessly.
+					</div>
+					<div>
+						Perhaps one of the most exciting aspects was the opportunity to work with pre-trained YOLOv8
+						models for the first time. As a great starting point, this has inspired me to explore even more
+						complex models and AI applications in future projects. Overall, the project was an invaluable
+						learning journey that expanded my skills in multiple areas, from backend development to machine
+						learning.
+					</div>
 				</div>
 			</div>
 		</Layout>
