@@ -203,7 +203,7 @@ def send_sms(sms_text, recipient_phone_number):
 				// className="w-full h-full rounded-lg border-[#121212] border-2"
 				className="w-full h-full rounded-lg"
 			>
-				<source src="/images/atom-display.mov" type="video/mp4" />
+				<source src="/images/atom.mov" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 			<br />
