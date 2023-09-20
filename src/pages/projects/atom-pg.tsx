@@ -207,8 +207,8 @@ def send_sms(sms_text, recipient_phone_number):
 				Your browser does not support the video tag.
 			</video>
 			<br />
-			<h2 id="Fetching and Displaying Data" className={`${projectClasses.subheading}`}>
-				Fetching and Displaying Data
+			<h2 id="Fetching & Displaying Data" className={`${projectClasses.subheading}`}>
+				Fetching & Displaying Data
 			</h2>
 
 			<div className={`${projectClasses.content}`}>
@@ -262,7 +262,6 @@ def send_sms(sms_text, recipient_phone_number):
 				ATOM can interact with Gmail using the Gmail API. It can announce unread emails and create draft emails.
 			</div>
 
-	
 			<br />
 
 			<h2 id="Calendar Management" className={`${projectClasses.subheading}`}>
