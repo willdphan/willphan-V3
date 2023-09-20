@@ -522,8 +522,8 @@ def licensePlate():
 					API
 				</h2>
 				<div className={`${projectClasses.content}`}>
-					The api.py file serves as the Flask app&apos;s main entry point, defining API routes and
-					functionalities. Functions like <Code>allowed_file()</Code> check for permitted file extensions,
+					The <Code>api.py</Code> file serves as the Flask app&apos;s main entry point, defining API routes
+					and functionalities. Functions like <Code>allowed_file()</Code> check for permitted file extensions,
 					while routes like <Code>/upload</Code> and
 					<Code>/download</Code> handle video file uploads and downloads, respectively. Other routes like{' '}
 					<Code>/start</Code> and <Code>/stop</Code>
