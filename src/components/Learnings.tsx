@@ -281,7 +281,7 @@ const Learnings = () => {
 				className="my-masonry-grid flex gap-2 relative "
 				columnClassName="my-masonry-grid_column"
 			>
-				{filteredVideos.slice(0, showMore ? filteredVideos.length : 4).map(project => (
+				{filteredVideos.slice(0, showMore ? filteredVideos.length : 2).map(project => (
 					<div
 						key={project.name}
 						className=" my-masonry-grid_column mb-2 w-full bg-[#0A0A0A] border-[#262626] border-[1px] rounded-lg py-[1px] px-[1px] space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
