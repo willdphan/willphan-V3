@@ -383,9 +383,9 @@ def licensePlate():
 				</h2>
 				<div className={`${projectClasses.content}`}>
 					<div>
-						upload_lp.py is similar to lp.py but is designed to work with user-uploaded videos. It contains
-						a function <Code>licensePlate(filepath)</Code> that takes a file path as input and performs
-						vehicle and license plate detection on the video at that path.
+						<Code>upload_lp.py</Code> is similar to lp.py but is designed to work with user-uploaded videos.
+						It contains a function <Code>licensePlate(filepath)</Code> that takes a file path as input and
+						performs vehicle and license plate detection on the video at that path.
 					</div>
 					<div>
 						The <Code>licensePlate()</Code> function in <Code>upload_lp.py</Code> takes a filepath argument,
@@ -574,10 +574,10 @@ def licensePlate():
 				</h2>
 				<div className={`${projectClasses.content}`}>
 					<div>
-						If you made it this far, you are crazy. I gained an immense amount of knowledge and experience
-						from working on this project. One of the key learnings was building an API using Flask, which
-						served as the backbone for the entire system. This was not only educational but also an
-						excellent refresher course on server-side programming.
+						Idk how you made it this far, you are crazy. I gained an immense amount of knowledge and
+						experience from working on this project. One of the key learnings was building an API using
+						Flask, which served as the backbone for the entire system. This was not only educational but
+						also an excellent refresher course on server-side programming.
 					</div>
 					<div>
 						The project also afforded me the opportunity to deeply integrate the API with a frontend
