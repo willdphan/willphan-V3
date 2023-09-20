@@ -15,6 +15,7 @@ export const projectClasses = {
 	video: ' rounded-xl border-[#242424] border-[1px] rounded-lg', // Define a custom class for videos
 	code: 'max-w-[24.5em] xs:max-w-[30em] sm:max-w-[45em] md:max-w-2xl w-full rounded-xl border-[#262626] border-[1px]',
 	// max-w-md sm:max-w-2xl
+	underline: 'underline underline-offset-2',
 }
 
 export default function Layout({ children, projectName, publicationDate }) {

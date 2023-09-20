@@ -1,10 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
-
 import Masonry from 'react-masonry-css'
 import Image from 'next/image'
-import pose from 'public/images/pose.gif'
 import rice from 'public/images/rice.png'
 import fish from 'public/images/fish.png'
 import heart from 'public/images/heart.png'

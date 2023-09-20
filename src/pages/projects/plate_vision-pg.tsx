@@ -1,4 +1,3 @@
-// pages/projects/degen.tsx
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Layout, { projectClasses } from 'src/pages/projects/layout'
@@ -7,6 +6,7 @@ import { CodeHighlight } from '@mantine/code-highlight'
 import { Code } from '@mantine/core'
 import Image from 'next/image'
 import { CodeHighlightTabs } from '@mantine/code-highlight'
+import Link from 'next/link'
 
 const Project = () => {
 	const structure = `
@@ -258,10 +258,21 @@ def licensePlate():
 		<Layout projectName={projectName as string} publicationDate={publicationDate}>
 			<div className={`${projectClasses.content}`}>
 				Plate Vision comprises a real-time license plate recognition system that uses YOLO for vehicle
-				detection, Roboflow for license plate identification, and EasyOCR for text reading. SORT tracks vehicles
-				across video frames. The architecture offers API endpoints for video uploads, real-time recognition
-				control, and streaming. It employs multithreading for concurrent video and API handling, streams
-				processed frames to clients, and manages file storage and output in CSV format.
+				detection,{' '}
+				<Link className={projectClasses.underline} href="https://universe.roboflow.com/">
+					Roboflow
+				</Link>{' '}
+				for license plate identification, and{'  '}
+				<Link className={projectClasses.underline} href="https://github.com/JaidedAI/EasyOCR">
+					EasyOCR
+				</Link>{' '}
+				for text reading.{'  '}
+				<Link className={projectClasses.underline} href="https://github.com/abewley/sort.git">
+					SORT
+				</Link>{' '}
+				tracks vehicles across video frames. The architecture offers API endpoints for video uploads, real-time
+				recognition control, and streaming. It employs multithreading for concurrent video and API handling,
+				streams processed frames to clients, and manages file storage and output in CSV format.
 			</div>
 
 			<br />
@@ -297,8 +308,8 @@ def licensePlate():
 			<br />
 			<CodeHighlight
 				code={`// structure${structure}`}
-				language="tsx"
-				copyLabel="Copy button code"
+				language="py"
+				copyLabel="Copy code"
 				copiedLabel="Copied!"
 				className={`${projectClasses.code}`}
 			/>
@@ -314,10 +325,16 @@ def licensePlate():
 			</h2>
 
 			<div className={`${projectClasses.content}`}>
-				The YOLOv8 model uses an annotated dataset on the Roboflow website here. The dataset contains a total of
-				21,174 images in the training set, 2,048 images in the valid set, and 1,020 images in the test set
-				(87/8/4 split). This dataset made it super easy to get started, especially since augmentations were
-				already made.
+				The YOLOv8 model uses an annotated dataset on the{' '}
+				<Link
+					className={projectClasses.underline}
+					href="https://universe.roboflow.com/roboflow-universe-projects/license-plate-recognition-rxg4e/dataset/4"
+				>
+					Roboflow
+				</Link>{' '}
+				website. The dataset contains a total of 21,174 images in the training set, 2,048 images in the valid
+				set, and 1,020 images in the test set (87/8/4 split). This dataset made it super easy to get started,
+				especially since augmentations were already made.
 			</div>
 			<br />
 			<Image
@@ -335,22 +352,21 @@ def licensePlate():
 
 			<div className={`${projectClasses.content}`}>
 				<div>
-					The api folder uses the Flask library for creating the api, the Ultralytics library for the YOLO
-					object detection model, cv2 (OpenCV) for image and video processing, and the sort library for the
-					SORT (Simple, Online, and Realtime Tracker) algorithm for tracking objects in a video.
+					The api folder uses the Flask library for creating the api, the Roboflow library for the YOLO object
+					detection model, cv2 (OpenCV) for image and video processing, and the sort library for the SORT
+					(Simple, Online, and Realtime Tracker) algorithm for tracking objects in a video.
 				</div>
 				<div>
-					It also uses the roboflow library for interacting with the Roboflow platform, which is used for
-					training and deploying computer vision models, and the easyocr library for performing Optical
-					Character Recognition (OCR) to convert images of text into machine-readable text.
+					The easyocr library is used for performing Optical Character Recognition (OCR) to convert images of
+					text into machine-readable text.
 				</div>
 				Below is the code used to initialize the Roboflow model.
 			</div>
 			<br />
 			<CodeHighlight
 				code={`${roboflow}`}
-				language="tsx"
-				copyLabel="Copy button code"
+				language="py"
+				copyLabel="Copy code"
 				copiedLabel="Copied!"
 				className={`${projectClasses.code}`}
 			/>
@@ -383,9 +399,9 @@ def licensePlate():
 				</h2>
 				<div className={`${projectClasses.content}`}>
 					<div>
-						<Code>upload_lp.py</Code> is similar to lp.py but is designed to work with user-uploaded videos.
-						It contains a function <Code>licensePlate(filepath)</Code> that takes a file path as input and
-						performs vehicle and license plate detection on the video at that path.
+						<Code>upload_lp.py</Code> is similar to <Code>lp.py</Code> but is designed to work with
+						user-uploaded videos. It contains a function <Code>licensePlate(filepath)</Code> that takes a
+						file path as input and performs vehicle and license plate detection on the video at that path.
 					</div>
 					<div>
 						The <Code>licensePlate()</Code> function in <Code>upload_lp.py</Code> takes a filepath argument,
@@ -420,10 +436,10 @@ def licensePlate():
 				<div className={`${projectClasses.content}`}>
 					<div>
 						The model was not always able to track the vehicles in every frame and as a result, we ended up
-						with a glitchy video. Because of this, we used the SORT algorithm. After the YOLO model from the
-						Ultralytics library detects vehicles in each frame, the SORT algorithm is applied to track these
-						vehicles across frames. This is done by associating the detected vehicles in the current frame
-						with those in the previous frame based on their bounding box coordinates. Then, the
+						with a glitchy video. Because of this, we used the SORT algorithm. After the YOLO model detects
+						vehicles in each frame, the SORT algorithm is applied to track these vehicles across frames.
+						This is done by associating the detected vehicles in the current frame with those in the
+						previous frame based on their bounding box coordinates. Then, the
 						<Code>add_missing_data.py</Code> is able to use the results in order fill in the missing frames
 						in the designated csv file. This way, multiple rendered frames wouldn&apos;t be missing, and we
 						could avoid the glitchy display.
@@ -495,7 +511,7 @@ def licensePlate():
 				<br />
 				<CodeHighlight
 					code={`${realtime2}`}
-					language="tsx"
+					language="py"
 					copyLabel="Copy code"
 					copiedLabel="Copied!"
 					className={`${projectClasses.code}`}

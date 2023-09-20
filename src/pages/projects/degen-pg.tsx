@@ -4,8 +4,9 @@ import Layout, { projectClasses } from 'src/pages/projects/layout'
 import '@mantine/code-highlight/styles.css'
 import { CodeHighlight } from '@mantine/code-highlight'
 import { Code } from '@mantine/core'
-import Image from 'next/image'
+
 import { CodeHighlightTabs } from '@mantine/code-highlight'
+import Link from 'next/link'
 
 const Project = () => {
 	const fetchnfts = `const fetchNfts = async address => {
@@ -120,10 +121,13 @@ const Project = () => {
 
 			<div className={`${projectClasses.content}`}>
 				<div>
-					To fetch the data, the application uses the Simple Hash API. This API provides information about
-					NFTs, including their images, names, and other details. After fetching the data, the application
-					displays it in a user-friendly manner, making it easy for users to understand and interact with the
-					information.
+					To fetch the data, the application uses the{' '}
+					<Link className={projectClasses.underline} href="https://simplehash.com/">
+						Simple Hash API
+					</Link>
+					. This API provides information about NFTs, including their images, names, and other details. After
+					fetching the data, the application displays it in a user-friendly manner, making it easy for users
+					to understand and interact with the information.
 				</div>
 				<div>
 					The application is structured in a modular way, with different components responsible for different
@@ -150,7 +154,7 @@ const Project = () => {
 			<br />
 
 			<div className={`${projectClasses.content}`}>
-				The fetched data is displayed using the NftCard component, which is defined in the
+				The fetched data is displayed using the <Code>NftCard</Code> component, which is defined in the
 				<Code>src/components/NftCard.tsx</Code> file. This component takes in the NFT details as props and
 				displays them in a user-friendly manner.
 			</div>
