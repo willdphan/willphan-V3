@@ -8,8 +8,9 @@ export const projects = [
 	{
 		title: 'TYPESCRIPT | PYTHON',
 		name: 'Plate Vision',
-		description: 'Uncover your NFT assets and their stories.',
+		description: 'Real-time license plate recognition system.',
 		frontend: '',
+		code: 'https://github.com/willdphan/plate-vision.git',
 		technology: 'ML/CV',
 		video: 'https://willphan.com/plate-vision.mp4',
 		nbviewer: '',

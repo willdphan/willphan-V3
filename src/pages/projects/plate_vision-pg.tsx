@@ -396,11 +396,25 @@ def licensePlate():
 				<br />
 				<CodeHighlight
 					code={`${upload}`}
-					language="tsx"
-					copyLabel="Copy button code"
+					language="py"
+					copyLabel="Copy code"
 					copiedLabel="Copied!"
 					className={`${projectClasses.code}`}
 				/>
+				<br />
+
+				<video
+					autoPlay
+					loop
+					muted
+					playsInline
+					// className="w-full h-full rounded-lg border-[#121212] border-2"
+					className="w-full h-full rounded-lg"
+				>
+					<source src="https://willphan.com/plate-vision-upload.mov" type="video/mp4" />
+					Your browser does not support the video tag.
+				</video>
+
 				<br />
 
 				<div className={`${projectClasses.content}`}>
@@ -423,8 +437,8 @@ def licensePlate():
 				<br />
 				<CodeHighlight
 					code={`${upload2}`}
-					language="tsx"
-					copyLabel="Copy button code"
+					language="py"
+					copyLabel="Copy code"
 					copiedLabel="Copied!"
 					className={`${projectClasses.code}`}
 				/>
@@ -434,17 +448,32 @@ def licensePlate():
 				</h2>
 				<div className={`${projectClasses.content}`}>
 					<Code>realTime_lp.py</Code> is similar to <Code>upload_lp.py</Code> but is designed to work with
-					real-time video streams instead of uploaded videos.
+					real-time video streams instead of uploaded videos. Keep in mind, you have a wait a little for it to
+					start up.
 				</div>
 
 				<br />
 				<CodeHighlight
 					code={`${realtime}`}
-					language="tsx"
+					language="py"
 					copyLabel="Copy code"
 					copiedLabel="Copied!"
 					className={`${projectClasses.code}`}
 				/>
+				<br />
+
+				<video
+					autoPlay
+					loop
+					muted
+					playsInline
+					// className="w-full h-full rounded-lg border-[#121212] border-2"
+					className="w-full h-full rounded-lg"
+				>
+					<source src="https://willphan.com/plate-vision-realtime.mov" type="video/mp4" />
+					Your browser does not support the video tag.
+				</video>
+
 				<br />
 
 				<div className={`${projectClasses.content}`}>
