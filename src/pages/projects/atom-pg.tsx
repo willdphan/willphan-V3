@@ -203,7 +203,7 @@ def send_sms(sms_text, recipient_phone_number):
 				// className="w-full h-full rounded-lg border-[#121212] border-2"
 				className="w-full h-full rounded-lg"
 			>
-				<source src="/images/atom.mov" type="video/mp4" />
+				<source src="https://willphan.com/atom-display.mov" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 			<br />
@@ -223,7 +223,7 @@ def send_sms(sms_text, recipient_phone_number):
 				defaultExpanded={false}
 				expandCodeLabel="Show full code"
 				collapseCodeLabel="Show less"
-				code={[{ fileName: 'index.tsx', code: fetchdisplay, language: 'tsx' }]}
+				code={[{ fileName: 'index.tsx', code: "fetchdisplay", language: 'tsx' }]}
 				copiedLabel="Copied!"
 				className={`${projectClasses.code}`}
 			/>
@@ -291,7 +291,7 @@ def send_sms(sms_text, recipient_phone_number):
 				// className="w-full h-full rounded-lg border-[#121212] border-2"
 				className="w-full h-full rounded-lg"
 			>
-				<source src="/images/calendar.mov" type="video/mp4" />
+				<source src="https://willphan.com/atom-calendar.mov" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 
@@ -323,7 +323,7 @@ def send_sms(sms_text, recipient_phone_number):
 				// className="w-full h-full rounded-lg border-[#121212] border-2"
 				className="w-full h-full rounded-lg"
 			>
-				<source src="/images/document.mov" type="video/mp4" />
+				<source src="https://willphan.com/atom-document.mov" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 
@@ -374,7 +374,7 @@ def send_sms(sms_text, recipient_phone_number):
 				// className="w-full h-full rounded-lg border-[#121212] border-2"
 				className="w-full h-full rounded-lg"
 			>
-				<source src="/images/atom-search.mov" type="video/mp4" />
+				<source src="https://willphan.com/atom-search.mov" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 
