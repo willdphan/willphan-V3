@@ -3,15 +3,15 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 
 const videos = [
-	{ src: '/images/scaleai.mov', alt: 'video' },
-	{ src: '/images/mac-chips.mov', alt: 'video' },
-	{ src: '/images/cd.mov', alt: 'video' },
-	{ src: '/images/dock.mp4', alt: 'video' },
-	{ src: '/images/marketplace.mp4', alt: 'video' },
-	{ src: '/images/opepen-folder.mov', alt: 'video' },
-	{ src: '/images/playlist-grain.mov', alt: 'video' },
-	{ src: '/images/opepen.mp4', alt: 'video' },
-	{ src: '/images/nouns.mp4', alt: 'video' },
+	{ src: 'https://willphan.com/scaleai-craft.mov', alt: 'video' },
+	{ src: 'https://willphan.com/mac-chips-craft.mov', alt: 'video' },
+	{ src: 'https://willphan.com/cd-craft.mov', alt: 'video' },
+	{ src: 'https://willphan.com/icon-dock-craft.mp4', alt: 'video' },
+	{ src: 'https://willphan.com/nft-marketplace-craft.mp4', alt: 'video' },
+	{ src: 'https://willphan.com/opepen-folder-craft.mov', alt: 'video' },
+	{ src: 'https://willphan.com/grain-craft.mov', alt: 'video' },
+	{ src: 'https://willphan.com/opepen-craft.mp4', alt: 'video' },
+	{ src: 'https://willphan.com/nouns-folder-craft.mp4', alt: 'video' },
 ]
 
 const Crafts = () => {
@@ -39,7 +39,6 @@ const Crafts = () => {
 			<div className="gap-2 md:columns-2 mt-20">
 				{videos.slice(0, visible).map((video, index) => (
 					<div key={index} className="mb-2 border-[#242424] border-[1px] rounded-lg">
-					
 						<video
 							autoPlay
 							loop
