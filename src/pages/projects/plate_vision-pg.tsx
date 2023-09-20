@@ -340,7 +340,6 @@ def licensePlate():
 					SORT (Simple, Online, and Realtime Tracker) algorithm for tracking objects in a video.
 				</div>
 				<div>
-				
 					It also uses the roboflow library for interacting with the Roboflow platform, which is used for
 					training and deploying computer vision models, and the easyocr library for performing Optical
 					Character Recognition (OCR) to convert images of text into machine-readable text.

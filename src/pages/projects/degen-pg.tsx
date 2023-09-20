@@ -1,168 +1,249 @@
-// pages/projects/degen.tsx
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Layout, { projectClasses } from 'src/pages/projects/layout'
 import '@mantine/code-highlight/styles.css'
 import { CodeHighlight } from '@mantine/code-highlight'
-import { CodeHighlightTabs } from '@mantine/code-highlight'
 import { Code } from '@mantine/core'
+import Image from 'next/image'
+import { CodeHighlightTabs } from '@mantine/code-highlight'
 
 const Project = () => {
-	const exampleCode = `
-		function Button() {
-		return <button>Click me</button>;
+	const fetchnfts = `const fetchNfts = async address => {
+	try {
+			// fetch
+			const res = await fetch('/api/nftsAxios?address=$[some_address]')
+			// turn json to response
+			const data = await res.json()
+			// set the new data
+			setNfts(data)
+			console.log(data)
+		} catch (error) {
+			console.error(error)
 		}
-	`
-
-	{
-		/* <CodeHighlight
-code={`// Custom copy label${exampleCode}`}
-language="tsx"
-copyLabel="Copy button code"
-copiedLabel="Copied!"
-className={`${projectClasses.code}`}
-/> */
-	}
-
-	{
-		/* <Code block>{codeForPreviousDemo}</Code> */
-	}
+	}`
+	const nftcard = `const NftCard = ({ title, id, image, value, last }) => {
+		const formatText = text => {
+			if (text && text.length > 4) {
+				return text.slice(0, 4) + '...'
+			}
+			return text
+		}
+	
+		return (
+			<section id="learnings" className="w-full px-1 flex hover:cursor hover:cursor-pointer">
+				<div className="columns-1 my-2 w-full flex items-center justify-center">
+					<div className="w-full max-w-[24em] sm:max-w-[30em] bg-white transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-[#F8F8F8] text-[#9B9B9B]  mb-2 font-Mono uppercase text-lg py-5">
+						<motion.div
+							exit={{ opacity: 0 }}
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							transition={{ duration: 0.5 }}
+							className="pl-10 space-y-2 flex space-x-10 uppercase ease-in-out"
+						>
+							<Image width={70} height={70} src={image} alt="" />
+							<div className="flex flex-col">
+								<h1 className="text-black text-wrap max-w-[10em] sm:max-w-full ">{title}</h1>
+								<div className="hidden sm:block sm:inline-flex space-x-3 ">
+									<p className="text-gray-400">ID:{formatText(id)}</p>
+									{value && <p className="text-gray-400">| FP:{Number(value).toFixed(3)}Ξ</p>}
+									{last && <p className="text-gray-400">| LS:{Number(last).toFixed(3)}Ξ</p>}
+								</div>
+							</div>
+						</motion.div>
+					</div>
+				</div>
+			</section>
+		)
+	}`
+	const face = `const Home: FC = () => {
+		return (
+			<div className="flex flex-col items-center  bg-white w-full min-h-screen ">
+				<Enter />
+				<div className="max-h-[55vh] flex flex-col lg:flex-row pt-36 w-full justify-center ">
+					<h3 className="hidden lg:block text-black uppercase font-Mono xl:mr-36 pt-2 text-lg">William Phan</h3>
+					<div>
+						<motion.div
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+							transition={{ duration: 1 }}
+							className="mb-64 mt-28 mx-5 lg:mt-0  pl-6 lg:pl-10 justify-center text-2xl md:text-4xl lg:text-[2.8rem] text-gray-400 bg-blue font-Mono uppercase max-w-[16em] sm:max-w-[20em] lg:max-w-[17em] mr-5  transition-all"
+							style={{ lineHeight: '1.3' }}
+						>
+							Uncover your NFT assets and their stories. Type in your wallet. Use Degen now.
+						</motion.div>
+					</div>
+				</div>
+				{/* Use props below */}
+				<Menu />
+			</div>
+		)
+	}`
 
 	const router = useRouter()
 	const { projectName } = router.query
 
-	const publicationDate = 'September, 2023'
+	const publicationDate = 'May, 2023'
 
 	return (
 		<Layout projectName={projectName as string} publicationDate={publicationDate}>
-			<div>
-				Plate Vision comprises a real-time license plate recognition system that uses YOLO for vehicle
-				detection, Roboflow for license plate identification, and EasyOCR for text reading. SORT tracks vehicles
-				across video frames. The architecture offers API endpoints for video uploads, real-time recognition
-				control, and streaming. It employs multithreading for concurrent video and API handling, streams
-				processed frames to clients, and manages file storage and output in CSV format.
+			<div className={`${projectClasses.content}`}>
+				<div>
+					Degen is a Next.js application that provides a user-friendly interface for viewing NFT (Non-Fungible
+					Token) portfolios. Next.js is a popular React framework that enables server-side rendering and
+					generates static websites for React-based web applications.
+				</div>
+				<div>
+					The main functionality of Degen is to allow users to view any NFT portfolio by simply pasting a
+					wallet address into an input field. This feature is particularly useful for users who want to
+					quickly check the NFTs associated with a specific wallet address.
+				</div>
 			</div>
-			<h2 id="hello" className={`${projectClasses.subheading}`}>
-				Structure
+
+			<br />
+
+			<video
+				autoPlay
+				loop
+				muted
+				playsInline
+				// className="w-full h-full rounded-lg border-[#121212] border-2"
+				className="w-full h-full rounded-lg"
+			>
+				<source src="/images/degen-view.mp4" type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
+			<br />
+			<h2 id="Fetching Data" className={`${projectClasses.subheading}`}>
+				Fetching Data
 			</h2>
+
+			<div className={`${projectClasses.content}`}>
+				<div>
+					To fetch the data, the application uses the Simple Hash API. This API provides information about
+					NFTs, including their images, names, and other details. After fetching the data, the application
+					displays it in a user-friendly manner, making it easy for users to understand and interact with the
+					information.
+				</div>
+				<div>
+					The application is structured in a modular way, with different components responsible for different
+					parts of the application. For example, there are components for displaying NFT details, handling
+					search functionality, and providing a user interface for inputting wallet addresses.
+				</div>
+				<div>
+					The application fetches data from the Simple Hash API in the <Code>src/pages/search.tsx</Code> file.
+					The
+					<Code>fetchNfts</Code> function is responsible for this, where it makes a <Code>GET</Code> request
+					to the API endpoint with the wallet address as a parameter. The fetched data is then stored in the
+					nfts state variable using the <Code>setNfts</Code> function.
+				</div>
+			</div>
+
+			<br />
 			<CodeHighlight
-				code={`// Custom copy label${exampleCode}`}
+				code={`// structure${fetchnfts}`}
 				language="tsx"
-				copyLabel="Copy button code"
+				copyLabel="Copy code"
 				copiedLabel="Copied!"
 				className={`${projectClasses.code}`}
 			/>
+			<br />
+
 			<div className={`${projectClasses.content}`}>
-				The api directory houses the backend Flask app, including various Python scripts for routes and
-				features. It has its own requirements.txt and a sort subdirectory for the SORT algorithm.
-				<br />
-				Inside the folder api/sort, the SORT algorithm is implemented, with its own requirements.txt and a GNU
-				License file.
-				<br />
-				The tech stack includes Next.js for the frontend and Flask for the backend, integrated under /api/. The
-				backend leverages libraries for tasks like object detection and license plate recognition.
+				The fetched data is displayed using the NftCard component, which is defined in the
+				<Code>src/components/NftCard.tsx</Code> file. This component takes in the NFT details as props and
+				displays them in a user-friendly manner.
 			</div>
-			<h2 id="hello" className={`${projectClasses.subheading}`}>
-				Data
-			</h2>
-			<CodeHighlight
-				code={`// Custom copy label${exampleCode}`}
-				language="tsx"
-				copyLabel="Copy button code"
+
+			<br />
+			<video
+				autoPlay
+				loop
+				muted
+				playsInline
+				// className="w-full h-full rounded-lg border-[#121212] border-2"
+				className="w-full h-full rounded-lg"
+			>
+				<source src="/images/nftcards.mp4" type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
+
+			<br />
+
+			<CodeHighlightTabs
+				withExpandButton
+				defaultExpanded={false}
+				expandCodeLabel="Show full code"
+				collapseCodeLabel="Show less"
+				code={[{ fileName: 'NftCard.tsx', code: nftcard, language: 'tsx' }]}
 				copiedLabel="Copied!"
 				className={`${projectClasses.code}`}
 			/>
+
+			<br />
+
 			<div className={`${projectClasses.content}`}>
-				The api folder is part of a larger project that uses Next.js for the frontend and Flask for the backend.
-				The Flask server is mapped into the Next.js app under /api/, as described in the README.md file. This
-				setup allows the use of Python libraries on the backend while benefiting from the features of Next.js on
-				the frontend.
+				The application provides a user interface for inputting wallet addresses in the{' '}
+				<Code>src/pages/index.tsx</Code>
+				file. The Enter component is used for this purpose.
+			</div>
+			<br />
+			<video
+				autoPlay
+				loop
+				muted
+				playsInline
+				// className="w-full h-full rounded-lg border-[#121212] border-2"
+				className="w-full h-full rounded-lg"
+			>
+				<source src="/images/address.mp4" type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
+			<br />
+
+			<div className={`${projectClasses.content}`}>
+				The search functionality is handled in the <Code>src/pages/search.tsx</Code> file. The{' '}
+				<Code>handleInputChange</Code> function updates the address state variable with the input value and
+				calls the fetchNfts function to fetch the NFTs associated with the input wallet address.
 			</div>
 
-			<h2 id="hello" className={`${projectClasses.subheading}`}>
-				Method
-			</h2>
+			<br />
+
 			<CodeHighlight
-				code={`// Custom copy label${exampleCode}`}
+				code={`// structure${face}`}
 				language="tsx"
-				copyLabel="Copy button code"
+				copyLabel="Copy code"
 				copiedLabel="Copied!"
 				className={`${projectClasses.code}`}
 			/>
+
+			<br />
+			<h2 id="Design Practice" className={`${projectClasses.subheading}`}>
+				Design Practice
+			</h2>
 			<div className={`${projectClasses.content}`}>
-				The api folder uses the Flask library for creating the api, the ultralytics library for the YOLO object
-				detection model, cv2 (OpenCV) for image and video processing, and the sort library for the SORT (Simple,
-				Online, and Realtime Tracker) algorithm for tracking objects in a video.
-				<br /> It also uses the roboflow library for interacting with the Roboflow platform, which is used for
-				training and deploying computer vision models, and the easyocr library for performing Optical Character
-				Recognition (OCR) to convert images of text into machine-readable text. Here&apos;s a brief summary of
-				each:
-			</div>
-			<div>
-				<div className={`${projectClasses.subheading}`}>Base Script</div>
 				<div>
-					lp.py is the base script that upload_lp.py and realTime_lp.py are built upon. It contains a function
-					licensePlate() that uses the YOLO and Roboflow models to detect vehicles and license plates in a
-					video. It also uses the SORT algorithm for tracking vehicles across frames. The detected license
-					plates are read using the EasyOCR library.
+					Degen is a user-friendly application built with Next.js that leverages the Simple Hash API to allow
+					users to view NFT portfolios associated with any Ethereum wallet address. The project refined my
+					UI/UX design skills. Making the application user-friendly was a top priority, and achieving that
+					goal required attention to detail in every aspect of the design and user interaction process.
 				</div>
-				<div className={`${projectClasses.subheading}`}>Upload Videos</div>
 				<div>
-					upload_lp.py is similar to lp.py but is designed to work with user-uploaded videos. It contains a
-					function licensePlate(filepath) that takes a file path as input and performs vehicle and license
-					plate detection on the video at that path.
-					<br />
-					The model was not always able to track the vehicles in every frame and as a result, we ended up with
-					a glitchy video. Because of this, we used the SORT algorithm. After the YOLO model from the
-					Ultralytics library detects vehicles in each frame, the SORT algorithm is applied to track these
-					vehicles across frames. This is done by associating the detected vehicles in the current frame with
-					those in the previous frame based on their bounding box coordinates. Then, the add_missing_data.py
-					is able to use the results in order fill in the missing frames in the designated csv file. This way,
-					multiple rendered frames wouldn&apos;t be missing, and we could avoid the glitchy display.
+					Building Degen was an immensely educational experience on multiple fronts. I delved deep into the
+					intricacies of Next.js, a leading React framework. It wasn&apos;t just about setting up a basic
+					project but mastering the nuances of server-side rendering and static site generation to deliver a
+					fast and optimized user experience.
 				</div>
-
-				<div className={`${projectClasses.subheading}`}>Real-Time Analysis</div>
 				<div>
-					realTime_lp.py is similar to upload_lp.py but is designed to work with real-time video streams
-					instead of uploaded videos.
-					<br />
-					The realTime_lp.py file has a function called realTime(stop_event, frame_queue) for real-time
-					license plate recognition from a video feed. It initializes SORT tracker, YOLO, and Roboflow models,
-					opens a video stream, and reads frames until a stop event or video end. Every 5 frames, it detects
-					and tracks vehicles, identifies license plates, reads their text with EasyOCR, and stores the
-					results. Processed frames are put into a queue for API retrieval, and results are written to a CSV
-					file.
-					<br /> The function runs in a separate thread, with stop_event signaling it to stop and frame_queue
-					passing processed frames to the API.
+					I integrated the Simple Hash API to fetch NFT data, which was an eye-opening experience in
+					understanding how to interact with external APIs, process the returned data, and transform it into a
+					digestible format for end-users. The experience taught me a lot about the broader NFT ecosystem and
+					how data is stored and accessed on the blockchain.
 				</div>
-
-				<div className={`${projectClasses.subheading}`}>API</div>
 				<div>
-					<div>
-						The api.py file serves as the Flask app&apos;s main entry point, defining API routes and
-						functionalities. Functions like allowed_file() check for permitted file extensions, while routes
-						like /upload and /download handle video file uploads and downloads, respectively. Other routes
-						like /start and /stop manage the real-time license plate recognition script, running it in
-						separate threads. The script also handles video streaming through the /video route.
-						Additionally, the Flask application is initialized, the upload folder is set, and the server
-						starts when the script runs directly.
-					</div>
-				</div>
-				<div className={`${projectClasses.subheading}`}>Results</div>
-				<div>It took a while to process, but the video turned out amazing!</div>
-				<div className={`${projectClasses.subheading}`}>Further Improvements</div>
-				<div>
-					1. The realTime_lp.py script could further be improved. Was stuck a little on why the live feed was
-					slow and unresponsive. Possibly could further fix the frame rate, but it was reasonable considering
-					the the model would have the process the live feed real-time. Researching and implementing a more
-					efficient method could improve performance.
-					<br />
-					2. The current code lacks comprehensive error handling. For instance, in the upload_file() function,
-					there&apos;s no handling for potential issues like file save errors. Adding try-except blocks around
-					these operations could improve the robustness of the application.
-					<br />
-					3. There&apos;s a significant amount of code duplication, especially in the licensePlate() functions
-					in api/lp.py and api/upload_lp.py. This could be refactored into a common function or module.
+					All in all, working on Degen was a holistic learning journey, enriching my understanding of modern
+					web frameworks, API integration, modular architecture, and domain-specific challenges in the rapidly
+					evolving world of NFTs.
 				</div>
 			</div>
 		</Layout>
