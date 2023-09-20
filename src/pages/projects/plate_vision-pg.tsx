@@ -274,7 +274,7 @@ def licensePlate():
 				// className="w-full h-full rounded-lg border-[#121212] border-2"
 				className="w-full h-full rounded-lg"
 			>
-				<source src="/images/plate_vision.mov" type="video/mp4" />
+				<source src="https://willphan.com/plate-vision-display.mov" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 
@@ -512,7 +512,7 @@ def licensePlate():
 					// className="w-full h-full rounded-lg border-[#121212] border-2"
 					className="w-full h-full rounded-lg"
 				>
-					<source src="/images/lp.mov" type="video/mp4" />
+					<source src="https://willphan.com/pllate-vision-outcome.mov" type="video/mp4" />
 					Your browser does not support the video tag.
 				</video>
 

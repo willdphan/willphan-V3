@@ -11,7 +11,7 @@ export const projects = [
 		description: 'Uncover your NFT assets and their stories.',
 		frontend: '',
 		technology: 'ML/CV',
-		video: '/images/plate_vision.mp4',
+		video: 'https://willphan.com/plate-vision.mp4',
 		nbviewer: '',
 		image: '',
 	},
