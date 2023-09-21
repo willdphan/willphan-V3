@@ -55,7 +55,7 @@ export default function Layout({ children, projectName, publicationDate }) {
 				{/* Table of Contents */}
 				<div className="">
 					<div className="fixed">
-						<ul className="animate-fade invisible xl:visible  absolute left-[-18em] space-y-2 text-xs text-[#9B9B9B] leading-relaxed font-Inter font-light">
+						<ul className="animate-fade invisible xl:visible absolute left-[-18em] space-y-2 text-xs text-[#9B9B9B] leading-relaxed font-Inter font-light">
 							<li>
 								<Link href="/">
 									<svg
@@ -96,7 +96,7 @@ export default function Layout({ children, projectName, publicationDate }) {
 								viewBox="0 0 24 24"
 								width="20"
 								height="20"
-								className="mb-10 lg:hidden"
+								className="mb-10 xl:hidden"
 							>
 								<path
 									d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z"

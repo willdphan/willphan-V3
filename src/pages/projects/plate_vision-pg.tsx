@@ -440,15 +440,35 @@ def licensePlate():
 				<br />
 
 				<div className={`${projectClasses.content}`}>
+					Initially, the model was not always able to track the vehicles in every frame and as a result, we
+					ended up with a glitchy video.{' '}
+				</div>
+
+				<br />
+				<video
+					autoPlay
+					loop
+					muted
+					playsInline
+					// className="w-full h-full rounded-lg border-[#121212] border-2"
+					className="w-full h-full rounded-lg"
+				>
+					<source
+						src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/plate-vision-glitch.mov"
+						type="video/mp4"
+					/>
+					Your browser does not support the video tag.
+				</video>
+				<br />
+
+				<div className={`${projectClasses.content}`}>
 					<div>
-						The model was not always able to track the vehicles in every frame and as a result, we ended up
-						with a glitchy video. Because of this, we used the SORT algorithm. After the YOLO model detects
-						vehicles in each frame, the SORT algorithm is applied to track these vehicles across frames.
-						This is done by associating the detected vehicles in the current frame with those in the
-						previous frame based on their bounding box coordinates. Then, the
-						<Code>add_missing_data.py</Code> is able to use the results in order fill in the missing frames
-						in the designated csv file. This way, multiple rendered frames wouldn&apos;t be missing, and we
-						could avoid the glitchy display.
+						Because of this, we used the SORT algorithm. After the YOLO model detects vehicles in each
+						frame, the SORT algorithm is applied to track these vehicles across frames. This is done by
+						associating the detected vehicles in the current frame with those in the previous frame based on
+						their bounding box coordinates. Then, the <Code>add_missing_data.py</Code> is able to use the
+						results in order fill in the missing frames in the designated csv file. This way, multiple
+						rendered frames wouldn&apos;t be missing, and we could avoid the glitchy display.
 					</div>
 					<div>
 						After the license plate recognition results are written to a CSV file, the script reads the CSV
