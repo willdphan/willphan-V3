@@ -111,7 +111,7 @@ const Project = () => {
 				// className="w-full h-full rounded-lg border-[#121212] border-2"
 				className="w-full h-full rounded-lg"
 			>
-				<source src="https://willphan.com/degen-display.mp4" type="video/mp4" />
+				<source src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/degen-display.mp4" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 			<br />
@@ -168,7 +168,7 @@ const Project = () => {
 				// className="w-full h-full rounded-lg border-[#121212] border-2"
 				className="w-full h-full rounded-lg"
 			>
-				<source src="https://willphan.com/degen-cards.mp4" type="video/mp4" />
+				<source src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/degen-cards.mp4" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 
@@ -200,7 +200,7 @@ const Project = () => {
 				// className="w-full h-full rounded-lg border-[#121212] border-2"
 				className="w-full h-full rounded-lg"
 			>
-				<source src="https://willphan.com/degen-address.mp4" type="video/mp4" />
+				<source src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/degen-address.mp4" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 			<br />

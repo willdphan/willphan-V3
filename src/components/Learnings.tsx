@@ -21,7 +21,7 @@ const Learnings = () => {
 			description: 'Counting Available Parking Spots with OpenCV',
 			code: 'https://github.com/willdphan/parking-counter',
 			technology: 'ML/CV',
-			video: 'https://willphan.com/parking-counter.mov',
+			video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/parking-counter.mov',
 			demo: '',
 		},
 		{
@@ -30,7 +30,7 @@ const Learnings = () => {
 			description: 'Color Detector with OpenCV and PIL',
 			code: 'https://github.com/willdphan/color-detector',
 			technology: 'ML/CV',
-			video: 'https://willphan.com/color-detector.mov',
+			video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/color-detector.mov',
 			demo: '',
 		},
 		{
@@ -48,7 +48,7 @@ const Learnings = () => {
 			description: 'Hand Detection with OpenCV & MediaPipe',
 			code: 'https://github.com/willdphan/hand-tracker',
 			technology: 'ML/CV',
-			video: 'https://willphan.com/hand-detector.mov',
+			video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/hand-detector.mov',
 			demo: '',
 		},
 		{
@@ -201,7 +201,7 @@ const Learnings = () => {
 			description: 'On-Chain NFTs w/VRGDAs. You see what you get.',
 			frontend: 'https://kaleidor.vercel.app/',
 			technology: 'BLOCKCHAIN',
-			video: 'https://willphan.com/kaleidor.mov',
+			video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/kaleidor.mov',
 			demo: '',
 		},
 		{
@@ -226,7 +226,7 @@ const Learnings = () => {
 			description: 'On-chain generative art. 111 shades of NFTs.',
 			frontend: 'https://shade-pi.vercel.app/',
 			technology: 'BLOCKCHAIN',
-			video: 'https://willphan.com/shade.mov',
+			video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/shade.mov',
 			demo: '',
 		},
 		{
@@ -252,7 +252,7 @@ const Learnings = () => {
 			frontend: 'https://splitz.vercel.app',
 			code: 'https://github.com/willdphan/splitz-contracts',
 			technology: 'BLOCKCHAIN',
-			video: 'https://willphan.com/splitz.mov',
+			video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/splitz.mov',
 			demo: '',
 		},
 	]

@@ -202,7 +202,7 @@ def send_sms(sms_text, recipient_phone_number):
 				// className="w-full h-full rounded-lg border-[#121212] border-2"
 				className="w-full h-full rounded-lg"
 			>
-				<source src="https://willphan.com/atom-display.mov" type="video/mp4" />
+				<source src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/atom-display.mov" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 			<br />
@@ -301,7 +301,7 @@ def send_sms(sms_text, recipient_phone_number):
 				// className="w-full h-full rounded-lg border-[#121212] border-2"
 				className="w-full h-full rounded-lg"
 			>
-				<source src="https://willphan.com/atom-calendar.mov" type="video/mp4" />
+				<source src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/atom-calendar.mov" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 
@@ -335,7 +335,7 @@ def send_sms(sms_text, recipient_phone_number):
 				// className="w-full h-full rounded-lg border-[#121212] border-2"
 				className="w-full h-full rounded-lg"
 			>
-				<source src="https://willphan.com/atom-document.mov" type="video/mp4" />
+				<source src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/atom-document.mov" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 
@@ -390,7 +390,7 @@ def send_sms(sms_text, recipient_phone_number):
 				// className="w-full h-full rounded-lg border-[#121212] border-2"
 				className="w-full h-full rounded-lg"
 			>
-				<source src="https://willphan.com/atom-search.mov" type="video/mp4" />
+				<source src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/atom-search.mov" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 

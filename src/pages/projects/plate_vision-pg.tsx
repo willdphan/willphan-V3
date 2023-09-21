@@ -285,7 +285,10 @@ def licensePlate():
 				// className="w-full h-full rounded-lg border-[#121212] border-2"
 				className="w-full h-full rounded-lg"
 			>
-				<source src="https://willphan.com/plate-vision-display.mov" type="video/mp4" />
+				<source
+					src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/plate-vision-display.mov"
+					type="video/mp4"
+				/>
 				Your browser does not support the video tag.
 			</video>
 
@@ -427,7 +430,10 @@ def licensePlate():
 					// className="w-full h-full rounded-lg border-[#121212] border-2"
 					className="w-full h-full rounded-lg"
 				>
-					<source src="https://willphan.com/plate-vision-upload.mov" type="video/mp4" />
+					<source
+						src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/plate-vision-upload.mov"
+						type="video/mp4"
+					/>
 					Your browser does not support the video tag.
 				</video>
 
@@ -486,7 +492,10 @@ def licensePlate():
 					// className="w-full h-full rounded-lg border-[#121212] border-2"
 					className="w-full h-full rounded-lg"
 				>
-					<source src="https://willphan.com/plate-vision-realtime.mov" type="video/mp4" />
+					<source
+						src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/plate-vision-realtime.mov"
+						type="video/mp4"
+					/>
 					Your browser does not support the video tag.
 				</video>
 
@@ -557,7 +566,10 @@ def licensePlate():
 					// className="w-full h-full rounded-lg border-[#121212] border-2"
 					className="w-full h-full rounded-lg"
 				>
-					<source src="https://willphan.com/pllate-vision-outcome.mov" type="video/mp4" />
+					<source
+						src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/plate-vision-outcome.mov"
+						type="video/mp4"
+					/>
 					Your browser does not support the video tag.
 				</video>
 

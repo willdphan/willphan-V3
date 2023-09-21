@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 
 const videos = [
-	{ src: 'https://willphan.com/scaleai-craft.mov', alt: 'video' },
-	{ src: 'https://willphan.com/mac-chips-craft.mov', alt: 'video' },
-	{ src: 'https://willphan.com/cd-craft.mov', alt: 'video' },
-	{ src: 'https://willphan.com/icon-dock-craft.mp4', alt: 'video' },
-	{ src: 'https://willphan.com/nft-marketplace-craft.mp4', alt: 'video' },
-	{ src: 'https://willphan.com/opepen-folder-craft.mov', alt: 'video' },
-	{ src: 'https://willphan.com/grain-craft.mov', alt: 'video' },
-	{ src: 'https://willphan.com/opepen-craft.mp4', alt: 'video' },
-	{ src: 'https://willphan.com/nouns-folder-craft.mp4', alt: 'video' },
+	{ src: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/scaleai-craft.mov', alt: 'video' },
+	{ src: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/mac-chips-craft.mov', alt: 'video' },
+	{ src: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/cd-craft.mov', alt: 'video' },
+	{ src: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/icon-dock-craft.mp4', alt: 'video' },
+	{ src: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/nft-marketplace-craft.mp4', alt: 'video' },
+	{ src: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/opepen-folder-craft.mov', alt: 'video' },
+	{ src: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/grain-craft.mov', alt: 'video' },
+	{ src: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/opepen-craft.mp4', alt: 'video' },
+	{ src: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/nouns-folder-craft.mp4', alt: 'video' },
 ]
 
 const Crafts = () => {
