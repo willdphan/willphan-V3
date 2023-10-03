@@ -29,6 +29,7 @@
 		"@tiptap/starter-kit": "^2.1.10",
 		"@vercel/analytics": "^0.1.11",
 		"autoprefixer": "^10.4.7",
+		"clsx": "^2.0.0",
 		"connectkit": "^0.0.2",
 		"dayjs": "^1.11.9",
 		"embla-carousel-react": "^7.1.0",

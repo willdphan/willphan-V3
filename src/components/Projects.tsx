@@ -6,6 +6,17 @@ import Image from 'next/image'
 
 export const projects = [
 	{
+		title: 'PYTHON',
+		name: 'KITTI SF',
+		description: 'Real-time license plate recognition system.',
+		frontend: '',
+		code: 'https://github.com/willdphan/plate-vision.git',
+		technology: 'ML/CV',
+		video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/kitti-sf-result.mov',
+		nbviewer: '',
+		image: '',
+	},
+	{
 		title: 'TYPESCRIPT | PYTHON',
 		name: 'Plate Vision',
 		description: 'Real-time license plate recognition system.',
