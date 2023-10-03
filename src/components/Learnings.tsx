@@ -293,35 +293,37 @@ const Learnings = () => {
 						key={project.name}
 						className=" my-masonry-grid_column mb-2 w-full bg-[#0A0A0A] border-[#262626] border-[1px] rounded-lg py-[1px] px-[1px] space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
 					>
-						{project.video ? (
-							<div className="">
-								<video
-									autoPlay
-									loop
-									muted
-									playsInline
-									className="rounded-lg border-[#0A0A0A] border-[1px]"
-								>
-									<source src={project.video} type="video/mp4" />
-								</video>
-							</div>
-						) : (
-							project.image && (
+						{
+							project.video ? (
 								<div className="">
-									{/* Specify the width */}
-									{/* Specify the height */}
-									{/* If you want to maintain aspect ratio */}
-									<Image
-										src={project.image}
-										alt={project.name}
-										width={600}
-										height={300}
-										layout="responsive"
+									<video
+										autoPlay
+										loop
+										muted
+										playsInline
 										className="rounded-lg border-[#0A0A0A] border-[1px]"
-									/>
+									>
+										<source src={project.video} type="video/mp4" />
+									</video>
 								</div>
-							)
-						)}
+							) : null
+							// 	project.image && (
+							// 		<div className="">
+							// 			{/* Specify the width */}
+							// 			{/* Specify the height */}
+							// 			{/* If you want to maintain aspect ratio */}
+							// 			<Image
+							// 				src={project.image}
+							// 				alt={project.name}
+							// 				width={600}
+							// 				height={300}
+							// 				layout="responsive"
+							// 				className="rounded-lg border-[#0A0A0A] border-[1px]"
+							// 			/>
+							// 		</div>
+							// 	)
+							// )
+						}
 
 						<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest px-3 pt-3">{project.title}</h2>
 						{/*  LINK ADDED HERE FOR PROJECTS PAGE, IF U ADD LINK, USE PT-3 */}
