@@ -202,7 +202,7 @@ const Learnings = () => {
 			frontend: 'https://kaleidor.vercel.app/',
 			technology: 'BLOCKCHAIN',
 			video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/kaleidor.mov',
-			image: '',
+
 			demo: '',
 		},
 		{
@@ -211,7 +211,7 @@ const Learnings = () => {
 			description: 'Fractionalized ERC721 auction w/VRGDA pricing.',
 			code: 'https://github.com/willdphan/RICKS-V2.git',
 			technology: 'BLOCKCHAIN',
-			image: '',
+
 			demo: '',
 		},
 		{
@@ -220,7 +220,7 @@ const Learnings = () => {
 			description: '1 | 1 NFT editions using gas efficient Minimal Proxy.',
 			code: 'https://github.com/willdphan/1-of-1.git',
 			technology: 'BLOCKCHAIN',
-			image: '',
+
 			demo: '',
 		},
 		{
@@ -231,7 +231,6 @@ const Learnings = () => {
 			technology: 'BLOCKCHAIN',
 			video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/shade.mov',
 			demo: '',
-			image: '',
 		},
 		{
 			title: 'SOLIDITY',
@@ -240,7 +239,6 @@ const Learnings = () => {
 			code: 'https://github.com/willdphan/erc20-yul',
 			technology: 'BLOCKCHAIN',
 			demo: '',
-			image: '',
 		},
 		{
 			title: 'SOLIDITY',
@@ -249,7 +247,6 @@ const Learnings = () => {
 			code: 'https://github.com/willdphan/latter-contracts.git',
 			technology: 'BLOCKCHAIN',
 			demo: '',
-			image: '',
 		},
 		{
 			title: 'SOLIDITY',
@@ -260,7 +257,6 @@ const Learnings = () => {
 			technology: 'BLOCKCHAIN',
 			video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/splitz.mov',
 			demo: '',
-			image: '',
 		},
 	]
 
@@ -385,7 +381,7 @@ const Learnings = () => {
 									</svg>
 								</a>
 							)}
-							{project.nbviewer && (
+							{/* {project.nbviewer && (
 								<a
 									href={project.nbviewer}
 									target="_blank"
@@ -401,7 +397,7 @@ const Learnings = () => {
 										/>
 									</svg>
 								</a>
-							)}
+							)} */}
 							{/* Adding the Next.js Image component */}
 						</div>
 					</div>
