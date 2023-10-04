@@ -8,7 +8,7 @@ export const projects = [
 	{
 		title: 'PYTHON',
 		name: 'KITTI SF',
-		description: 'Real-time license plate recognition system.',
+		description: 'Sensor Fusion with the KITTI Dataset. WIP',
 		frontend: '',
 		code: 'https://github.com/willdphan/plate-vision.git',
 		technology: 'ML/CV',
