@@ -266,7 +266,7 @@ const Learnings = () => {
 		<section className="mt-[-2em]" id="learnings">
 			<div className="flex items-center justify-start mb-4">
 				{' '}
-				<h2 className="text-sm font-Space text-[#9B9B9B] mx-2 mr-8 tracking-widest">LEARNINGS</h2>{' '}
+				<h2 className="text-sm font-Space text-[#9B9B9B] mx-2 mr-8 tracking-widest">FOR FUN</h2>{' '}
 				{/* Title next to dropdown */}
 				<select
 					value={selectedTech}

@@ -14,7 +14,7 @@ const Other = () => {
 	]
 
 	return (
-		<section id="">
+		<section id="other">
 			<div className="gap-2 columns-1 mt-20 mb-20">
 				{other.map((learning, index) => (
 					<div

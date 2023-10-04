@@ -34,7 +34,7 @@ const Crafts = () => {
 	}, [])
 
 	return (
-		<section id="other">
+		<section id="crafts">
 			<div className="gap-2 md:columns-2 mt-20">
 				{videos.slice(0, visible).map((video, index) => (
 					<div key={index} className="mb-2 border-[#242424] border-[1px] rounded-lg">
