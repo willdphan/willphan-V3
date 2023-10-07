@@ -7,7 +7,7 @@ import Image from 'next/image'
 export const projects = [
 	{
 		title: 'PYTHON',
-		name: 'CHAR',
+		name: 'CHAR 01',
 		description: 'Autonomous Robot with Sensor Fusion. Coming soon...',
 		frontend: '',
 		code: 'na',
