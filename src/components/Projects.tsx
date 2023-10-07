@@ -7,6 +7,17 @@ import Image from 'next/image'
 export const projects = [
 	{
 		title: 'PYTHON',
+		name: 'CHAR',
+		description: 'Autonomous Robot with Sensor Fusion. Coming soon...',
+		frontend: '',
+		code: 'na',
+		technology: 'ML/CV',
+		video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/char-display.mp4',
+		nbviewer: '',
+		image: '',
+	},
+	{
+		title: 'PYTHON',
 		name: 'KITTI SF',
 		description: 'Sensor Fusion with the KITTI Dataset. WIP',
 		frontend: '',
