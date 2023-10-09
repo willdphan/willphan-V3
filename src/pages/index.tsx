@@ -17,7 +17,7 @@ const Home: FC = () => {
 
 				<div className="w-full lg:w-6/12 ml-auto pt-14  ">
 					<Projects />
-					<Learnings />
+					{/* <Learnings /> */}
 					<Crafts />
 					<Other />
 				</div>

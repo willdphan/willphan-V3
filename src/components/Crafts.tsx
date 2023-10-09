@@ -14,7 +14,7 @@ const videos = [
 ]
 
 const Crafts = () => {
-	const [visible, setVisible] = useState(5) // Initial number of videos to show
+	const [visible, setVisible] = useState(4) // Initial number of videos to show
 	const [expanded, setExpanded] = useState(false) // Initial state
 
 	const toggle = () => {
