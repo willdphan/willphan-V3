@@ -23,7 +23,7 @@ export const projects = [
 		frontend: '',
 		code: 'https://github.com/willdphan/plate-vision.git',
 		technology: 'ML/CV',
-		video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/kitti-sf-result.mov',
+		video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/kitti-sf-display.mp4',
 		nbviewer: '',
 		image: '',
 	},
