@@ -275,12 +275,16 @@ plt.imshow(canvas);
 				<div>
 					The synchronization of data is aligned with the LiDAR, given its lowest update rate among the
 					devices. However, the synchrony among the camera, GPS/IMU (navigation), and LiDAR isn&apos;t exact,
-					despite utilizing the synchronized raw data. According to the KITTI dataset documentation, the
-					maximal time discrepancy between the camera/velodyne and gps/imu is capped at 5ms. Although more
-					accurate measurements could be derived through interpolation, we will forgo addressing these minor
-					differences for the sake of simplicity, as the slight error from the imperfect synchronization
-					won&apos;t significantly affect our assessments. This notion will be further validated as we later
-					project LiDAR points onto the camera images, where no noticeable discrepancy will be observed.
+					despite utilizing the synchronized raw data.{' '}
+				</div>
+
+				<div>
+					According to the KITTI dataset documentation, the maximal time discrepancy between the
+					camera/velodyne and gps/imu is capped at 5ms. Although more accurate measurements could be derived
+					through interpolation, we will forgo addressing these minor differences for the sake of simplicity,
+					as the slight error from the imperfect synchronization won&apos;t significantly affect our
+					assessments. This notion will be further validated as we later project LiDAR points onto the camera
+					images, where no noticeable discrepancy will be observed.
 				</div>
 			</div>
 			<br />
@@ -323,12 +327,10 @@ plt.imshow(canvas);
 			/>
 			<br />
 
-			<h2 id="Data" className={`${projectClasses.subheading}`}>
-				Transformation Procedures
-			</h2>
-
 			<div className={`${projectClasses.content}`}>
-				<div>• LiDAR to Camera</div>
+				<h2 id="lidar to camera transformation" className={`${projectClasses.subheading}`}>
+					LiDAR to Camera Transformation
+				</h2>
 				<div>
 					To convert a point from LiDAR to camera image space, a sequence of transformations is performed to
 					account for the differing orientations and positions of the LiDAR and camera systems on the vehicle.
@@ -346,11 +348,79 @@ plt.imshow(canvas);
   $$`}
 				</Latex>
 				<div>
-					Following this, another rigid transformation is performed to reach the desired camera frame (e.g.,
-					Camera 2). A rectifying transformation, solely a rotation, aligns the stereo images to the same
-					y-axis, aiding in accurate depth perception. Finally, a camera projection transformation translates
-					the 3D point into 2D image space coordinates (u, v, z).
+					Where the r&apos;s correspond to the 3x3 rotation matrix and the t&apos;s correspond to the 3x1
+					translation vector.
 				</div>
+				<div>
+					To convert a transformation matrix to its homogeneous representation, we add a row of new
+					coordinates on the bottom, where 0&apos;s will be placed under the rotation portion and a 1 will be
+					placed under the translation portion.
+				</div>
+				<Latex>{`$$
+    T = \\begin{bmatrix}
+            r_{11} & r_{12} & r_{13} & t_{14} \\\\
+            r_{21} & r_{22} & r_{23} & t_{24} \\\\
+            r_{31} & r_{32} & r_{33} & t_{34} \\\\
+                 0 &      0 &      0 & 1      
+        \\end{bmatrix}
+$$`}</Latex>
+				<div>
+					{' '}
+					Let&apos;s figure out how we got the matrix above. The KITTI{' '}
+					<a href="https://www.cvlibs.net/publications/Geiger2013IJRR.pdf">paper</a> describes the
+					transformation from LiDAR to camera <Latex>{`$i$`}</Latex> as follows, where each transformation
+					matrix has been converted to its homogeneous representation. The difference here is that we have
+					changed the notation and added the transformation to the desired camera reference.
+				</div>
+				<Latex>{`$$
+\\tilde{y} = P^{cam2}_{rect2} R^{rect2}_{ref2} T^{ref2}_{ref0} T^{ref0}_{velo} \\tilde{x},
+  \\qquad \\text{where } \\tilde{x} = [x, y, z, 1]^T
+$$`}</Latex>
+				<Latex>{`$$
+\\tilde{y} = \\left( \\tilde{u}, \\tilde{v}, z, 1 \\right)
+$$`}</Latex>
+				<div>For convenience we will denote the transformation from LiDAR to Camera 2 like so:</div>
+				<Latex>{`$$
+T^{cam2}_{velo} = P^{cam2}_{rect2} R^{rect2}_{ref2} T^{ref2}_{ref0} T^{ref0}_{velo}
+$$`}</Latex>
+				<div>
+					<ul>
+						<li>
+							<Latex>{`$T^{ref}_{velo}$`}</Latex> - LiDAR to Camera Reference → transforms a 3D point
+							relative to the LiDAR to a 3D point relative to the Camera
+						</li>
+						<li>
+							<Latex>{`$T^{ref2}_{ref0}$`}</Latex> - Rigid Body Transformation from Camera 0 to to reach
+							the desired Camera 2
+						</li>
+						<li>
+							<Latex>{`$R^{rect2}_{ref2}$`}</Latex> - Camera 2 to Rectified Camera 2 reference.
+							It&apos;solely based on a rotation and aligns the stereo images to the same y-axis, aiding
+							in accurate depth perception.
+						</li>
+						<li>
+							<Latex>{`$P^{cam2}_{rect2}$`}</Latex> - Rectified Camera 2 to 2D Camera 2 (u,v,z) coordinate
+							space
+						</li>
+						<li>
+							<Latex>{`$T^{cam2}_{velo}$`}</Latex> - 3D LiDAR space to 2D Camera 2 (u,v,z) coordinate
+							space.
+						</li>
+					</ul>
+				</div>
+				<div>
+					{' '}
+					<a className="font-bold">NOTE:</a> We still denote (u,v,z) as 2D space even though we have z since
+					we are referring to the 2D camera image space with real world depth relative to the camera.
+				</div>
+				<div>
+					Where (u,v,z) are the final camera coordinates after the rectification and projection transforms. In
+					order to transform from homogeneous image coordinates <Latex>{`$\\tilde{y}$`}</Latex> to true (u, v,
+					z) image coordinates y, we will need to normalize by the depth and drop the 1, like so:
+				</div>
+				<Latex>{`$$
+y = \\left( \\frac{\\tilde{u}}{z}, \\frac{\\tilde{v}}{z}, z \\right)
+$$`}</Latex>
 				<div>
 					These transformations can be encapsulated into a single matrix, simplifying the LiDAR to Camera
 					transformation into one operation. The final coordinates in camera space are denoted as (u, v, z),
@@ -365,8 +435,17 @@ plt.imshow(canvas);
 		 0 &      0 &      0 & 1      \\\\
 \\end{bmatrix}
   $$`}
-				</Latex>
-				<div>• Camera to LiDAR</div>
+				</Latex>{' '}
+				<div>
+					<a className="font-bold">NOTE:</a> The notation convention is that the starting reference frame is
+					in the subscript and the ending reference frame is in the superscript. The <Latex>{`$1$`}</Latex>{' '}
+					added as the 4th coordinate in homogeneous representation is sometimes referred to as{' '}
+					<Latex>{`$w$`}</Latex>.
+				</div>
+				<br />
+				<h2 id="camera to lidar transformation" className={`${projectClasses.subheading}`}>
+					Camera to LiDAR Transformation
+				</h2>
 				<div>
 					To transition from Camera to LiDAR, or from IMU to LiDAR/Camera, similar transformation steps are
 					followed, utilizing the homogeneous representation of transformation matrices, and inverting the
@@ -405,47 +484,43 @@ plt.imshow(canvas);
     $$`}
 					</Latex>
 				</div>
-				<div>• IMU to LiDAR</div>
-				<div>
-					Moreover, transitioning from IMU to Geodetic coordinates involves converting Cartesian coordinates
-					to spherical coordinates (Slant Range, Azimuth, Elevation), which are then translated to Geodetic
-					coordinates (Latitude, Longitude, Altitude) using external libraries like pymap3d.
-				</div>
-
-				<div>• IMU to Geodetic</div>
+				<h2 id="imu to lidar transformation" className={`${projectClasses.subheading}`}>
+					IMU to LiDAR Transformation
+				</h2>
 				<div>
 					We will also need to translate IMU to LiDAR, thankfully we have a single matrix{' '}
 					<Latex>{`$T^{velo}_{imu}$`}</Latex> that will handle this in a single operation.
 				</div>
-
 				<Latex>{`$$y_{velo} = T^{velo}_{imu} x_{imu}$$`}</Latex>
-
 				<div>
 					And once we have <Latex>{`$y_{velo}$`}</Latex> we can convert it to camera coordinates using the
 					equations above, or we can compose the transformations, to go from IMU to Camera 2:
 				</div>
-
 				<Latex>{`$$T^{cam2}_{imu} =P^{cam2}_{rect2} R^{rect2}_{ref2} T^{ref2}_{ref0} T^{ref0}_{velo} T^{velo}_{imu}$$`}</Latex>
-
 				<div>
 					To transform from the Camera to IMU coordinates, we can do a very similar operation as we did for
 					camera to LiDAR. We just use the homogeneous representation of the transformation matrix and take
 					its inverse, then we can invert the transform.
 				</div>
-
 				<Latex>{`$$
 \\begin{align*}
     T^{imu}_{cam2} &= (T^{cam2}_{imu})^{-1} \\\\[1em]
     T^{imu}_{cam2} \\tilde{y}_{cam2} &=  \\tilde{x}_{imu}
 \\end{align*}
 $$`}</Latex>
-
+				<h2 id="imu to geodetic transformation" className={`${projectClasses.subheading}`}>
+					IMU to Geodetic Transformation
+				</h2>
+				<div>
+					Moreover, transitioning from IMU to Geodetic coordinates involves converting Cartesian coordinates
+					to spherical coordinates (Slant Range, Azimuth, Elevation), which are then translated to Geodetic
+					coordinates (Latitude, Longitude, Altitude) using external libraries like pymap3d.
+				</div>
 				<div>
 					We can transform to any camera <Latex>{`$i$`}</Latex> just by replacing{' '}
 					<Latex>{`$P^{cami}_{recti}$`}</Latex> and <Latex>{`$R^{ref}_{rect2}$`}</Latex> with the proper
 					matrices from our calibration file calib_cam_to_cam.txt.
 				</div>
-
 				<Latex>
 					{`$$
   range = \\sqrt{x^2 + y^2 + z^2} \\\\[1em]
@@ -453,14 +528,16 @@ $$`}</Latex>
   elevation = \\arctan \\left(\\frac{\\sqrt{x^2 + y^2}}{z} \\right)
   $$`}
 				</Latex>
-
 				<div>
 					This process ensures accurate representation and translation of points across different sensor
 					coordinate systems, crucial for tasks like object detection and navigation in autonomous systems.
 					Below we load calibration data.
 				</div>
 			</div>
-
+			<br />
+			<h2 id="load camera calibration data" className={`${projectClasses.subheading}`}>
+				Load Camera Calibration Data
+			</h2>
 			<div className={`${projectClasses.content}`}>
 				With the code below, we load the camera data. The code snippet reads calibration data from
 				calib_cam_to_cam.txt, extracts various transformation matrices, and transforms them into homogeneous
