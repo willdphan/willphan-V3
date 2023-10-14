@@ -91,13 +91,13 @@ const Fun = () => {
 						<Button
 							onMouseEnter={open}
 							onMouseLeave={close}
-							className="text-sm font-Space  animate-pulse"
+							className="text-sm font-Space animate-pulse"
 							style={{
 								backgroundColor: '#0A0A0A',
 								borderRadius: '50%',
 								width: '30px',
 								height: '30px',
-								color: '#9B9B9B', // Updated this line
+								color: '#9B9B9B',
 								display: 'flex',
 								alignItems: 'center',
 								justifyContent: 'center',
@@ -122,16 +122,25 @@ const Fun = () => {
 							lineHeight: '1.75rem',
 						}}
 					>
-						<Text
-							size="sm"
+						<div
+							style={{
+								lineHeight: '1.75rem',
+							}}
+							className="text-md  font-Space text-white tracking-widest pt-3 uppercase"
+						>
+							What is this?
+							<br />
+						</div>
+						<div
+							className="text-sm font-Inter text-[#9B9B9B]"
 							style={{
 								lineHeight: '1.75rem',
 							}}
 						>
-							Below is curated selection of my projects, showcasing my designs and code. Click the project
-							titles for detailed insights into the creation process and conceptual foundations. Code
-							snippets and links are also provided for further exploration.
-						</Text>
+							Below is a curated selection of my projects, showcasing my designs and code. Click the
+							project titles for detailed insights into the creation process and conceptual foundations.
+							Code snippets and links are also provided for further exploration.
+						</div>
 					</Popover.Dropdown>
 				</Popover>
 			</div>
