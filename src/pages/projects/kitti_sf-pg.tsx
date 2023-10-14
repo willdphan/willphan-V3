@@ -7,9 +7,10 @@ import { Code } from '@mantine/core'
 import Image from 'next/image'
 import { CodeHighlightTabs } from '@mantine/code-highlight'
 import Link from 'next/link'
+import Latex from 'react-latex-next'
+import 'katex/dist/katex.min.css'
 
 const Project = () => {
-
 	const load = `
 with open('2011_10_03/calib_cam_to_cam.txt','r') as f:
 calib = f.readlines()
@@ -239,20 +240,19 @@ plt.imshow(canvas);
 			<br />
 
 			<video
-					autoPlay
-					loop
-					muted
-					playsInline
-					// className="w-full h-full rounded-lg border-[#121212] border-2"
-					className="w-full h-full rounded-lg"
-				>
-					<source
-						src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/kitti-sf-result.mov"
-						type="video/mp4"
-					/>
-					Your browser does not support the video tag.
-				</video>
-
+				autoPlay
+				loop
+				muted
+				playsInline
+				// className="w-full h-full rounded-lg border-[#121212] border-2"
+				className="w-full h-full rounded-lg"
+			>
+				<source
+					src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/kitti-sf-result.mov"
+					type="video/mp4"
+				/>
+				Your browser does not support the video tag.
+			</video>
 
 			<br />
 			<h2 id="structure" className={`${projectClasses.subheading}`}>
@@ -333,8 +333,18 @@ plt.imshow(canvas);
 					To convert a point from LiDAR to camera image space, a sequence of transformations is performed to
 					account for the differing orientations and positions of the LiDAR and camera systems on the vehicle.
 					Initially, a rigid body transformation, combining rotation and translation, is carried out from
-					LiDAR to camera 0 frame.
+					LiDAR to camera 0 frame. A rigid transformation is essentially a rotation followed by a translation.
+					A rigid transformation matrix can combine these two components like so:
 				</div>
+				<Latex>
+					{`$$
+  T = \\begin{bmatrix}
+  r_{11} & r_{12} & r_{13} & t_{14} \\\\
+  r_{21} & r_{22} & r_{23} & t_{24} \\\\
+  r_{31} & r_{32} & r_{33} & t_{34}
+  \\end{bmatrix}
+  $$`}
+				</Latex>
 				<div>
 					Following this, another rigid transformation is performed to reach the desired camera frame (e.g.,
 					Camera 2). A rectifying transformation, solely a rotation, aligns the stereo images to the same
@@ -346,18 +356,104 @@ plt.imshow(canvas);
 					transformation into one operation. The final coordinates in camera space are denoted as (u, v, z),
 					where z provides depth information in the 2D image space.
 				</div>
+				<Latex>
+					{`$$
+    T = \\begin{bmatrix}
+	r_{11} & r_{12} & r_{13} & t_{14} \\\\
+	r_{21} & r_{22} & r_{23} & t_{24} \\\\
+	r_{31} & r_{32} & r_{33} & t_{34} \\\\
+		 0 &      0 &      0 & 1      \\\\
+\\end{bmatrix}
+  $$`}
+				</Latex>
 				<div>• Camera to LiDAR</div>
 				<div>
 					To transition from Camera to LiDAR, or from IMU to LiDAR/Camera, similar transformation steps are
 					followed, utilizing the homogeneous representation of transformation matrices, and inverting the
 					transformation matrix to reverse the transformation direction.
 				</div>
-				<div>• IMU to Geodetic</div>
+				<div>
+					First, we need to convert <Latex>{`$T^{cam2}_{velo}$`}</Latex>
+					to its homogeneous representation. We can do that by adding a row of new coordinates at the bottom,
+					where 0&apos;s will be placed under the rotation portion and a 1 will be placed under the
+					translation portion.
+					<Latex>
+						{`$$
+    T^{cam2}_{velo} = \\begin{bmatrix}
+                         t_{11} & t_{12} & t_{13} & t_{14} \\\\
+                         t_{21} & t_{22} & t_{23} & t_{24} \\\\
+                         t_{31} & t_{32} & t_{33} & t_{34} \\\\
+                              0 &      0 &      0 & 1      
+                     \\end{bmatrix}
+    $$`}
+					</Latex>
+					Next, we need to convert $y$ back to its homogeneous form <Latex>{`$\tilde{y}$`}</Latex>.
+					<Latex>
+						{`$$ 
+    \\tilde{y} = (u \\cdot z,\\; v \\cdot z,\\; z,\\; 1) 
+    $$`}
+					</Latex>
+					Finally, we can get the homogeneous representation in LiDAR coordinates by inverting the homogeneous
+					transformation{' '}
+					<a href="http://www.info.hiroshima-cu.ac.jp/~miyazaki/knowledge/teche0053.html">matrix</a>.
+					<Latex>
+						{`$$
+    \\begin{align*}
+        T^{velo}_{cam2} &= (T^{cam2}_{velo})^{-1} \\\\[1em]
+        T^{velo}_{cam2} \\tilde{y} &= \\tilde{x}
+    \\end{align*}
+    $$`}
+					</Latex>
+				</div>
+				<div>• IMU to LiDAR</div>
 				<div>
 					Moreover, transitioning from IMU to Geodetic coordinates involves converting Cartesian coordinates
 					to spherical coordinates (Slant Range, Azimuth, Elevation), which are then translated to Geodetic
 					coordinates (Latitude, Longitude, Altitude) using external libraries like pymap3d.
 				</div>
+
+				<div>• IMU to Geodetic</div>
+				<div>
+					We will also need to translate IMU to LiDAR, thankfully we have a single matrix{' '}
+					<Latex>{`$T^{velo}_{imu}$`}</Latex> that will handle this in a single operation.
+				</div>
+
+				<Latex>{`$$y_{velo} = T^{velo}_{imu} x_{imu}$$`}</Latex>
+
+				<div>
+					And once we have <Latex>{`$y_{velo}$`}</Latex> we can convert it to camera coordinates using the
+					equations above, or we can compose the transformations, to go from IMU to Camera 2:
+				</div>
+
+				<Latex>{`$$T^{cam2}_{imu} =P^{cam2}_{rect2} R^{rect2}_{ref2} T^{ref2}_{ref0} T^{ref0}_{velo} T^{velo}_{imu}$$`}</Latex>
+
+				<div>
+					To transform from the Camera to IMU coordinates, we can do a very similar operation as we did for
+					camera to LiDAR. We just use the homogeneous representation of the transformation matrix and take
+					its inverse, then we can invert the transform.
+				</div>
+
+				<Latex>{`$$
+\\begin{align*}
+    T^{imu}_{cam2} &= (T^{cam2}_{imu})^{-1} \\\\[1em]
+    T^{imu}_{cam2} \\tilde{y}_{cam2} &=  \\tilde{x}_{imu}
+\\end{align*}
+$$`}</Latex>
+
+				<div>
+					We can transform to any camera <Latex>{`$i$`}</Latex> just by replacing{' '}
+					<Latex>{`$P^{cami}_{recti}$`}</Latex> and <Latex>{`$R^{ref}_{rect2}$`}</Latex> with the proper
+					matrices from our calibration file calib_cam_to_cam.txt.
+				</div>
+
+				<Latex>
+					{`$$
+  range = \\sqrt{x^2 + y^2 + z^2} \\\\[1em]
+  azimuth = \\arctan \\left( \\frac{y}{x} \\right) \\\\[1em]
+  elevation = \\arctan \\left(\\frac{\\sqrt{x^2 + y^2}}{z} \\right)
+  $$`}
+				</Latex>
+
 				<div>
 					This process ensures accurate representation and translation of points across different sensor
 					coordinate systems, crucial for tasks like object detection and navigation in autonomous systems.
@@ -648,8 +744,6 @@ plt.imshow(canvas);
 					layout="responsive"
 					className={`${projectClasses.image}`}
 				/>
-
-			
 
 				<br />
 
