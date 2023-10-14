@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { useState } from 'react'
 import Masonry from 'react-masonry-css'
 import Image from 'next/image'
+import { Popover, Text, Button } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
 
 export const projects = [
 	{
@@ -65,7 +67,7 @@ export const projects = [
 const Fun = () => {
 	const [showMore, setShowMore] = useState(false)
 	const [selectedTech, setSelectedTech] = useState('ALL')
-
+	const [opened, { close, open }] = useDisclosure(false)
 	const filteredProjects = projects.filter(exp => (selectedTech === 'ALL' ? true : exp.technology === selectedTech))
 
 	return (
@@ -77,13 +79,61 @@ const Fun = () => {
 				<select
 					value={selectedTech}
 					onChange={e => setSelectedTech(e.target.value)}
-					className="bg-[#0A0A0A] rounded-md py-2 text-md leading-relaxed text-sm font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
+					className="bg-[#0A0A0A] rounded-md py-2 text-md leading-relaxed text-sm font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300 mr-2"
 				>
 					<option value="ALL">ALL</option>
 					<option value="ML/CV">ML | CV</option>
 					<option value="BLOCKCHAIN">BLOCKCHAIN</option>
 					<option value="OTHER">OTHER</option>
 				</select>
+				<Popover width={350} position="bottom" withArrow opened={opened}>
+					<Popover.Target>
+						<Button
+							onMouseEnter={open}
+							onMouseLeave={close}
+							className="text-sm font-Space tracking-widest animate-pulse"
+							style={{
+								backgroundColor: '#0A0A0A',
+								borderRadius: '50%',
+								width: '30px',
+								height: '30px',
+								color: '#9B9B9B', // Updated this line
+								display: 'flex',
+								alignItems: 'center',
+								justifyContent: 'center',
+								padding: '1px',
+								borderColor: '#262626',
+								borderWidth: '0.5px',
+								borderStyle: 'solid',
+							}}
+						>
+							?
+						</Button>
+					</Popover.Target>
+					<Popover.Dropdown
+						className="font-Inter text-[#9B9B9B]"
+						style={{
+							pointerEvents: 'none',
+							backgroundColor: '#0A0A0A',
+							borderRadius: '5%',
+							borderWidth: '1px',
+							borderColor: '#262626',
+							padding: '20px',
+							lineHeight: '1.75rem',
+						}}
+					>
+						<Text
+							size="sm"
+							style={{
+								lineHeight: '1.75rem',
+							}}
+						>
+							Explore a curated selection of my projects, showcasing my designs and code. Click the
+							project titles for detailed insights into the creation process and conceptual foundations.
+							Code snippets and links are also provided for further exploration.
+						</Text>
+					</Popover.Dropdown>
+				</Popover>
 			</div>
 			<Masonry
 				breakpointCols={{ default: 2, 700: 1 }}
