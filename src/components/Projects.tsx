@@ -128,9 +128,9 @@ const Fun = () => {
 								lineHeight: '1.75rem',
 							}}
 						>
-							Explore a curated selection of my projects, showcasing my designs and code. Click the
-							project titles for detailed insights into the creation process and conceptual foundations.
-							Code snippets and links are also provided for further exploration.
+							Below is curated selection of my projects, showcasing my designs and code. Click the project
+							titles for detailed insights into the creation process and conceptual foundations. Code
+							snippets and links are also provided for further exploration.
 						</Text>
 					</Popover.Dropdown>
 				</Popover>
