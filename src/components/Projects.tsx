@@ -126,7 +126,7 @@ const Fun = () => {
 							style={{
 								lineHeight: '1.75rem',
 							}}
-							className="text-md  font-Space text-white tracking-widest pt-3 uppercase"
+							className="text-md  font-Space text-white  pt-3 uppercase"
 						>
 							What is this?
 							<br />
