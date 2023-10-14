@@ -79,7 +79,7 @@ const Fun = () => {
 				<select
 					value={selectedTech}
 					onChange={e => setSelectedTech(e.target.value)}
-					className="bg-[#0A0A0A] rounded-md py-2 text-md leading-relaxed text-sm font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300 mr-2"
+					className="bg-[#0A0A0A] rounded-md py-2 text-md leading-relaxed text-sm font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300 mr-6"
 				>
 					<option value="ALL">ALL</option>
 					<option value="ML/CV">ML | CV</option>
