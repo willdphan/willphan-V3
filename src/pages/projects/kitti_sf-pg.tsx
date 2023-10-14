@@ -50,9 +50,12 @@ T_cam2_imu = np.linalg.inv(np.insert(T_imu_cam2, 3, values=[0,0,0,1], axis=0))
 	`
 
 	const yolo = `
+# clone repo
 !git clone https://github.com/ultralytics/yolov5
 
-!pip install -r yolov5/requirements.txt  #Install whatever is needed
+# install requirements for cloned repo
+!pip install -r yolov5/requirements.txt 
+
 import torch
 
 model = torch.hub.load('ultralytics/yolov5', 'yolov5s')  # or yolov5m, yolov5l, yolov5x, custom
