@@ -19,7 +19,7 @@ export const projects = [
 	{
 		title: 'PYTHON',
 		name: 'KITTI SF',
-		description: 'Sensor Fusion with the KITTI Dataset. WIP',
+		description: 'Sensor Fusion with the KITTI Dataset.',
 		frontend: '',
 		code: 'https://github.com/willdphan/plate-vision.git',
 		technology: 'ML/CV',
