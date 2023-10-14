@@ -91,7 +91,7 @@ const Fun = () => {
 						<Button
 							onMouseEnter={open}
 							onMouseLeave={close}
-							className="text-sm font-Space tracking-widest animate-pulse"
+							className="text-sm font-Space  animate-pulse"
 							style={{
 								backgroundColor: '#0A0A0A',
 								borderRadius: '50%',
