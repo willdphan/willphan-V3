@@ -252,7 +252,7 @@ def licensePlate():
 	const router = useRouter()
 	const { projectName } = router.query
 
-	const publicationDate = 'September, 2023'
+	const publicationDate = 'August, 2023'
 
 	return (
 		<Layout projectName={projectName as string} publicationDate={publicationDate}>
