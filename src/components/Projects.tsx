@@ -21,12 +21,12 @@ export const projects = [
 	{
 		title: 'PYTHON',
 		name: 'KITTI SF',
-		description: 'Sensor Fusion with the KITTI Dataset.',
+		description: 'Sensor fusion and object detection with the KITTI Dataset.',
 		frontend: '',
-		code: 'https://github.com/willdphan/plate-vision.git',
+		code: 'https://github.com/willdphan/kitti-sf',
 		technology: 'ML/CV',
 		video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/kitti-sf-display.mp4',
-		nbviewer: '',
+		nbviewer: 'https://nbviewer.org/github/willdphan/kitti-sf/blob/main/KITTI_SF.ipynb',
 		image: '',
 	},
 	{

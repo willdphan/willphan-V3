@@ -10,6 +10,7 @@ import Link from 'next/link'
 import Latex from 'react-latex-next'
 import 'katex/dist/katex.min.css'
 
+
 const Project = () => {
 	const load = `
 with open('2011_10_03/calib_cam_to_cam.txt','r') as f:
@@ -328,8 +329,8 @@ plt.imshow(canvas);
 			<br />
 
 			<div className={`${projectClasses.content}`}>
-				<h2 id="lidar to camera transformation" className={`${projectClasses.subheading}`}>
-					LiDAR to Camera Transformation
+				<h2 id="lidar to camera" className={`${projectClasses.subheading}`}>
+					LiDAR to Camera
 				</h2>
 				<div>
 					To convert a point from LiDAR to camera image space, a sequence of transformations is performed to
@@ -354,7 +355,7 @@ plt.imshow(canvas);
 				<div>
 					To convert a transformation matrix to its homogeneous representation, we add a row of new
 					coordinates on the bottom, where 0&apos;s will be placed under the rotation portion and a 1 will be
-					placed under the translation portion.
+					placed under the translation portion. This would be the transformation matrix!
 				</div>
 				<Latex>{`$$
     T = \\begin{bmatrix}
@@ -366,7 +367,8 @@ plt.imshow(canvas);
 $$`}</Latex>
 				<div>
 					{' '}
-					Let&apos;s figure out how we got the matrix above. The KITTI{' '}
+					That was a little vague, so let&apos;s go into a little more detail about how we got the
+					transformation matrix. The KITTI{' '}
 					<a href="https://www.cvlibs.net/publications/Geiger2013IJRR.pdf">paper</a> describes the
 					transformation from LiDAR to camera <Latex>{`$i$`}</Latex> as follows, where each transformation
 					matrix has been converted to its homogeneous representation. The difference here is that we have
@@ -410,7 +412,7 @@ $$`}</Latex>
 				</div>
 				<div>
 					{' '}
-					<a className="font-bold">NOTE:</a> We still denote (u,v,z) as 2D space even though we have z since
+					<a className="font-bold">Note:</a> We still denote (u,v,z) as 2D space even though we have z since
 					we are referring to the 2D camera image space with real world depth relative to the camera.
 				</div>
 				<div>
@@ -437,14 +439,14 @@ $$`}</Latex>
   $$`}
 				</Latex>{' '}
 				<div>
-					<a className="font-bold">NOTE:</a> The notation convention is that the starting reference frame is
+					<a className="font-bold">Note:</a> The notation convention is that the starting reference frame is
 					in the subscript and the ending reference frame is in the superscript. The <Latex>{`$1$`}</Latex>{' '}
 					added as the 4th coordinate in homogeneous representation is sometimes referred to as{' '}
 					<Latex>{`$w$`}</Latex>.
 				</div>
 				<br />
-				<h2 id="camera to lidar transformation" className={`${projectClasses.subheading}`}>
-					Camera to LiDAR Transformation
+				<h2 id="camera to lidar" className={`${projectClasses.subheading}`}>
+					Camera to LiDAR
 				</h2>
 				<div>
 					To transition from Camera to LiDAR, or from IMU to LiDAR/Camera, similar transformation steps are
@@ -466,7 +468,8 @@ $$`}</Latex>
                      \\end{bmatrix}
     $$`}
 					</Latex>
-					Next, we need to convert $y$ back to its homogeneous form <Latex>{`$\tilde{y}$`}</Latex>.
+					Next, we need to convert <Latex>{`$y$`}</Latex> back to its homogeneous form{' '}
+					<Latex>{`$\\tilde{y}$`}</Latex>.
 					<Latex>
 						{`$$ 
     \\tilde{y} = (u \\cdot z,\\; v \\cdot z,\\; z,\\; 1) 
@@ -484,8 +487,8 @@ $$`}</Latex>
     $$`}
 					</Latex>
 				</div>
-				<h2 id="imu to lidar transformation" className={`${projectClasses.subheading}`}>
-					IMU to LiDAR Transformation
+				<h2 id="imu to lidar" className={`${projectClasses.subheading}`}>
+					IMU to LiDAR
 				</h2>
 				<div>
 					We will also need to translate IMU to LiDAR, thankfully we have a single matrix{' '}
@@ -508,8 +511,13 @@ $$`}</Latex>
     T^{imu}_{cam2} \\tilde{y}_{cam2} &=  \\tilde{x}_{imu}
 \\end{align*}
 $$`}</Latex>
-				<h2 id="imu to geodetic transformation" className={`${projectClasses.subheading}`}>
-					IMU to Geodetic Transformation
+				<div>
+					We can transform to any camera <Latex>{`$i$`}</Latex> just by replacing{' '}
+					<Latex>{`$P^{cami}_{recti}$`}</Latex> and <Latex>{`$R^{ref}_{rect2}$`}</Latex> with the proper
+					matrices from our calibration file calib_cam_to_cam.txt
+				</div>
+				<h2 id="imu to geodetic" className={`${projectClasses.subheading}`}>
+					IMU to Geodetic
 				</h2>
 				<div>
 					Moreover, transitioning from IMU to Geodetic coordinates involves converting Cartesian coordinates
@@ -554,7 +562,10 @@ $$`}</Latex>
 				className={`${projectClasses.code}`}
 			/>
 			<br />
-
+		
+			<h2 id="load lidar & gpu/imu calibration data" className={`${projectClasses.subheading}`}>
+				Load LiDAR & GPS/IMU Calibration Data
+			</h2>
 			<div className={`${projectClasses.content}`}>
 				Next we obtain the matrix to transform 3D LiDAR/velo (x, y, z) coordinates to 2D camera (u,v)
 				coordinates, and it&apos;s homogeneous inverse that will allow us to transform from camera (u, v, z, 1)
@@ -766,11 +777,11 @@ $$`}</Latex>
 						fairly low. For the remaining IMU values we can wee that the y (horizontal) and z (vertical)
 						have numbers that make sense based on the object locations on the image. Now that we have
 						locations for each object we can reconstruct the scene at each frame, using the LLA locations.
-						Using the folium librarym we can visualize these locations for each object.
+						Using the folium library we can visualize these locations for each object.
 					</div>
 					<br />
 					<Image
-						src="/images/overlay.png"
+						src="/images/folium.png"
 						alt=""
 						width={1000}
 						height={1000}
