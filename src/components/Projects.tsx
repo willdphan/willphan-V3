@@ -118,7 +118,7 @@ const Fun = () => {
 							style={{
 								lineHeight: '1.75rem',
 							}}
-							className="text-md  font-Space text-white  pt-3 uppercase"
+							className="text-md mb-2 font-Space text-white  pt-3 uppercase"
 						>
 							What is this?
 							<br />
@@ -129,8 +129,10 @@ const Fun = () => {
 								lineHeight: '1.75rem',
 							}}
 						>
-							Below is a curated selection of my projects, showcasing my designs and code. Click the
-							project titles for detailed insights into the creation process and conceptual foundations.
+							Below is a curated selection of my projects, showcasing my designs and code.
+							<p className="text-[#d5d5d5] my-2">Press &quot;Show Visuals&quot; to toggle Graphics!</p>
+							Click the project titles for details about the creation process and conceptual foundations.
+							<br />
 							Code snippets and links are also provided for further exploration.
 						</div>
 					</Popover.Dropdown>
