@@ -66,7 +66,7 @@ export const projects = [
 
 const Fun = () => {
 	const [showMore, setShowMore] = useState(false)
-	const [showVisuals, setShowVisuals] = useState(true)
+	const [showVisuals, setShowVisuals] = useState(false)
 	const [selectedTech, setSelectedTech] = useState('ALL')
 	const [opened, { close, open }] = useDisclosure(false)
 
@@ -139,7 +139,7 @@ const Fun = () => {
 				</Popover>
 				<button
 					onClick={() => setShowVisuals(!showVisuals)}
-					className="py-2 px-2 ml-2 rounded-md flex items-center hover:cursor-pointer text-sm font-Space text-[#FFFFFF] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300 animate-pulse"
+					className="py-2 px-2 ml-4 rounded-md flex items-center hover:cursor-pointer text-sm font-Space text-[#FFFFFF] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300 animate-pulse"
 				>
 					{showVisuals ? 'HIDE VISUALS' : 'SHOW VISUALS'}
 				</button>
