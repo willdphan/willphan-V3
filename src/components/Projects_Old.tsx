@@ -64,20 +64,28 @@ export const projects = [
 	},
 ]
 
-const Fun = () => {
+const Old = () => {
 	const [showMore, setShowMore] = useState(false)
-	const [showVisuals, setShowVisuals] = useState(false)
 	const [selectedTech, setSelectedTech] = useState('ALL')
 	const [opened, { close, open }] = useDisclosure(false)
-
 	const filteredProjects = projects.filter(exp => (selectedTech === 'ALL' ? true : exp.technology === selectedTech))
 
 	return (
 		<section className="mt-[1em] mb-20" id="projects">
 			<div className="flex items-center justify-start mb-4">
-				{/* TITLE */}
-				{/* <h2 className="text-sm font-Space text-[#9B9B9B] mx-2  tracking-widest">PROJECTS</h2> */}
-
+				{' '}
+				<h2 className="text-sm font-Space text-[#9B9B9B] mx-2 mr-8 tracking-widest">PROJECTS</h2>{' '}
+				{/* Title next to dropdown */}
+				<select
+					value={selectedTech}
+					onChange={e => setSelectedTech(e.target.value)}
+					className="bg-[#0A0A0A] rounded-md py-2 text-md leading-relaxed text-sm font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300 mr-6"
+				>
+					<option value="ALL">ALL</option>
+					<option value="ML/CV">ML | CV</option>
+					<option value="BLOCKCHAIN">BLOCKCHAIN</option>
+					<option value="OTHER">OTHER</option>
+				</select>
 				<Popover width={350} position="bottom" withArrow opened={opened}>
 					<Popover.Target>
 						<Button
@@ -94,7 +102,7 @@ const Fun = () => {
 								alignItems: 'center',
 								justifyContent: 'center',
 								padding: '1px',
-								borderColor: '#555555',
+								borderColor: '#262626',
 								borderWidth: '0.5px',
 								borderStyle: 'solid',
 							}}
@@ -135,23 +143,6 @@ const Fun = () => {
 						</div>
 					</Popover.Dropdown>
 				</Popover>
-				<button
-					onClick={() => setShowVisuals(!showVisuals)}
-					className="py-2 px-2 ml-2 rounded-md flex items-center hover:cursor-pointer text-sm font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
-				>
-					{showVisuals ? 'HIDE VISUALS' : 'SHOW VISUALS'}
-				</button>
-				{/* FILTER BUTTON */}
-				{/* <select
-					value={selectedTech}
-					onChange={e => setSelectedTech(e.target.value)}
-					className="bg-[#0A0A0A] rounded-md py-2 text-md leading-relaxed text-sm font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300 mr-6"
-				>
-					<option value="ALL">ALL</option>
-					<option value="ML/CV">ML | CV</option>
-					<option value="BLOCKCHAIN">BLOCKCHAIN</option>
-					<option value="OTHER">OTHER</option>
-				</select> */}
 			</div>
 			<Masonry
 				breakpointCols={{ default: 2, 700: 1 }}
@@ -159,50 +150,59 @@ const Fun = () => {
 				columnClassName="my-masonry-grid_column"
 			>
 				{filteredProjects.slice(0, showMore ? filteredProjects.length : 4).map(project => (
-					// py-[1px] px-[1px]
+					// px-7 py-7
+
 					<div
 						key={project.name}
-						className="mb-2 my-masonry-grid_column w-full bg-[#0A0A0A] border-[#262626] border-[1px] rounded-lg py-[1px] px-[1px]  space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
+						className=" mb-2 my-masonry-grid_column w-full bg-[#0A0A0A]  border-[#262626] border-[1px] rounded-lg py-[1px]  px-[1px] space-y-2 transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-gradient-to-br hover:bg-[#2a2929] ] text-[#9B9B9B] hover:text-white"
 					>
-						{showVisuals &&
-							(project.video ? (
-								<div className="video-container">
-									<video src={project.video} controls />
+						{project.video ? (
+							<div className="">
+								{/* <video
+									autoPlay
+									loop
+									muted
+									playsInline
+									className="rounded-lg border-[#0A0A0A] border-[1px]"
+								>
+									<source src={project.video} type="video/mp4" />
+								</video> */}
+							</div>
+						) : (
+							project.image && (
+								<div className="">
+									{/* Specify the width */}
+									{/* Specify the height */}
+									{/* If you want to maintain aspect ratio */}
+									{/* <Image
+										src={project.image}
+										alt={project.name}
+										width={600}
+										height={300}
+										layout="responsive"
+										className="rounded-lg border-[#0A0A0A] border-[1px]"
+									/> */}
 								</div>
-							) : (
-								project.image && (
-									<div className="">
-										{/* Specify the width */}
-										{/* Specify the height */}
-										{/* If you want to maintain aspect ratio */}
-										{/* <Image
-												src={project.image}
-												alt={project.name}
-												width={600}
-												height={300}
-												layout="responsive"
-												className="rounded-lg border-[#0A0A0A] border-[1px]"
-											/> */}
-									</div>
-								)
-							))}
-
+							)
+						)}
+						{/* changes */}
+						{/*  LINK ADDED HERE FOR PROJECTS PAGE */}
 						<Link
 							href={`/projects/${project.name.toLowerCase().replace(/ /g, '_')}-pg?projectName=${
 								project.name
 							}`}
 						>
-							<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest px-7 pt-7">
+							<h2 className="text-xs font-Space text-[#9B9B9B] tracking-widest px-3 pt-3">
 								{project.title}
 							</h2>
 
-							<h1 className="text-md font-Space font-normal text-white px-7 pt-3">{project.name}</h1>
+							<h1 className="text-md font-Space font-normal text-white px-3 pt-3">{project.name}</h1>
 
-							<p className="text-sm leading-7 font-Inter  text-[#9B9B9B] pt-[7px] px-7">
-								{project.description}
-							</p>
+							<p className="text-sm leading-7 font-Inter  text-[#9B9B9B] px-3">{project.description}</p>
 						</Link>
-						<div className="flex space-x-4 pt-1 px-7 pb-7">
+						{/* changes */}
+						<div className="flex space-x-4 pt-1 px-3 pb-3 ">
+							{/* changes */}
 							{project.demo && (
 								<a
 									href={project.demo}
@@ -259,7 +259,7 @@ const Fun = () => {
 									href={project.nbviewer}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="flex items-c<ntr hover:cursor-pointer font-Inter text-sm text-[#54627a] pr-3"
+									className="flex items-center hover:cursor-pointer font-Inter text-sm text-[#54627a] pr-3"
 								>
 									NBViewer
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
@@ -271,6 +271,7 @@ const Fun = () => {
 									</svg>
 								</a>
 							)}
+							{/* Adding the Next.js Image component */}
 						</div>
 					</div>
 				))}
@@ -289,4 +290,4 @@ const Fun = () => {
 	)
 }
 
-export default Fun
+export default Old
