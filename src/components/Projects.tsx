@@ -89,12 +89,12 @@ const Fun = () => {
 								borderRadius: '50%',
 								width: '30px',
 								height: '30px',
-								color: '#9B9B9B',
+								color: '#d5d5d5',
 								display: 'flex',
 								alignItems: 'center',
 								justifyContent: 'center',
 								padding: '1px',
-								borderColor: '#555555',
+								borderColor: '#d5d5d5',
 								borderWidth: '0.5px',
 								borderStyle: 'solid',
 							}}
@@ -139,7 +139,7 @@ const Fun = () => {
 				</Popover>
 				<button
 					onClick={() => setShowVisuals(!showVisuals)}
-					className="py-2 px-2 ml-2 rounded-md flex items-center hover:cursor-pointer text-sm font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300 animate-pulse"
+					className="py-2 px-2 ml-2 rounded-md flex items-center hover:cursor-pointer text-sm font-Space text-[#FFFFFF] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300 animate-pulse"
 				>
 					{showVisuals ? 'HIDE VISUALS' : 'SHOW VISUALS'}
 				</button>
