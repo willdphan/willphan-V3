@@ -158,7 +158,7 @@ const Old = () => {
 					>
 						{project.video ? (
 							<div className="">
-								{/* <video
+							 <video
 									autoPlay
 									loop
 									muted
@@ -166,7 +166,7 @@ const Old = () => {
 									className="rounded-lg border-[#0A0A0A] border-[1px]"
 								>
 									<source src={project.video} type="video/mp4" />
-								</video> */}
+								</video> 
 							</div>
 						) : (
 							project.image && (
@@ -174,14 +174,14 @@ const Old = () => {
 									{/* Specify the width */}
 									{/* Specify the height */}
 									{/* If you want to maintain aspect ratio */}
-									{/* <Image
+									 <Image
 										src={project.image}
 										alt={project.name}
 										width={600}
 										height={300}
 										layout="responsive"
 										className="rounded-lg border-[#0A0A0A] border-[1px]"
-									/> */}
+									/> 
 								</div>
 							)
 						)}

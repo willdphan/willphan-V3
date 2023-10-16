@@ -169,7 +169,15 @@ const Fun = () => {
 						{showVisuals &&
 							(project.video ? (
 								<div className="video-container">
-									<video src={project.video} controls />
+									<video
+										autoPlay
+										loop
+										muted
+										playsInline
+										className="rounded-lg border-[#0A0A0A] border-[1px]"
+									>
+										<source src={project.video} type="video/mp4" />
+									</video>
 								</div>
 							) : (
 								project.image && (
@@ -177,14 +185,14 @@ const Fun = () => {
 										{/* Specify the width */}
 										{/* Specify the height */}
 										{/* If you want to maintain aspect ratio */}
-										{/* <Image
-												src={project.image}
-												alt={project.name}
-												width={600}
-												height={300}
-												layout="responsive"
-												className="rounded-lg border-[#0A0A0A] border-[1px]"
-											/> */}
+										<Image
+											src={project.image}
+											alt={project.name}
+											width={600}
+											height={300}
+											layout="responsive"
+											className="rounded-lg border-[#0A0A0A] border-[1px]"
+										/>
 									</div>
 								)
 							))}
