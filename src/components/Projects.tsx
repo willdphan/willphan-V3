@@ -131,9 +131,9 @@ const Fun = () => {
 						>
 							Below is a curated selection of my projects, showcasing my designs and code.
 							<p className="text-[#d5d5d5] my-2">Press &quot;Show Visuals&quot; to toggle Graphics!</p>
-							Click the project titles for details about the creation process and conceptual foundations.
+							{/* Click the project titles for details about the creation process and conceptual foundations.
 							<br />
-							Code snippets and links are also provided for further exploration.
+							Code snippets and links are also provided for further exploration. */}
 						</div>
 					</Popover.Dropdown>
 				</Popover>
