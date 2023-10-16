@@ -139,7 +139,7 @@ const Fun = () => {
 				</Popover>
 				<button
 					onClick={() => setShowVisuals(!showVisuals)}
-					className="py-2 px-2 ml-2 rounded-md flex items-center hover:cursor-pointer text-sm font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300"
+					className="py-2 px-2 ml-2 rounded-md flex items-center hover:cursor-pointer text-sm font-Space text-[#9B9B9B] tracking-widest hover:bg-[#2a2929] hover:text-white transform transition duration-300 animate-pulse"
 				>
 					{showVisuals ? 'HIDE VISUALS' : 'SHOW VISUALS'}
 				</button>
