@@ -10,7 +10,6 @@ import Link from 'next/link'
 import Latex from 'react-latex-next'
 import 'katex/dist/katex.min.css'
 
-
 const Project = () => {
 	const load = `
 with open('2011_10_03/calib_cam_to_cam.txt','r') as f:
@@ -543,8 +542,8 @@ $$`}</Latex>
 				</div>
 			</div>
 			<br />
-			<h2 id="load camera calibration data" className={`${projectClasses.subheading}`}>
-				Load Camera Calibration Data
+			<h2 id="camera calibration data" className={`${projectClasses.subheading}`}>
+				Camera Calibration Data
 			</h2>
 			<div className={`${projectClasses.content}`}>
 				With the code below, we load the camera data. The code snippet reads calibration data from
@@ -562,9 +561,9 @@ $$`}</Latex>
 				className={`${projectClasses.code}`}
 			/>
 			<br />
-		
-			<h2 id="load lidar & gpu/imu calibration data" className={`${projectClasses.subheading}`}>
-				Load LiDAR & GPS/IMU Calibration Data
+
+			<h2 id="lidar & gpu/imu calibration data" className={`${projectClasses.subheading}`}>
+				LiDAR & GPS/IMU Calibration Data
 			</h2>
 			<div className={`${projectClasses.content}`}>
 				Next we obtain the matrix to transform 3D LiDAR/velo (x, y, z) coordinates to 2D camera (u,v)
