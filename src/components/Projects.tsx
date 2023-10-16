@@ -160,7 +160,7 @@ const Fun = () => {
 				className="my-masonry-grid flex gap-2 relative"
 				columnClassName="my-masonry-grid_column"
 			>
-				{filteredProjects.slice(0, showMore ? filteredProjects.length : 4).map(project => (
+				{filteredProjects.slice(0, showMore ? filteredProjects.length : 6).map(project => (
 					// py-[1px] px-[1px]
 					<div
 						key={project.name}
