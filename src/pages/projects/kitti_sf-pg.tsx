@@ -231,9 +231,22 @@ plt.imshow(canvas);
 					</li>
 				</ul>
 				<div>
-					For further details, a readme regarding the KITTI data is available here, and a paper elucidating
-					the data collection and coordinate systems can be found here. Now, let&apos;s proceed with data
-					acquisition and dive in.
+					For further details, a{' '}
+					<Link
+						className={projectClasses.underline}
+						href="https://github.com/yanii/kitti-pcl/blob/master/KITTI_README.TXT"
+					>
+						README
+					</Link>{' '}
+					regarding the KITTI data is available, and a paper elucidating the data collection and coordinate
+					systems can be found{' '}
+					<Link
+						className={projectClasses.underline}
+						href="https://www.cvlibs.net/publications/Geiger2013IJRR.pdf"
+					>
+						here
+					</Link>
+					. Now, let&apos;s proceed with data acquisition and dive in.
 				</div>
 			</div>
 
@@ -262,13 +275,29 @@ plt.imshow(canvas);
 			<div className={`${projectClasses.content}`}>
 				<div>
 					The KITTI raw dataset encompasses data from four different cameras (comprising two grayscale and two
-					RGB cameras), a Velodyne LiDAR, and the OXTS GPS navigation system.
+					RGB cameras), a Velodyne LiDAR, and the{' '}
+					<Link
+						className={projectClasses.underline}
+						href="https://www.oxts.com/wp-content/uploads/2020/03/rtman-200302.pdf"
+					>
+						OXTS
+					</Link>{' '}
+					GPS navigation system.
 				</div>
 				<div>
 					Here are the respective update rates:
 					<ul>
 						<li>• RGB camera: 15 Hz (15 frames per second)</li>
-						<li>• OXTS GPS navigation system: 100 Hz</li>
+						<li>
+							•{' '}
+							<Link
+								className={projectClasses.underline}
+								href="https://www.oxts.com/wp-content/uploads/2020/03/rtman-200302.pdf"
+							>
+								OXTS
+							</Link>{' '}
+							GPS navigation system: 100 Hz
+						</li>
 						<li>• Velodyne LiDAR: 10 Hz</li>{' '}
 					</ul>
 				</div>
@@ -334,9 +363,16 @@ plt.imshow(canvas);
 				<div>
 					To convert a point from LiDAR to camera image space, a sequence of transformations is performed to
 					account for the differing orientations and positions of the LiDAR and camera systems on the vehicle.
-					Initially, a rigid body transformation, combining rotation and translation, is carried out from
-					LiDAR to camera 0 frame. A rigid transformation is essentially a rotation followed by a translation.
-					A rigid transformation matrix can combine these two components like so:
+					Initially, a{' '}
+					<Link
+						className={projectClasses.underline}
+						href="https://www.seas.upenn.edu/~meam620/slides/kinematics0.pdf"
+					>
+						rigid body transformation
+					</Link>
+					, combining rotation and translation, is carried out from LiDAR to camera 0 frame. A rigid
+					transformation is essentially a rotation followed by a translation. A rigid transformation matrix
+					can combine these two components like so:
 				</div>
 				<Latex>
 					{`$$
@@ -415,9 +451,16 @@ $$`}</Latex>
 					we are referring to the 2D camera image space with real world depth relative to the camera.
 				</div>
 				<div>
-					Where (u,v,z) are the final camera coordinates after the rectification and projection transforms. In
-					order to transform from homogeneous image coordinates <Latex>{`$\\tilde{y}$`}</Latex> to true (u, v,
-					z) image coordinates y, we will need to normalize by the depth and drop the 1, like so:
+					Where (u,v,z) are the final camera coordinates after the rectification and{' '}
+					<Link
+						className={projectClasses.underline}
+						href="https://www.seas.upenn.edu/~meam620/slides/kinematics0.pdf"
+					>
+						projection
+					</Link>{' '}
+					transforms. In order to transform from homogeneous image coordinates <Latex>{`$\\tilde{y}$`}</Latex>{' '}
+					to true (u, v, z) image coordinates y, we will need to normalize by the depth and drop the 1, like
+					so:
 				</div>
 				<Latex>{`$$
 y = \\left( \\frac{\\tilde{u}}{z}, \\frac{\\tilde{v}}{z}, z \\right)
@@ -549,8 +592,14 @@ $$`}</Latex>
 				With the code below, we load the camera data. The code snippet reads calibration data from
 				calib_cam_to_cam.txt, extracts various transformation matrices, and transforms them into homogeneous
 				coordinates. It obtains a projection matrix for mapping rectified left camera to left camera
-				coordinates, a rectified rotation matrix for the left camera, and a rigid body transformation matrix
-				from Camera 0 to Camera 2, adjusting them for homogeneous coordinate transformations.
+				coordinates, a rectified rotation matrix for the left camera, and a{' '}
+				<Link
+					className={projectClasses.underline}
+					href="https://www.seas.upenn.edu/~meam620/slides/kinematics0.pdf"
+				>
+					rigid body transformation
+				</Link>{' '}
+				matrix from Camera 0 to Camera 2, adjusting them for homogeneous coordinate transformations.
 			</div>
 			<br />
 			<CodeHighlight
@@ -632,9 +681,21 @@ $$`}</Latex>
 						We will employ a function from our KITTI utilities script, utilizing our rotation matrix 𝑇 to
 						transform LiDAR (x,y,z) coordinates into camera (u,v,z) coordinates. This function also manages
 						the exclusion of points that venture outside the cameras Field of View (FOV). Additionally, it
-						facilitates the removal of the ground plane from the LiDAR point cloud using the RANSAC
-						algorithm from sklearn. Essentially, RANSAC aims to identify the most extensive plane within the
-						point cloud, which we then eliminate.
+						facilitates the removal of the ground plane from the LiDAR point cloud using the{' '}
+						<Link
+							className={projectClasses.underline}
+							href="https://en.wikipedia.org/wiki/Random_sample_consensus"
+						>
+							RANSAC
+						</Link>{' '}
+						algorithm from sklearn. Essentially,{' '}
+						<Link
+							className={projectClasses.underline}
+							href="https://en.wikipedia.org/wiki/Random_sample_consensus"
+						>
+							RANSAC
+						</Link>{' '}
+						aims to identify the most extensive plane within the point cloud, which we then eliminate.
 					</div>
 
 					<br />
@@ -650,9 +711,22 @@ $$`}</Latex>
 
 					<div>3. Associate projected (u,v,z) points with object centers.</div>
 					<div>
-						To associate the detected object centers with the (u,v,z) points, we evaluate the L2 norm
+						To associate the detected object centers with the (u,v,z) points, we evaluate the{' '}
+						<Link
+							className={projectClasses.underline}
+							href="https://montjoile.medium.com/l0-norm-l1-norm-l2-norm-l-infinity-norm-7a7d18a4f40c"
+						>
+							L2 Norm
+						</Link>{' '}
 						between the object bounding box center location and all projected LiDAR (u, v) points. We then
-						select the point with the smallest L2 norm.
+						select the point with the smallest{' '}
+						<Link
+							className={projectClasses.underline}
+							href="https://montjoile.medium.com/l0-norm-l1-norm-l2-norm-l-infinity-norm-7a7d18a4f40c"
+						>
+							L2 Norm
+						</Link>
+						.
 					</div>
 
 					<br />
@@ -676,9 +750,15 @@ $$`}</Latex>
 					<div>
 						Now, the goal is to change the object IMU (x, y, z) coordinates to Azimuth, Elevation, and
 						Range. Following this, pymap3d can be employed to convert the object centers to Latitude,
-						Longitude, and Altitude. While the KITTI dataset doesn&apos;t clarify the type of altitude, the
-						OXTS documentation mentions the measurement can be either geoidal (MSL) or ellipsoidal (HAE).
-						For more details, refer to this link. We&apos;ll proceed under the assumption that the type of
+						Longitude, and Altitude. While the KITTI dataset doesn&apos;t clarify the type of altitude, the{' '}
+						<Link
+							className={projectClasses.underline}
+							href="https://www.oxts.com/wp-content/uploads/2020/03/rtman-200302.pdf"
+						>
+							OXTS
+						</Link>{' '}
+						documentation mentions the measurement can be either geoidal (MSL) or ellipsoidal (HAE). For
+						more details, refer to this link. We&apos;ll proceed under the assumption that the type of
 						altitude is not critical.
 					</div>
 				</div>
