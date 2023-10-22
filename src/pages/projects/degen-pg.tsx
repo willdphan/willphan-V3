@@ -9,7 +9,8 @@ import { CodeHighlightTabs } from '@mantine/code-highlight'
 import Link from 'next/link'
 
 const Project = () => {
-	const fetchnfts = `const fetchNfts = async address => {
+	const fetchnfts = `
+const fetchNfts = async address => {
 	try {
 			// fetch
 			const res = await fetch('/api/nftsAxios?address=$[some_address]')
@@ -22,64 +23,66 @@ const Project = () => {
 			console.error(error)
 		}
 	}`
-	const nftcard = `const NftCard = ({ title, id, image, value, last }) => {
-		const formatText = text => {
-			if (text && text.length > 4) {
-				return text.slice(0, 4) + '...'
-			}
-			return text
+	const nftcard = `
+const NftCard = ({ title, id, image, value, last }) => {
+	const formatText = text => {
+		if (text && text.length > 4) {
+			return text.slice(0, 4) + '...'
 		}
-	
-		return (
-			<section id="learnings" className="w-full px-1 flex hover:cursor hover:cursor-pointer">
-				<div className="columns-1 my-2 w-full flex items-center justify-center">
-					<div className="w-full max-w-[24em] sm:max-w-[30em] bg-white transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-[#F8F8F8] text-[#9B9B9B]  mb-2 font-Mono uppercase text-lg py-5">
-						<motion.div
-							exit={{ opacity: 0 }}
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							transition={{ duration: 0.5 }}
-							className="pl-10 space-y-2 flex space-x-10 uppercase ease-in-out"
-						>
-							<Image width={70} height={70} src={image} alt="" />
-							<div className="flex flex-col">
-								<h1 className="text-black text-wrap max-w-[10em] sm:max-w-full ">{title}</h1>
-								<div className="hidden sm:block sm:inline-flex space-x-3 ">
-									<p className="text-gray-400">ID:{formatText(id)}</p>
-									{value && <p className="text-gray-400">| FP:{Number(value).toFixed(3)}Ξ</p>}
-									{last && <p className="text-gray-400">| LS:{Number(last).toFixed(3)}Ξ</p>}
-								</div>
+		return text
+	}
+
+	return (
+		<section id="learnings" className="w-full px-1 flex hover:cursor hover:cursor-pointer">
+			<div className="columns-1 my-2 w-full flex items-center justify-center">
+				<div className="w-full max-w-[24em] sm:max-w-[30em] bg-white transform transition duration-300 sm:hover:scale-[1.01] sm:hover:bg-[#F8F8F8] text-[#9B9B9B]  mb-2 font-Mono uppercase text-lg py-5">
+					<motion.div
+						exit={{ opacity: 0 }}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ duration: 0.5 }}
+						className="pl-10 space-y-2 flex space-x-10 uppercase ease-in-out"
+					>
+						<Image width={70} height={70} src={image} alt="" />
+						<div className="flex flex-col">
+							<h1 className="text-black text-wrap max-w-[10em] sm:max-w-full ">{title}</h1>
+							<div className="hidden sm:block sm:inline-flex space-x-3 ">
+								<p className="text-gray-400">ID:{formatText(id)}</p>
+								{value && <p className="text-gray-400">| FP:{Number(value).toFixed(3)}Ξ</p>}
+								{last && <p className="text-gray-400">| LS:{Number(last).toFixed(3)}Ξ</p>}
 							</div>
-						</motion.div>
-					</div>
+						</div>
+					</motion.div>
 				</div>
-			</section>
-		)
-	}`
-	const face = `const Home: FC = () => {
-		return (
-			<div className="flex flex-col items-center  bg-white w-full min-h-screen ">
-				<Enter />
-				<div className="max-h-[55vh] flex flex-col lg:flex-row pt-36 w-full justify-center ">
-					<h3 className="hidden lg:block text-black uppercase font-Mono xl:mr-36 pt-2 text-lg">William Phan</h3>
-					<div>
-						<motion.div
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							exit={{ opacity: 0 }}
-							transition={{ duration: 1 }}
-							className="mb-64 mt-28 mx-5 lg:mt-0  pl-6 lg:pl-10 justify-center text-2xl md:text-4xl lg:text-[2.8rem] text-gray-400 bg-blue font-Mono uppercase max-w-[16em] sm:max-w-[20em] lg:max-w-[17em] mr-5  transition-all"
-							style={{ lineHeight: '1.3' }}
-						>
-							Uncover your NFT assets and their stories. Type in your wallet. Use Degen now.
-						</motion.div>
-					</div>
-				</div>
-				{/* Use props below */}
-				<Menu />
 			</div>
-		)
-	}`
+		</section>
+	)
+}`
+	const face = `
+const Home: FC = () => {
+	return (
+		<div className="flex flex-col items-center  bg-white w-full min-h-screen ">
+			<Enter />
+			<div className="max-h-[55vh] flex flex-col lg:flex-row pt-36 w-full justify-center ">
+				<h3 className="hidden lg:block text-black uppercase font-Mono xl:mr-36 pt-2 text-lg">William Phan</h3>
+				<div>
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						transition={{ duration: 1 }}
+						className="mb-64 mt-28 mx-5 lg:mt-0  pl-6 lg:pl-10 justify-center text-2xl md:text-4xl lg:text-[2.8rem] text-gray-400 bg-blue font-Mono uppercase max-w-[16em] sm:max-w-[20em] lg:max-w-[17em] mr-5  transition-all"
+						style={{ lineHeight: '1.3' }}
+					>
+						Uncover your NFT assets and their stories. Type in your wallet. Use Degen now.
+					</motion.div>
+				</div>
+			</div>
+			{/* Use props below */}
+			<Menu />
+		</div>
+	)
+}`
 
 	const router = useRouter()
 	const { projectName } = router.query
@@ -145,7 +148,7 @@ const Project = () => {
 
 			<br />
 			<CodeHighlight
-				code={`// structure${fetchnfts}`}
+				code={`${fetchnfts}`}
 				language="tsx"
 				copyLabel="Copy code"
 				copiedLabel="Copied!"
@@ -213,10 +216,12 @@ const Project = () => {
 
 			<br />
 
-			<CodeHighlight
-				code={`// structure${face}`}
-				language="tsx"
-				copyLabel="Copy code"
+			<CodeHighlightTabs
+				withExpandButton
+				defaultExpanded={false}
+				expandCodeLabel="Show full code"
+				collapseCodeLabel="Show less"
+				code={[{ fileName: 'Home.tsx', code: face, language: 'tsx' }]}
 				copiedLabel="Copied!"
 				className={`${projectClasses.code}`}
 			/>
