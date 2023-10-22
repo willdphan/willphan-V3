@@ -212,13 +212,13 @@ const Fun = () => {
 								{project.description}
 							</p>
 						</Link>
-						<div className="flex space-x-4 pt-1 px-7 pb-7">
+						<div className="flex space-x-4 pt-1 px-7 pb-7 ">
 							{project.demo && (
 								<a
 									href={project.demo}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="flex items-center hover:cursor-pointer font-Inter text-sm text-[#54627a] pr-3"
+									className="	 flex items-center hover:cursor-pointer font-Inter text-sm text-[#54627a] pr-3"
 								>
 									Demo
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
