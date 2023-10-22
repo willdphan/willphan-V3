@@ -265,7 +265,7 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 					>
 						here
 					</Link>
-					. <code>kitti_utils.py</code>functions can be found{' '}
+					. <code>kitti_utils.py</code> functions can be found{' '}
 					<Link
 						className={projectClasses.underline}
 						href="https://github.com/itberrios/CV_tracking/blob/main/kitti_tracker/kitti_utils.py"
@@ -661,10 +661,11 @@ $$`}</Latex>
 				LiDAR & GPS/IMU Calibration Data
 			</h2>
 			<div className={`${projectClasses.content}`}>
-				Next we obtain the matrix to transform 3D LiDAR/velo (x, y, z) coordinates to 2D camera (u,v)
+				Next we obtain the matrix to transform 3D LiDAR/Velo (x, y, z) coordinates to 2D camera (u,v)
 				coordinates, and it&apos;s homogeneous inverse that will allow us to transform from camera (u, v, z, 1)
 				back to LiDAR (x, y, z, 1). With this, we can get the transformation matrix for IMU to camera and camera
-				to IMU.
+				to IMU. We use the <code>get_rigid_transformation()</code> function from the <code>kitti_utils.py</code>{' '}
+				file mentioned at the beginning of the article.
 			</div>
 			<br />
 			<CodeHighlight
@@ -745,12 +746,12 @@ $$`}</Latex>
 					</div>
 
 					<br />
-					<CodeHighlight
-						code={`${uvz}`}
-						language="py"
-						copyLabel="Copy code"
-						copiedLabel="Copied!"
-						className={`${projectClasses.code}`}
+					<CodeHighlightTabs
+						withExpandButton
+						defaultExpanded={false}
+						expandCodeLabel="Show full code"
+						collapseCodeLabel="Show less"
+						code={[{ fileName: 'get_uvz_centers', code: uvz, language: 'py' }]}
 					/>
 
 					<br />
@@ -776,12 +777,12 @@ $$`}</Latex>
 					</div>
 
 					<br />
-					<CodeHighlight
-						code={`${three}`}
-						language="py"
-						copyLabel="Copy code"
-						copiedLabel="Copied!"
-						className={`${projectClasses.code}`}
+					<CodeHighlightTabs
+						withExpandButton
+						defaultExpanded={false}
+						expandCodeLabel="Show full code"
+						collapseCodeLabel="Show less"
+						code={[{ fileName: 'get_detection_coords', code: three, language: 'py' }]}
 					/>
 
 					<br />
@@ -923,12 +924,13 @@ $$`}</Latex>
 					</div>
 				</div>
 				<br />
-				<CodeHighlight
-					code={`${draw}`}
-					language="py"
-					copyLabel="Copy code"
-					copiedLabel="Copied!"
-					className={`${projectClasses.code}`}
+
+				<CodeHighlightTabs
+					withExpandButton
+					defaultExpanded={false}
+					expandCodeLabel="Show full code"
+					collapseCodeLabel="Show less"
+					code={[{ fileName: 'draw_scenario', code: draw, language: 'tsx' }]}
 				/>
 
 				<br />

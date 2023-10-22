@@ -57,41 +57,43 @@ export default function Home() {
         fetchAndUpdateTranscript();
     }, []);
     `
-	const fetchdisplay = `
-    useEffect(() => {
-        const fetchAndUpdateTranscript = async () => {
-          setLoading(true);
-          try {
-            const response = await fetch('/api/listen?timestamp=$[lastUpdateTime]');
-            const text = await response.text();
-            console.log("Transcript:", text);
-    
-            if (!text) {
-              setLoading(false);
-              setTimeout(fetchAndUpdateTranscript, 1000);
-              return;
-            }
-    
-            const lines = text.split("\n");
-    
-            let messages = "";
-    
-            for (let i = 0; i < lines.length; i += 3) {
-              messages += lines.slice(i, i + 3).join("\n") + "\n";
-            }
-    
-            if (messages !== "") {
-              setDisplayedMessage(messages);
-              setLastUpdateTime(Date.now());
-            }
-          } catch (err) {
-            console.error(err);
-          }
-    
-          setLoading(false);
-          setTimeout(fetchAndUpdateTranscript, 1000);
-        };
-    `
+
+	const fdisplay = `
+useEffect(() => {
+	const fetchAndUpdateTranscript = async () => {
+		setLoading(true);
+		try {
+		const response = await fetch('/api/listen?timestamp=$[lastUpdateTime]');
+		const text = await response.text();
+		console.log("Transcript:", text);
+
+		if (!text) {
+			setLoading(false);
+			setTimeout(fetchAndUpdateTranscript, 1000);
+			return;
+		}
+
+		const lines = text.split("\n");
+
+		let messages = "";
+
+		for (let i = 0; i < lines.length; i += 3) {
+			messages += lines.slice(i, i + 3).join("\n") + "\n";
+		}
+
+		if (messages !== "") {
+			setDisplayedMessage(messages);
+			setLastUpdateTime(Date.now());
+		}
+		} catch (err) {
+		console.error(err);
+		}
+
+		setLoading(false);
+		setTimeout(fetchAndUpdateTranscript, 1000);
+	};
+	`
+
 	const email = `
 def announce_unread_emails():
     unread_emails = list_unread_emails()
@@ -223,9 +225,7 @@ def send_sms(sms_text, recipient_phone_number):
 				defaultExpanded={false}
 				expandCodeLabel="Show full code"
 				collapseCodeLabel="Show less"
-				code={[{ fileName: 'index.tsx', code: 'fetchdisplay', language: 'tsx' }]}
-				copiedLabel="Copied!"
-				className={`${projectClasses.code}`}
+				code={[{ fileName: 'fetch.tsx', code: fdisplay, language: 'tsx' }]}
 			/>
 
 			<br />
