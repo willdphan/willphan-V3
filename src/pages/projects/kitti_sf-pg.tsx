@@ -282,15 +282,15 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 					>
 						README
 					</Link>{' '}
-					regarding the KITTI data is available, and a paper elucidating the data collection and coordinate
-					systems can be found{' '}
+					regarding the KITTI data is available, with a{' '}
 					<Link
 						className={projectClasses.underline}
 						href="https://www.cvlibs.net/publications/Geiger2013IJRR.pdf"
 					>
-						here
+						paper{' '}
 					</Link>
-					. Now, let&apos;s proceed with data acquisition and dive in.
+					elucidating the data collection and coordinate systems. Now, let&apos;s proceed with data
+					acquisition and dive in.
 				</div>
 			</div>
 
