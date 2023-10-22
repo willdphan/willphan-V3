@@ -258,6 +258,16 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 					</li>
 				</ul>
 				<div>
+					.txt files used for data conversion and interpretation between the devices can be found{' '}
+					<Link
+						className={projectClasses.underline}
+						href="https://github.com/MasazI/DeepLearning_TensorFlow/tree/master/KITTI/data/2011_09_26"
+					>
+						here
+					</Link>
+					.{' '}
+				</div>
+				<div>
 					For further details, a{' '}
 					<Link
 						className={projectClasses.underline}
@@ -336,7 +346,7 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 
 				<div>
 					According to the KITTI dataset documentation, the maximal time discrepancy between the
-					camera/velodyne and gps/imu is capped at 5ms. Although more accurate measurements could be derived
+					camera/velodyne and GPS/IMU is capped at 5ms. Although more accurate measurements could be derived
 					through interpolation, we will forgo addressing these minor differences for the sake of simplicity,
 					as the slight error from the imperfect synchronization won&apos;t significantly affect our
 					assessments. This notion will be further validated as we later project LiDAR points onto the camera
