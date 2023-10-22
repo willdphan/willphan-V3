@@ -200,6 +200,33 @@ canvas = np.zeros((canvas_height, canvas_width, 3), dtype=np.uint8)
 draw_scenario(canvas, imu_xyz, sf=12)
 plt.imshow(canvas);
 `
+	const three = `
+def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True):
+
+    ## 1. compute detections in the left image
+    detections = model(image)
+
+    # draw boxes on image
+    if draw_boxes:
+        detections.show() 
+
+    # get bounding box locations (x1,y1), (x2,y2) Prob, class
+    bboxes = detections.xyxy[0].cpu() # remove from GPU
+
+    # get LiDAR points and transform them to image/camera space
+    velo_uvz = project_velobin2uvz(bin_path, 
+                                   T_velo_cam2, 
+                                   image, 
+                                   remove_plane=True)
+
+    # get uvz centers for detected objects
+    bboxes = get_uvz_centers(image, 
+                             velo_uvz, 
+                             bboxes, 
+                             draw=draw_depth)
+
+    return bboxes, velo_uvz
+`
 
 	const router = useRouter()
 	const { projectName } = router.query
@@ -556,7 +583,7 @@ $$`}</Latex>
 				<div>
 					We can transform to any camera <Latex>{`$i$`}</Latex> just by replacing{' '}
 					<Latex>{`$P^{cami}_{recti}$`}</Latex> and <Latex>{`$R^{ref}_{rect2}$`}</Latex> with the proper
-					matrices from our calibration file calib_cam_to_cam.txt
+					matrices from our calibration file <Code>calib_cam_to_cam.txt</Code>
 				</div>
 				<h2 id="imu to geodetic" className={`${projectClasses.subheading}`}>
 					IMU to Geodetic
@@ -589,17 +616,19 @@ $$`}</Latex>
 				Camera Calibration Data
 			</h2>
 			<div className={`${projectClasses.content}`}>
-				With the code below, we load the camera data. The code snippet reads calibration data from
-				calib_cam_to_cam.txt, extracts various transformation matrices, and transforms them into homogeneous
-				coordinates. It obtains a projection matrix for mapping rectified left camera to left camera
-				coordinates, a rectified rotation matrix for the left camera, and a{' '}
-				<Link
-					className={projectClasses.underline}
-					href="https://www.seas.upenn.edu/~meam620/slides/kinematics0.pdf"
-				>
-					rigid body transformation
-				</Link>{' '}
-				matrix from Camera 0 to Camera 2, adjusting them for homogeneous coordinate transformations.
+				<div>
+					With the code below, we load the camera data. The code snippet reads calibration data from
+					<Code>calib_cam_to_cam.txt</Code>, extracts various transformation matrices, and transforms them
+					into homogeneous coordinates. It obtains a projection matrix for mapping rectified left camera to
+					left camera coordinates, a rectified rotation matrix for the left camera, and a{' '}
+					<Link
+						className={projectClasses.underline}
+						href="https://www.seas.upenn.edu/~meam620/slides/kinematics0.pdf"
+					>
+						rigid body transformation
+					</Link>{' '}
+					matrix from Camera 0 to Camera 2, adjusting them for homogeneous coordinate transformations.
+				</div>
 			</div>
 			<br />
 			<CodeHighlight
@@ -675,7 +704,7 @@ $$`}</Latex>
 					</div>
 					<div>The fundamental steps are:</div>
 
-					<div>1. Identify objects in the camera image.</div>
+					<div>1. Identify objects in the camera image with the YOLO model defined above.</div>
 					<div>2. Map LiDAR point cloud to camera (u,v,z) coordinates.</div>
 					<div>
 						We will employ a function from our KITTI utilities script, utilizing our rotation matrix 𝑇 to
@@ -731,7 +760,7 @@ $$`}</Latex>
 
 					<br />
 					<CodeHighlight
-						code={`${imu_arr}`}
+						code={`${three}`}
 						language="py"
 						copyLabel="Copy code"
 						copiedLabel="Copied!"
