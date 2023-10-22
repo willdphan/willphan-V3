@@ -258,7 +258,7 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 					</li>
 				</ul>
 				<div>
-					.txt files used for data conversion and interpretation between the devices can be found{' '}
+					<code>.txt</code> files used for data conversion and interpretation between the devices can be found{' '}
 					<Link
 						className={projectClasses.underline}
 						href="https://github.com/MasazI/DeepLearning_TensorFlow/tree/master/KITTI/data/2011_09_26"
