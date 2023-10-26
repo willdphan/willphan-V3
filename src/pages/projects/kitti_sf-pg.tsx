@@ -602,6 +602,7 @@ $$`}</Latex>
 					<Latex>{`$P^{cami}_{recti}$`}</Latex> and <Latex>{`$R^{ref}_{rect2}$`}</Latex> with the proper
 					matrices from our calibration file <Code>calib_cam_to_cam.txt</Code>
 				</div>
+				<br />
 				<h2 id="imu to geodetic" className={`${projectClasses.subheading}`}>
 					IMU to Geodetic
 				</h2>
