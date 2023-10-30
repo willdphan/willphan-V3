@@ -630,8 +630,8 @@ $$`}</Latex>
 				</div>
 			</div>
 			<br />
-			<h2 id="camera calibration data" className={`${projectClasses.subheading}`}>
-				Camera Calibration Data
+			<h2 id="camera calib data" className={`${projectClasses.subheading}`}>
+				Camera Calib Data
 			</h2>
 			<div className={`${projectClasses.content}`}>
 				<div>
@@ -658,8 +658,8 @@ $$`}</Latex>
 			/>
 			<br />
 
-			<h2 id="lidar & gpu/imu calibration data" className={`${projectClasses.subheading}`}>
-				LiDAR & GPS/IMU Calibration Data
+			<h2 id="lidar, gpu/imu calib data" className={`${projectClasses.subheading}`}>
+				LiDAR, GPS/IMU Calib Data
 			</h2>
 			<div className={`${projectClasses.content}`}>
 				Next we obtain the matrix to transform 3D LiDAR/Velo (x, y, z) coordinates to 2D camera (u,v)
