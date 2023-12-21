@@ -51,7 +51,7 @@ export default function Layout({ children, projectName, publicationDate }) {
 
 	return (
 		<div className="bg-[#0A0A0A] min-h-[100vh] h-full pt-20 flex flex-col items-center pb-20">
-			<main className="px-0 w-full max-w-2xl">
+			<main className="px-10 md:px-0 w-full max-w-2xl">
 				{/* Table of Contents */}
 				<div className="">
 					<div className="fixed">
