@@ -10,7 +10,6 @@ import Link from 'next/link'
 import Latex from 'react-latex-next'
 import 'katex/dist/katex.min.css'
 
-
 const Project = () => {
 	const load = `
 with open('2011_10_03/calib_cam_to_cam.txt','r') as f:
@@ -236,18 +235,18 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 
 	return (
 		<Layout projectName={projectName as string} publicationDate={publicationDate}>
-			<p className={`${projectClasses.content}`}>
-				<p>
+			<div className={`${projectClasses.content}`}>
+				<div>
 					In this exploration of the KITTI dataset, we delve into 3D object detection utilizing Early Sensor
-					Fusion or Early Fusion, a technique directed at integrating raw data from perse sources prior to
+					Fusion or Early Fusion, a technique directed at integrating raw data from diverse sources prior to
 					performing detection.
-				</p>{' '}
-				<p>
+				</div>{' '}
+				<div>
 					Contrastingly, Late Fusion entails the initial detection of objects, followed by a fusion of these
 					detections. In this scenario, a variant fusion method is employed where objects are first detected
 					in camera images, and subsequently, their centers are fused with LiDAR data to obtain depth
 					information.
-				</p>
+				</div>
 				<ul>
 					Outlined below are the principal steps:
 					<li>1. Object detection in camera images (Detection)</li>
@@ -258,15 +257,15 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 						system insight into the physical locations of objects within the real world.
 					</li>
 				</ul>
-				<p>
-					<code>.txt</code> files used for data conversion and interpretation between the devices can be found{' '}
+				<div>
+					<Code>.txt</Code> files used for data conversion and interpretation between the devices can be found{' '}
 					<Link
 						className={projectClasses.underline}
 						href="https://github.com/MasazI/DeepLearning_TensorFlow/tree/master/KITTI/data/2011_09_26"
 					>
 						here
 					</Link>
-					. <code>kitti_utils.py</code> functions can be found{' '}
+					. <Code>kitti_utils.py</Code> functions can be found{' '}
 					<Link
 						className={projectClasses.underline}
 						href="https://github.com/itberrios/CV_tracking/blob/main/kitti_tracker/kitti_utils.py"
@@ -274,8 +273,8 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 						here
 					</Link>
 					.{' '}
-				</p>
-				<p>
+				</div>
+				<div>
 					For further details, a{' '}
 					<Link
 						className={projectClasses.underline}
@@ -291,9 +290,9 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 						paper{' '}
 					</Link>
 					elucidating the data collection and coordinate systems. Now, let&apos;s proceed with data
-					acquisition and pe in.
-				</p>
-			</p>
+					acquisition and dive in.
+				</div>
+			</div>
 
 			<br />
 
@@ -317,8 +316,8 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 				Data Overview
 			</h2>
 
-			<p className={`${projectClasses.content}`}>
-				<p>
+			<div className={`${projectClasses.content}`}>
+				<div>
 					The KITTI raw dataset encompasses data from four different cameras (comprising two grayscale and two
 					RGB cameras), a Velodyne LiDAR, and the{' '}
 					<Link
@@ -328,8 +327,8 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 						OXTS
 					</Link>{' '}
 					GPS navigation system.
-				</p>
-				<p>
+				</div>
+				<div>
 					Here are the respective update rates:
 					<ul>
 						<li>• RGB camera: 15 Hz (15 frames per second)</li>
@@ -345,33 +344,33 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 						</li>
 						<li>• Velodyne LiDAR: 10 Hz</li>{' '}
 					</ul>
-				</p>
-				<p>
+				</div>
+				<div>
 					The synchronization of data is aligned with the LiDAR, given its lowest update rate among the
 					devices. However, the synchrony among the camera, GPS/IMU (navigation), and LiDAR isn&apos;t exact,
 					despite utilizing the synchronized raw data.{' '}
-				</p>
+				</div>
 
-				<p>
+				<div>
 					According to the KITTI dataset documentation, the maximal time discrepancy between the
 					camera/velodyne and GPS/IMU is capped at 5ms. Although more accurate measurements could be derived
 					through interpolation, we will forgo addressing these minor differences for the sake of simplicity,
 					as the slight error from the imperfect synchronization won&apos;t significantly affect our
 					assessments. This notion will be further validated as we later project LiDAR points onto the camera
 					images, where no noticeable discrepancy will be observed.
-				</p>
-			</p>
+				</div>
+			</div>
 			<br />
 			<h2 id="structure" className={`${projectClasses.subheading}`}>
 				Camera | LiDAR | IMU Data
 			</h2>
-			<p className={`${projectClasses.content}`}>
-				<p>
+			<div className={`${projectClasses.content}`}>
+				<div>
 					Understanding the varied reference frames used by the Camera, LiDAR, and IMU, positioned differently
 					on the vehicle, is crucial for the upcoming code comprehension. These devices on the ego vehicle
 					(main vehicle gathering perception data) have distinct orientations.
-				</p>
-				<p>
+				</div>
+				<div>
 					<ul>
 						Camera
 						<li>• x → right</li>
@@ -384,12 +383,12 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 						<li>• y → left</li>
 						<li>• z → up</li>{' '}
 					</ul>
-				</p>
-				<p>
+				</div>
+				<div>
 					These orientations help in data conversion and interpretation between the devices. Below is the
 					vehicle used to gather data for the KITTI dataset.
-				</p>
-			</p>
+				</div>
+			</div>
 			<br />
 			<Image
 				src="/images/car.png"
@@ -401,11 +400,11 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 			/>
 			<br />
 
-			<p className={`${projectClasses.content}`}>
+			<div className={`${projectClasses.content}`}>
 				<h2 id="lidar to camera" className={`${projectClasses.subheading}`}>
 					LiDAR to Camera
 				</h2>
-				<p>
+				<div>
 					To convert a point from LiDAR to camera image space, a sequence of transformations is performed to
 					account for the differing orientations and positions of the LiDAR and camera systems on the vehicle.
 					Initially, a{' '}
@@ -418,7 +417,7 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 					, combining rotation and translation, is carried out from LiDAR to camera 0 frame. A rigid
 					transformation is essentially a rotation followed by a translation. A rigid transformation matrix
 					can combine these two components like so:
-				</p>
+				</div>
 				<Latex>
 					{`$$
   T = \\begin{bmatrix}
@@ -428,15 +427,15 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
   \\end{bmatrix}
   $$`}
 				</Latex>
-				<p>
+				<div>
 					Where the r&apos;s correspond to the 3x3 rotation matrix and the t&apos;s correspond to the 3x1
 					translation vector.
-				</p>
-				<p>
+				</div>
+				<div>
 					To convert a transformation matrix to its homogeneous representation, we add a row of new
 					coordinates on the bottom, where 0&apos;s will be placed under the rotation portion and a 1 will be
 					placed under the translation portion. This would be the transformation matrix!
-				</p>
+				</div>
 				<Latex>{`$$
     T = \\begin{bmatrix}
             r_{11} & r_{12} & r_{13} & t_{14} \\\\
@@ -445,7 +444,7 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
                  0 &      0 &      0 & 1      
         \\end{bmatrix}
 $$`}</Latex>
-				<p>
+				<div>
 					{' '}
 					That was a little vague, so let&apos;s go into a little more detail about how we got the
 					transformation matrix. The KITTI{' '}
@@ -453,7 +452,7 @@ $$`}</Latex>
 					transformation from LiDAR to camera <Latex>{`$i$`}</Latex> as follows, where each transformation
 					matrix has been converted to its homogeneous representation. The difference here is that we have
 					changed the notation and added the transformation to the desired camera reference.
-				</p>
+				</div>
 				<Latex>{`$$
 \\tilde{y} = P^{cam2}_{rect2} R^{rect2}_{ref2} T^{ref2}_{ref0} T^{ref0}_{velo} \\tilde{x},
   \\qquad \\text{where } \\tilde{x} = [x, y, z, 1]^T
@@ -461,11 +460,11 @@ $$`}</Latex>
 				<Latex>{`$$
 \\tilde{y} = \\left( \\tilde{u}, \\tilde{v}, z, 1 \\right)
 $$`}</Latex>
-				<p>For convenience we will denote the transformation from LiDAR to Camera 2 like so:</p>
+				<div>For convenience we will denote the transformation from LiDAR to Camera 2 like so:</div>
 				<Latex>{`$$
 T^{cam2}_{velo} = P^{cam2}_{rect2} R^{rect2}_{ref2} T^{ref2}_{ref0} T^{ref0}_{velo}
 $$`}</Latex>
-				<p>
+				<div>
 					<ul>
 						<li>
 							<Latex>{`$T^{ref}_{velo}$`}</Latex> - LiDAR to Camera Reference → transforms a 3D point
@@ -489,13 +488,13 @@ $$`}</Latex>
 							space.
 						</li>
 					</ul>
-				</p>
-				<p>
+				</div>
+				<div>
 					{' '}
 					<a className="font-bold">Note:</a> We still denote (u,v,z) as 2D space even though we have z since
 					we are referring to the 2D camera image space with real world depth relative to the camera.
-				</p>
-				<p>
+				</div>
+				<div>
 					Where (u,v,z) are the final camera coordinates after the rectification and{' '}
 					<Link
 						className={projectClasses.underline}
@@ -506,16 +505,17 @@ $$`}</Latex>
 					transforms. In order to transform from homogeneous image coordinates <Latex>{`$\\tilde{y}$`}</Latex>{' '}
 					to true (u, v, z) image coordinates y, we will need to normalize by the depth and drop the 1, like
 					so:
-				</p>
+				</div>
 				<Latex>{`$$
 y = \\left( \\frac{\\tilde{u}}{z}, \\frac{\\tilde{v}}{z}, z \\right)
 $$`}</Latex>
-				<p>
+				<div>
 					These transformations can be encapsulated into a single matrix, simplifying the LiDAR to Camera
 					transformation into one operation. The final coordinates in camera space are denoted as (u, v, z),
 					where z provides depth information in the 2D image space.
-				</p>
-				<Latex>
+				</div>
+				
+				<Latex >
 					{`$$
     T = \\begin{bmatrix}
 	r_{11} & r_{12} & r_{13} & t_{14} \\\\
@@ -525,22 +525,23 @@ $$`}</Latex>
 \\end{bmatrix}
   $$`}
 				</Latex>{' '}
-				<p>
+			
+				<div>
 					<a className="font-bold">Note:</a> The notation convention is that the starting reference frame is
 					in the subscript and the ending reference frame is in the superscript. The <Latex>{`$1$`}</Latex>{' '}
 					added as the 4th coordinate in homogeneous representation is sometimes referred to as{' '}
 					<Latex>{`$w$`}</Latex>.
-				</p>
+				</div>
 				<br />
 				<h2 id="camera to lidar" className={`${projectClasses.subheading}`}>
 					Camera to LiDAR
 				</h2>
-				<p>
+				<div>
 					To transition from Camera to LiDAR, or from IMU to LiDAR/Camera, similar transformation steps are
 					followed, utilizing the homogeneous representation of transformation matrices, and inverting the
 					transformation matrix to reverse the transformation direction.
-				</p>
-				<p>
+				</div>
+				<div>
 					First, we need to convert <Latex>{`$T^{cam2}_{velo}$`}</Latex>
 					to its homogeneous representation. We can do that by adding a row of new coordinates at the bottom,
 					where 0&apos;s will be placed under the rotation portion and a 1 will be placed under the
@@ -573,50 +574,50 @@ $$`}</Latex>
     \\end{align*}
     $$`}
 					</Latex>
-				</p>
+				</div>
 				<h2 id="imu to lidar" className={`${projectClasses.subheading}`}>
 					IMU to LiDAR
 				</h2>
-				<p>
+				<div>
 					We will also need to translate IMU to LiDAR, thankfully we have a single matrix{' '}
 					<Latex>{`$T^{velo}_{imu}$`}</Latex> that will handle this in a single operation.
-				</p>
+				</div>
 				<Latex>{`$$y_{velo} = T^{velo}_{imu} x_{imu}$$`}</Latex>
-				<p>
+				<div>
 					And once we have <Latex>{`$y_{velo}$`}</Latex> we can convert it to camera coordinates using the
 					equations above, or we can compose the transformations, to go from IMU to Camera 2:
-				</p>
+				</div>
 				<Latex>{`$$T^{cam2}_{imu} =P^{cam2}_{rect2} R^{rect2}_{ref2} T^{ref2}_{ref0} T^{ref0}_{velo} T^{velo}_{imu}$$`}</Latex>
-				<p>
+				<div>
 					To transform from the Camera to IMU coordinates, we can do a very similar operation as we did for
 					camera to LiDAR. We just use the homogeneous representation of the transformation matrix and take
 					its inverse, then we can invert the transform.
-				</p>
+				</div>
 				<Latex>{`$$
 \\begin{align*}
     T^{imu}_{cam2} &= (T^{cam2}_{imu})^{-1} \\\\[1em]
     T^{imu}_{cam2} \\tilde{y}_{cam2} &=  \\tilde{x}_{imu}
 \\end{align*}
 $$`}</Latex>
-				<p>
+				<div>
 					We can transform to any camera <Latex>{`$i$`}</Latex> just by replacing{' '}
 					<Latex>{`$P^{cami}_{recti}$`}</Latex> and <Latex>{`$R^{ref}_{rect2}$`}</Latex> with the proper
 					matrices from our calibration file <Code>calib_cam_to_cam.txt</Code>
-				</p>
+				</div>
 				<br />
 				<h2 id="imu to geodetic" className={`${projectClasses.subheading}`}>
 					IMU to Geodetic
 				</h2>
-				<p>
+				<div>
 					Moreover, transitioning from IMU to Geodetic coordinates involves converting Cartesian coordinates
 					to spherical coordinates (Slant Range, Azimuth, Elevation), which are then translated to Geodetic
 					coordinates (Latitude, Longitude, Altitude) using external libraries like pymap3d.
-				</p>
-				<p>
+				</div>
+				<div>
 					We can transform to any camera <Latex>{`$i$`}</Latex> just by replacing{' '}
 					<Latex>{`$P^{cami}_{recti}$`}</Latex> and <Latex>{`$R^{ref}_{rect2}$`}</Latex> with the proper
 					matrices from our calibration file calib_cam_to_cam.txt.
-				</p>
+				</div>
 				<Latex>
 					{`$$
   range = \\sqrt{x^2 + y^2 + z^2} \\\\[1em]
@@ -624,18 +625,18 @@ $$`}</Latex>
   elevation = \\arctan \\left(\\frac{\\sqrt{x^2 + y^2}}{z} \\right)
   $$`}
 				</Latex>
-				<p>
+				<div>
 					This process ensures accurate representation and translation of points across different sensor
 					coordinate systems, crucial for tasks like object detection and navigation in autonomous systems.
 					Below we load calibration data.
-				</p>
-			</p>
+				</div>
+			</div>
 			<br />
 			<h2 id="camera calib data" className={`${projectClasses.subheading}`}>
 				Camera Calib Data
 			</h2>
-			<p className={`${projectClasses.content}`}>
-				<p>
+			<div className={`${projectClasses.content}`}>
+				<div>
 					With the code below, we load the camera data. The code snippet reads calibration data from
 					<Code>calib_cam_to_cam.txt</Code>, extracts various transformation matrices, and transforms them
 					into homogeneous coordinates. It obtains a projection matrix for mapping rectified left camera to
@@ -647,30 +648,28 @@ $$`}</Latex>
 						rigid body transformation
 					</Link>{' '}
 					matrix from Camera 0 to Camera 2, adjusting them for homogeneous coordinate transformations.
-				</p>
-			</p>
+				</div>
+			</div>
 			<br />
-	
 			<CodeHighlight
 				code={`${load}`}
 				language="py"
 				copyLabel="Copy code"
 				copiedLabel="Copied!"
 				className={`${projectClasses.code}`}
-			
 			/>
 			<br />
 
 			<h2 id="lidar, gpu/imu calib data" className={`${projectClasses.subheading}`}>
 				LiDAR, GPS/IMU Calib Data
 			</h2>
-			<p className={`${projectClasses.content}`}>
+			<div className={`${projectClasses.content}`}>
 				Next we obtain the matrix to transform 3D LiDAR/Velo (x, y, z) coordinates to 2D camera (u,v)
 				coordinates, and it&apos;s homogeneous inverse that will allow us to transform from camera (u, v, z, 1)
 				back to LiDAR (x, y, z, 1). With this, we can get the transformation matrix for IMU to camera and camera
-				to IMU. We use the <code>get_rigid_transformation()</code> function from the <code>kitti_utils.py</code>{' '}
+				to IMU. We use the <Code>get_rigid_transformation()</Code> function from the <Code>kitti_utils.py</Code>{' '}
 				file mentioned at the beginning of the article.
-			</p>
+			</div>
 			<br />
 			<CodeHighlight
 				code={`${transform}`}
@@ -681,21 +680,21 @@ $$`}</Latex>
 			/>
 			<br />
 
-			<p className={`${projectClasses.content}`}>
+			<div className={`${projectClasses.content}`}>
 				Now that we are able to project the LiDAR points onto the image, we can associate points on the image
 				with LiDAR depth.
-			</p>
+			</div>
 			<br />
 
 			<h2 id="Method" className={`${projectClasses.subheading}`}>
 				YOLOv5
 			</h2>
 
-			<p className={`${projectClasses.content}`}>
+			<div className={`${projectClasses.content}`}>
 				We will use YOLOv5 to detect objects in 2D, then we will find their corresponding depths. Then using our
 				GPS/IMU data we can find out where all of these objects are located in the world via Latitude and
 				Longitude.
-			</p>
+			</div>
 			<br />
 			<CodeHighlight
 				code={`${yolo}`}
@@ -705,30 +704,30 @@ $$`}</Latex>
 				className={`${projectClasses.code}`}
 			/>
 
-			<p>
+			<div>
 				<br />
 				<h2 id="Base Script" className={`${projectClasses.subheading}`}>
 					Detection Pipeline
 				</h2>
-				<p className={`${projectClasses.content}`}>
-					<p>
+				<div className={`${projectClasses.content}`}>
+					<div>
 						Understanding the varied reference frames used by the Camera, LiDAR, and IMU, positioned
 						differently on the vehicle, is crucial for the upcoming code comprehension. These devices on the
 						ego vehicle (main vehicle gathering perception data) have distinct orientations.
-					</p>
-					<p>
+					</div>
+					<div>
 						<ul>
 							Camera
 							<li>• Camera (u, v, z)</li>
 							<li>• LiDAR (x, y, z)</li>
 							<li>• IMU (x, y, z)</li>{' '}
 						</ul>
-					</p>
-					<p>The fundamental steps are:</p>
+					</div>
+					<div>The fundamental steps are:</div>
 
-					<p>1. Identify objects in the camera image with the YOLO model defined above.</p>
-					<p>2. Map LiDAR point cloud to camera (u,v,z) coordinates.</p>
-					<p>
+					<div>1. Identify objects in the camera image with the YOLO model defined above.</div>
+					<div>2. Map LiDAR point cloud to camera (u,v,z) coordinates.</div>
+					<div>
 						We will employ a function from our KITTI utilities script, utilizing our rotation matrix 𝑇 to
 						transform LiDAR (x,y,z) coordinates into camera (u,v,z) coordinates. This function also manages
 						the exclusion of points that venture outside the cameras Field of View (FOV). Additionally, it
@@ -747,7 +746,7 @@ $$`}</Latex>
 							RANSAC
 						</Link>{' '}
 						aims to identify the most extensive plane within the point cloud, which we then eliminate.
-					</p>
+					</div>
 
 					<br />
 					<CodeHighlightTabs
@@ -760,8 +759,8 @@ $$`}</Latex>
 
 					<br />
 
-					<p>3. Associate projected (u,v,z) points with object centers.</p>
-					<p>
+					<div>3. Associate projected (u,v,z) points with object centers.</div>
+					<div>
 						To associate the detected object centers with the (u,v,z) points, we evaluate the{' '}
 						<Link
 							className={projectClasses.underline}
@@ -778,7 +777,7 @@ $$`}</Latex>
 							L2 Norm
 						</Link>
 						.
-					</p>
+					</div>
 
 					<br />
 					<CodeHighlightTabs
@@ -791,14 +790,14 @@ $$`}</Latex>
 
 					<br />
 
-					<p>4. Convert (u,v,z) object centers to IMU (x,y,z) coordinates.</p>
-					<p>
+					<div>4. Convert (u,v,z) object centers to IMU (x,y,z) coordinates.</div>
+					<div>
 						To transition the (u,v,z) object centers, simply convert them to homogeneous coordinates and
 						utilize our homogeneous transformation to obtain the IMU (x,y,z) coordinates.
-					</p>
-					<p>5. Convert IMU to LLA</p>
+					</div>
+					<div>5. Convert IMU to LLA</div>
 
-					<p>
+					<div>
 						Now, the goal is to change the object IMU (x, y, z) coordinates to Azimuth, Elevation, and
 						Range. Following this, pymap3d can be employed to convert the object centers to Latitude,
 						Longitude, and Altitude. While the KITTI dataset doesn&apos;t clarify the type of altitude, the{' '}
@@ -811,8 +810,8 @@ $$`}</Latex>
 						documentation mentions the measurement can be either geoidal (MSL) or ellipsoidal (HAE). For
 						more details, refer to this link. We&apos;ll proceed under the assumption that the type of
 						altitude is not critical.
-					</p>
-				</p>
+					</div>
+				</div>
 
 				<br />
 
@@ -828,9 +827,9 @@ $$`}</Latex>
 				<h2 id="Upload Videos" className={`${projectClasses.subheading}`}>
 					Test Pipeline
 				</h2>
-				<p className={`${projectClasses.content}`}>
+				<div className={`${projectClasses.content}`}>
 					Let&apos;s put everything together by stacking the detection model on top of the LiDAR results.
-				</p>
+				</div>
 				<br />
 				<Image
 					src="/images/stack.png"
@@ -843,11 +842,11 @@ $$`}</Latex>
 
 				<br />
 
-				<p className={`${projectClasses.content}`}>
+				<div className={`${projectClasses.content}`}>
 					Let&apos;s project the LiDAR point cloud onto the camera image. We will see even though there is a
 					slight time difference between the Camer and LiDAR, the points are still aligned with the image
 					objects, confirming that the time difference is negligable for this purpose.
-				</p>
+				</div>
 
 				<br />
 				<Image
@@ -864,7 +863,7 @@ $$`}</Latex>
 				<h2 id="Real-Time Analysis" className={`${projectClasses.subheading}`}>
 					Double Check
 				</h2>
-				<p className={`${projectClasses.content}`}>
+				<div className={`${projectClasses.content}`}>
 					After obtaining (x, y, z) coordinates of detected objects in multiple reference frames, it&apos;s
 					advisable to validate the accuracy of the transformations. While we lack ground truth, camera images
 					can provide a basic validation. By examining the (u,v,z) positions, particularly the z (depth)
@@ -872,7 +871,7 @@ $$`}</Latex>
 					perform a reality check. Additionally, by comparing the rotation transformation from Camera to IMU,
 					especially since the IMU is located 1.08 meters behind the camera, further validation can be
 					achieved.
-				</p>
+				</div>
 
 				<br />
 				<CodeHighlight
@@ -901,14 +900,14 @@ $$`}</Latex>
 				/>
 				<br />
 
-				<p className={`${projectClasses.content}`}>
-					<p>
+				<div className={`${projectClasses.content}`}>
+					<div>
 						We can see that the errors between the theoretical IMU x values and the actual x values are
 						fairly low. For the remaining IMU values we can wee that the y (horizontal) and z (vertical)
 						have numbers that make sense based on the object locations on the image. Now that we have
 						locations for each object we can reconstruct the scene at each frame, using the LLA locations.
 						Using the folium library we can visualize these locations for each object.
-					</p>
+					</div>
 					<br />
 					<Image
 						src="/images/folium.png"
@@ -920,13 +919,13 @@ $$`}</Latex>
 					/>
 
 					<br />
-					<p>
+					<div>
 						Now we can use opencv2 to display the environment detected by the Camera and LiDAR. In this case
 						we will draw a rectangle for every detected object, but you can use the detected MSCOCO class in
 						bboxes and draw custom symbols for each different object. You could also cluster the data in
 						LiDAR space and draw symbols based on the clustered data shape.
-					</p>
-				</p>
+					</div>
+				</div>
 				<br />
 
 				<CodeHighlightTabs
@@ -950,9 +949,9 @@ $$`}</Latex>
 
 				<br />
 
-				<p className={`${projectClasses.content}`}>
-					<p>Now we stack all of the images together into a single frame!</p>
-				</p>
+				<div className={`${projectClasses.content}`}>
+					<div>Now we stack all of the images together into a single frame!</div>
+				</div>
 
 				<br />
 				<Image
@@ -969,26 +968,26 @@ $$`}</Latex>
 				<h2 id="You are Crazy" className={`${projectClasses.subheading}`}>
 					Lessons
 				</h2>
-				<p className={`${projectClasses.content}`}>
-					<p>
+				<div className={`${projectClasses.content}`}>
+					<div>
 						This project on KITTI 3D Object Detection through LiDAR-Camera Fusion greatly enhanced my
 						understanding of sensor fusion techniques, particularly Early Fusion, for 3D object detection.
 						It involved steps like object detection in camera images, projecting 3D LiDAR point clouds to 2D
 						image space, and associating LiDAR depth with each detected object.
-					</p>
-					<p>
+					</div>
+					<div>
 						Through hands-on experience, I learned how to process and synchronize data from different
 						sensors like cameras and LiDAR, and how to transform coordinate systems among them.
-					</p>
-					<p>
+					</div>
+					<div>
 						Implementing a detection pipeline using YOLOv5 for 2D object detection, and then associating
 						these detections with LiDAR data to estimate their 3D positions was a significant learning
 						experience. This project provided a practical understanding of challenges and solutions in
 						sensor fusion, crucial for applications like autonomous vehicles, where accurate real-world
 						object detection and localization are essential.
-					</p>
-				</p>
-			</p>
+					</div>
+				</div>
+			</div>
 		</Layout>
 	)
 }
