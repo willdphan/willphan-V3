@@ -29,5 +29,18 @@
 	overflow-x: hidden;
 }
 
+
+
+.mantine-CodeHighlight-pre {
+	background-color: #0A0A0A !important;
+	border-radius: 0.75rem !important;
+}
+
+.mantine-CodeHighlightTabs-pre {
+	background-color: #0A0A0A !important;
+	border-radius: 0.75rem !important;
+}
+  
+
 @tailwind components;
 @tailwind utilities;

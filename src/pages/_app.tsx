@@ -10,6 +10,7 @@ import type { AppProps } from 'next/app'
 import { MantineProvider, createTheme } from '@mantine/core'
 import '@mantine/core/styles.css'
 
+
 const App = ({ Component, pageProps }) => {
 	return (
 		<ThemeProvider attribute="class">

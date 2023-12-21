@@ -12,7 +12,7 @@ export const projectClasses = {
 	subheading: 'text-sm font-Space font-normal text-white pb-2 ',
 	content: 'text-sm space-y-2 text-[#9B9B9B] leading-7 font-Inter font-normal ',
 	image: 'relative rounded-lg w-full h-full overflow-hidden border-[#242424] border-[1px]', // Define a custom class for images h-[350px] sm:h-[450px] md:h-[550px] lg:h-[550px] xl:h-[550px]
-	video: ' rounded-xl border-[#242424] border-[1px] rounded-lg', // Define a custom class for videos
+	video: 'rounded-xl border-[#242424] border-[1px] rounded-lg', // Define a custom class for videos
 	code: 'max-w-[24.5em] xs:max-w-[30em] sm:max-w-[45em] md:max-w-2xl w-full rounded-xl border-[#262626] border-[1px]',
 	// max-w-md sm:max-w-2xl
 	underline: 'underline underline-offset-2',
@@ -50,12 +50,12 @@ export default function Layout({ children, projectName, publicationDate }) {
 	}, [children])
 
 	return (
-		<div className="bg-[#0A0A0A]   min-h-[100vh] h-full  pt-20 flex flex-col items-center pb-20">
-			<main className="px-10 w-full max-w-2xl">
+		<div className="bg-[#0A0A0A] min-h-[100vh] h-full pt-20 flex flex-col items-center pb-20">
+			<main className="px-0 w-full max-w-2xl">
 				{/* Table of Contents */}
 				<div className="">
 					<div className="fixed">
-						<ul className="animate-fade invisible xl:visible absolute left-[-18em] space-y-2 text-xs text-[#9B9B9B] leading-relaxed font-Inter font-light">
+						<ul className="animate-fade invisible xl:visible absolute left-[-22em] space-y-2 text-xs text-[#9B9B9B] leading-relaxed font-Inter font-light">
 							<li>
 								<Link href="/">
 									<svg
@@ -107,7 +107,6 @@ export default function Layout({ children, projectName, publicationDate }) {
 					</div>
 					{/* Display the project name as a title */}
 					<h1 className={projectClasses.title}>{projectName}</h1>
-
 					{/* Display the publication date */}
 					<p className={projectClasses.date}>{publicationDate}</p>
 					<div className={projectClasses.content}>{children}</div>

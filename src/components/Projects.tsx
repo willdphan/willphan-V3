@@ -208,7 +208,7 @@ const Fun = () => {
 
 							<h1 className="text-md font-Space font-normal text-white px-7 pt-3">{project.name}</h1>
 
-							<p className="text-sm leading-7 font-Inter  text-[#9B9B9B] pt-[7px] px-7">
+							<p className="text-sm leading-7 font-Inter text-[#9B9B9B] pt-[7px] px-7">
 								{project.description}
 							</p>
 						</Link>
@@ -218,14 +218,14 @@ const Fun = () => {
 									href={project.demo}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="	 flex items-center hover:cursor-pointer font-Inter text-sm text-[#54627a] pr-3"
+									className="	 flex items-center hover:cursor-pointer font-Inter text-sm text-[#bfdbfe] pr-3"
 								>
 									Demo
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
 										<path fill="none" d="M0 0h24v24H0z" />
 										<path
 											d="M16.004 9.414l-8.607 8.607-1.414-1.414L14.589 8H7.004V6h11v11h-2V9.414z"
-											fill="#54627a"
+											fill="#bfdbfe"
 										/>
 									</svg>
 								</a>
@@ -235,14 +235,14 @@ const Fun = () => {
 									href={project.frontend}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="flex items-center hover:cursor-pointer font-Inter text-sm text-[#54627a] pr-3"
+									className="flex items-center hover:cursor-pointer font-Inter text-sm text-[#bfdbfe] pr-3"
 								>
 									Frontend
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
 										<path fill="none" d="M0 0h24v24H0z" />
 										<path
 											d="M16.004 9.414l-8.607 8.607-1.414-1.414L14.589 8H7.004V6h11v11h-2V9.414z"
-											fill="#54627a"
+											fill="#bfdbfe"
 										/>
 									</svg>
 								</a>
@@ -252,14 +252,14 @@ const Fun = () => {
 									href={project.code}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="flex items-center hover:cursor-pointer font-Inter text-sm text-[#54627a] pr-3"
+									className="flex items-center hover:cursor-pointer font-Inter text-sm text-[#bfdbfe] pr-3"
 								>
 									Code
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
 										<path fill="none" d="M0 0h24v24H0z" />
 										<path
 											d="M16.004 9.414l-8.607 8.607-1.414-1.414L14.589 8H7.004V6h11v11h-2V9.414z"
-											fill="#54627a"
+											fill="#bfdbfe"
 										/>
 									</svg>
 								</a>
@@ -269,14 +269,14 @@ const Fun = () => {
 									href={project.nbviewer}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="flex items-c<ntr hover:cursor-pointer font-Inter text-sm text-[#54627a] pr-3"
+									className="flex items-c<ntr hover:cursor-pointer font-Inter text-sm text-[#bfdbfe] pr-3"
 								>
 									NBViewer
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
 										<path fill="none" d="M0 0h24v24H0z" />
 										<path
 											d="M16.004 9.414l-8.607 8.607-1.414-1.414L14.589 8H7.004V6h11v11h-2V9.414z"
-											fill="#54627a"
+											fill="#bfdbfe"
 										/>
 									</svg>
 								</a>

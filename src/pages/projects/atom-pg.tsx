@@ -189,10 +189,10 @@ def send_sms(sms_text, recipient_phone_number):
 
 	return (
 		<Layout projectName={projectName as string} publicationDate={publicationDate}>
-			<div className={`${projectClasses.content}`}>
+			<p className={`${projectClasses.content}`}>
 				ATOM is a Next.js application that serves as an AI executive assistant. It fetches and displays messages
 				from an API, and provides a user-friendly interface for interaction.
-			</div>
+			</p>
 
 			<br />
 
@@ -212,12 +212,12 @@ def send_sms(sms_text, recipient_phone_number):
 				Fetching & Displaying Data
 			</h2>
 
-			<div className={`${projectClasses.content}`}>
+			<p className={`${projectClasses.content}`}>
 				The application fetches data from the API in the <Code>fetchAndUpdateTranscript</Code> function inside
 				the Home component. It makes a <Code>GET</Code> request to the <Code>/api/listen</Code> endpoint with
 				the <Code>lastUpdateTime</Code> as a parameter. The fetched data is then stored in the{' '}
 				<Code>displayedMessage</Code> state variable.
-			</div>
+			</p>
 
 			<br />
 			<CodeHighlightTabs
@@ -229,24 +229,24 @@ def send_sms(sms_text, recipient_phone_number):
 			/>
 
 			<br />
-			<div className={`${projectClasses.content}`}>
-				<div>
+			<p className={`${projectClasses.content}`}>
+				<p>
 					ATOM is an AI executive assistant that provides a variety of services by integrating with various
 					APIs and libraries. The key capabilities are listed below.
-				</div>
-			</div>
+				</p>
+			</p>
 
 			<br />
 			<h2 id="Voice Interaction" className={`${projectClasses.subheading}`}>
 				Voice Interaction
 			</h2>
-			<div className={`${projectClasses.content}`}>
+			<p className={`${projectClasses.content}`}>
 				ATOM uses the ElevenLabs library to generate voice responses. It listens to user commands, transcribes
 				them, and generates appropriate responses. The transcription is done using the{' '}
 				<Code>speech_recognition</Code> library, and the responses are generated using the ElevenLabsUser class
 				from the ElevenLabs library. The responses are then converted to audio using the pydub library and
 				played back to the user.
-			</div>
+			</p>
 
 			<br />
 
@@ -261,26 +261,26 @@ def send_sms(sms_text, recipient_phone_number):
 			<h2 id="Email Management" className={`${projectClasses.subheading}`}>
 				Email Management
 			</h2>
-			<div className={`${projectClasses.content}`}>
+			<p className={`${projectClasses.content}`}>
 				ATOM uses the Gmail API to interact with the user&apos;s Gmail account. It can list unread emails in the
 				user&apos;s inbox and create draft emails with a specified subject, body, and recipient. The
 				<Code>announce_unread_emails</Code> function fetches the list of unread emails and returns a message
 				with the count of unread emails. The <Code>create_draft_email</Code> function creates a draft email with
 				the specified subject, body, and recipient.
-			</div>
+			</p>
 
 			<br />
 
 			<h2 id="Calendar Management" className={`${projectClasses.subheading}`}>
 				Calendar Management
 			</h2>
-			<div className={`${projectClasses.content}`}>
+			<p className={`${projectClasses.content}`}>
 				ATOM uses the Google Calendar API to manage the user&apos;s calendar events. It can create events with a
 				specified start time, end time, summary, and attendees using the <Code>create_event</Code> function. It
 				can delete events with a specified event ID using the <Code>delete_event</Code> function. It can find an
 				event with a specified event ID using the <Code>find_event</Code> function. It can list all events for
 				the current day using the <Code>get_events</Code> function.
-			</div>
+			</p>
 
 			<br />
 
@@ -310,11 +310,11 @@ def send_sms(sms_text, recipient_phone_number):
 			<h2 id="Document Management" className={`${projectClasses.subheading}`}>
 				Document Management
 			</h2>
-			<div className={`${projectClasses.content}`}>
+			<p className={`${projectClasses.content}`}>
 				ATOM uses the Google Docs API to manage Google Docs. It can create a new Google Doc with a specified
 				title and initial text using the <Code>create_google_doc</Code> function. It can edit a Google Doc with
 				a specified document ID and text using the <Code>edit_google_doc</Code> function.
-			</div>
+			</p>
 
 			<br />
 
@@ -343,12 +343,12 @@ def send_sms(sms_text, recipient_phone_number):
 			<h2 id="Screen Analysis" className={`${projectClasses.subheading}`}>
 				Screen Analysis
 			</h2>
-			<div className={`${projectClasses.content}`}>
+			<p className={`${projectClasses.content}`}>
 				ATOM uses the Azure Computer Vision API to analyze the user&apos;s screen. It captures the screen using
 				the ImageGrab library, converts the image to the OpenCV format, and sends it to the Azure Computer
 				Vision API for analysis. The <Code>analyze_screen_and_respond</Code> function captures the screen,
 				analyzes it, generates a response using GPT-3, and plays back the response to the user.
-			</div>
+			</p>
 
 			<br />
 
@@ -364,12 +364,12 @@ def send_sms(sms_text, recipient_phone_number):
 			<h2 id="Web Search" className={`${projectClasses.subheading}`}>
 				Web Search
 			</h2>
-			<div className={`${projectClasses.content}`}>
+			<p className={`${projectClasses.content}`}>
 				ATOM uses the Google Custom Search API to perform web searches. It sends a GET request to the Google
 				Custom Search API with the user&apos;s query and receives a list of search results. It then uses
 				OpenAI&apos;s GPT-3 to generate a summary of the top search results. The <Code>search_google</Code>{' '}
 				function performs the web search, and the <Code>gpt3_query</Code> function generates the summary.
-			</div>
+			</p>
 
 			<br />
 
@@ -398,13 +398,13 @@ def send_sms(sms_text, recipient_phone_number):
 			<h2 id="SMS Sending" className={`${projectClasses.subheading}`}>
 				SMS Sending
 			</h2>
-			<div className={`${projectClasses.content}`}>
+			<p className={`${projectClasses.content}`}>
 				ATOM uses the Twilio API to send SMS messages. It can send an SMS to a specified recipient with a
 				specified message. The <Code>send_sms</Code> function is used to send the SMS. It takes the text of the
 				SMS and the recipient&apos;s phone number as arguments. The function uses the{' '}
 				<Code>twilio_client.messages.create</Code> method to create and send the SMS. The status of the SMS is
 				then printed to the console.
-			</div>
+			</p>
 
 			<br />
 

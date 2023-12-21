@@ -256,7 +256,7 @@ def licensePlate():
 
 	return (
 		<Layout projectName={projectName as string} publicationDate={publicationDate}>
-			<div className={`${projectClasses.content}`}>
+			<p className={`${projectClasses.content}`}>
 				Plate Vision comprises a real-time license plate recognition system that uses YOLO for vehicle
 				detection,{' '}
 				<Link className={projectClasses.underline} href="https://universe.roboflow.com/">
@@ -273,7 +273,7 @@ def licensePlate():
 				tracks vehicles across video frames. The architecture offers API endpoints for video uploads, real-time
 				recognition control, and streaming. It employs multithreading for concurrent video and API handling,
 				streams processed frames to clients, and manages file storage and output in CSV format.
-			</div>
+			</p>
 
 			<br />
 
@@ -297,17 +297,17 @@ def licensePlate():
 				Structure
 			</h2>
 
-			<div className={`${projectClasses.content}`}>
-				<div>
+			<p className={`${projectClasses.content}`}>
+				<p>
 					The api directory houses the backend Flask app, including various Python scripts for routes and
 					features. Inside the folder <Code>api/sort</Code>, the SORT algorithm is implemented.
-				</div>
-				<div>
+				</p>
+				<p>
 					The tech stack includes Next.js for the frontend and Flask for the backend, integrated under
 					<Code>/api/</Code>. The backend leverages libraries for tasks like object detection and license
 					plate recognition. The structure looks something like this.
-				</div>
-			</div>
+				</p>
+			</p>
 			<br />
 			<CodeHighlight
 				code={`// structure${structure}`}
@@ -317,17 +317,17 @@ def licensePlate():
 				className={`${projectClasses.code}`}
 			/>
 			<br />
-			<div className={`${projectClasses.content}`}>
+			<p className={`${projectClasses.content}`}>
 				The api folder is part of a larger project that uses Next.js for the frontend and Flask for the backend.
 				The Flask server is mapped into the Next.js app under <Code>/api/</Code>. This setup allows the use of
 				Python libraries on the backend while benefiting from the features of Next.js and on the frontend.
-			</div>
+			</p>
 			<br />
 			<h2 id="Data" className={`${projectClasses.subheading}`}>
 				Data
 			</h2>
 
-			<div className={`${projectClasses.content}`}>
+			<p className={`${projectClasses.content}`}>
 				The YOLOv8 model uses an annotated dataset on the{' '}
 				<Link
 					className={projectClasses.underline}
@@ -338,7 +338,7 @@ def licensePlate():
 				website. The dataset contains a total of 21,174 images in the training set, 2,048 images in the valid
 				set, and 1,020 images in the test set (87/8/4 split). This dataset made it super easy to get started,
 				especially since augmentations were already made.
-			</div>
+			</p>
 			<br />
 			<Image
 				src="/images/plate-roboflow.png"
@@ -353,18 +353,18 @@ def licensePlate():
 				Method
 			</h2>
 
-			<div className={`${projectClasses.content}`}>
-				<div>
+			<p className={`${projectClasses.content}`}>
+				<p>
 					The api folder uses the Flask library for creating the api, the Roboflow library for the YOLO object
 					detection model, cv2 (OpenCV) for image and video processing, and the sort library for the SORT
 					(Simple, Online, and Realtime Tracker) algorithm for tracking objects in a video.
-				</div>
-				<div>
+				</p>
+				<p>
 					The easyocr library is used for performing Optical Character Recognition (OCR) to convert images of
 					text into machine-readable text.
-				</div>
+				</p>
 				Below is the code used to initialize the Roboflow model.
-			</div>
+			</p>
 			<br />
 			<CodeHighlight
 				code={`${roboflow}`}
@@ -374,18 +374,18 @@ def licensePlate():
 				className={`${projectClasses.code}`}
 			/>
 
-			<div>
+			<p>
 				<br />
 				<h2 id="Base Script" className={`${projectClasses.subheading}`}>
 					Base Script
 				</h2>
-				<div className={`${projectClasses.content}`}>
+				<p className={`${projectClasses.content}`}>
 					<Code>lp.py</Code> is the base script that <Code>upload_lp.py</Code> and <Code>realTime_lp.py</Code>{' '}
 					are built upon. It contains a function
 					<Code>licensePlate()</Code> that uses the YOLO and Roboflow models to detect vehicles and license
 					plates in a video. It also uses the SORT algorithm for tracking vehicles across frames. The detected
 					license plates are read using the EasyOCR library. Format shown below shortened for brevity.
-				</div>
+				</p>
 				<br />
 				<CodeHighlightTabs
 					withExpandButton
@@ -400,18 +400,18 @@ def licensePlate():
 				<h2 id="Upload Videos" className={`${projectClasses.subheading}`}>
 					Upload Videos
 				</h2>
-				<div className={`${projectClasses.content}`}>
-					<div>
+				<p className={`${projectClasses.content}`}>
+					<p>
 						<Code>upload_lp.py</Code> is similar to <Code>lp.py</Code> but is designed to work with
 						user-uploaded videos. It contains a function <Code>licensePlate(filepath)</Code> that takes a
 						file path as input and performs vehicle and license plate detection on the video at that path.
-					</div>
-					<div>
+					</p>
+					<p>
 						The <Code>licensePlate()</Code> function in <Code>upload_lp.py</Code> takes a filepath argument,
 						which is the path to the video file to be processed. In <Code>lp.py</Code>, the video file path
 						is hardcoded as <Code>trim-highway.mp4</Code>.
-					</div>{' '}
-				</div>
+					</p>{' '}
+				</p>
 				<br />
 				<CodeHighlight
 					code={`${upload}`}
@@ -439,10 +439,10 @@ def licensePlate():
 
 				<br />
 
-				<div className={`${projectClasses.content}`}>
+				<p className={`${projectClasses.content}`}>
 					Initially, the model was not always able to track the vehicles in every frame and as a result, we
 					ended up with a glitchy video.{' '}
-				</div>
+				</p>
 
 				<br />
 				<video
@@ -461,21 +461,21 @@ def licensePlate():
 				</video>
 				<br />
 
-				<div className={`${projectClasses.content}`}>
-					<div>
+				<p className={`${projectClasses.content}`}>
+					<p>
 						Because of this, we used the SORT algorithm. After the YOLO model detects vehicles in each
 						frame, the SORT algorithm is applied to track these vehicles across frames. This is done by
 						associating the detected vehicles in the current frame with those in the previous frame based on
 						their bounding box coordinates. Then, the <Code>add_missing_data.py</Code> is able to use the
 						results in order fill in the missing frames in the designated csv file. This way, multiple
 						rendered frames wouldn&apos;t be missing, and we could avoid the glitchy display.
-					</div>
-					<div>
+					</p>
+					<p>
 						After the license plate recognition results are written to a CSV file, the script reads the CSV
 						file back in, performs interpolation on the bounding box data, and writes the interpolated data
 						back to the CSV file. This process, however, is not done in <Code>lp.py</Code>.
-					</div>
-				</div>
+					</p>
+				</p>
 				<br />
 				<CodeHighlight
 					code={`${upload2}`}
@@ -488,11 +488,11 @@ def licensePlate():
 				<h2 id="Real-Time Analysis" className={`${projectClasses.subheading}`}>
 					Real-Time Analysis
 				</h2>
-				<div className={`${projectClasses.content}`}>
+				<p className={`${projectClasses.content}`}>
 					<Code>realTime_lp.py</Code> is similar to <Code>upload_lp.py</Code> but is designed to work with
 					real-time video streams instead of uploaded videos. Keep in mind, you have a wait a little for it to
 					start up.
-				</div>
+				</p>
 
 				<br />
 				<CodeHighlight
@@ -521,21 +521,21 @@ def licensePlate():
 
 				<br />
 
-				<div className={`${projectClasses.content}`}>
-					<div>
+				<p className={`${projectClasses.content}`}>
+					<p>
 						The <Code>realTime_lp.py</Code> file has a function called{' '}
 						<Code>realTime(stop_event, frame_queue)</Code> for real-time license plate recognition from a
 						video feed. It initializes SORT tracker, YOLO, and Roboflow models, opens a video stream, and
 						reads frames until a stop event or video end. Every 5 frames, it detects and tracks vehicles,
 						identifies license plates, reads their text with EasyOCR, and stores the results. Processed
 						frames are put into a queue for API retrieval, and results are written to a CSV file.
-					</div>{' '}
-					<div>
+					</p>{' '}
+					<p>
 						The function runs in a separate thread, with <Code>stop_event</Code> signaling it to stop and{' '}
 						<Code>frame_queue</Code>
 						passing processed frames to the API.
-					</div>
-				</div>
+					</p>
+				</p>
 
 				<br />
 				<CodeHighlight
@@ -550,7 +550,7 @@ def licensePlate():
 				<h2 id="API" className={`${projectClasses.subheading}`}>
 					API
 				</h2>
-				<div className={`${projectClasses.content}`}>
+				<p className={`${projectClasses.content}`}>
 					The <Code>api.py</Code> file serves as the Flask app&apos;s main entry point, defining API routes
 					and functionalities. Functions like <Code>allowed_file()</Code> check for permitted file extensions,
 					while routes like <Code>/upload</Code> and
@@ -560,7 +560,7 @@ def licensePlate():
 					also handles video streaming through the <Code>/video</Code> route. Additionally, the Flask
 					application is initialized, the upload folder is set, and the server starts when the script runs
 					directly.
-				</div>
+				</p>
 				<br />
 				<CodeHighlightTabs
 					withExpandButton
@@ -575,7 +575,7 @@ def licensePlate():
 				<h2 id="Results" className={`${projectClasses.subheading}`}>
 					Results
 				</h2>
-				<div>It took a while to process, but the video turned out amazing!</div>
+				<p>It took a while to process, but the video turned out amazing!</p>
 				<br />
 
 				<video
@@ -597,51 +597,51 @@ def licensePlate():
 				<h2 id="Further Improvements" className={`${projectClasses.subheading}`}>
 					Further Improvements
 				</h2>
-				<div className={`${projectClasses.content}`}>
-					<div>
+				<p className={`${projectClasses.content}`}>
+					<p>
 						1. The <Code>realTime_lp.py</Code> script could further be improved. Was stuck a little on why
 						the live feed was slow and unresponsive. Possibly could further fix the frame rate, but it was
 						reasonable considering the the model would have the process the live feed real-time. Researching
 						and implementing a more efficient method could improve performance.
-					</div>
-					<div>
+					</p>
+					<p>
 						2. The current code lacks comprehensive error handling. For instance, in the{' '}
 						<Code>upload_file()</Code>
 						function, there&apos;s no handling for potential issues like file save errors. Adding try-except
 						blocks around these operations could improve the robustness of the application.
-					</div>
-					<div>
+					</p>
+					<p>
 						3. There&apos;s a significant amount of code duplication, especially in the{' '}
 						<Code>licensePlate()</Code> functions in <Code>api/lp.py</Code> and{' '}
 						<Code>api/upload_lp.py</Code>. This could be refactored into a common function or module.
-					</div>
-				</div>
+					</p>
+				</p>
 				<br />
 				<h2 id="You are Crazy" className={`${projectClasses.subheading}`}>
 					You are Crazy
 				</h2>
-				<div className={`${projectClasses.content}`}>
-					<div>
+				<p className={`${projectClasses.content}`}>
+					<p>
 						Idk how you made it this far, you are crazy. I gained an immense amount of knowledge and
 						experience from working on this project. One of the key learnings was building an API using
 						Flask, which served as the backbone for the entire system. This was not only educational but
 						also an excellent refresher course on server-side programming.
-					</div>
-					<div>
+					</p>
+					<p>
 						The project also afforded me the opportunity to deeply integrate the API with a frontend
 						application. The synergy between the frontend and backend provided a well-rounded perspective on
 						full-stack development, and it was incredibly satisfying to see the two sides interact
 						seamlessly.
-					</div>
-					<div>
+					</p>
+					<p>
 						Perhaps one of the most exciting aspects was the opportunity to work with pre-trained YOLOv8
 						models for the first time. As a great starting point, this has inspired me to explore even more
 						complex models and AI applications in future projects. Overall, the project was an invaluable
 						learning journey that expanded my skills in multiple areas, from backend development to machine
 						learning.
-					</div>
-				</div>
-			</div>
+					</p>
+				</p>
+			</p>
 		</Layout>
 	)
 }
