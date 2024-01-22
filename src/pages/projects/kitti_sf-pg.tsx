@@ -236,11 +236,27 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 	return (
 		<Layout projectName={projectName as string} publicationDate={publicationDate}>
 			<div className={`${projectClasses.content}`}>
-				<div>
-					In this exploration of the KITTI dataset, we delve into 3D object detection utilizing Early Sensor
-					Fusion or Early Fusion, a technique directed at integrating raw data from diverse sources prior to
-					performing detection.
-				</div>{' '}
+				In this exploration of the KITTI dataset, we delve into 3D object detection utilizing Early Sensor
+				Fusion or Early Fusion, a technique directed at integrating raw data from diverse sources prior to
+				performing detection.
+			</div>{' '}
+			<br />
+			<video
+				autoPlay
+				loop
+				muted
+				playsInline
+				// className="w-full h-full rounded-lg border-[#121212] border-2"
+				className="w-full h-full rounded-lg border-[#121212] border-2"
+			>
+				<source
+					src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/kitti-sf-result.mov"
+					type="video/mp4"
+				/>
+				Your browser does not support the video tag.
+			</video>
+			<br />
+			<div className={`${projectClasses.content}`}>
 				<div>
 					Contrastingly, Late Fusion entails the initial detection of objects, followed by a fusion of these
 					detections. In this scenario, a variant fusion method is employed where objects are first detected
@@ -293,29 +309,9 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 					acquisition and dive in.
 				</div>
 			</div>
-
-			<br />
-
-			<video
-				autoPlay
-				loop
-				muted
-				playsInline
-				// className="w-full h-full rounded-lg border-[#121212] border-2"
-				className="w-full h-full rounded-lg"
-			>
-				<source
-					src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/kitti-sf-result.mov"
-					type="video/mp4"
-				/>
-				Your browser does not support the video tag.
-			</video>
-
-			<br />
 			<h2 id="structure" className={`${projectClasses.subheading}`}>
 				Data Overview
 			</h2>
-
 			<div className={`${projectClasses.content}`}>
 				<div>
 					The KITTI raw dataset encompasses data from four different cameras (comprising two grayscale and two
@@ -399,7 +395,6 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 				className={`${projectClasses.image}`}
 			/>
 			<br />
-
 			<div className={`${projectClasses.content}`}>
 				<h2 id="lidar to camera" className={`${projectClasses.subheading}`}>
 					LiDAR to Camera
@@ -514,8 +509,7 @@ $$`}</Latex>
 					transformation into one operation. The final coordinates in camera space are denoted as (u, v, z),
 					where z provides depth information in the 2D image space.
 				</div>
-				
-				<Latex >
+				<Latex>
 					{`$$
     T = \\begin{bmatrix}
 	r_{11} & r_{12} & r_{13} & t_{14} \\\\
@@ -525,7 +519,6 @@ $$`}</Latex>
 \\end{bmatrix}
   $$`}
 				</Latex>{' '}
-			
 				<div>
 					<a className="font-bold">Note:</a> The notation convention is that the starting reference frame is
 					in the subscript and the ending reference frame is in the superscript. The <Latex>{`$1$`}</Latex>{' '}
@@ -659,7 +652,6 @@ $$`}</Latex>
 				className={`${projectClasses.code}`}
 			/>
 			<br />
-
 			<h2 id="lidar, gpu/imu calib data" className={`${projectClasses.subheading}`}>
 				LiDAR, GPS/IMU Calib Data
 			</h2>
@@ -679,17 +671,14 @@ $$`}</Latex>
 				className={`${projectClasses.code}`}
 			/>
 			<br />
-
 			<div className={`${projectClasses.content}`}>
 				Now that we are able to project the LiDAR points onto the image, we can associate points on the image
 				with LiDAR depth.
 			</div>
 			<br />
-
 			<h2 id="Method" className={`${projectClasses.subheading}`}>
 				YOLOv5
 			</h2>
-
 			<div className={`${projectClasses.content}`}>
 				We will use YOLOv5 to detect objects in 2D, then we will find their corresponding depths. Then using our
 				GPS/IMU data we can find out where all of these objects are located in the world via Latitude and
@@ -703,7 +692,6 @@ $$`}</Latex>
 				copiedLabel="Copied!"
 				className={`${projectClasses.code}`}
 			/>
-
 			<div>
 				<br />
 				<h2 id="Base Script" className={`${projectClasses.subheading}`}>
