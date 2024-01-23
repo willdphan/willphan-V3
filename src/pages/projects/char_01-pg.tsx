@@ -326,6 +326,7 @@ ExecuteProcess(
 					everything to get you started - like ROS2 subscribers and packages. Definitely a solid pick for
 					anyone diving into these techs for the first time.
 				</div>
+
 				<div>
 					If you don&apos;t understand the basics, I definitely suggest getting a handle on the basics first
 					before diving into creating your own stuff or even trying to follow my code. It&apos;ll give you a
@@ -400,7 +401,13 @@ ExecuteProcess(
 			<div className={`${projectClasses.content}`}>
 				<div>
 					Keep in mind, we need to connect model to the <Code>/cmd_vel topic</Code> into the{' '}
-					<Code>char_01_model.sdf</Code> file.
+					<Code>char_01_model.sdf</Code> file. Code is{' '}
+					<Link
+						className={projectClasses.underline}
+						href="https://github.com/willdphan/char-01/blob/4210aafeb5c262d53692909b3e651718de7305d2/ros2_pkg/models/char_01/char_01_model.sdf"
+					>
+						here.
+					</Link>{' '}
 					<Code>/cmd_vel</Code> topic usually carries messages of type <Code>geometry_msgs/Twist</Code>, which
 					contain fields for linear <Code>(x, y, z)</Code> and angular <Code> (x, y, z)</Code> velocities. In
 					a typical scenario, a ROS node controlling the robot&apos;s movement will subscribe to this topic
@@ -427,9 +434,16 @@ ExecuteProcess(
 			<h2 id="structure" className={`${projectClasses.subheading}`}>
 				World Design
 			</h2>
+
 			<div className={`${projectClasses.content}`}>
 				As for the model world, I created an SDF file in the worlds folder and connected four walls in neon blue
-				to contain the CHAR 01 robot. We also added a sun. Code is here.
+				to contain the CHAR 01 robot. We also added a sun. Code is{' '}
+				<Link
+					className={projectClasses.underline}
+					href="https://github.com/willdphan/char-01/blob/4210aafeb5c262d53692909b3e651718de7305d2/ros2_pkg/worlds/char_01_world.sdf"
+				>
+					here.
+				</Link>{' '}
 			</div>
 			<br />
 
