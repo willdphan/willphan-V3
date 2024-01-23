@@ -321,7 +321,7 @@ ExecuteProcess(
 					>
 						Udemy by Raymond Andrade.
 					</Link>{' '}
-					It really hit the mark in terms of staying current, which is a tall order in this field.
+					It really hit the mark in terms of staying current, which seems like a tall order in this field.
 					Raymond&apos;s course was a big help, especially with its clear, visual explanations. It&apos;s got
 					everything to get you started - like ROS2 subscribers and packages. Definitely a solid pick for
 					anyone diving into these techs for the first time.
