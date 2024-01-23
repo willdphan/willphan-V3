@@ -346,8 +346,9 @@ ExecuteProcess(
 					<Link className={projectClasses.underline} href="https://github.com/willdphan/char-01.git">
 						here!
 					</Link>{' '}
-					Other than that, let&apos;s get started! Here are the files I&apos;ll focus on in the repo:
+					Other than that, let&apos;s get started!
 				</div>
+				<div>Here are the files I&apos;ll focus on in the repo:</div>
 				<ul>
 					<li>
 						• <Code>char_01_model.sdf</Code>
