@@ -342,7 +342,7 @@ ExecuteProcess(
 					I used a lot of his code and modified it to my simulation, check out his repo!
 				</div>
 				<div>
-					If you want to dive more into my code, check out the repo
+					If you want to dive more into my code, check out the repo{' '}
 					<Link className={projectClasses.underline} href="https://github.com/willdphan/char-01.git">
 						here!
 					</Link>{' '}
