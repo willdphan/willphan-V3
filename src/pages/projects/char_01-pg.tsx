@@ -384,7 +384,13 @@ ExecuteProcess(
 				As shown in my CAD drawing, I attempted to mimic its shape in Gazebo Ignition. I couldn&apos;t convert
 				it to URDF for some reason and figured it was quicker to create it in an SDF file since it consisted of
 				simple shapes, you can the code for this here! Here&apos;s the CHAR 01 look-alike next to a sick Hummer.
-				It&apos;s a little big, but it&apos;ll do.
+				It&apos;s a little big, but it&apos;ll do. Code is{' '}
+				<Link
+					className={projectClasses.underline}
+					href="https://github.com/willdphan/char-01/blob/4210aafeb5c262d53692909b3e651718de7305d2/ros2_pkg/models/char_01/char_01_model.sdf"
+				>
+					here.
+				</Link>{' '}
 			</div>
 
 			<br />
@@ -402,13 +408,7 @@ ExecuteProcess(
 			<div className={`${projectClasses.content}`}>
 				<div>
 					Keep in mind, we need to connect model to the <Code>/cmd_vel topic</Code> into the{' '}
-					<Code>char_01_model.sdf</Code> file. Code is{' '}
-					<Link
-						className={projectClasses.underline}
-						href="https://github.com/willdphan/char-01/blob/4210aafeb5c262d53692909b3e651718de7305d2/ros2_pkg/models/char_01/char_01_model.sdf"
-					>
-						here.
-					</Link>{' '}
+					<Code>char_01_model.sdf</Code> file.
 					<Code>/cmd_vel</Code> topic usually carries messages of type <Code>geometry_msgs/Twist</Code>, which
 					contain fields for linear <Code>(x, y, z)</Code> and angular <Code> (x, y, z)</Code> velocities. In
 					a typical scenario, a ROS node controlling the robot&apos;s movement will subscribe to this topic
