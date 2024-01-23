@@ -12,7 +12,7 @@ export const projects = [
 		name: 'CHAR 01',
 		description: 'Autonomous Navigation with Machine Learning.',
 		frontend: '',
-		code: 'na',
+		code: 'https://github.com/willdphan/char-01.git',
 		technology: 'ML/CV',
 		video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/char-display.mp4',
 		nbviewer: '',
