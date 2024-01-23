@@ -438,7 +438,7 @@ ExecuteProcess(
 
 			<div className={`${projectClasses.content}`}>
 				As for the model world, I created an SDF file in the worlds folder and connected four walls in neon blue
-				to contain the CHAR 01 robot. We also added a sun. Code is{' '}
+				to contain the CHAR 01 robot. We also added some lighting. Code is{' '}
 				<Link
 					className={projectClasses.underline}
 					href="https://github.com/willdphan/char-01/blob/4210aafeb5c262d53692909b3e651718de7305d2/ros2_pkg/worlds/char_01_world.sdf"
