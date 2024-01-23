@@ -558,7 +558,7 @@ ExecuteProcess(
 					<Code>vehicle_blue/chassis/gpu_lidar</Code> but this may vary depending how you set up your model.
 				</div>
 
-				<div>And then click in the button &quot;Add&quot; to include a display to visualize the lidar</div>
+				<div>And then click in the button &quot;Add&quot; to include a display and visualize the lidar.</div>
 			</div>
 
 			<br />
