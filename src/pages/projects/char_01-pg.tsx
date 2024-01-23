@@ -313,15 +313,6 @@ ExecuteProcess(
 
 			<div className={`${projectClasses.content}`}>
 				<div>
-					The aim of this project was to explore ROS2 and Gazebo Ignition, coupled with an opportunity to
-					enhance my C++ skills. Operating within a limited budget, I chose to develop the project in a
-					simulation environment as a practical and cost-effective approach towards eventual real-world
-					application. Opting for simplicity and clarity, I utilized a scikit-learn model instead of delving
-					into more intricate methods such as reinforcement learning. This decision was driven by the desire
-					to gain a solid grasp of simulation tools. The highlight and most exhilarating aspect for me was
-					integrating a machine learning model with the robot and observing its performance in action.
-				</div>{' '}
-				<div>
 					Finding current resources for ROS2 and Gazebo was quite a task, given how often they&apos;re
 					updated. But I hit the jackpot with this cool course on{' '}
 					<Link
@@ -1049,7 +1040,12 @@ ExecuteProcess(
 			<div className={`${projectClasses.content}`}>
 				<div>
 					Now you need to build the package, source the <Code>setup.bash</Code>, then run the launch file to
-					get the simulation started! The model sometimes pauses to try and predict its next move.
+					get the simulation started! The model sometimes pauses to try and predict its next move. If you want
+					to just clone this project and get started, check out the{' '}
+					<Link className={projectClasses.underline} href="https://github.com/willdphan/char-01.git">
+						README.md
+					</Link>
+					README.md
 				</div>
 				<div>
 					As you can see, the model I&apos;ve created isn&apos;t perfect and there&apos;s definitely room for
