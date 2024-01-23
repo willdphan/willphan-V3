@@ -63,7 +63,7 @@ void callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
 {
 	std::ofstream file;  
 	std::string package_path = ament_index_cpp::get_package_share_directory("ros2_pkg");
-	std::string file_path = "/media/psf/Developer/Robotics/char-01/ros2_pkg/data";
+	std::string file_path = ".../char-01/ros2_pkg/data";
 	file.open(file_path, std::ios_base::app);
 	for (const auto& range : msg->ranges)
 	{
@@ -138,17 +138,17 @@ report = classification_report(y_test, y_pred, target_names=class_names, zero_di
 print('Classification Report:\n', report)
 `
 	const train_save = `
-joblib.dump(clf, '...data/rf_model/[path_to_random_forest_model.pkl'])
-joblib.dump(k_best, '...data/k_best/[path_to_k_best.pkl]')
-joblib.dump(label_encoder, '.../data/label_encoder/[path_to_label_encoder.pkl]')
+joblib.dump(clf, '...data/rf_model/path_to_random_forest_model.pkl')
+joblib.dump(k_best, '...data/k_best/path_to_k_best.pkl')
+joblib.dump(label_encoder, '.../data/label_encoder/path_to_label_encoder.pkl')
 `
 	const predict_load = `
 self.clf = joblib.load(
-	'/media/psf/Developer/Robotics/char-01/ros2_pkg/data/rf_model/random_forest_model.pkl')
+	'.../data/rf_model/random_forest_model.pkl')
 self.k_best = joblib.load(
-	'/media/psf/Developer/Robotics/char-01/ros2_pkg/data/k_best/k_best.pkl')
+	'.../data/k_best/k_best.pkl')
 self.label_encoder = joblib.load(
-	'/media/psf/Developer/Robotics/char-01/ros2_pkg/data/label_encoder/label_encoder.pkl')
+	'.../data/label_encoder/label_encoder.pkl')
 `
 	const predict_callback = `
 # the received data is preprocessed and
@@ -242,7 +242,7 @@ int main(int argc, char **argv)
 `
 	const launch = `
 ExecuteProcess(
-	cmd=['ign', 'gazebo', '/media/psf/Developer/Robotics/char-01/ros2_pkg/worlds/char_01_world.sdf'],
+	cmd=['ign', 'gazebo', '.../worlds/char_01_world.sdf'],
 	output='screen'
 )
 Node(
@@ -281,11 +281,18 @@ ExecuteProcess(
 	return (
 		<Layout projectName={projectName as string} publicationDate={publicationDate}>
 			<div className={`${projectClasses.content}`}>
-				The purpose of this project was to dive into ROS2 and Gazebo Ignition. I also wanted to learn C++. Due
-				to budget restraints, I decided making it work in simulation would be a great start to making it a
-				reality. To keep things simple, I used a scikit-learn model model over more complex approaches like
-				reinforcement learning to get a better understanding of the simulation tools. This was the part I was
-				most excited about was connecting a machine learning model to the robot and watching it perform.
+				<div>
+					The purpose of this project was to dive into ROS2 and Gazebo Ignition. I also wanted to learn how to
+					design a robot in CAD and program it using C++. Because I&apos;m broke, I decided making it work in
+					simulation would be a great start to making it a reality. To keep things simple, I used a
+					scikit-learn model model over more complex approaches like reinforcement learning to get a better
+					understanding of the simulation tools. This was the part I was most excited about was connecting a
+					machine learning model to the robot and watching it perform.
+				</div>
+				<div>
+					Below is a CAD render of CHAR 01 in Fusion360. I like to keep it simple and minimal. Hopefully
+					I&apos;ll use my school 3D printers to print this bad boy out, praying that I can get free filament.{' '}
+				</div>
 			</div>
 
 			<br />
@@ -306,37 +313,71 @@ ExecuteProcess(
 
 			<div className={`${projectClasses.content}`}>
 				<div>
-					The purpose of this project was to dive into ROS2 and Gazebo Ignition. I also wanted to learn C++.
-					Due to budget restraints, I decided making it work in simulation would be a great start to making it
-					a reality. To keep things simple, I used a scikit-learn model model over more complex approaches
-					like reinforcement learning to get a better understanding of the simulation tools. This was the part
-					I was most excited about was connecting a machine learning model to the robot and watching it
-					perform.
+					The aim of this project was to explore ROS2 and Gazebo Ignition, coupled with an opportunity to
+					enhance my C++ skills. Operating within a limited budget, I chose to develop the project in a
+					simulation environment as a practical and cost-effective approach towards eventual real-world
+					application. Opting for simplicity and clarity, I utilized a scikit-learn model instead of delving
+					into more intricate methods such as reinforcement learning. This decision was driven by the desire
+					to gain a solid grasp of simulation tools. The highlight and most exhilarating aspect for me was
+					integrating a machine learning model with the robot and observing its performance in action.
 				</div>{' '}
 				<div>
-					There was not much sources that were up-to-date, but I found this course on Udemy by ___ to be
-					extremely helpful. Most of the course was up-to-date (which was hard to find since ROS2 and Gazebo
-					are constantly updating) in visually guiding me. You should be able to learn the basics of topics,
-					subscribers, packages, etc.
+					Finding current resources for ROS2 and Gazebo was quite a task, given how often they&apos;re
+					updated. But I hit the jackpot with this cool course on{' '}
+					<Link
+						className={projectClasses.underline}
+						href="https://www.udemy.com/course/ros2-cpp-robotics-developer-course/"
+					>
+						Udemy by Raymond Andrade.
+					</Link>{' '}
+					It really hit the mark in terms of staying current, which is a tall order in this field.
+					Raymond&apos;s course was a big help, especially with its clear, visual explanations. It&apos;s got
+					everything to get you started - like ROS2 subscribers and packages. Definitely a solid pick for
+					anyone diving into these techs for the first time.
 				</div>
 				<div>
-					I highly recommend learning how to do all of these first before creating something your own or
-					mimicking my code as it will provide a much better understanding! I won&apos;t go over the basics
-					and will go straight into describing how I created model, worlds, topics, subscribers.{' '}
+					If you don&apos;t understand the basics, I definitely suggest getting a handle on the basics first
+					before diving into creating your own stuff or even trying to follow my code. It&apos;ll give you a
+					way better understanding of how everything fits together. I&apos;m going to skip the beginner stuff
+					and jump right into the cool parts - like how I built the model, crafted the worlds, and set up the
+					topics and subscribers. It&apos;s more fun that way!
 				</div>
-				<div>I also used a lot of ___ code and modified it to my world/model, check out his repo!</div>
 				<div>
-					If you want to dive more into my code, check it out here! Other than that, let&apos;s get started!
-					here are the files I&apos;ll focus on in the repo:
+					For a similar project using an Arduino, check out{' '}
+					<Link className={projectClasses.underline} href="https://youtu.be/PdSDhdciSpE?si=lA5s7GLW5RZzkDLo">
+						Niko Dembartnik.
+					</Link>{' '}
+					I used a lot of his code and modified it to my simulation, check out his repo!
+				</div>
+				<div>
+					If you want to dive more into my code, check out the repo
+					<Link className={projectClasses.underline} href="https://github.com/willdphan/char-01.git">
+						here!
+					</Link>{' '}
+					Other than that, let&apos;s get started! Here are the files I&apos;ll focus on in the repo:
 				</div>
 				<ul>
-					<li>• char_01_model.sdf</li>
-					<li>• char_01_world.sdf</li>
-					<li>• lidar_node</li>
-					<li>• visualize.py</li>
-					<li>• train_model.py</li>
-					<li>• predict.py</li>
-					<li>• control.cpp</li>
+					<li>
+						• <Code>char_01_model.sdf</Code>
+					</li>
+					<li>
+						• <Code>char_01_world.sdf</Code>
+					</li>
+					<li>
+						• <Code>lidar_node</Code>
+					</li>
+					<li>
+						• <Code>visualize.py</Code>
+					</li>
+					<li>
+						• <Code>train_model.py</Code>
+					</li>
+					<li>
+						• <Code>predict.py</Code>
+					</li>
+					<li>
+						• <Code>control.cpp</Code>
+					</li>
 				</ul>
 			</div>
 
@@ -349,7 +390,8 @@ ExecuteProcess(
 			<div className={`${projectClasses.content}`}>
 				As shown in my CAD drawing, I attempted to mimic its shape in Gazebo Ignition. I couldn&apos;t convert
 				it to URDF for some reason and figured it was quicker to create it in an SDF file since it consisted of
-				simple shapes, you can the code for this here!
+				simple shapes, you can the code for this here! Here&apos;s the CHAR 01 look-alike next to a sick Hummer.
+				It&apos;s a little big, but it&apos;ll do.
 			</div>
 
 			<br />
@@ -366,13 +408,17 @@ ExecuteProcess(
 
 			<div className={`${projectClasses.content}`}>
 				<div>
-					Keep in mind, we need to connect model to the /cmd_vel topic into the `char_01_model.sdf` file.
-					`/cmd_vel` topic usually carries messages of type `geometry_msgs/Twist`, which contain fields for
-					linear (`x`, `y`, `z`) and angular (`x`, `y`, `z`) velocities. In a typical scenario, a ROS node
-					controlling the robot&apos;s movement will subscribe to this topic and translate the received
-					velocity commands into motor commands to drive the robot&apos;s wheels or tracks.
+					Keep in mind, we need to connect model to the <Code>/cmd_vel topic</Code> into the{' '}
+					<Code>char_01_model.sdf</Code> file.
+					<Code>/cmd_vel</Code> topic usually carries messages of type <Code>geometry_msgs/Twist</Code>, which
+					contain fields for linear <Code>(x, y, z)</Code> and angular <Code> (x, y, z)</Code> velocities. In
+					a typical scenario, a ROS node controlling the robot&apos;s movement will subscribe to this topic
+					and translate the received velocity commands into motor commands to drive the robot&apos;s wheels or
+					tracks.
 				</div>
-				<div>Here, we implemented the diff drive system in the char-01-model file.</div>
+				<div>
+					Here, we implemented the diff drive system plugin in the <Code>char-01-model.sdf</Code> file.
+				</div>
 			</div>
 
 			<br />
@@ -422,8 +468,9 @@ ExecuteProcess(
 					>
 						ROS2 Documentation: Humble
 					</Link>{' '}
-					in order to get a feel of what visualizing lidar sensor is like. This C++ code defines a ROS2 node
-					for a LiDAR sensor.
+					in order to get a feel of what visualizing lidar sensor is like. The tutorial makes it easy to run a
+					pre-made world with a lidar model so check it out! Afterwards, I developed this ROS2 node in C++ for
+					a LiDAR sensor shown later below.
 				</div>
 			</div>
 
@@ -442,20 +489,12 @@ ExecuteProcess(
 
 			<br />
 
-			<CodeHighlight
-				code={`${lidar_libs}`}
-				language="cpp"
-				copyLabel="Copy code"
-				copiedLabel="Copied!"
-				className={`${projectClasses.code}`}
-			/>
-
-			<br />
-
 			<div className={`${projectClasses.content}`}>
-				This class inherits from rclcpp::Node, which is a base class for ROS2 nodes. In the constructor, the
-				node is named "lidar_node". It creates a subscription that listens to sensor_msgs::msg::LaserScan
-				messages on the "lidar" topic. The callback function for this subscription is LidarNode::callback.
+				Overall, the class inherits from <Code>rclcpp::Node</Code>, which is a base class for ROS2 nodes. In the
+				constructor, the node is named <Code>lidar_node</Code>. It creates a subscription that listens to{' '}
+				<Code>sensor_msgs::msg::LaserScan</Code>
+				messages on the <Code>lidar</Code> topic. The callback function for this subscription is{' '}
+				<Code>LidarNode::callback</Code>.
 			</div>
 
 			<br />
@@ -471,8 +510,8 @@ ExecuteProcess(
 			<br />
 
 			<div className={`${projectClasses.content}`}>
-				This function is called whenever a new LaserScan message is received. It writes the range readings to a
-				file.
+				Within the class, this function is called whenever a new <Code>LaserScan</Code> message is received. It
+				writes the range readings to a file.
 			</div>
 			<br />
 
@@ -486,8 +525,8 @@ ExecuteProcess(
 
 			<br />
 			<div className={`${projectClasses.content}`}>
-				This function initializes the ROS2 system, spins the LidarNode (i.e., starts the node and keeps it
-				running to process callbacks), and then shuts down the ROS2 system when the node stops.
+				This function initializes the ROS2 system, spins the <Code>LidarNode</Code> (i.e., starts the node and
+				keeps it running to process callbacks), and then shuts down the ROS2 system when the node stops.
 			</div>
 			<br />
 
@@ -501,9 +540,19 @@ ExecuteProcess(
 
 			<br />
 			<div className={`${projectClasses.content}`}>
-				In this version of lidar_node.cc, the LidarNode only subscribes to LaserScan messages and writes the
-				range readings to a file. Make sure u add the new lidar_node to your CMakeLists.txt file when building
-				your package!{' '}
+				In this version of <Code>lidar_node.cc</Code>, the <Code>LidarNode</Code> only subscribes to{' '}
+				<Code>LaserScan</Code> messages and writes the range readings to a file. Make sure u add the new{' '}
+				<Code>lidar_node</Code> to your <Code>CMakeLists.txt</Code> file when building your package!{' '}
+			</div>
+
+			<div className={`${projectClasses.content}`}>
+				<div>
+					After sourcing your bash file, you can go into terminal and type <Code>rviz2</Code> for another
+					window to pop up. In the window, you can configure the &quot;Fixed Frame&quot;. I entered{' '}
+					<Code>vehicle_blue/chassis/gpu_lidar</Code> but this may vary depending how you set up your model.
+				</div>
+
+				<div>And then click in the button &quot;Add&quot; to include a display to visualize the lidar</div>
 			</div>
 
 			<br />
@@ -526,23 +575,47 @@ ExecuteProcess(
 			</h2>
 			<div className={`${projectClasses.content}`}>
 				<div>
-					Now, you could manually control the robot with the lidar sensor in order to gather simulation...
-					However, that would be time-consuming, and why do that when ___ already did this for us?
+					You could manually control the robot with the lidar sensor in order to gather data from the
+					simulation but... that would be time-consuming, and why do that when{' '}
+					<Link
+						className={projectClasses.underline}
+						href="https://indystry.cc/machine-learning-robot-driving-autonomously-with-arduino-and-lidar/"
+					>
+						Niko
+					</Link>{' '}
+					already did this for us?
 				</div>
 				<div>
-					In his repo, I snatched the all.txt data, visualize.py, train_model, and predict,py files and
-					altered them to fit my project. In his all.txt data, at the end of each row generated by the sensor,
-					it consists of one of these letters:
+					In his repo, I snatched the <Code>all.txt</Code> data, <Code>visualize.py</Code>,{' '}
+					<Code>train_model.py</Code>, and <Code>predict.py</Code> files and altered them to fit my project.
+					In his <Code>all.txt</Code> data, the end of each row generated by the sensor consists of one of
+					these letters:
 				</div>
 			</div>
 			<div className={`${projectClasses.content}`}>
-				<ul>
-					<li>• F - Forward</li>
-					<li>• I - Forward Right</li>
-					<li>• R - Right</li>
-					<li>• G - Forward Left</li>
-					<li>• L - Left</li>
-				</ul>
+				<div>
+					<ul>
+						<li>
+							• <Code>F - Forward</Code>
+						</li>
+						<li>
+							• <Code>I - Forward Right</Code>
+						</li>
+						<li>
+							• <Code>R - Right</Code>
+						</li>
+						<li>
+							• <Code>G - Forward Left</Code>
+						</li>
+						<li>
+							• <Code>L - Left</Code>
+						</li>
+					</ul>
+				</div>
+				<div>
+					These letters are used to label the sensor data with the corresponding movement or direction, which
+					is crucial for training a model to understand and predict movements based on sensor inputs.
+				</div>
 			</div>
 			<br />
 
@@ -550,8 +623,9 @@ ExecuteProcess(
 				Visualize Data
 			</h2>
 			<div className={`${projectClasses.content}`}>
-				At a high level, this script visualizes LiDAR sensor data. It reads data from a file, processes it, and
-				for each set of data that matches the LiDAR resolution, it generates a polar plot.
+				At a high level, the <Code>visualize.py</Code> script visualizes LiDAR sensor data. It reads data from
+				the <Code>all.txt</Code> file, processes it, and for each set of data that matches the LiDAR resolution,
+				it generates a polar plot.
 			</div>
 
 			<br />
@@ -567,8 +641,8 @@ ExecuteProcess(
 			<br />
 			<div className={`${projectClasses.content}`}>
 				Each data point is represented as a black dot, and an additional orange dot is plotted at the center of
-				the plot the orange dot plotted at the coordinates (400, 400) representing the location of the LiDAR
-				sensor or the robot model itself in the visualization. The plot is then displayed to the user.
+				the plot the orange dot plotted at the coordinates <Code>(400, 400)</Code> representing the location of
+				the LiDAR sensor or the robot model itself in the visualization. The plot is then displayed to the user.
 			</div>
 			<br />
 
@@ -586,8 +660,14 @@ ExecuteProcess(
 			</h2>
 			<div className={`${projectClasses.content}`}>
 				<div>
-					This Python script performs a machine learning workflow, where it first preprocesses and encodes a
-					dataset, then selects key features for training a Random Forest Classifier.
+					This <Code>train_model.py</Code> script performs a machine learning workflow, where it first
+					preprocesses and encodes a dataset, then selects key features for training a{' '}
+					<Link
+						className={projectClasses.underline}
+						href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html"
+					>
+						Random Forest Classifier.
+					</Link>
 				</div>
 				<div>
 					After training, the model&apos;s accuracy is evaluated and the model, along with its components, is
@@ -595,8 +675,7 @@ ExecuteProcess(
 					evaluation, and serialization, making it a comprehensive solution for a classification task.
 				</div>
 				<div>
-					The script reads the all.txt file and loads it into a pandas DataFrame. The data is assumed not to
-					have a header row.
+					The script reads the <Code>all.txt</Code> file and loads it into a pandas DataFrame.
 				</div>
 			</div>
 			<br />
@@ -611,8 +690,9 @@ ExecuteProcess(
 
 			<br />
 			<div className={`${projectClasses.content}`}>
-				Here, the script renames the last column to 'Label' and filters out rows with specific labels ('L', 'R',
-				'H', 'J'). It then splits the data into features (`X`) and labels (`y`).
+				Here, the script renames the last column to &quot;Label&quot; and filters out rows with specific labels{' '}
+				<Code>(L, R, H, J)</Code>. It then splits the data into features <Code>(X)</Code> and labels{' '}
+				<Code>(y)</Code>.
 			</div>
 			<br />
 
@@ -626,7 +706,7 @@ ExecuteProcess(
 
 			<br />
 			<div className={`${projectClasses.content}`}>
-				The `LabelEncoder` is used to convert categorical labels into a numeric format.
+				The <Code>LabelEncoder</Code> is used to convert categorical labels into a numeric format.
 			</div>
 			<br />
 
@@ -701,8 +781,8 @@ ExecuteProcess(
 			<br />
 
 			<div className={`${projectClasses.content}`}>
-				Finally, the trained Random Forest model, the `SelectKBest` object, and the `LabelEncoder` are saved to
-				files for future use.{' '}
+				Finally, the trained Random Forest model, the <Code>SelectKBest</Code> object, and the{' '}
+				<Code>LabelEncoder</Code> are saved to files for future use.{' '}
 			</div>
 			<br />
 
@@ -717,7 +797,18 @@ ExecuteProcess(
 			<br />
 
 			<div className={`${projectClasses.content}`}>
-				As seen below, we reach an accuracy of around ~67 percent!
+				<div>
+					This is the overall accuracy of the model, which is 66.69%. It tells you how often the model makes
+					the correct prediction across all classes.
+				</div>
+
+				<div>
+					From these results, you can infer that the model is better at correctly identifying forward
+					movements <Code>(F)</Code> compared to left <Code>(G)</Code> or right <Code>(I)</Code> ones. The
+					model is relatively precise when it predicts a movement as forward right <Code>(I)</Code>, but it
+					doesn&apos;t recall them well (many forward right movements are missed), indicating an imbalance
+					between precision and recall for this class. Either way, I&apos;ll just use this for now.
+				</div>
 			</div>
 
 			<br />
@@ -737,29 +828,30 @@ ExecuteProcess(
 			</h2>
 			<div className={`${projectClasses.content}`}>
 				<div>
-					This script defines a ROS 2 (Robot Operating System) node in Python for making predictions based on
-					LiDAR data using a trained machine learning model, specifically a Random Forest Classifier.
-					Here&apos;s a breakdown of its functionality:
+					This <Code>predict.py</Code> defines a ROS2 node in Python for making predictions based on LiDAR
+					data using a trained machine learning model, specifically a Random Forest Classifier.
 				</div>
+				<div>Here&apos;s a breakdown of its functionality:</div>
 				<div>
-					The Predictor class is a custom ROS2 node. It subscribes to the 'lidar' topic, loads a trained
-					model, a feature selector, and a label encoder, and publishes predictions to the 'prediction' topic.
-				</div>
-				<div>
-					The joblib.load function is used to load the trained Random Forest model from a file. The loaded
-					model is stored in self.clf.
-				</div>
-				<div>
-					The joblib.load function is also used to load the feature selector from a file. The loaded feature
-					selector is stored in self.k_best.
-				</div>
-				<div>
-					The joblib.load function is also used to load the feature selector from a file. The loaded feature
-					selector is stored in self.k_best.
-				</div>
-				<div>
-					Similarly, the joblib.load function is used to load the label encoder from a file. The loaded label
-					encoder is stored in self.label_encoder.
+					<ul>
+						<li>
+							• <Code>Predictor</Code> class is a custom ROS2 node. It subscribes to the{' '}
+							<Code>lidar</Code> topic, loads a trained model, a feature selector, and a label encoder,
+							and publishes predictions to the <Code>prediction</Code> topic.
+						</li>
+						<li>
+							• <Code>joblib.load</Code> function is used to load the trained Random Forest model from a
+							file. The loaded model is stored in <Code>self.clf</Code>.
+						</li>
+						<li>
+							• <Code>joblib.load</Code> function is also used to load the feature selector from a file.
+							The loaded feature selector is stored in <Code>self.k_best</Code>.
+						</li>
+						<li>
+							• Similarly, the <Code>joblib.load</Code> function is used to load the label encoder from a
+							file. The loaded label encoder is stored in <Code>self.label_encoder</Code>.
+						</li>
+					</ul>
 				</div>
 			</div>
 			<br />
@@ -774,8 +866,9 @@ ExecuteProcess(
 
 			<div className={`${projectClasses.content}`}>
 				<div>
-					The listener_callback method is called whenever a new message is published on the 'lidar' topic. It
-					preprocesses the data, makes a prediction using the trained model, and publishes the prediction.
+					The <Code>listener_callback</Code> method is called whenever a new message is published on the{' '}
+					<Code>lidar</Code> topic. It preprocesses the data, makes a prediction using the trained model, and
+					publishes the prediction.
 				</div>
 			</div>
 
@@ -791,8 +884,8 @@ ExecuteProcess(
 
 			<div className={`${projectClasses.content}`}>
 				<div>
-					The preprocess_data method is used to preprocess the LiDAR data before it's passed to the machine
-					learning model for prediction.
+					The <Code>preprocess_data</Code> method is used to preprocess the LiDAR data before it&apos;s passed
+					to the machine learning model for prediction.
 				</div>
 			</div>
 
@@ -809,7 +902,7 @@ ExecuteProcess(
 			<div className={`${projectClasses.content}`}>
 				<div>
 					While the script is running, it will keep making predictions every time a new message is published
-					on the 'lidar' topic, and it will only shut down when the ROS2 system is shut down.
+					on the <Code>lidar</Code> topic, and it will only shut down when the ROS2 system is shut down.
 				</div>
 			</div>
 
@@ -828,13 +921,15 @@ ExecuteProcess(
 			</h2>
 			<div className={`${projectClasses.content}`}>
 				<div>
-					This C++ file, control.cpp, defines a node that listens for predictions and publishes corresponding
-					Twist messages to control a robot. Here&apos;s a breakdown of its components:
+					This C++ file, <Code>control.cpp</Code>, defines a node that listens for predictions and publishes
+					corresponding Twist messages to control a robot.
 				</div>
 				<div>
-					The constructor for ControlNode initializes the node with the name "control_node", creates a
-					publisher that publishes geometry_msgs::msg::Twist messages on the "cmd_vel" topic, and creates a
-					subscription that listens for std_msgs::msg::String messages on the "prediction" topic.
+					Its constructor for <Code>ControlNode</Code> initializes the node with the name{' '}
+					<Code>control_node</Code>, creates a publisher that publishes <Code>geometry_msgs::msg::Twist</Code>{' '}
+					messages on the <Code>cmd_vel</Code> topic, and creates a subscription that listens for{' '}
+					<Code>std_msgs::msg::String</Code>
+					messages on the <Code>prediction</Code> topic.
 				</div>
 			</div>
 			<br />
@@ -848,9 +943,9 @@ ExecuteProcess(
 			<br />
 
 			<div className={`${projectClasses.content}`}>
-				The callback function is called whenever a new message is received on the "prediction" topic. It
-				converts the prediction from a string to an integer, creates a geometry_msgs::msg::Twist message based
-				on the prediction, and publishes this message on the "cmd_vel" topic.
+				The callback function is called whenever a new message is received on the <Code>prediction</Code> topic.
+				It converts the prediction from a string to an integer, creates a <Code>geometry_msgs::msg::Twist</Code>{' '}
+				message based on the prediction, and publishes this message on the <Code>cmd_vel</Code> topic.
 			</div>
 
 			<br />
@@ -864,8 +959,8 @@ ExecuteProcess(
 			<br />
 
 			<div className={`${projectClasses.content}`}>
-				The main function initializes the ROS2 system, creates a ControlNode, spins the node to process
-				callbacks, and then shuts down the ROS2 system when the node is done.
+				The main function initializes the ROS2 system, creates a <Code>ControlNode</Code>, spins the node to
+				process callbacks, and then shuts down the ROS2 system when the node is done.
 			</div>
 
 			<br />
@@ -892,38 +987,39 @@ ExecuteProcess(
 					<ul>
 						<li>1. Starts the Ignition Gazebo simulator with a specific world file. </li>
 						<li>
-							2. Launches a node (predict_node) that uses a machine learning model to make predictions
-							based on LiDAR data.{' '}
+							2. Launches a node (<Code>predict_node</Code>) that uses a machine learning model to make
+							predictions based on LiDAR data.{' '}
 						</li>
 						<li>
-							3. Launches a node (control_node) for controlling the robot (the specifics of what this node
-							does aren't provided in the launch file).{' '}
+							3. Launches a node (<Code>control_node</Code>) for controlling the robot (the specifics of
+							what this node does aren&apos;t provided in the launch file).{' '}
 						</li>
 						<li>
-							4. Launches a node (lidar_node) for handling LiDAR data (the specifics of what this node
-							does aren't provided in the launch file).{' '}
+							4. Launches a node (<Code>lidar_node</Code>) for handling LiDAR data (the specifics of what
+							this node does aren&apos;t provided in the launch file).{' '}
 						</li>
 						<li>
-							5. Sets up bridges between ROS2 and Ignition Gazebo for the /lidar and /cmd_vel topics,
-							allowing ROS2 nodes to interact with the simulator.{' '}
+							5. Sets up bridges between ROS2 and Ignition Gazebo for the <Code>/lidar</Code> and{' '}
+							<Code>/cmd_vel</Code> topics, allowing ROS2 nodes to interact with the simulator.{' '}
 						</li>
 					</ul>
 				</div>
 			</div>
 
 			<br />
-			<CodeHighlight
-				code={`${launch}`}
-				language="text"
-				copyLabel="Copy code"
-				copiedLabel="Copied!"
-				className={`${projectClasses.code}`}
+
+			<CodeHighlightTabs
+				withExpandButton
+				defaultExpanded={false}
+				expandCodeLabel="Show full code"
+				collapseCodeLabel="Show less"
+				code={[{ fileName: 'char_01.launch.py', code: launch, language: 'text' }]}
 			/>
 
 			<br />
 
 			<div className={`${projectClasses.content}`}>
-				<div>Look at CHAR 01 go!</div>
+				<div>The video is sped up 1.5x times... but look at CHAR 01 go! It&apos;s moving!</div>
 			</div>
 
 			<br />
@@ -942,19 +1038,33 @@ ExecuteProcess(
 
 			<br />
 
-			<h2 id="learnings" className={`${projectClasses.subheading}`}>
-				Learnings
+			<div className={`${projectClasses.content}`}>
+				In essence, this launch file sets up a complete system for simulating, controlling, and making
+				predictions for a robot using ROS2 and Ignition Gazebo.
+			</div>
+			<br />
+			<h2 id="what's next?" className={`${projectClasses.subheading}`}>
+				What&apos;s Next?
 			</h2>
 			<div className={`${projectClasses.content}`}>
 				<div>
-					In essence, this launch file sets up a complete system for simulating, controlling, and making
-					predictions for a robot using ROS2 and Ignition Gazebo.
+					Now you need to build the package, source the <Code>setup.bash</Code>, then run the launch file to
+					get the simulation started! The model sometimes pauses to try and predict its next move.
 				</div>
 				<div>
-					Now you need to build the package, source it, then run the launch file to get the simulation
-					started! The model sometimes pauses to try and predict its next move. As you can see, the model is
-					not the best, and there are definitely some tweaks that could be made. But I&apos;m super proud with
-					the dent I made in ROS2, Gazebo, and C++.
+					As you can see, the model I&apos;ve created isn&apos;t perfect and there&apos;s definitely room for
+					improvement. For instance, experimenting with different models might yield more efficient results.
+					I&apos;m also thinking that incorporating reinforcement learning could be a game-changer, especially
+					in terms of enabling CHAR 01 to better explore its environment.
+				</div>
+				<div>
+					But hey, this project is just one step in my ongoing learning journey, and I&apos;m genuinely
+					thrilled about what lies ahead.
+				</div>
+				<div>
+					Overall, I&apos;m really proud of the progress I&apos;ve made with ROS2, Gazebo, and C++, and
+					I&apos;m excited to continue exploring this field brimming with possibilities. Hope to update you
+					all!
 				</div>
 			</div>
 		</Layout>
