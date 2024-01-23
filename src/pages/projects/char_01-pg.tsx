@@ -476,7 +476,7 @@ ExecuteProcess(
 					</Link>{' '}
 					in order to get a feel of what visualizing lidar sensor is like. The tutorial makes it easy to run a
 					pre-made world with a lidar model so check it out! Afterwards, I developed this ROS2 node in C++ for
-					a LiDAR sensor shown later below.
+					a LiDAR sensor called <Code>lidar_node.cpp</Code> shown below.
 				</div>
 			</div>
 
