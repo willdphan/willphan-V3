@@ -496,9 +496,9 @@ ExecuteProcess(
 			<br />
 
 			<div className={`${projectClasses.content}`}>
-				Overall, the class inherits from <Code>rclcpp::Node</Code>, which is a base class for ROS2 nodes. In the
-				constructor, the node is named <Code>lidar_node</Code>. It creates a subscription that listens to{' '}
-				<Code>sensor_msgs::msg::LaserScan</Code>
+				Overall, the <Code>LidarNode</Code> class inherits from <Code>rclcpp::Node</Code>, which is a base class
+				for ROS2 nodes. In the constructor, the node is named <Code>lidar_node</Code>. It creates a subscription
+				that listens to <Code>sensor_msgs::msg::LaserScan</Code>
 				messages on the <Code>lidar</Code> topic. The callback function for this subscription is{' '}
 				<Code>LidarNode::callback</Code>.
 			</div>
