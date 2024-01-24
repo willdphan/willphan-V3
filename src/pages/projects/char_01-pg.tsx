@@ -1060,6 +1060,7 @@ ExecuteProcess(
 					<Link className={projectClasses.underline} href="https://github.com/willdphan/char-01.git">
 						README.md
 					</Link>
+					.
 				</div>
 				<div>
 					As you can see, the model I&apos;ve created isn&apos;t perfect and there&apos;s definitely room for
