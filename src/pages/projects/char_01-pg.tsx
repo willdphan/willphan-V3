@@ -287,11 +287,13 @@ ExecuteProcess(
 					simulation would be a great start to making it a reality. To keep things simple, I used a
 					scikit-learn model model over more complex approaches like reinforcement learning to get a better
 					understanding of the simulation tools. This was the part I was most excited about was connecting a
-					machine learning model to the robot and watching it perform.
+					machine learning model to the robot and watching it perform. Although autonomous navigation could
+					technically be achieved with basic sensors, my goal was to deepen my learning by integrating a
+					machine learning model.
 				</div>
 				<div>
-					Below is a CAD render of CHAR 01 in Fusion360. I like to keep it simple and minimal. Hopefully
-					I&apos;ll use my school 3D printers to print this bad boy out, praying that I can get free filament.{' '}
+					Below is a CAD render of CHAR 01 in Fusion360. I like to keep it minimal. Hopefully I&apos;ll use my
+					school 3D printers to print this bad boy out, praying that I can get free filament.{' '}
 				</div>
 			</div>
 
