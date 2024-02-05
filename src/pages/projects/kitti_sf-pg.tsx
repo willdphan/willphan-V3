@@ -309,6 +309,7 @@ def get_detection_coordinates(image, bin_path, draw_boxes=True, draw_depth=True)
 					acquisition and dive in.
 				</div>
 			</div>
+			<br />
 			<h2 id="structure" className={`${projectClasses.subheading}`}>
 				Data Overview
 			</h2>
