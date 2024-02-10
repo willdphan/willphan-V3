@@ -66,7 +66,7 @@ export const projects = [
 
 const Fun = () => {
 	const [showMore, setShowMore] = useState(false)
-	const [showVisuals, setShowVisuals] = useState(false)
+	const [showVisuals, setShowVisuals] = useState(true)
 	const [selectedTech, setSelectedTech] = useState('ALL')
 	const [opened, { close, open }] = useDisclosure(false)
 
