@@ -10,7 +10,7 @@ export const projects = [
 	{
 		title: 'C++',
 		name: 'SILK 02',
-		description: 'Quadruped with Computer Vision',
+		description: 'Quadruped with Computer Vision. WIP',
 		frontend: '',
 		code: 'na',
 		technology: 'ML/CV',
