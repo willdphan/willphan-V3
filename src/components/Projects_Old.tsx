@@ -8,6 +8,17 @@ import { useDisclosure } from '@mantine/hooks'
 
 export const projects = [
 	{
+		title: 'C++',
+		name: 'SILK 02',
+		description: 'Quadruped with Computer Vision',
+		frontend: '',
+		code: 'na',
+		technology: 'ML/CV',
+		video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/silk-02-display.mp4',
+		nbviewer: '',
+		image: '',
+	},
+	{
 		title: 'PYTHON',
 		name: 'CHAR 01',
 		description: 'Autonomous Robot with Sensor Fusion. Coming soon...',
@@ -158,7 +169,7 @@ const Old = () => {
 					>
 						{project.video ? (
 							<div className="">
-							 <video
+								<video
 									autoPlay
 									loop
 									muted
@@ -166,7 +177,7 @@ const Old = () => {
 									className="rounded-lg border-[#0A0A0A] border-[1px]"
 								>
 									<source src={project.video} type="video/mp4" />
-								</video> 
+								</video>
 							</div>
 						) : (
 							project.image && (
@@ -174,14 +185,14 @@ const Old = () => {
 									{/* Specify the width */}
 									{/* Specify the height */}
 									{/* If you want to maintain aspect ratio */}
-									 <Image
+									<Image
 										src={project.image}
 										alt={project.name}
 										width={600}
 										height={300}
 										layout="responsive"
 										className="rounded-lg border-[#0A0A0A] border-[1px]"
-									/> 
+									/>
 								</div>
 							)
 						)}
