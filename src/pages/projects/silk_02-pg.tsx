@@ -229,6 +229,30 @@ array([ -0.0095994,   0.0013328,  -0.0028969,   0.0023714,   -0.010605,  -0.0032
 				className={`${projectClasses.image}`}
 			/>
 			<br />
+
+			<div className={`${projectClasses.content}`}>
+				<div>
+					Had to disassemble it several times to identify what was wrong while coding. I realized that 2 of
+					the 8 servers were not working and I burnt out 3 Arduino Nanos So I went in and replaced them. Got
+					some movement going, not final yet though. WIP.
+				</div>
+			</div>
+
+			<br />
+
+			<video
+				autoPlay
+				loop
+				muted
+				playsInline
+				// className="w-full h-full rounded-lg border-[#121212] border-2"
+				className="w-full h-full rounded-lg border-[#121212] border-2"
+			>
+				<source src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/silk-02-move.mov" type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
+
+			<br />
 		</Layout>
 	)
 }
