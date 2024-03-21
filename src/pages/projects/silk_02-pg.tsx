@@ -248,7 +248,7 @@ array([ -0.0095994,   0.0013328,  -0.0028969,   0.0023714,   -0.010605,  -0.0032
 				// className="w-full h-full rounded-lg border-[#121212] border-2"
 				className="w-full h-full rounded-lg border-[#121212] border-2"
 			>
-				<source src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/silk-02-move.mov" type="video/mp4" />
+				<source src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/silk-02-move.MOV" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 
