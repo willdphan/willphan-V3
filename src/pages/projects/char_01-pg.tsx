@@ -307,7 +307,10 @@ ExecuteProcess(
 				// className="w-full h-full rounded-lg border-[#121212] border-2"
 				className="w-full h-full rounded-lg border-[#121212] border-2"
 			>
-				<source src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/char-display.mp4" type="video/mp4" />
+				<source
+					src="https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/char-01-display.mp4"
+					type="video/mp4"
+				/>
 				Your browser does not support the video tag.
 			</video>
 

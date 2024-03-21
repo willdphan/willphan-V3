@@ -14,7 +14,7 @@ export const projects = [
 		frontend: '',
 		code: 'na',
 		technology: 'ML/CV',
-		video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/silk-02-display.mp4',
+		video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/char-01-display.mp4',
 		nbviewer: '',
 		image: '',
 	},
