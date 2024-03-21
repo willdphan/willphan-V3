@@ -9,8 +9,8 @@ import { useDisclosure } from '@mantine/hooks'
 export const projects = [
 	{
 		title: 'C++',
-		name: 'SILK 02',
-		description: 'Quadruped with Computer Vision. WIP',
+		name: 'SILK 02 (WIP)',
+		description: 'Quadruped with Computer Vision. ',
 		frontend: '',
 		code: 'na',
 		technology: 'ML/CV',

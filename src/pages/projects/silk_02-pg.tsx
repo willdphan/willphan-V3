@@ -234,7 +234,7 @@ array([ -0.0095994,   0.0013328,  -0.0028969,   0.0023714,   -0.010605,  -0.0032
 				<div>
 					Had to disassemble it several times to identify what was wrong while coding. I realized that 2 of
 					the 8 servers were not working and I burnt out 3 Arduino Nanos So I went in and replaced them. Got
-					some movement going, not final yet though. WIP.
+					some movement going, not final yet though. 
 				</div>
 			</div>
 
