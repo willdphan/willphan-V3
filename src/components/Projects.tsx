@@ -12,7 +12,7 @@ export const projects = [
 		name: 'SILK 02',
 		description: 'Quadruped with Computer Vision (WIP).',
 		frontend: '',
-		code: 'na',
+		code: 'https://github.com/willdphan/silk-02',
 		technology: 'ML/CV',
 		video: 'https://pub-33c643825c664d0091b84d7ae37a5150.r2.dev/silk-02-display.mp4',
 		nbviewer: '',
