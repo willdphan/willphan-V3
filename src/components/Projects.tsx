@@ -9,7 +9,7 @@ import { useDisclosure } from '@mantine/hooks'
 export const projects = [
 	{
 		title: 'C++',
-		name: 'SILK 02',
+		name: 'SILK-02',
 		description: 'Quadruped with Computer Vision (WIP).',
 		frontend: '',
 		code: 'https://github.com/willdphan/silk-02',
@@ -20,7 +20,7 @@ export const projects = [
 	},
 	{
 		title: 'PYTHON, C++',
-		name: 'CHAR 01',
+		name: 'CHAR-01',
 		description: 'Autonomous Navigation with Machine Learning.',
 		frontend: '',
 		code: 'https://github.com/willdphan/char-01.git',
